@@ -1,0 +1,23 @@
+{
+	"name": "cloud-pi",
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"workspaces": [
+		"packages/*",
+		"apps/*"
+	],
+	"scripts": {
+		"build": "npm run build -w @cloud-pi/tui",
+		"typecheck": "npm run typecheck --workspaces --if-present",
+		"test": "npm run test --workspaces --if-present",
+		"verify": "npm run typecheck && npm run build && npm run test && npm run test:dist -w @cloud-pi/tui",
+		"example": "npm --prefix packages/tui/examples run"
+	},
+	"devDependencies": {
+		"@types/node": "^24.19.2",
+		"typescript": "6.0.3"
+	}
+}

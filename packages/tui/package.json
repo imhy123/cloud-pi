@@ -1,0 +1,72 @@
+{
+	"name": "@cloud-pi/tui",
+	"version": "0.1.0",
+	"description": "Node.js terminal UI library: immutable frame rendering, themes, rich components, inline images and terminal notifications",
+	"type": "module",
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"sideEffects": false,
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"README_cn.md",
+		"LICENSE",
+		"THIRD-PARTY-NOTICES.md",
+		"PATCHES.md",
+		"PATCHES_cn.md"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./theme": {
+			"types": "./dist/theme.d.ts",
+			"import": "./dist/theme.js"
+		},
+		"./components": {
+			"types": "./dist/components.d.ts",
+			"import": "./dist/components.js"
+		},
+		"./render": {
+			"types": "./dist/render.d.ts",
+			"import": "./dist/render.js"
+		},
+		"./image": {
+			"types": "./dist/image.d.ts",
+			"import": "./dist/image.js"
+		},
+		"./notifications": {
+			"types": "./dist/notifications.d.ts",
+			"import": "./dist/notifications.js"
+		},
+		"./multiplexers": {
+			"types": "./dist/multiplexers.d.ts",
+			"import": "./dist/multiplexers.js"
+		},
+		"./keys": {
+			"types": "./dist/keys.d.ts",
+			"import": "./dist/keys.js"
+		}
+	},
+	"scripts": {
+		"build": "tsup",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:dist": "node --test test/dist/*.test.mjs",
+		"verify": "npm run typecheck && npm run build && npm run test && npm run test:dist"
+	},
+	"dependencies": {
+		"get-east-asian-width": "^1.4.0",
+		"yaml": "^2.8.1"
+	},
+	"devDependencies": {
+		"tsup": "^9.0.0",
+		"vitest": "^5.1.0"
+	}
+}

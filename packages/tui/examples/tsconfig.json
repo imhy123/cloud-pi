@@ -1,0 +1,22 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"paths": {
+			"@oh-my-pi/pi-utils": ["../src/vendor/pi-utils/index.ts"],
+			"@oh-my-pi/pi-utils/*": ["../src/vendor/pi-utils/*"],
+			"@oh-my-pi/pi-natives": ["../src/compat/natives.ts"],
+			"@oh-my-pi/pi-natives/path": ["../src/compat/natives-path.ts"],
+			"@oh-my-pi/pi-ai": ["../src/compat/pi-ai.ts"],
+			"@oh-my-pi/pi-agent-core": ["../src/compat/pi-agent-core.ts"],
+			"@cloud-pi/tui": ["../src/index.ts"],
+			"@cloud-pi/tui/theme": ["../src/theme/index.ts"],
+			"@cloud-pi/tui/components": ["../src/components/index.ts"],
+			"@cloud-pi/tui/render": ["../src/render/index.ts"],
+			"@cloud-pi/tui/image": ["../src/image.ts"],
+			"@cloud-pi/tui/notifications": ["../src/notifications.ts"],
+			"@cloud-pi/tui/multiplexers": ["../src/multiplexers/index.ts"],
+			"@cloud-pi/tui/keys": ["../src/keys.ts"]
+		}
+	},
+	"include": ["**/*.ts", "../src/compat/bun-globals.d.ts"]
+}

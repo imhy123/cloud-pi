@@ -1,0 +1,18 @@
+{
+	"name": "@cloud-pi/tui-examples",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"01-hello": "node --import ./register.mjs 01-hello/hello.ts",
+		"02-picker": "node --import ./register.mjs 02-picker/picker.ts",
+		"03-list": "node --import ./register.mjs 03-list/list.ts",
+		"04-overlay": "node --import ./register.mjs 04-overlay/overlay.ts",
+		"05-theme": "node --import ./register.mjs 05-theme/theme.ts",
+		"06-markdown": "node --import ./register.mjs 06-markdown/markdown.ts",
+		"07-loader": "node --import ./register.mjs 07-loader/loader.ts",
+		"08-image": "node --import ./register.mjs 08-image/image.ts",
+		"09-notify": "node --import ./register.mjs 09-notify/notify.ts",
+		"10-composer": "node --import ./register.mjs 10-composer/composer.ts",
+		"11-welcome": "node --import ./register.mjs 11-welcome/welcome.ts"
+	}
+}
