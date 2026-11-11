@@ -1,4 +1,4 @@
-import { Markdown, ProcessTerminal, TUI, closeMediaWorkers, getMarkdownTheme } from "@cloud-pi/tui";
+import { Markdown, ProcessTerminal, TUI, closeMediaWorkers, getMarkdownTheme, matchesKey } from "@cloud-pi/tui";
 
 const tui = new TUI(new ProcessTerminal());
 const source = [
@@ -16,11 +16,11 @@ const markdown = new Markdown(source, 1, 0, getMarkdownTheme());
 markdown.onChange = () => tui.requestRender();
 tui.addChild(markdown);
 tui.addInputListener(data => {
-	if (data === "q" || data === "\x03") {
+	if (data === "q" || matchesKey(data, "ctrl+c")) {
 		tui.stop();
 		markdown.dispose();
 		closeMediaWorkers();
-		return { consume: true };
+		process.exit(0);
 	}
 	return undefined;
 });
