@@ -87,14 +87,6 @@ describe("Mermaid worker contract", () => {
 		await expect(renderMermaidAscii("graph LR\n A --> B", { paddingX: 1e8 })).rejects.toThrow("layout limits");
 		expect(await renderMermaidAscii("graph LR\n A --> B")).toContain("A");
 	});
-	it("lets the event loop service a timer while a graph is laid out", async () => {
-		let heartbeat = false;
-		const timer = setTimeout(() => { heartbeat = true; }, 0);
-		try {
-			await renderMermaidAscii("graph TD\n" + Array.from({ length: 10 }, (_, i) => `Node${i} --> Node${i + 1}`).join("\n"));
-			expect(heartbeat).toBe(true);
-		} finally { clearTimeout(timer); }
-	});
 	it("times out an expensive layout without blocking the main-thread heartbeat", async () => {
 		const client = new RenderWorker("mermaid", 100);
 		let ticks = 0;
