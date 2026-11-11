@@ -10,11 +10,11 @@
 			"@oh-my-pi/pi-agent-core": ["../src/compat/pi-agent-core.ts"],
 			"@cloud-pi/tui": ["../src/index.ts"],
 			"@cloud-pi/tui/theme": ["../src/theme/index.ts"],
-			"@cloud-pi/tui/components": ["../src/components/index.ts"],
+			"@cloud-pi/tui/components": ["../entries/components.ts"],
 			"@cloud-pi/tui/render": ["../src/render/index.ts"],
-			"@cloud-pi/tui/image": ["../src/image.ts"],
-			"@cloud-pi/tui/notifications": ["../src/notifications.ts"],
-			"@cloud-pi/tui/multiplexers": ["../src/multiplexers/index.ts"],
+			"@cloud-pi/tui/image": ["../entries/image.ts"],
+			"@cloud-pi/tui/notifications": ["../entries/notifications.ts"],
+			"@cloud-pi/tui/multiplexers": ["../entries/multiplexers.ts"],
 			"@cloud-pi/tui/keys": ["../src/keys.ts"]
 		}
 	},

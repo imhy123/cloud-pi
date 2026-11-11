@@ -138,7 +138,7 @@ setHighlighter({
 `Text`、`Box`、`Container`、`Input`、`Editor`、`Form` / `FormField`、
 `Markdown`、`Loader`、`CancellableLoader`、`ProgressBar`、`Table`、`Sparkline`、
 `SelectList`、`SettingsList`、`TreeView`、`TruncatedText`、`KeyValueList`、
-`Section`、`TabBar`、`Spacer`、`Metric`、`WizardStep`、`Image`，以及
+`Section`、`TabBar`、`Spacer`、`Metric`、`WizardStep`、`Image`、`SvgFigure`、`FigureMarkdown`，以及
 `components/layout` 中的布局容器。
 
 每个组件都实现：
@@ -212,7 +212,7 @@ getTerminalInfo(TERMINAL_ID).sendNotification({
 | `@cloud-pi/tui/theme` | 主题单例、加载器、适配器、`setHighlighter` |
 | `@cloud-pi/tui/components` | 仅组件 |
 | `@cloud-pi/tui/render` | 输出/代码/工具渲染辅助与超链接 |
-| `@cloud-pi/tui/image` | `Image`、Kitty graphics、图片编码/尺寸 |
+| `@cloud-pi/tui/image` | `Image`、Kitty graphics、图片编码/尺寸、SVG 图片与 worker 转换 |
 | `@cloud-pi/tui/notifications` | 通知协议、路由、桌面提示 |
 | `@cloud-pi/tui/multiplexers` | tmux、screen、zellij、cmux、herdr、orca、wmux 适配器 |
 | `@cloud-pi/tui/keys` | 按键匹配/解析 |
@@ -232,15 +232,53 @@ getTerminalInfo(TERMINAL_ID).sendNotification({
 `src/` 下的 TypeScript 文件带有 verbatim/adapted/new 来源头。JSON 来源及完整清单见
 [SOURCES.json](./SOURCES.json)。本地差异与同步历史见 [PATCHES.md](./PATCHES.md)。
 
-Mermaid 代码块使用纯 TypeScript 的 `beautiful-mermaid` 渲染器，支持流程图、状态图、
-时序图、类图、ER 图和 XY 图。不支持的语法回退为代码；布局可能与上游 Rust 渲染器不同。
+Mermaid 代码块在 Node worker 中使用 `beautiful-mermaid`，支持流程图、状态图、时序图、
+类图、ER 图和 XY 图。直接使用 Markdown 时设置
+`markdown.onChange = () => tui.requestRender()`：首帧显示代码，异步结果到达后重绘。
+不支持的语法回退为代码，布局可能与上游 Rust 渲染器不同。仍支持宿主自定义的同步 resolver。
+
+### SVG 图片
+
+`SvgFigure` 显示 SVG 源码，`FigureMarkdown` 从正文中提取顶层 SVG 代码块。两者在独立
+worker 中通过 resvg-wasm 转为 PNG，再经 Kitty/iTerm2 显示。支持流式更新、主题 token、
+终端整字符单元补边及代码回退。FigureMarkdown 会连接内部 Markdown 的重绘回调。
+
+```ts
+import { FigureMarkdown, Markdown, getMarkdownTheme } from "@cloud-pi/tui";
+
+const document = new FigureMarkdown(source, {
+ markdown: text => new Markdown(text, 0, 0, getMarkdownTheme()),
+ budget: tui.imageBudget,
+ onChange: () => tui.requestRender(),
+});
+tui.addChild(document);
+```
+
+`@cloud-pi/tui/image` 还导出异步 `rasterizeSvg(bytes, maxWidthPx, maxHeightPx, scale?, cell?)`、
+`setSvgFontOptions({ fontBuffers, fontFiles, fontDirs, defaultFontFamily, loadSystemFonts })`
+和 `closeMediaWorkers()`。默认搜索系统字体；显式字体数据可保证跨机器一致的字形。
+移除图片/Markdown 实例时应 dispose，应用退出时调用 closeMediaWorkers 取消未完成工作。
+worker 按需加载，空闲时取消引用。队列、输入和渲染上限见 PATCHES.md。
+
+运行 `npm run example -- 12-svg` 查看 SVG 图片示例，
+运行 `npm run example -- 13-mermaid` 查看异步 Mermaid 布局示例。
+
+### 包入口与兼容层
+
+自定义公共聚合入口位于 `entries/`。`@cloud-pi/tui/components`、`@cloud-pi/tui/image`、
+`@cloud-pi/tui/notifications` 和 `@cloud-pi/tui/multiplexers` 的导入路径保持不变。
+
+`src/compat/` 是内部迁移适配目录，不是独立 npm 包。构建/测试别名把上游导入映射到这里，
+让复制的源码保留原有导入路径。它提供部分 Bun shim、纯 TypeScript 文本/按键引擎、
+原生 API 的 Node 替代、少量 pi-ai/pi-agent-core 类型替身，以及基于 worker 的 SVG/Mermaid
+渲染。它仅实现本库需要的子集，不是上述上游包的完整实现。
 
 ## 开发
 
 ```sh
 npm install
 npm run typecheck -w @cloud-pi/tui   # tsc --noEmit
-npm run build -w @cloud-pi/tui       # tsup (ESM + d.ts, 8 entry points)
+npm run build -w @cloud-pi/tui       # tsup (ESM + d.ts, 8 public entries + worker)
 npm run test -w @cloud-pi/tui        # Vitest over src/
 npm run test:dist -w @cloud-pi/tui   # tracked tests in test/bundle/
 npm run verify                       # all of the above
@@ -249,7 +287,8 @@ npm run audit:upstream -w @cloud-pi/tui # pinned source/header comparison
 
 `test/setup.ts` 将 Bun shim 安装到 `globalThis`，使 vendored 源码无需修改即可在
 Vitest 下运行。来源审计需要相邻的 oh-my-pi 与 pi Git 仓库，也可设置 `OH_MY_PI_DIR`
-和 `PI_DIR`。测试使用纯 Node：即使未安装 Bun 也必须通过。
+和 `PI_DIR`。测试使用纯 Node：即使未安装 Bun 也必须通过。开发工具通过根 override 固定 Rolldown 1.2.16，
+避开 1.2.18 的 Linux CPU 指令回归；测试无需强制 WASM 设置。
 
 ## 许可证
 

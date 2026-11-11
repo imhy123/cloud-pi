@@ -30,7 +30,7 @@ npm run 01-hello   # node --import ./register.mjs 01-hello/hello.ts
 - `tsconfig.json` —— 为 tsserver/vtsls 映射同样的说明符，让编辑器与运行时一致。
 
 不涉及构建步骤，也不依赖 `file:..`。只有当有消费方读取 `dist/`（发布包、
-`test/dist`）时才需要 `npm run build`；源码改动在下次运行 demo 时生效。
+`test/bundle`）时才需要 `npm run build`；源码改动在下次运行 demo 时生效。
 
 ### 0.2 环境要求
 
@@ -573,3 +573,18 @@ demo 不属于测试套件。
 
 完整 API 说明见 [../README_cn.md](../README_cn.md)；逐文件的来源与改动见
 [../PATCHES_cn.md](../PATCHES_cn.md)。
+
+## SVG 图片
+
+`npm run 12-svg` 运行 `12-svg/svg.ts`：在 worker 中栅格化 SVG，通过 Kitty/iTerm2 显示。
+FigureMarkdown 通过 onChange 通知完成；不支持内联图片的终端显示代码块源码。
+
+## Mermaid 图表
+
+`npm run 13-mermaid` 运行 `13-mermaid/mermaid.ts`：通过 Markdown 渲染状态图，并设置
+`markdown.onChange = () => tui.requestRender()`。调整终端大小可验证布局选择。
+该示例不需要图片协议或 SVG 渲染器。
+
+两个示例都从源码运行，无需构建。移除组件时 dispose，退出时调用 closeMediaWorkers。
+自定义包子路径经 `entries/components.ts`、`entries/image.ts`、`entries/notifications.ts` 和
+`entries/multiplexers.ts` 解析，具体实现仍位于 `src/`。

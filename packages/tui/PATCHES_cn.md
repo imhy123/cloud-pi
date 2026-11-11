@@ -34,6 +34,8 @@ multiplexer、Kitty/iTerm2 图片、通知、LaTeX、fuzzy/autocomplete、帧率
 
 - `src/apps/`、`src/chat/`、`src/tools/`、`src/overlays/`、`src/setup/`、
   `src/status-line/`、`src/charts/`、`src/html-form/`：CLI 产品界面。
+  `src/chat/` 现保留 `svg-source.ts`、`svg-figure.ts` 和 `figure-markdown.ts`；
+  后者移除了表格图表集成。
 - `src/debug-server.ts`、`src/thinking.ts`、`src/hotkeys-markdown.ts`：CLI/session
   集成及模型/推理强度策略。
 - `src/native/`、`src/sixel.ts`、`src/render/sixel.ts`：排除的协议。
@@ -61,10 +63,26 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
   扫描缓存 1 秒过期，最多 16 种配置；`cache: false` 重新扫描。排序仍是对上游原生评分
   的本地近似。最多扫描 200,000 个条目；取消或超时可能返回部分结果，且不会缓存部分扫描。
   不读取全局 Git excludes 或 linked-worktree 的 info/exclude 文件。
-- Mermaid 使用 [beautiful-mermaid](https://github.com/lukilabs/beautiful-mermaid) 1.1.3：
-  同步纯 TypeScript，不依赖 DOM、浏览器或原生运行时。测试覆盖流程图、状态图、时序图、
-  类图、ER 图和 XY 图样例。适配层支持流程图方向覆盖。布局/语法细节可能与上游 Rust
-  不同；无效或不支持的图仍回退为代码块。
+- 内置 Mermaid 渲染在按需启动的 Node worker 中使用 beautiful-mermaid。resolver 为异步，
+  同时支持宿主自定义的同步 Markdown resolver。`Markdown.onChange` 在完成后通知宿主重绘。
+  等待中的图不会将回退代码行发布为稳定 scrollback。每个组件 single-flight 合并流式编辑，
+  已销毁组件忽略结果；缓存失效覆盖 L1、共享 L2 和流式前缀。支持流程图及顶层状态图方向覆盖，
+  跳过与原始方向重复的变体。测试覆盖六种输出快照、上游 ASCII golden/缓存选择、颜色、
+  宽度选择、回退及 worker 响应性。
+- SVG 支持适配三个可复用 chat 模块。`SvgFigure` 和 `FigureMarkdown` 在独立、按需启动的
+  worker 中通过 `@resvg/resvg-wasm` 将 SVG 转成 PNG，再复用 Image 的 Kitty/iTerm2 路径。
+  支持 SVGZ、等比缩放、整字符单元透明补边、主题 token、流式补全/节流及过期结果丢弃。
+  失败或无图片协议时回退代码。同步 Image 组件接收位图数据；SVG 使用新增接口。
+- `setSvgFontOptions` 接收字体 buffer/文件/目录及默认字体族。默认扫描常见系统字体目录，
+  最多 128 个文件、深度 8、合计 64 MiB。传入 buffer 会复制。需要跨机器一致的字形时应显式
+  提供字体数据。字体和 WASM 都在 worker 中初始化。
+- 两个渲染队列独立、按需启动，每个最多 32 个请求。请求含排队时间的时限为 15 秒；worker
+  失败会拒绝整个队列，下一请求重新启动 worker。worker 的 JS 堆上限为 128 MiB，忙碌时
+  保持引用，空闲时取消引用。`closeMediaWorkers` 终止未完成工作。SVG 源码（含 SVGZ 解压后）
+  上限 4 MiB，画布上限 16 百万像素，不解析外部 href。Mermaid 源码上限 256 KiB、
+  2000 行/1000 个边标记、padding 64、输出 4 MiB；超时或渲染失败回退代码。布局/语法可能
+  与上游 Rust 不同。worker JS 入口随 dist 发布；WASM 从已安装的 resvg 依赖定位，运行时
+  不进行网络下载。
 - 语法高亮在宿主安装 highlighter 前保持关闭。Windows AltGr 布局发现、Windows 8.3
   路径转换及 stderr fd 重定向仍不可用。macOS 外观检测轮询 `defaults`。
 
@@ -80,7 +98,7 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/compat/bun.ts` | new | 部分 Node Bun shim；Unicode Jamo 测量与终端宽度覆盖分离。 |
 | `src/compat/keys-engine.ts` | adapted | 使用 pi 按键引擎，并导出 ParsedKittySequence 和 parseKittySequence。 |
 | `src/compat/natives-path.ts` | new | Windows 8.3 长短路径辅助原样返回输入。 |
-| `src/compat/natives.ts` | new | 文本/按键/高亮/外观兼容层、worker 输出泵、gitignore 发现及 Mermaid 适配。 |
+| `src/compat/natives.ts` | new | 文本/按键/高亮/外观兼容层、worker 输出泵、gitignore 发现及异步 SVG/Mermaid 兼容层。 |
 | `src/compat/pi-agent-core.ts` | new | 提供 ThinkingLevel 结构类型和值，不引入 agent 运行时。 |
 | `src/compat/pi-ai.ts` | new | 提供图片内容结构类型，不引入提供商运行时。 |
 | `src/compat/text.ts` | adapted | 源自 pi 的文本引擎：显式制表宽度、终端 Jamo 宽度、CSI 及冒号 SGR 处理。 |
@@ -89,7 +107,6 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/components/editor.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/form.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/image.ts` | adapted | 移除 TSP/SIXEL；保留 Kitty/iTerm2 与 OSC 8 路径。 |
-| `src/components/index.ts` | new | 为现有库导出增加包入口。 |
 | `src/components/input.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/key-value-list.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/layout/geometry.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
@@ -97,7 +114,7 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/components/layout/split-pane.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/layout/stack.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/loader.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
-| `src/components/markdown.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
+| `src/components/markdown.ts` | adapted | 移除 TSP；增加异步 Mermaid 结果、宿主重绘/销毁及缓存/稳定前缀处理。 |
 | `src/components/metric.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/progress-bar.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/scroll-view.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
@@ -111,12 +128,9 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/components/tree-view.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/truncated-text.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/wizard-step.ts` | adapted | 移除 TSP；逐元素比较替代原生 sameItems。 |
-| `src/image.ts` | new | 为现有库导出增加包入口。 |
 | `src/index.ts` | adapted | 整理库导出；不导出 CLI、原生界面或调试服务器。 |
 | `src/keys.ts` | adapted | 公开重导出 KeyEventType，供生成的声明使用。 |
 | `src/latex-block.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
-| `src/multiplexers/index.ts` | new | 为现有库导出增加包入口。 |
-| `src/notifications.ts` | new | 为现有库导出增加包入口。 |
 | `src/prompt/image-references.ts` | adapted | 移除原生链接状态与 span；保留终端链接标记及 OSC 8 策略。 |
 | `src/render/code-cell.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/render/extension-links.ts` | adapted | 移除原生链接状态与 span；保留终端链接标记及 OSC 8 策略。 |
@@ -144,13 +158,27 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/vendor/pi-utils/stderr-guard.ts` | adapted | 移除 FFI；fd-2 重定向仍不可用。 |
 | `src/vendor/pi-utils/yaml-config.ts` | adapted | 使用 yaml 包替代 Bun.YAML.stringify。 |
 | `src/windows-altgr.ts` | adapted | 移除 user32 FFI；保留可注入转换，布局发现为空。 |
+| `src/chat/svg-figure.ts` | adapted | worker PNG 转换、Node base64、过期结果处理，移除 SIXEL。 |
+| `src/chat/figure-markdown.ts` | adapted | 仅组合 SVG，增加异步重绘回调和销毁。 |
+| `src/theme/mermaid-cache.ts` | adapted | 异步 single-flight 缓存及状态图宽度/方向选择。 |
+| `src/vendor/pi-utils/mermaid-ascii.ts` | adapted | 基于 Promise 的渲染与安全回退；移除未使用的 `extractMermaidBlocks`。 |
+| `src/compat/render-worker.ts` | new | 类型明确的渲染协议/调用、字体配置及有界 worker 生命周期。 |
+| `src/compat/render-worker-entry.ts` | new | 在 worker 中执行 SVG/Mermaid，仅从配套文件导入类型。 |
 
 ## 构建、测试与声明
 
-`tsup.config.ts`、`vitest.config.ts`、`tsconfig.json`、`scripts/`、`SOURCES.json`
-及本地测试属于包基础设施。`test/markdown-incremental-lex.test.ts` 和
-`test/test-themes.ts` 从相同 v18.18.7 上游测试路径适配（Vitest、本地导入及标准断言）。
+`tsup.config.ts`、`vitest.config.ts`、`tsconfig.json`、`scripts/`、`entries/`、`SOURCES.json`
+及本地测试属于包基础设施。自定义公共聚合入口为 `entries/components.ts`、`entries/image.ts`、
+`entries/notifications.ts` 和 `entries/multiplexers.ts`。包子路径保持不变；移出 src 可保留
+上游源码路径。渲染器主线程 API 与协议位于 `src/compat/render-worker.ts`，worker 入口为
+`src/compat/render-worker-entry.ts`。请求具有对应的结果类型，仅在 worker 边界校验并转换解码结果。`test/markdown-incremental-lex.test.ts`、`test/test-themes.ts`、
+`test/mermaid-cache.test.ts`、`test/mermaid-ascii.test.ts`、`test/svg-source.test.ts` 和
+`test/svg-figure.test.ts` 从相同 v18.18.7 上游测试路径适配（Vitest、本地导入及标准断言）。
 其他测试为本地新增。`test/compat-regressions.test.ts` 覆盖兼容性修复。纳入版本控制的
 产物测试位于 `test/bundle/`；没有测试时 runner 会失败，并在没有全局 Bun 的全新 Node
 进程中导入每个公共入口。`npm run verify` 运行类型检查、构建、源码测试及产物测试。
 来源审计单独运行，需要上游 Git 仓库。上游 MIT 声明保持完整。
+
+开发工具通过根 npm override 将 `rolldown` 及匹配的平台绑定固定到 `1.2.16`，避开
+1.2.18 的 Linux CPU 指令回归（[上游 issue](https://github.com/rolldown/rolldown/issues/11607)）。
+原生测试无需强制 WASM 环境变量。

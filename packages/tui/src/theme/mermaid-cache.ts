@@ -1,5 +1,5 @@
-// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/theme/mermaid-cache.ts
-// (commit e325ffc73ab8; v18.18.7).
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/theme/mermaid-cache.ts
+// (commit e325ffc73ab8; v18.18.7). Async single-flight render caching with reset epochs and real state-layout direction selection.
 // See PATCHES.md.
 import type { MermaidRenderOptions } from "@oh-my-pi/pi-natives";
 import { LRUCache } from "@oh-my-pi/pi-utils/lru";
@@ -56,20 +56,29 @@ function measureLayout(ascii: string, authored: boolean): LayoutCandidate {
 	return { ascii, width: asciiDisplayWidth(ascii), height: ascii.split("\n").length, authored };
 }
 
-function renderVariant(
+async function renderVariant(
 	source: string,
 	baseOptions: MermaidRenderOptions,
 	baseKey: string,
 	direction: "TD" | "LR" | null,
-): string | null {
+): Promise<string | null> {
 	const key = `${baseKey}\x00${direction ?? ""}\x00${source}`;
 	const cached = cache.get(key);
 	if (cached !== undefined) return cached;
 
-	const ascii = mermaidAscii.renderMermaidAsciiSafe(source, direction ? { ...baseOptions, direction } : baseOptions);
-	cache.set(key, ascii);
-	return ascii;
+	const flight = flights.get(key);
+	if (flight) return flight;
+	const epoch = generation;
+	const promise = mermaidAscii.renderMermaidAsciiSafe(source, direction ? { ...baseOptions, direction } : baseOptions).then(ascii => {
+		if (epoch === generation) cache.set(key, ascii);
+		return ascii;
+	}).finally(() => { if (flights.get(key) === promise) flights.delete(key); });
+	flights.set(key, promise);
+	return promise;
 }
+
+let generation = 0;
+const flights = new Map<string, Promise<string | null>>();
 
 const FORCED_DIRECTIONS = ["TD", "LR"] as const;
 type ForcedDirection = (typeof FORCED_DIRECTIONS)[number];
@@ -93,6 +102,18 @@ function forcedDirections(source: string): readonly ForcedDirection[] {
 		if (!wordChar) return [];
 	}
 	if (header === "sequencediagram" || header === "classdiagram" || header === "erdiagram") return [];
+	if (/^statediagram(?:-v2)?$/.test(header)) {
+		let depth = 0;
+		let direction = "td";
+		for (const line of source.split("\n").slice(1)) {
+			if (depth === 0) direction = /^\s*direction\s+(td|tb|lr|rl|bt)\s*$/i.exec(line)?.[1]?.toLowerCase() ?? direction;
+			const structural = line.replace(/"(?:\\.|[^"\\])*"/g, "").replace(/%%.*$/, "");
+			depth += (structural.match(/\{/g)?.length ?? 0) - (structural.match(/\}/g)?.length ?? 0);
+		}
+		if (direction === "td" || direction === "tb") return ["LR"];
+		if (direction === "lr" || direction === "rl") return ["TD"];
+		return FORCED_DIRECTIONS;
+	}
 	const authored = /^(?:graph|flowchart)\s+(td|tb|lr|rl)$/.exec(header)?.[1];
 	if (authored === "td" || authored === "tb") return ["LR"];
 	if (authored === "lr" || authored === "rl") return ["TD"];
@@ -103,7 +124,7 @@ function forcedDirections(source: string): readonly ForcedDirection[] {
  * Resolve mermaid ASCII from fenced block source text.
  * Returns null when rendering fails, while memoizing failures to avoid repeated work.
  */
-export function resolveMermaidAscii(source: string, options?: MermaidResolveOptions): string | null {
+export async function resolveMermaidAscii(source: string, options?: MermaidResolveOptions): Promise<string | null> {
 	const normalizedSource = source.replace(/\r\n?/g, "\n").trim();
 	if (!normalizedSource) return null;
 
@@ -112,7 +133,7 @@ export function resolveMermaidAscii(source: string, options?: MermaidResolveOpti
 	const baseOptions: MermaidRenderOptions = { colorMode: "none", ...rest };
 	const baseKey = JSON.stringify(baseOptions);
 
-	const base = renderVariant(normalizedSource, baseOptions, baseKey, null);
+	const base = await renderVariant(normalizedSource, baseOptions, baseKey, null);
 	if (base === null) return null;
 	if (maxWidth === undefined) return base;
 
@@ -121,7 +142,7 @@ export function resolveMermaidAscii(source: string, options?: MermaidResolveOpti
 	// authored one are rendered (see `forcedDirections`).
 	const candidates = [measureLayout(base, true)];
 	for (const direction of forcedDirections(normalizedSource)) {
-		const variant = renderVariant(normalizedSource, baseOptions, baseKey, direction);
+		const variant = await renderVariant(normalizedSource, baseOptions, baseKey, direction);
 		if (variant !== null) candidates.push(measureLayout(variant, false));
 	}
 
@@ -159,5 +180,7 @@ export function resolveMermaidAscii(source: string, options?: MermaidResolveOpti
  * Clear the mermaid cache.
  */
 export function clearMermaidCache(): void {
+	generation++;
+	flights.clear();
 	cache.clear();
 }

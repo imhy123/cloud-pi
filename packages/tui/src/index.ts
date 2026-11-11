@@ -1,5 +1,5 @@
 // cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/index.ts
-// (commit e325ffc73ab8; v18.18.7). Removed CLI, native and debug-server exports; retained library exports.
+// (commit e325ffc73ab8; v18.18.7). Library exports including SVG components and typed render-worker APIs; removed CLI/native/debug exports.
 // See PATCHES.md.
 // Core TUI interfaces and classes.
 
@@ -77,3 +77,9 @@ export * from "./ttyid";
 export * from "./tui";
 // Utilities
 export * from "./utils";
+
+export * from "./chat/svg-source";
+export * from "./chat/svg-figure";
+export * from "./chat/figure-markdown";
+export { rasterizeSvg, setSvgFontOptions, closeMediaWorkers } from "./compat/render-worker";
+export type { SvgCell, SvgFontOptions } from "./compat/render-worker";

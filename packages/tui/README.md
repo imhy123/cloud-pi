@@ -144,7 +144,7 @@ Exported from `@cloud-pi/tui/components` (and `@cloud-pi/tui`):
 `Text`, `Box`, `Container`, `Input`, `Editor`, `Form` / `FormField`,
 `Markdown`, `Loader`, `CancellableLoader`, `ProgressBar`, `Table`, `Sparkline`,
 `SelectList`, `SettingsList`, `TreeView`, `TruncatedText`, `KeyValueList`,
-`Section`, `TabBar`, `Spacer`, `Metric`, `WizardStep`, `Image`, plus layout
+`Section`, `TabBar`, `Spacer`, `Metric`, `WizardStep`, `Image`, `SvgFigure`, `FigureMarkdown`, plus layout
 containers in `components/layout`.
 
 Every component implements:
@@ -220,7 +220,7 @@ legacy VT sequences and the Kitty keyboard protocol are supported.
 | `@cloud-pi/tui/theme` | Theme singleton, loaders, adapters, `setHighlighter` |
 | `@cloud-pi/tui/components` | Components only |
 | `@cloud-pi/tui/render` | Output/code/tool render helpers and hyperlinks |
-| `@cloud-pi/tui/image` | `Image`, Kitty graphics, image encoding/dimensions |
+| `@cloud-pi/tui/image` | `Image`, Kitty graphics, image encoding/dimensions, SVG figures and worker conversion |
 | `@cloud-pi/tui/notifications` | Notification protocols, routing, desktop toasts |
 | `@cloud-pi/tui/multiplexers` | tmux, screen, zellij, cmux, herdr, orca, wmux adapters |
 | `@cloud-pi/tui/keys` | Key matching/parsing |
@@ -244,16 +244,60 @@ TypeScript files under `src/` carry verbatim/adapted/new provenance headers.
 JSON provenance and the complete inventory live in [SOURCES.json](./SOURCES.json).
 See [PATCHES.md](./PATCHES.md) for local differences and synchronization history.
 
-Mermaid fenced blocks use the pure TypeScript `beautiful-mermaid` renderer
-(flowchart, state, sequence, class, ER and XY charts). Unsupported syntax falls
-back to code; layout can differ from upstream's Rust renderer.
+Mermaid fenced blocks use `beautiful-mermaid` in a Node worker (flowchart, state,
+sequence, class, ER and XY charts). Set `markdown.onChange = () => tui.requestRender()`
+when using Markdown directly: the first frame shows code, then redraws after the
+asynchronous result arrives. Unsupported syntax falls back to code; layout can
+differ from upstream's Rust renderer. Existing custom synchronous resolvers work.
+
+### SVG figures
+
+`SvgFigure` displays SVG sources; `FigureMarkdown` lifts top-level SVG fences out
+of prose. Both render through resvg-wasm in a separate worker, then display PNG
+through Kitty/iTerm2. They support streaming updates, theme tokens, terminal-cell
+padding and code fallback. FigureMarkdown wires its Markdown repaint callbacks.
+
+```ts
+import { FigureMarkdown, Markdown, getMarkdownTheme } from "@cloud-pi/tui";
+
+const document = new FigureMarkdown(source, {
+ markdown: text => new Markdown(text, 0, 0, getMarkdownTheme()),
+ budget: tui.imageBudget,
+ onChange: () => tui.requestRender(),
+});
+tui.addChild(document);
+```
+
+`@cloud-pi/tui/image` also exports async `rasterizeSvg(bytes, maxWidthPx,
+maxHeightPx, scale?, cell?)`, `setSvgFontOptions({ fontBuffers, fontFiles,
+fontDirs, defaultFontFamily, loadSystemFonts })`, and `closeMediaWorkers()`.
+System fonts are searched by default; explicit font data gives consistent glyphs
+across hosts. Dispose removed figures/Markdown instances; call closeMediaWorkers
+at application shutdown to cancel outstanding work. Workers load lazily and are
+unreferenced while idle. See PATCHES.md for queue, input and render limits.
+
+Run `npm run example -- 12-svg` for SVG figures, or
+`npm run example -- 13-mermaid` for asynchronous Mermaid layout.
+
+### Package entries and compatibility
+
+Custom public barrels live in `entries/`; the `@cloud-pi/tui/components`,
+`@cloud-pi/tui/image`, `@cloud-pi/tui/notifications` and
+`@cloud-pi/tui/multiplexers` import paths are unchanged.
+
+`src/compat/` is an internal adaptation directory, not a separate npm package.
+Build/test aliases redirect upstream imports there so copied sources can retain
+their import paths. It supplies a partial Bun shim, pure TypeScript text/key
+engines, Node replacements for native APIs, small pi-ai/pi-agent-core type
+stand-ins, and worker-backed SVG/Mermaid rendering. These are the subset needed
+by this library, not full implementations of those upstream packages.
 
 ## Development
 
 ```sh
 npm install
 npm run typecheck -w @cloud-pi/tui   # tsc --noEmit
-npm run build -w @cloud-pi/tui       # tsup (ESM + d.ts, 8 entry points)
+npm run build -w @cloud-pi/tui       # tsup (ESM + d.ts, 8 public entries + worker)
 npm run test -w @cloud-pi/tui        # Vitest over src/
 npm run test:dist -w @cloud-pi/tui   # tracked tests in test/bundle/
 npm run verify                       # all of the above
@@ -263,7 +307,9 @@ npm run audit:upstream -w @cloud-pi/tui # pinned source/header comparison
 `test/setup.ts` installs the Bun shim on `globalThis` so the vendored sources run
 unmodified under Vitest. The source audit needs sibling oh-my-pi and pi Git repositories (or `OH_MY_PI_DIR`
 and `PI_DIR`). Tests are plain Node: they must pass with no Bun
-installed.
+installed. Development tooling pins Rolldown to 1.2.16 via the root override to
+avoid the Linux CPU instruction regression in 1.2.18; no forced WASM setting is
+needed for tests.
 
 ## License
 

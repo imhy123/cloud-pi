@@ -44,6 +44,7 @@ const header = new Text("@cloud-pi/tui / 06-markdown", 1, 1);
 const hint = new Text("r restart · s finish · Ctrl+C quits", 1, 0);
 const status = new Text("", 1, 1);
 const markdown = new Markdown("", 1, 0, getMarkdownTheme());
+markdown.onChange = () => tui.requestRender();
 
 hint.setStyleFn(text => theme.fg("dim", text));
 status.setStyleFn(text => theme.fg("muted", text));

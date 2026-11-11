@@ -13,6 +13,8 @@
 		"08-image": "node --import ./register.mjs 08-image/image.ts",
 		"09-notify": "node --import ./register.mjs 09-notify/notify.ts",
 		"10-composer": "node --import ./register.mjs 10-composer/composer.ts",
-		"11-welcome": "node --import ./register.mjs 11-welcome/welcome.ts"
+		"11-welcome": "node --import ./register.mjs 11-welcome/welcome.ts",
+		"12-svg": "node --import ./register.mjs 12-svg/svg.ts",
+		"13-mermaid": "node --import ./register.mjs 13-mermaid/mermaid.ts"
 	}
 }

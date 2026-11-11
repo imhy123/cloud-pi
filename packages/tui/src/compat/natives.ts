@@ -1,15 +1,16 @@
-// cloud-pi-tui: new file. Node worker output pump, gitignore-aware cached discovery, Mermaid adapter, text/key/highlighting and appearance facades.
+// cloud-pi-tui: new file. Native API facade: Node text/key/highlighting/appearance/output/search replacements and render-worker re-exports.
 // See PATCHES.md.
 /**
-	* Pure JavaScript replacement for the subset of `@oh-my-pi/pi-natives` that
-	* the TUI uses. The native addon (Rust/N-API) is intentionally not part of
-	* cloud-pi-tui: text measurement and key parsing come from local ports, syntax
-	* highlighting is a pluggable no-op, and the remaining helpers degrade to
-	* platform-neutral implementations.
-	*/
+ * Pure JavaScript replacement for the subset of `@oh-my-pi/pi-natives` that
+ * the TUI uses. The native addon (Rust/N-API) is intentionally not part of
+ * cloud-pi-tui: text measurement and key parsing come from local ports, syntax
+ * highlighting is a pluggable no-op, and the remaining helpers degrade to
+ * platform-neutral implementations.
+ */
 
 import * as fs from "node:fs";
-import { renderMermaidASCII } from "beautiful-mermaid";
+export type { MermaidRenderOptions, SvgCell, SvgFontOptions } from "./render-worker";
+export { renderMermaidAscii, rasterizeSvg, setSvgFontOptions, closeMediaWorkers } from "./render-worker";
 import { Worker } from "node:worker_threads";
 import ignore, { type Ignore } from "ignore";
 import * as fsp from "node:fs/promises";
@@ -349,29 +350,6 @@ export class TtyWriter {
 // =============================================================================
 // Mermaid diagrams
 // =============================================================================
-
-export interface MermaidRenderOptions {
-	useAscii?: boolean;
-	paddingX?: number;
-	paddingY?: number;
-	boxBorderPadding?: number;
-	direction?: "TD" | "TB" | "LR" | "BT" | "RL";
-	colorMode?: "none" | "auto" | "ansi16" | "ansi256" | "truecolor" | "html";
-	theme?: {
-		fg?: string;
-		border?: string;
-		line?: string;
-		arrow?: string;
-		accent?: string;
-	};
-}
-
-/** Pure TypeScript renderer; unsupported syntax keeps the caller's code fallback. */
-export function renderMermaidAscii(text: string, options?: MermaidRenderOptions | null): string {
-	const { direction, ...rest } = options ?? {};
-	const source = direction ? text.replace(/^(\s*(?:graph|flowchart)\s+)(?:TD|TB|LR|RL|BT)\b/i, `$1${direction}`) : text;
-	return renderMermaidASCII(source, { ...rest, colorMode: rest.colorMode ?? "none" });
-}
 
 // =============================================================================
 // Fuzzy file search

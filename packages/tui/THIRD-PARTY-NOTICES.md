@@ -39,8 +39,14 @@ the change.
 | `yaml` | ISC | Keybindings/config YAML parsing and serialization |
 | `jsonc-parser` | MIT | JSONC keybinding configuration parsing |
 | `ignore` | MIT | Gitignore rule evaluation |
-| `beautiful-mermaid` | MIT | Pure TypeScript Mermaid terminal rendering |
+| `beautiful-mermaid` | MIT | Mermaid terminal layout in a Node worker |
+| `@resvg/resvg-wasm` | MPL-2.0 | SVG-to-PNG WebAssembly renderer |
+| `pngjs` | MIT | Pure JavaScript PNG decoding and whole-cell padding |
 
 `beautiful-mermaid` includes a TypeScript port of Alexander Grooff's MIT-licensed
 mermaid-ascii engine; its distribution retains that attribution. It is consumed
 as an npm dependency, without copying its sources into this repository.
+
+`@resvg/resvg-wasm` is consumed as an unmodified npm dependency. Its WebAssembly
+artifact and upstream source/license are distributed by
+[resvg-js](https://github.com/yisibl/resvg-js); no native addon is loaded.

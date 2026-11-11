@@ -35,6 +35,32 @@
 			"upstreamSha256": "3b1de55f31c87e50f64a2c81796f4e3829fc04e2a4be714a4940f98da5dae0ab"
 		},
 		{
+			"file": "chat/figure-markdown.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/chat/figure-markdown.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9f91d8641566e1bf2ccb7aa7f90a151eed37ef99066c20691ad434b75151adb6",
+			"changes": "SVG-only integration without table charts, asynchronous Markdown repaint callbacks and lifecycle handling."
+		},
+		{
+			"file": "chat/svg-figure.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/chat/svg-figure.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "95ffd368a6e9332825f49a37fef5b1efdf9070f4dfa67ac3d4206537aff2253d",
+			"changes": "Worker-backed SVG rasterization, Node base64, no SIXEL repaint option, stale-result rejection and lifecycle handling."
+		},
+		{
+			"file": "chat/svg-source.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/chat/svg-source.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "20b420ed82c8de85261962324a51021800aaecb86c486a1a9ddd8d319ff136d0"
+		},
+		{
 			"file": "chrome/keybinding-hints.ts",
 			"kind": "verbatim",
 			"origin": "oh-my-pi",
@@ -93,7 +119,7 @@
 			"source": null,
 			"commit": null,
 			"upstreamSha256": null,
-			"changes": "Node worker output pump, gitignore-aware cached discovery, Mermaid adapter, text/key/highlighting and appearance facades."
+			"changes": "Native API facade: Node text/key/highlighting/appearance/output/search replacements and render-worker re-exports."
 		},
 		{
 			"file": "compat/pi-agent-core.ts",
@@ -112,6 +138,24 @@
 			"commit": null,
 			"upstreamSha256": null,
 			"changes": "Structural stand-in for `@oh-my-pi/pi-ai` image content types."
+		},
+		{
+			"file": "compat/render-worker-entry.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Worker entry for Mermaid layout and SVG WASM rasterization; imports companion contracts as types only."
+		},
+		{
+			"file": "compat/render-worker.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Typed SVG/Mermaid calls and contracts, font configuration and bounded lazy worker lifecycle."
 		},
 		{
 			"file": "compat/text.ts",
@@ -264,15 +308,6 @@
 			"changes": "Removed SIXEL encoding and the native image node; Kitty/iTerm2 rendering is unchanged."
 		},
 		{
-			"file": "components/index.ts",
-			"kind": "new",
-			"origin": "new",
-			"source": null,
-			"commit": null,
-			"upstreamSha256": null,
-			"changes": "Public component barrel."
-		},
-		{
 			"file": "components/input.ts",
 			"kind": "adapted",
 			"origin": "oh-my-pi",
@@ -342,7 +377,7 @@
 			"source": "packages/tui/src/components/markdown.ts",
 			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
 			"upstreamSha256": "0258df7301ccd59bae70abe79c76aa3e57176d9a52a5a2c45ca8b9723239c8ad",
-			"changes": "Removed native Markdown describe paths; retained the v18.18.7 render path."
+			"changes": "Removed TSP; added asynchronous Mermaid results, repaint/disposal callbacks, single-flight edits and cache/stable-prefix invalidation."
 		},
 		{
 			"file": "components/menu-selection.ts",
@@ -534,22 +569,13 @@
 			"upstreamSha256": "b0b5483cd6380ffbad7a235f59691c234bf915aa1cb1bc3e73d00e5a140c38ef"
 		},
 		{
-			"file": "image.ts",
-			"kind": "new",
-			"origin": "new",
-			"source": null,
-			"commit": null,
-			"upstreamSha256": null,
-			"changes": "Image entry point: image component, Kitty graphics and terminal image encoding helpers."
-		},
-		{
 			"file": "index.ts",
 			"kind": "adapted",
 			"origin": "oh-my-pi",
 			"source": "packages/tui/src/index.ts",
 			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
 			"upstreamSha256": "58b73d5ff1d767bf6bbd344539f6e044df10b576b474a81469a92b7264be41d5",
-			"changes": "Removed CLI, native and debug-server exports; retained library exports."
+			"changes": "Library exports including SVG components and typed render-worker APIs; removed CLI/native/debug exports."
 		},
 		{
 			"file": "key-hint-format.ts",
@@ -666,15 +692,6 @@
 			"upstreamSha256": "1ff1ca26044d111d8f8f90a2fa453ab6453192df73b644b34ba544bc3ae59aa7"
 		},
 		{
-			"file": "multiplexers/index.ts",
-			"kind": "new",
-			"origin": "new",
-			"source": null,
-			"commit": null,
-			"upstreamSha256": null,
-			"changes": "Public multiplexer barrel."
-		},
-		{
 			"file": "multiplexers/notify.ts",
 			"kind": "verbatim",
 			"origin": "oh-my-pi",
@@ -729,15 +746,6 @@
 			"source": "packages/tui/src/multiplexers/zellij.ts",
 			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
 			"upstreamSha256": "220583a4e391177fe000321e972077e8eff0358ea61167402d85d62688cbcaa2"
-		},
-		{
-			"file": "notifications.ts",
-			"kind": "new",
-			"origin": "new",
-			"source": null,
-			"commit": null,
-			"upstreamSha256": null,
-			"changes": "Notification entry point: OSC formatting, multiplexer routing and desktop toasts."
 		},
 		{
 			"file": "prompt/image-format.ts",
@@ -1044,11 +1052,12 @@
 		},
 		{
 			"file": "theme/mermaid-cache.ts",
-			"kind": "verbatim",
+			"kind": "adapted",
 			"origin": "oh-my-pi",
 			"source": "packages/tui/src/theme/mermaid-cache.ts",
 			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
-			"upstreamSha256": "5823b54e8a7e64171842f803b1a67c4e2f32430fdf6c0285fc7109e660d9fc7c"
+			"upstreamSha256": "5823b54e8a7e64171842f803b1a67c4e2f32430fdf6c0285fc7109e660d9fc7c",
+			"changes": "Async single-flight render caching with reset epochs and real state-layout direction selection."
 		},
 		{
 			"file": "theme/schema-validation.ts",
@@ -1356,11 +1365,12 @@
 		},
 		{
 			"file": "vendor/pi-utils/mermaid-ascii.ts",
-			"kind": "verbatim",
+			"kind": "adapted",
 			"origin": "oh-my-pi",
 			"source": "packages/utils/src/mermaid-ascii.ts",
 			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
-			"upstreamSha256": "4d9a2c380b206d8f413f5dd7841ef5f0c3dbe8a125890d7f6a4122b5adfe7c27"
+			"upstreamSha256": "4d9a2c380b206d8f413f5dd7841ef5f0c3dbe8a125890d7f6a4122b5adfe7c27",
+			"changes": "Promise-based worker rendering and async safe fallback; removed unused extractMermaidBlocks."
 		},
 		{
 			"file": "vendor/pi-utils/path.ts",

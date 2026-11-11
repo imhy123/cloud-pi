@@ -18,11 +18,11 @@ const vendor = name => path.join(root, "src/vendor/pi-utils", name);
 const packageEntries = {
 	"": "src/index.ts",
 	theme: "src/theme/index.ts",
-	components: "src/components/index.ts",
+	components: "entries/components.ts",
 	render: "src/render/index.ts",
-	image: "src/image.ts",
-	notifications: "src/notifications.ts",
-	multiplexers: "src/multiplexers/index.ts",
+	image: "entries/image.ts",
+	notifications: "entries/notifications.ts",
+	multiplexers: "entries/multiplexers.ts",
 	keys: "src/keys.ts",
 };
 

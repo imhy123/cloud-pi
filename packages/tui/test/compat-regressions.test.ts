@@ -95,11 +95,11 @@ describe("migration regressions", () => {
 	it.each([
 		"graph LR\n A --> B", "stateDiagram-v2\n A --> B", "sequenceDiagram\n A->>B: hello",
 		"classDiagram\n A --> B", "erDiagram\n A ||--o{ B : has", "xychart-beta\n x-axis [a,b]\n bar [1,2]",
-	])("renders Mermaid without a browser: %s", source => {
-		expect(renderMermaidAscii(source, { colorMode: "none" }).trim().length).toBeGreaterThan(0);
+	])("renders Mermaid without a browser: %s", async source => {
+		expect(await renderMermaidAscii(source, { colorMode: "none" })).toMatchSnapshot();
 	});
-	it("overrides Mermaid direction through the compatibility adapter", () => {
-		expect(renderMermaidAscii("graph TD\n A --> B", { direction: "LR" })).toBe(renderMermaidAscii("graph LR\n A --> B"));
+	it("overrides Mermaid direction through the compatibility adapter", async () => {
+		expect(await renderMermaidAscii("graph TD\n A --> B", { direction: "LR" })).toBe(await renderMermaidAscii("graph LR\n A --> B"));
 	});
 	it("places Input caret at the requested end", () => {
 		const input = new Input();

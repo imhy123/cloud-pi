@@ -35,7 +35,7 @@ npm run 01-hello   # node --import ./register.mjs 01-hello/hello.ts
   matches the runtime.
 
 No build step and no `file:..` dependency are involved. `npm run build` is only
-needed when something consumes `dist/` (published package, `test/dist`); source
+needed when something consumes `dist/` (published package, `test/bundle`); source
 edits are picked up on the next demo run.
 
 ### 0.2 Requirements
@@ -618,3 +618,20 @@ kept close to upstream, with these deliberate differences:
 
 For the full API tour, see [../README.md](../README.md); for the file-by-file
 provenance and changes, see [../PATCHES.md](../PATCHES.md).
+
+## SVG figures
+
+`npm run 12-svg` runs `12-svg/svg.ts`: an SVG figure is rasterized in a worker
+and displayed through Kitty/iTerm2. FigureMarkdown forwards completion through
+onChange; terminals without inline graphics show fenced source instead.
+
+## Mermaid diagrams
+
+`npm run 13-mermaid` runs `13-mermaid/mermaid.ts`: a state diagram renders through
+Markdown with `markdown.onChange = () => tui.requestRender()`. Resize to exercise
+layout selection. This example requires no image protocol or SVG renderer.
+
+Both examples run from source without a build. Dispose removed components and
+call closeMediaWorkers on shutdown. Custom package subpaths resolve through
+`entries/components.ts`, `entries/image.ts`, `entries/notifications.ts` and
+`entries/multiplexers.ts`; implementation modules remain under `src/`.

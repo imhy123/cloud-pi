@@ -1,5 +1,5 @@
 // cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/markdown.ts
-// (commit e325ffc73ab8; v18.18.7). Removed native Markdown describe paths; retained the v18.18.7 render path.
+// (commit e325ffc73ab8; v18.18.7). Removed TSP; added asynchronous Mermaid results, repaint/disposal callbacks, single-flight edits and cache/stable-prefix invalidation.
 // See PATCHES.md.
 import { stripVTControlCharacters } from "node:util";
 import { LRUCache } from "@oh-my-pi/pi-utils/lru";
@@ -1839,7 +1839,7 @@ export interface MarkdownTheme {
 	 * Resolve a mermaid ASCII rendering by fenced block source text.
 	 * Return null to fall back to fenced code rendering.
 	 */
-	resolveMermaidAscii?: (source: string, maxWidth?: number) => string | null;
+	resolveMermaidAscii?: (source: string, maxWidth?: number) => string | null | Promise<string | null>;
 	/**
 	 * Glyphs for quote borders, rules, tables and color swatches. Optional so themes
 	 * built to the upstream pi-tui `MarkdownTheme` shape (which has no `symbols`)
@@ -2510,6 +2510,47 @@ export class Markdown implements Component {
 		return this;
 	}
 
+	/** Called after asynchronous diagram output changes; hosts schedule a TUI repaint here. */
+	onChange?: () => void;
+	#mermaidResults = new Map<string, string | null>();
+	#mermaidResolver?: MarkdownTheme["resolveMermaidAscii"];
+	#mermaidFlight?: object;
+	#unsettledMermaid = false;
+	#disposed = false;
+	get pendingMermaid(): boolean { return this.#unsettledMermaid || this.#mermaidFlight !== undefined; }
+	/** Release pending result ownership when a component is removed. */
+	dispose(): void { this.#disposed = true; this.#mermaidFlight = undefined; this.#mermaidResults.clear(); this.onChange = undefined; }
+	#resolveMermaid(source: string, width: number): string | null {
+		const resolver = this.#theme.resolveMermaidAscii;
+		if (!resolver || this.#disposed) return null;
+		if (this.#mermaidResolver !== resolver) {
+			this.#mermaidResolver = resolver;
+			this.#mermaidResults.clear();
+			this.#mermaidFlight = undefined;
+		}
+		const key = JSON.stringify([source, width]);
+		if (this.#mermaidResults.has(key)) return this.#mermaidResults.get(key)!;
+		// Single-flight per component coalesces streaming edits while a prior source renders.
+		if (this.#mermaidFlight) { this.#unsettledMermaid = true; return null; }
+		let result: ReturnType<NonNullable<MarkdownTheme["resolveMermaidAscii"]>>;
+		try { result = resolver(source, width); } catch { return null; }
+		if (!result || typeof result === "string") return result;
+		this.#unsettledMermaid = true;
+		const flight = {};
+		this.#mermaidFlight = flight;
+		void Promise.resolve(result).catch(() => null).then(ascii => {
+			if (this.#disposed || this.#mermaidFlight !== flight || this.#theme.resolveMermaidAscii !== resolver) return;
+			this.#mermaidFlight = undefined;
+			if (this.#text.includes(source)) {
+				if (this.#mermaidResults.size >= 64) this.#mermaidResults.delete(this.#mermaidResults.keys().next().value!);
+				this.#mermaidResults.set(key, ascii);
+			}
+			this.releaseRenderCaches();
+			this.onChange?.();
+		});
+		return null;
+	}
+
 	constructor(
 		text: string,
 		paddingX: number,
@@ -2654,6 +2695,10 @@ export class Markdown implements Component {
 		const table = this.#streamTableSettledText;
 		if (table !== undefined && table.length > text.length) text = table;
 		if (fence !== undefined && fence.length > text.length) text = fence;
+		if (this.pendingMermaid) {
+			const start = source.search(/^ {0,3}(?:`{3,}|~{3,})mermaid(?:[ \t]|$)/m);
+			if (start >= 0) return text.slice(0, start);
+		}
 		return text;
 	}
 
@@ -3162,6 +3207,7 @@ export class Markdown implements Component {
 			return this.#cachedLines;
 		}
 
+		this.#unsettledMermaid = false;
 		// Calculate available width for content (subtract horizontal padding)
 		const paddingX = this.#ignoreTight ? this.#paddingX : getPaddingX(this.#paddingX);
 		const contentWidth = Math.max(1, width - paddingX * 2);
@@ -3351,7 +3397,7 @@ export class Markdown implements Component {
 		let cacheKey: string | undefined;
 		// A locked table or an open table tail lays out differently from the
 		// same text elsewhere, so such renders stay out of the shared cache.
-		const sharedCache = !this.#openTableTail && !this.tableLocks?.size;
+		const sharedCache = !this.#openTableTail && !this.tableLocks?.size && !(this.#theme.resolveMermaidAscii && normalizedText.includes("mermaid"));
 		if (!this.transientRenderCache && sharedCache) {
 			cacheKey = this.#renderCacheKey(normalizedText, signature);
 			const cached = renderCache.get(cacheKey);
@@ -4177,7 +4223,7 @@ export class Markdown implements Component {
 				// canvas. truncateToWidth is ANSI- and wide-char-aware, and the
 				// resolver picks the shortest orientation that fits this width.
 				if (token.lang === "mermaid" && this.#theme.resolveMermaidAscii) {
-					const ascii = this.#theme.resolveMermaidAscii(token.text, width);
+					const ascii = this.#resolveMermaid(token.text, width);
 					if (ascii) {
 						for (const asciiLine of ascii.split("\n")) {
 							lines.push(

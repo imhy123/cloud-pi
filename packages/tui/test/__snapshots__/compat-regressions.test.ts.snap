@@ -1,0 +1,94 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`migration regressions > renders Mermaid without a browser: classDiagram
+ A --> B 1`] = `
+"┌───┐    
+│ A │    
+└───┘    
+  │      
+  │      
+  ▼      
+┌───┐    
+│ B │    
+└───┘    
+         
+         "
+`;
+
+exports[`migration regressions > renders Mermaid without a browser: erDiagram
+ A ||--o{ B : has 1`] = `
+"┌───┐      ┌───┐    
+│ A ││───○╟│ B │    
+└───┘ has  └───┘    
+                    
+                    "
+`;
+
+exports[`migration regressions > renders Mermaid without a browser: graph LR
+ A --> B 1`] = `
+"┌───┐     ┌───┐
+│   │     │   │
+│ A ├────►│ B │
+│   │     │   │
+└───┘     └───┘"
+`;
+
+exports[`migration regressions > renders Mermaid without a browser: sequenceDiagram
+ A->>B: hello 1`] = `
+" ┌───┐      ┌───┐   
+ │ A │      │ B │   
+ └─┬─┘      └─┬─┘   
+   │          │     
+   │  hello   │     
+   │──────────▶     
+   │          │     
+ ┌─┴─┐      ┌─┴─┐   
+ │ A │      │ B │   
+ └───┘      └───┘   "
+`;
+
+exports[`migration regressions > renders Mermaid without a browser: stateDiagram-v2
+ A --> B 1`] = `
+"╭───╮
+│   │
+│ A │
+│   │
+╰─┬─╯
+  │  
+  │  
+  │  
+  │  
+  ▼  
+╭───╮
+│   │
+│ B │
+│   │
+╰───╯"
+`;
+
+exports[`migration regressions > renders Mermaid without a browser: xychart-beta
+ x-axis [a,b]
+ bar [1,2] 1`] = `
+"    │
+    │
+   2┤·········································████████···········
+    │                                         ████████
+    │                                         ████████
+ 1.8┤·········································████████···········
+    │                                         ████████
+    │                                         ████████
+ 1.6┤·········································████████···········
+    │                                         ████████
+    │                                         ████████
+ 1.4┤·········································████████···········
+    │                                         ████████
+    │                                         ████████
+ 1.2┤·········································████████···········
+    │                                         ████████
+    │                                         ████████
+   1┤···········████████······················████████···········
+    │           ████████                      ████████
+    │           ████████                      ████████
+    ┼───────────────┬─────────────────────────────┬──────────────
+                    a                             b"
+`;
