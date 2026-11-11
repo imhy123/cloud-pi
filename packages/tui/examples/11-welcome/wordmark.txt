@@ -1,20 +1,21 @@
-# Cloud Pi 启动字标 —— 手绘草稿
+# Cloud Pi startup wordmark — hand-drawn draft
 #
-# 直接画“半方块字符”，所见即所得（omp 的 omp 字标就是这么写死的）：
+# Draw "half-block characters" directly; what you see is what you get (omp's
+# own wordmark is hard-coded the same way):
 #
-#     █   整格实心（上下两个像素都有）
-#     ▀   只有上半格
-#     ▄   只有下半格
-#     ▔   分隔横线：开场参与渐变，动画结束后变灰
-#     空格 空
+#     █   full cell (both pixel rows)
+#     ▀   top half only
+#     ▄   bottom half only
+#     ▔   separator rule: joins the gradient during the intro, turns gray once it settles
+#     space  empty
 #
-# 规则：
-#   - 每行就是终端里的一行；行数不限（2 行 = 4 像素高，3 行 = 6 像素高）。
-#   - 行宽不必手算，按最长行对齐即可；行尾空格可以省。
-#   - 改完保存这个文件，然后告诉我“按 wordmark.txt 来”就行。
+# Rules:
+#   - One line here is one terminal row; row count is free (2 rows = 4 pixels tall, 3 rows = 6 pixels).
+#   - Line width needs no manual math: lines are padded to the longest one; trailing spaces may be dropped.
+#   - Save the file after editing, then re-run the example to see the result.
 #
-# 可选设置（去掉行首的 # 才生效）：
-#   @color gradient      # gradient = 渐变 + 扫光动画（当前效果）；text = 纯主题文字色，omp 字标就是这种
+# Optional settings (remove the leading '#' to activate):
+#   @color gradient      # gradient = gradient + shine sweep (current look); text = flat theme text color, like omp's wordmark
 #   @version v0.1.0
 #   @tip Tip: Ctrl+C exits Cloud-Pi.
 #

@@ -134,7 +134,7 @@ listed below; the reason describes the difference from its declared baseline.
 | `src/components/layout/split-pane.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
 | `src/components/layout/stack.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
 | `src/components/loader.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
-| `src/components/markdown.ts` | adapted | Removed TSP; added async Mermaid results, host repaint/disposal and cache/stable-prefix handling. |
+| `src/components/markdown.ts` | adapted | Removed TSP; added async Mermaid results, host repaint/disposal and cache/stable-prefix handling, including whitespace before fence language labels. |
 | `src/components/metric.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
 | `src/components/progress-bar.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
 | `src/components/scroll-view.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |

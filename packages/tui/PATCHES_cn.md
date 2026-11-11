@@ -114,7 +114,7 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/components/layout/split-pane.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/layout/stack.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/loader.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
-| `src/components/markdown.ts` | adapted | 移除 TSP；增加异步 Mermaid 结果、宿主重绘/销毁及缓存/稳定前缀处理。 |
+| `src/components/markdown.ts` | adapted | 移除 TSP；增加异步 Mermaid 结果、宿主重绘/销毁及缓存/稳定前缀处理，包含围栏语言标记前的空白。 |
 | `src/components/metric.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/progress-bar.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/scroll-view.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |

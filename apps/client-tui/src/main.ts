@@ -1,0 +1,94 @@
+import {
+	Container,
+	Editor,
+	getEditorTheme,
+	initTheme,
+	matchesKey,
+	onTerminalAppearanceChange,
+	onThemeChange,
+	ProcessTerminal,
+	startMacOSAppearanceReprobeFallback,
+	Text,
+	theme,
+	TUI,
+} from "@cloud-pi/tui";
+
+import { locale } from "./i18n/locale";
+import { Welcome } from "./tui/components/welcome";
+
+// omp's default dark theme; its accent (electricBlue #00b4ff) is the color omp
+// paints the editor border with, so the client selects it for a matching frame.
+// The light mapping is what a white-background terminal gets after detection.
+// `true` also arms the SIGWINCH/macOS appearance observers.
+await initTheme(true, undefined, undefined, "titanium", "light");
+
+// The second argument draws the caret with the terminal's hardware cursor, so
+// no cursor glyph is printed into scrollback on exit.
+const terminal = new ProcessTerminal();
+const tui = new TUI(terminal, true);
+// Text comes from the catalog; `locale` reads the system's languages and
+// re-renders subscribers when a setting switches it later.
+const welcome = new Welcome({
+	version: "v0.0.1",
+	tipLabel: locale.t("welcome.tipLabel"),
+	tip: locale.t("welcome.tip"),
+});
+const transcript = new Container();
+const editor = new Editor(getEditorTheme());
+
+tui.addChild(welcome);
+tui.addChild(transcript);
+tui.addChild(editor);
+tui.setFocus(editor);
+
+/**
+ * Mirror omp's editor border recolor (`updateEditorBorderColor`): omp derives
+ * the frame color from the session accent or thinking level. The client has
+ * neither, so it pins the frame to the theme accent — titanium `electricBlue`,
+ * the color omp records for its own border.
+ */
+function updateEditorBorderColor(): void {
+	editor.borderColor = text => theme.fg("accent", text);
+}
+
+editor.setBorderStyle("claude");
+updateEditorBorderColor();
+
+// Follow the terminal's light/dark appearance. The terminal replays an already
+// detected report to late subscribers, so subscribing before `tui.start()` still
+// sees the startup OSC 11 reply; Mode 2031 keeps it current afterwards.
+terminal.onAppearanceChange(mode => onTerminalAppearanceChange(mode));
+// macOS appearance polling, only engaged where the OSC 11 report is untrusted.
+const stopAppearanceFallback = startMacOSAppearanceReprobeFallback(terminal);
+onThemeChange(() => {
+	// Theme loading is async and frames are cached (the banner keys its lines on
+	// width), so drop caches or they keep the previous palette.
+	welcome.invalidate();
+	tui.invalidate();
+	tui.requestRender(true);
+});
+
+welcome.playIntro(() => tui.requestRender());
+
+// A language switch re-renders the banner in the new catalog; transcript lines
+// already emitted keep the language they were printed in.
+locale.onChange(() => {
+	welcome.setTip(locale.t("welcome.tipLabel"), locale.t("welcome.tip"));
+	tui.requestRender();
+});
+
+editor.onSubmit = text => {
+	transcript.addChild(new Text(locale.t("chat.youSaid", text), 1, 0));
+	tui.requestRender();
+};
+
+tui.addInputListener(data => {
+	if (matchesKey(data, "ctrl+c")) {
+		stopAppearanceFallback();
+		tui.stop();
+		process.exit(0);
+	}
+	return undefined;
+});
+
+tui.start();

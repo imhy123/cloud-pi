@@ -130,6 +130,17 @@ describe("Markdown asynchronous diagrams", () => {
 		expect(resolver).toHaveBeenCalledTimes(1);
 		md.dispose();
 	});
+	it("withholds a pending fence written with a space before the language", async () => {
+		const gate = Promise.withResolvers<string | null>();
+		const md = new Markdown("Before\n\n``` mermaid\ngraph LR\n A --> B\n```\n\nAfter", 0, 0, { ...defaultMarkdownTheme, resolveMermaidAscii: () => gate.promise });
+		md.transientRenderCache = true;
+		md.render(60);
+		expect(md.pendingMermaid).toBe(true);
+		expect(md.getLastRenderStableText()).toBe("Before\n\n");
+		const changed = Promise.withResolvers<void>(); md.onChange = changed.resolve;
+		gate.resolve("DRAWN DIAGRAM"); await changed.promise;
+		expect(md.render(60).join("\n")).toContain("DRAWN DIAGRAM"); md.dispose();
+	});
 	it("keeps a failed diagram as code, caching the failure without retry loops", async () => {
 		const resolver = vi.fn(async () => null);
 		const md = new Markdown(text("invalid diagram"), 0, 0, { ...defaultMarkdownTheme, resolveMermaidAscii: resolver });

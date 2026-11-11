@@ -1,5 +1,5 @@
 // cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/markdown.ts
-// (commit e325ffc73ab8; v18.18.7). Removed TSP; added asynchronous Mermaid results, repaint/disposal callbacks, single-flight edits and cache/stable-prefix invalidation.
+// (commit e325ffc73ab8; v18.18.7). Removed TSP; added asynchronous Mermaid results, repaint/disposal callbacks, single-flight edits and cache/stable-prefix invalidation, including whitespace before fence language labels.
 // See PATCHES.md.
 import { stripVTControlCharacters } from "node:util";
 import { LRUCache } from "@oh-my-pi/pi-utils/lru";
@@ -2696,7 +2696,7 @@ export class Markdown implements Component {
 		if (table !== undefined && table.length > text.length) text = table;
 		if (fence !== undefined && fence.length > text.length) text = fence;
 		if (this.pendingMermaid) {
-			const start = source.search(/^ {0,3}(?:`{3,}|~{3,})mermaid(?:[ \t]|$)/m);
+			const start = source.search(/^ {0,3}(?:`{3,}|~{3,})[ \t]*mermaid(?:[ \t]|$)/m);
 			if (start >= 0) return text.slice(0, start);
 		}
 		return text;

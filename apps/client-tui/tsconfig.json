@@ -1,0 +1,59 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"paths": {
+			"@oh-my-pi/pi-utils": [
+				"../../packages/tui/src/vendor/pi-utils/index.ts"
+			],
+			"@oh-my-pi/pi-utils/*": [
+				"../../packages/tui/src/vendor/pi-utils/*"
+			],
+			"@oh-my-pi/pi-natives": [
+				"../../packages/tui/src/compat/natives.ts"
+			],
+			"@oh-my-pi/pi-natives/path": [
+				"../../packages/tui/src/compat/natives-path.ts"
+			],
+			"@oh-my-pi/pi-ai": [
+				"../../packages/tui/src/compat/pi-ai.ts"
+			],
+			"@oh-my-pi/pi-agent-core": [
+				"../../packages/tui/src/compat/pi-agent-core.ts"
+			],
+			"@cloud-pi/i18n": [
+				"../../packages/i18n/src/index.ts"
+			],
+			"@cloud-pi/tui": [
+				"../../packages/tui/src/index.ts"
+			],
+			"@cloud-pi/tui/theme": [
+				"../../packages/tui/src/theme/index.ts"
+			],
+			"@cloud-pi/tui/components": [
+				"../../packages/tui/entries/components.ts"
+			],
+			"@cloud-pi/tui/render": [
+				"../../packages/tui/src/render/index.ts"
+			],
+			"@cloud-pi/tui/image": [
+				"../../packages/tui/entries/image.ts"
+			],
+			"@cloud-pi/tui/notifications": [
+				"../../packages/tui/entries/notifications.ts"
+			],
+			"@cloud-pi/tui/multiplexers": [
+				"../../packages/tui/entries/multiplexers.ts"
+			],
+			"@cloud-pi/tui/keys": [
+				"../../packages/tui/src/keys.ts"
+			]
+		}
+	},
+	"include": [
+		"src",
+		"../../packages/tui/src/compat/bun-globals.d.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

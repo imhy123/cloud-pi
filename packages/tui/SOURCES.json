@@ -377,7 +377,7 @@
 			"source": "packages/tui/src/components/markdown.ts",
 			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
 			"upstreamSha256": "0258df7301ccd59bae70abe79c76aa3e57176d9a52a5a2c45ca8b9723239c8ad",
-			"changes": "Removed TSP; added asynchronous Mermaid results, repaint/disposal callbacks, single-flight edits and cache/stable-prefix invalidation."
+			"changes": "Removed TSP; added asynchronous Mermaid results, repaint/disposal callbacks, single-flight edits and cache/stable-prefix invalidation, including whitespace before fence language labels."
 		},
 		{
 			"file": "components/menu-selection.ts",
