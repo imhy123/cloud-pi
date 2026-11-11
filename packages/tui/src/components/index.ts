@@ -1,4 +1,5 @@
-// cloud-pi-tui: new file. Public component barrel. See PATCHES.md.
+// cloud-pi-tui: new file. Public component barrel.
+// See PATCHES.md.
 // Public component exports.
 export * from "./box";
 export * from "./cancellable-loader";

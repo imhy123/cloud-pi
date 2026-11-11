@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/table.ts
-// (commit 83de60ad99). Removed the TSP describe path and `TspTableColumn`/
-// `TspText`. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/table.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP describe path and `TspTableColumn`/ `TspText`.
+// See PATCHES.md.
 import type { Component } from "../tui";
 import { Ellipsis, finiteWidth, getWidthConfigEpoch, singleLine, truncateToWidth, visibleWidth } from "../utils";
 

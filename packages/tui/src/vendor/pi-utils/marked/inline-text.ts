@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/utils/src/marked/inline-text.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * The plain-text step of inline lexing over one inline source: where text can end ({@link TextStops}, which also
  * tells the bare-URL rule where it can match) and how it is appended ({@link TextRun}).

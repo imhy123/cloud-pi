@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/utils/src/color.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Color manipulation utilities for hex colors.
  *

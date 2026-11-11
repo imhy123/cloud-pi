@@ -1,5 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/render/width-aware-text.ts
-// (commit 83de60ad99). Removed the native describe path. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/render/width-aware-text.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the native describe path.
+// See PATCHES.md.
 import { Text } from "../components/text";
 import type { Component } from "../tui";
 import { getPaddingX } from "../utils";

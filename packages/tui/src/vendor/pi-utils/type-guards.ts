@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/utils/src/type-guards.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 export function isRecord(value: unknown): value is Record<string, unknown> {
 	return !!value && typeof value === "object" && !Array.isArray(value);
 }

@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/render/render-utils.ts
-// (commit 83de60ad99). Imports the `compat/natives` facade instead of the
-// native package. See PATCHES.md.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/render/render-utils.ts
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Shared utilities and constants for tool renderers.
  *
@@ -389,11 +389,6 @@ export function capPreviewLines(
 	const hint = options.expandHint === false ? "" : formatExpandHint(theme, false, true);
 	const marker = `… ${hidden} earlier ${pluralize("line", hidden)}${hint ? ` ${hint}` : ""}`;
 	return [`${options.prefix ?? ""}${theme.fg("dim", marker)}`, ...visible];
-}
-
-/** Join metadata with the theme separator and muted styling. */
-export function formatMeta(meta: string[], theme: Theme): string {
-	return meta.length > 0 ? ` ${theme.fg("muted", meta.join(theme.sep.dot))}` : "";
 }
 
 function sanitizeErrorText(message: string | undefined): string {

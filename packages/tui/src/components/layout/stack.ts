@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/layout/stack.ts
-// (commit 83de60ad99). Removed the native stack describe path and slot helpers.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/layout/stack.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the native stack describe path and slot helpers.
 // See PATCHES.md.
 import type { MouseRoutable, SgrMouseEvent } from "../../mouse";
 import type { Component } from "../../tui";

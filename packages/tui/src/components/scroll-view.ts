@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/scroll-view.ts
-// (commit 83de60ad99). Removed the TSP `describe()` implementation; the
-// `render()` path is unchanged. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/scroll-view.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP `describe()` implementation; the `render()` path is unchanged.
+// See PATCHES.md.
 import { matchesKey } from "../keys";
 import type { Component } from "../tui";
 import { Ellipsis, getWidthConfigEpoch, padding, replaceTabs, truncateToWidth, visibleWidth } from "../utils";

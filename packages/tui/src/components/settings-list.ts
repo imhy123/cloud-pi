@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/settings-list.ts
-// (commit 21f1188cf88): added `SettingEditor` and `menu` rows. Removed TSP
-// preference types and the native described-item cache. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/settings-list.ts
+// (commit e325ffc73ab8; v18.18.7). Removed TSP preference types and the native described-item cache.
+// See PATCHES.md.
 import { formatKeyHint } from "../app-keybindings";
 import { editorKey, editorKeys } from "../chrome/keybinding-hints";
 import { fuzzyFilter } from "../fuzzy";

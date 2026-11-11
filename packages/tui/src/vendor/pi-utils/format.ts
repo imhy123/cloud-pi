@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/utils/src/format.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 const SEC = 1_000;
 const MIN = 60 * SEC;
 const HOUR = 60 * MIN;

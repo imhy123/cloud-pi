@@ -1,7 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/index.ts (commit
-// 21f1188cf88). Dropped CLI-only exports (chat transcript, debug server, TSP
-// native modules); added the frame-rate and spinner-clock exports. See
-// PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/index.ts
+// (commit e325ffc73ab8; v18.18.7). Removed CLI, native and debug-server exports; retained library exports.
+// See PATCHES.md.
 // Core TUI interfaces and classes.
 
 // Autocomplete support
@@ -48,6 +47,7 @@ export type * from "./editor-component";
 export * from "./fuzzy";
 // Frame-rate ceiling (tui.maxFps)
 export * from "./frame-rate";
+export * from "./motion-effects";
 // Glyph Protocol: in-band icon registration (APC 25a1)
 export * from "./glyph-protocol";
 // Keybindings

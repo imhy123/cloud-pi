@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/tmux.ts (commit
-// 83de60ad99). Removed the TSP session helpers and SIXEL client detection.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/tmux.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP session helpers and SIXEL client detection.
 // See PATCHES.md.
 import { $which } from "@oh-my-pi/pi-utils";
 import { isBunTestRuntime } from "@oh-my-pi/pi-utils/env";

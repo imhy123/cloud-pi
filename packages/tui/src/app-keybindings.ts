@@ -1,9 +1,10 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/app-keybindings.ts
-// (commit 83de60ad99). Replaced `Bun.JSONC`/`Bun.YAML` with a local JSONC
-// parser and the `yaml` package. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/app-keybindings.ts
+// (commit e325ffc73ab8; v18.18.7). Replaced Bun JSONC/YAML with jsonc-parser and yaml.
+// See PATCHES.md.
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { parse as parseYaml } from "yaml";
+import { parse as parseJsoncValue, type ParseError } from "jsonc-parser";
 // Subpaths, not the `@oh-my-pi/pi-utils` barrel: the barrel loads the native
 // addon (file-lock), and key-hint formatting runs on addon-free CLI paths
 // (`omp --version`, help) through cli/command-help.ts.
@@ -23,9 +24,9 @@ import {
 } from "./keybindings";
 
 /**
- * Application-level keybindings (coding agent specific).
- * Values are always `true` — used for declaration merging.
- */
+	* Application-level keybindings (coding agent specific).
+	* Values are always `true` — used for declaration merging.
+	*/
 interface AppKeybindings {
 	"app.interrupt": true;
 	"app.clear": true;
@@ -83,8 +84,8 @@ declare module "./keybindings" {
 }
 
 /**
- * Resolve default image-paste shortcuts for the current terminal platform.
- */
+	* Resolve default image-paste shortcuts for the current terminal platform.
+	*/
 export function getDefaultPasteImageKeys(platform: NodeJS.Platform = process.platform): KeyId[] {
 	if (platform === "win32") return ["ctrl+v", "alt+v"];
 	if (platform === "darwin") return ["ctrl+v", "super+v"];
@@ -92,8 +93,8 @@ export function getDefaultPasteImageKeys(platform: NodeJS.Platform = process.pla
 }
 
 /**
- * All keybindings definitions: TUI + app-specific.
- */
+	* All keybindings definitions: TUI + app-specific.
+	*/
 export const KEYBINDINGS = {
 	...TUI_KEYBINDINGS,
 	"app.interrupt": {
@@ -293,8 +294,8 @@ export const KEYBINDINGS = {
 } as const satisfies KeybindingDefinitions;
 
 /**
- * Migration map from old keybinding names to new namespaced IDs.
- */
+	* Migration map from old keybinding names to new namespaced IDs.
+	*/
 const KEYBINDING_NAME_MIGRATIONS = {
 	// App-specific (old names)
 	interrupt: "app.interrupt",
@@ -364,8 +365,8 @@ const KEYBINDING_NAME_MIGRATIONS = {
 } as const satisfies Record<string, Keybinding>;
 
 /**
- * Check if a key is a legacy keybinding name.
- */
+	* Check if a key is a legacy keybinding name.
+	*/
 function isLegacyKeybindingName(key: string): key is keyof typeof KEYBINDING_NAME_MIGRATIONS {
 	return key in KEYBINDING_NAME_MIGRATIONS;
 }
@@ -389,9 +390,9 @@ function toKeybindingsConfig(value: unknown): KeybindingsConfig {
 }
 
 /**
- * Migrate old keybinding names to new namespaced IDs.
- * Returns both the migrated config and a flag indicating if migration occurred.
- */
+	* Migrate old keybinding names to new namespaced IDs.
+	* Returns both the migrated config and a flag indicating if migration occurred.
+	*/
 function migrateKeybindingNames(rawConfig: unknown): {
 	config: KeybindingsConfig;
 	migrated: boolean;
@@ -415,8 +416,8 @@ function migrateKeybindingNames(rawConfig: unknown): {
 }
 
 /**
- * Order keybindings config to match KEYBINDINGS key order.
- */
+	* Order keybindings config to match KEYBINDINGS key order.
+	*/
 function orderKeybindingsConfig(config: KeybindingsConfig): KeybindingsConfig {
 	const ordered: KeybindingsConfig = {};
 	for (const key of Object.keys(KEYBINDINGS)) {
@@ -449,65 +450,18 @@ export interface KeybindingsCreateOptions {
 	inheritedAgentDir?: string;
 }
 
-/**
- * Parse JSON with comments and trailing commas, the subset Bun's JSONC accepts.
- */
+/** Parse JSONC without treating punctuation inside strings as syntax. */
 function parseJsonc(text: string): unknown {
-	let output = "";
-	let inString = false;
-	let inLineComment = false;
-	let inBlockComment = false;
-	for (let i = 0; i < text.length; i++) {
-		const char = text[i]!;
-		const next = text[i + 1];
-		if (inLineComment) {
-			if (char === "\n") {
-				inLineComment = false;
-				output += char;
-			}
-			continue;
-		}
-		if (inBlockComment) {
-			if (char === "*" && next === "/") {
-				inBlockComment = false;
-				i++;
-			}
-			continue;
-		}
-		if (inString) {
-			output += char;
-			if (char === "\\") {
-				output += next ?? "";
-				i++;
-			} else if (char === '"') {
-				inString = false;
-			}
-			continue;
-		}
-		if (char === '"') {
-			inString = true;
-			output += char;
-			continue;
-		}
-		if (char === "/" && next === "/") {
-			inLineComment = true;
-			i++;
-			continue;
-		}
-		if (char === "/" && next === "*") {
-			inBlockComment = true;
-			i++;
-			continue;
-		}
-		output += char;
-	}
-	return JSON.parse(output.replace(/,\s*([}\]])/g, "$1"));
+	const errors: ParseError[] = [];
+	const value = parseJsoncValue(text, errors, { allowTrailingComma: true });
+	if (errors.length) throw new SyntaxError(`Invalid JSONC at offset ${errors[0]!.offset}`);
+	return value;
 }
 
 /**
- * Load raw config from a file synchronously.
- * Returns parsed JSON/YAML or null if file doesn't exist or is invalid.
- */
+	* Load raw config from a file synchronously.
+	* Returns parsed JSON/YAML or null if file doesn't exist or is invalid.
+	*/
 function loadRawConfig(filePath: string): unknown {
 	try {
 		const content = fs.readFileSync(filePath, "utf-8");
@@ -600,9 +554,9 @@ function loadMergedKeybindingsConfig(
 }
 
 /**
- * Load and migrate keybindings config.
- * Legacy JSON is read for compatibility, but successful write-back goes to YAML.
- */
+	* Load and migrate keybindings config.
+	* Legacy JSON is read for compatibility, but successful write-back goes to YAML.
+	*/
 function loadKeybindingsConfig(
 	filePath: string,
 	writeBackPath: string | undefined,
@@ -673,9 +627,9 @@ function keyConfigValue(keys: KeyId[]): KeyId | KeyId[] {
 }
 
 /**
- * Manages all keybindings (app + TUI).
- * Extends the TUI KeybindingsManager with app-specific functionality.
- */
+	* Manages all keybindings (app + TUI).
+	* Extends the TUI KeybindingsManager with app-specific functionality.
+	*/
 export class KeybindingsManager extends TuiKeybindingsManager {
 	#configPath: string | undefined;
 	#inheritedConfigPath: string | undefined;

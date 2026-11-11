@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/components/composer/band.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Soft status band composer (the rust omp default): the full status line sits
  * flush against the terminal's left edge as a filled powerline band with a

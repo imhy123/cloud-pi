@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { detectKittyUnicodePlaceholdersSupport } from "../src/kitty-graphics";
 import {
 	calculateImageRows,
@@ -129,7 +129,11 @@ describe("image encoding", () => {
 	});
 
 	it("wraps Kitty transmissions in APC chunks with the requested id", () => {
-		const encoded = encodeKittyTransmit("AAAA", 42);
+		// Pin the environment: a developer running inside tmux gets a DCS envelope.
+  vi.stubEnv("TMUX", "");
+  vi.stubEnv("TERM", "xterm-256color");
+  const encoded = encodeKittyTransmit("AAAA", 42);
+  vi.unstubAllEnvs();
 		expect(encoded.startsWith("\x1b_G")).toBe(true);
 		expect(encoded.endsWith("\x1b\\")).toBe(true);
 		expect(encoded).toContain("a=t,f=100,q=2,i=42");

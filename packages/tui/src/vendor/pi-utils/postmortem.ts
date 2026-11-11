@@ -1,7 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/utils/src/postmortem.ts (commit
-// 21f1188cf88). The Bun-only `process.reallyExit` path is replaced with
-// `process.exit`/`SIGKILL`; a disconnected terminal is declared dead so
-// `SIGTERM`/`SIGHUP` skip the postmortem. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/utils/src/postmortem.ts
+// (commit e325ffc73ab8; v18.18.7). The Bun-only `process.reallyExit` path is replaced with `process.exit`/`SIGKILL`; a disconnected terminal is declared dead so `SIGTERM`/`SIGHUP` skip the postmortem.
+// See PATCHES.md.
 /**
  * Cleanup and postmortem handler utilities.
  *

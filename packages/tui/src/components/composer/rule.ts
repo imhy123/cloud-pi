@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/components/composer/rule.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Single-rule composer: a borderless prompt docked below one top rule. The
  * right status group rides the rule while the left group remains below the

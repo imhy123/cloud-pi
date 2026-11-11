@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/frame-rate.ts
-// (commit 21f1188cf88). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * The frame-rate ceiling (`tui.maxFps`): the render scheduler paints no closer than
  * {@link minFrameIntervalMs}, except frames a keystroke is waiting on. Dependency-free: the host's

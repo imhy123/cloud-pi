@@ -1,7 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/loader.ts
-// (commit 21f1188cf88). Removed the TSP describe path, native helpers and
-// `TspProps`; spinner cadence comes from the shared spinner clock. See
-// PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/loader.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP describe path, native helpers and `TspProps`; spinner cadence comes from the shared spinner clock.
+// See PATCHES.md.
 import { sharedSpinnerFrame, spinnerAnimated, spinnerInterval, spinnerTickDelay } from "../spinner-clock";
 import type { TUI } from "../tui";
 import { getPaddingX, padding, sliceByColumn, visibleWidth } from "../utils";

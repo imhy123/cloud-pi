@@ -22,10 +22,11 @@ research-phase part of cloud-pi.
 
 - Migrate as much of oh-my-pi's TUI as possible, keeping upstream file paths,
   structure, and behavior. Prefer adapting an upstream file over rewriting it.
-- Every file under `packages/tui/src/` starts with a provenance header stating
+- Every TypeScript file under `packages/tui/src/` starts with a provenance header stating
   one of: verbatim copy, adapted copy (upstream path, baseline commit, and
   changes), or new file. Keep the header accurate whenever the file's status
-  changes.
+  changes. JSON files stay comment-free; record their provenance and the complete
+  source inventory in `packages/tui/SOURCES.json`.
 - Do not reintroduce Bun runtime dependencies, FFI, native addons, TSP
   (Tern Surface Protocol), or SIXEL. The package must run on plain Node.js; text
   measurement and key parsing stay in pure TypeScript.

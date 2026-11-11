@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/input.ts
-// (commit 83de60ad99). Removed the TSP describe path and `TspInputProps`.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/input.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP describe path and `TspInputProps`.
 // See PATCHES.md.
 import { BracketedPasteHandler, decodeReencodedPasteControls } from "../bracketed-paste";
 import { canonicalKeyId, getKeybindings } from "../keybindings";
@@ -107,10 +107,10 @@ export class Input implements Component, Focusable {
 		};
 	}
 
-	setValue(value: string): void {
+	/** Replace the value; the caret lands at the end unless `cursor: "start"`. */
+	setValue(value: string, options: { cursor?: "start" | "end" } = {}): void {
 		this.#value = value;
-		// Callers seed or replace the value wholesale; typing continues at the end.
-		this.#cursor = value.length;
+		this.#cursor = options.cursor === "start" ? 0 : value.length;
 	}
 
 	setUseTerminalCursor(useTerminalCursor: boolean): void {

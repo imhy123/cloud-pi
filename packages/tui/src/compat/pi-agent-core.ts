@@ -1,5 +1,5 @@
-// cloud-pi-tui: new file. Structural stand-in for
-// `@oh-my-pi/pi-agent-core` (`ThinkingLevel`). See PATCHES.md.
+// cloud-pi-tui: new file. Structural stand-in for `@oh-my-pi/pi-agent-core` (`ThinkingLevel`).
+// See PATCHES.md.
 /**
  * Structural stand-in for `@oh-my-pi/pi-agent-core`. The TUI only needs the
  * `ThinkingLevel` enum-shaped constant; keeping the values identical preserves

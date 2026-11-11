@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/theme/schema.ts
-// (commit 21f1188cf88): added the `terminal.ansi` palette index and `AnsiColor`.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/theme/schema.ts
+// (commit e325ffc73ab8; v18.18.7).
 // See PATCHES.md.
 import type { SpinnerFramesOverride } from "./symbols";
 

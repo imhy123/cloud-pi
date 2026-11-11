@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/render/hyperlink.ts
-// (commit 83de60ad99). Removed the native link spans; OSC 8 helpers are
-// unchanged. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/render/hyperlink.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the native link spans; OSC 8 helpers are unchanged.
+// See PATCHES.md.
 /**
  * OSC 8 terminal hyperlink support for paths and URLs.
  *

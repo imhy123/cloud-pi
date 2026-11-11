@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/terminal-multiplexer.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 import { cmuxMultiplexer } from "./multiplexers/cmux";
 import { herdrMultiplexer } from "./multiplexers/herdr";
 import { orcaMultiplexer } from "./multiplexers/orca";

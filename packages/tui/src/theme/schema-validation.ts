@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/theme/schema-validation.ts
-// (commit 83de60ad99). Replaced the ArkType/`@oh-my-pi/omptype` schema with
-// structural validators. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/theme/schema-validation.ts
+// (commit e325ffc73ab8; v18.18.7). Replaced the ArkType/`@oh-my-pi/omptype` schema with structural validators.
+// See PATCHES.md.
 import type { SpinnerFramesOverride } from "./symbols";
 import type { ThemeJson } from "./schema";
 

@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/multiplexers/herdr.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 import { DEFAULT_NOTIFICATION_TITLE, notificationTitleAndBody, spawnNotifier } from "./notify";
 import type { TerminalMultiplexerModule } from "./types";
 

@@ -1,7 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/terminal-capabilities.ts
-// (commit 21f1188cf88). Removed SIXEL encoding/detection and the native import;
-// Kitty and iTerm2 detection are unchanged, and OSC 99 IDs take a per-process
-// random prefix. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/terminal-capabilities.ts
+// (commit e325ffc73ab8; v18.18.7). Removed SIXEL encoding/detection and the native import; Kitty and iTerm2 detection are unchanged, and OSC 99 IDs take a per-process random prefix.
+// See PATCHES.md.
 import { $env, isBunTestRuntime, isTerminalHeadless, isWsl } from "@oh-my-pi/pi-utils/env";
 import { writeTerminalSequence } from "./active-terminal";
 import { sendDesktopNotification, shouldDeliverDesktopNotification } from "./desktop-notify";
@@ -586,8 +585,13 @@ const KNOWN_TERMINALS = Object.freeze({
 	// OSC 99, and OSC 66 text sizing are outside rio's supported set and keep
 	// the conservative defaults.
 	rio: new TerminalInfo("rio", ImageProtocol.Kitty, true, true),
-	// Rex (TERM_PROGRAM=rex / TERM=xterm-rex): only Kitty graphics is confirmed.
-	rex: new TerminalInfo("rex", ImageProtocol.Kitty, true, false),
+	// Rex (Superlogical's terminal) identifies via TERM_PROGRAM=rex, or
+	// TERM=xterm-rex over SSH. It renders Kitty graphics and OSC 8
+	// hyperlinks — a link opens on command-click, and
+	// Settings > Terminal > Links only decides whether an `ssh://`-style link
+	// that launches another app asks first — so links are on. Notifications
+	// keep the BEL default.
+	rex: new TerminalInfo("rex", ImageProtocol.Kitty, true, true),
 	// Tern (Stencil's terminal, `stencil-term`) sets TERM_PROGRAM=tern and
 	// implements Kitty graphics (Unicode placeholders included), OSC 8 and
 	// OSC 9/99 notifications. Whether omp renders natively (Tern Surface

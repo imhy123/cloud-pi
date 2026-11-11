@@ -1,17 +1,17 @@
-// cloud-pi-tui: ported from pi packages/tui/src/utils.ts (commit 2a32a605a9).
-// ANSI-aware width/wrap/truncate/slice replacing the native text engine, with an
-// explicit tab width. See PATCHES.md.
+// cloud-pi-tui: adapted copy of pi packages/tui/src/utils.ts
+// (commit 2a32a605a9f1). Pure TypeScript text engine with explicit tab width, terminal Jamo overrides, complete CSI detection and colon SGR state.
+// See PATCHES.md.
 /**
- * Pure-TypeScript terminal text engine.
- *
- * Replaces the native `pi-natives` text APIs (`visibleWidth`,
- * `truncateToWidth`, `sliceWithWidth`, `extractSegments`,
- * `wrapTextWithAnsi`) with an ANSI-aware implementation.
- *
- * The algorithms are ported from pi's `packages/tui/src/utils.ts`
- * (MIT, Copyright (c) 2025 Mario Zechner), generalized to take an explicit
- * tab width instead of the fixed 3-cell tab that pi assumes.
- */
+	* Pure-TypeScript terminal text engine.
+	*
+	* Replaces the native `pi-natives` text APIs (`visibleWidth`,
+	* `truncateToWidth`, `sliceWithWidth`, `extractSegments`,
+	* `wrapTextWithAnsi`) with an ANSI-aware implementation.
+	*
+	* The algorithms are ported from pi's `packages/tui/src/utils.ts`
+	* (MIT, Copyright (c) 2025 Mario Zechner), generalized to take an explicit
+	* tab width instead of the fixed 3-cell tab that pi assumes.
+	*/
 
 import { eastAsianWidth } from "get-east-asian-width";
 
@@ -30,6 +30,14 @@ const RGI_EMOJI_REGEX = /^\p{RGI_Emoji}$/v;
 const CJK_BREAK_REGEX =
 	/[\p{Script_Extensions=Han}\p{Script_Extensions=Hiragana}\p{Script_Extensions=Katakana}\p{Script_Extensions=Hangul}\p{Script_Extensions=Bopomofo}]/u;
 
+let hangulWidthOverride = 0;
+
+/** 0 follows the platform, -1 follows Unicode, 1/2 force terminal Jamo width. */
+export function setHangulCompatJamoWidthOverride(value: number): void {
+	hangulWidthOverride = value;
+	widthCache.clear();
+}
+
 const WIDTH_CACHE_SIZE = 512;
 const widthCache = new Map<string, number>();
 
@@ -42,7 +50,7 @@ function ansiCodeLength(str: string, pos: number): number {
 	if (next === "[") {
 		for (let j = pos + 2; j < str.length; j++) {
 			const c = str.charCodeAt(j);
-			if (c === 0x6d || c === 0x47 || c === 0x4b || c === 0x48 || c === 0x4a) return j + 1 - pos;
+			if (c >= 0x40 && c <= 0x7e) return j + 1 - pos;
 		}
 		return 0;
 	}
@@ -56,7 +64,7 @@ function ansiCodeLength(str: string, pos: number): number {
 		return 0;
 	}
 
-	return 0;
+	return next && /[\x30-\x7e]/.test(next) ? 2 : 0;
 }
 
 /** The escape sequence starting at `pos`, or null when there is none. */
@@ -79,6 +87,11 @@ function couldBeEmoji(segment: string): boolean {
 
 /** Terminal width of a single grapheme cluster. */
 function graphemeWidth(segment: string, tabWidth: number): number {
+	const target = hangulWidthOverride === 0 ? (process.platform === "darwin" ? 1 : -1) : hangulWidthOverride;
+	if (segment.length === 1 && segment.charCodeAt(0) >= 0x3131 && segment.charCodeAt(0) <= 0x318e) {
+		if (segment === "\u3164") return target === 1 ? 1 : 0;
+		if (target === 1 || target === 2) return target;
+	}
 	if (segment.length === 1) {
 		const code = segment.charCodeAt(0);
 		if (code >= 0x20 && code <= 0x7e) return 1;
@@ -256,6 +269,8 @@ class AnsiCodeTracker {
 	dim = false;
 	italic = false;
 	underline = false;
+	underlineStyle = "4";
+	underlineColor: string | null = null;
 	blink = false;
 	inverse = false;
 	hidden = false;
@@ -273,7 +288,7 @@ class AnsiCodeTracker {
 
 		if (!ansiCode.endsWith("m")) return;
 
-		const match = ansiCode.match(/\x1b\[([\d;]*)m/);
+		const match = ansiCode.match(/\x1b\[([\d;:]*)m/);
 		if (!match) return;
 
 		const params = match[1];
@@ -285,20 +300,31 @@ class AnsiCodeTracker {
 		const parts = params.split(";");
 		let i = 0;
 		while (i < parts.length) {
-			const code = Number.parseInt(parts[i], 10);
+			const part = parts[i]!;
+			const code = Number.parseInt(part, 10);
+			if (part.includes(":")) {
+				if (code === 4) { this.underline = Number(part.split(":")[1]) !== 0; this.underlineStyle = part; }
+				else if (code === 38) this.fgColor = part;
+				else if (code === 48) this.bgColor = part;
+				else if (code === 58) this.underlineColor = part;
+				i++;
+				continue;
+			}
 
-			if (code === 38 || code === 48) {
+			if (code === 38 || code === 48 || code === 58) {
 				if (parts[i + 1] === "5" && parts[i + 2] !== undefined) {
 					const colorCode = `${parts[i]};${parts[i + 1]};${parts[i + 2]}`;
 					if (code === 38) this.fgColor = colorCode;
-					else this.bgColor = colorCode;
+					else if (code === 48) this.bgColor = colorCode;
+					else this.underlineColor = colorCode;
 					i += 3;
 					continue;
 				}
 				if (parts[i + 1] === "2" && parts[i + 4] !== undefined) {
 					const colorCode = `${parts[i]};${parts[i + 1]};${parts[i + 2]};${parts[i + 3]};${parts[i + 4]}`;
 					if (code === 38) this.fgColor = colorCode;
-					else this.bgColor = colorCode;
+					else if (code === 48) this.bgColor = colorCode;
+					else this.underlineColor = colorCode;
 					i += 5;
 					continue;
 				}
@@ -319,6 +345,7 @@ class AnsiCodeTracker {
 					break;
 				case 4:
 					this.underline = true;
+					this.underlineStyle = "4";
 					break;
 				case 5:
 					this.blink = true;
@@ -360,6 +387,9 @@ class AnsiCodeTracker {
 				case 39:
 					this.fgColor = null;
 					break;
+				case 59:
+					this.underlineColor = null;
+					break;
 				case 49:
 					this.bgColor = null;
 					break;
@@ -383,6 +413,8 @@ class AnsiCodeTracker {
 		this.strikethrough = false;
 		this.fgColor = null;
 		this.bgColor = null;
+		this.underlineColor = null;
+		this.underlineStyle = "4";
 	}
 
 	clear(): void {
@@ -395,13 +427,14 @@ class AnsiCodeTracker {
 		if (this.bold) codes.push("1");
 		if (this.dim) codes.push("2");
 		if (this.italic) codes.push("3");
-		if (this.underline) codes.push("4");
+		if (this.underline) codes.push(this.underlineStyle);
 		if (this.blink) codes.push("5");
 		if (this.inverse) codes.push("7");
 		if (this.hidden) codes.push("8");
 		if (this.strikethrough) codes.push("9");
 		if (this.fgColor) codes.push(this.fgColor);
 		if (this.bgColor) codes.push(this.bgColor);
+		if (this.underlineColor) codes.push(this.underlineColor);
 
 		let result = codes.length > 0 ? `\x1b[${codes.join(";")}m` : "";
 		if (this.activeHyperlink) result += formatOsc8Hyperlink(this.activeHyperlink);

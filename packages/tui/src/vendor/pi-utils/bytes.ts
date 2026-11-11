@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/utils/src/bytes.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Narrow `bytes` to a view over its own whole `ArrayBuffer`, which is what
  * `crypto.subtle.{digest,sign,importKey,encrypt,decrypt}` require under the

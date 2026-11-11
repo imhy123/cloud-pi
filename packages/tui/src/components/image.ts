@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/image.ts
-// (commit 83de60ad99). Removed SIXEL encoding and the native image node;
-// Kitty/iTerm2 rendering is unchanged. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/image.ts
+// (commit e325ffc73ab8; v18.18.7). Removed SIXEL encoding and the native image node; Kitty/iTerm2 rendering is unchanged.
+// See PATCHES.md.
 import { getKittyGraphics } from "../kitty-graphics";
 import {
 	getCellDimensions,

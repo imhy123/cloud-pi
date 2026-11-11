@@ -1,7 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/latex-to-unicode.ts
-// (commit 21f1188cf88). `\textnormal` resets bold/italic, `\sqrt` index styling
-// is preserved, and environments restore the outer foreground/background. See
-// PATCHES.md.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/latex-to-unicode.ts
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 import { mathSpanAt } from "@oh-my-pi/pi-utils/math-delimiters";
 import { TERMINAL } from "./terminal-capabilities";
 

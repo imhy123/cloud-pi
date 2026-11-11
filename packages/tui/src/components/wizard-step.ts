@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/wizard-step.ts
-// (commit 83de60ad99). Removed the TSP describe path; `sameItems` is replaced
-// with an element-wise comparison. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/wizard-step.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP describe path; `sameItems` is replaced with an element-wise comparison.
+// See PATCHES.md.
 import type { MouseRoutable, SgrMouseEvent } from "../mouse";
 import type { Component } from "../tui";
 

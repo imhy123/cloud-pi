@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/glyph-protocol.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Glyph Protocol client: ships the TUI's private-use icons to the terminal so
  * the nerd symbol preset renders without a patched font installed.

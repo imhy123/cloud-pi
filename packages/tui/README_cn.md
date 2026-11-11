@@ -12,6 +12,8 @@ Node.js 终端 UI 库。它提供不可变帧渲染器、主题、组件、内�
 - **纯 TypeScript 文本引擎**：ANSI 感知的宽度计算、换行、截断，以及 Kitty 键盘协议
   解析，无需原生绑定。
 
+上游基线：oh-my-pi **v18.18.7**（`e325ffc73ab8`）。
+
 ## 安装
 
 `@cloud-pi/tui` 尚未发布到 npm registry。在本 monorepo 内，直接按包名声明依赖，
@@ -227,8 +229,11 @@ getTerminalInfo(TERMINAL_ID).sendNotification({
   调试服务器均未包含。
 - **高亮可插拔**：不内置语法高亮引擎。
 
-`src/` 下的每个文件都以一个来源声明注释开头，注明对应的上游文件与基线提交，并标记为
-逐字复制、修改后复制或全新文件。逐文件的修改日志见 [PATCHES.md](./PATCHES.md)。
+`src/` 下的 TypeScript 文件带有 verbatim/adapted/new 来源头。JSON 来源及完整清单见
+[SOURCES.json](./SOURCES.json)。本地差异与同步历史见 [PATCHES.md](./PATCHES.md)。
+
+Mermaid 代码块使用纯 TypeScript 的 `beautiful-mermaid` 渲染器，支持流程图、状态图、
+时序图、类图、ER 图和 XY 图。不支持的语法回退为代码；布局可能与上游 Rust 渲染器不同。
 
 ## 开发
 
@@ -237,12 +242,14 @@ npm install
 npm run typecheck -w @cloud-pi/tui   # tsc --noEmit
 npm run build -w @cloud-pi/tui       # tsup (ESM + d.ts, 8 entry points)
 npm run test -w @cloud-pi/tui        # Vitest over src/
-npm run test:dist -w @cloud-pi/tui   # node --test against the built bundle
+npm run test:dist -w @cloud-pi/tui   # tracked tests in test/bundle/
 npm run verify                       # all of the above
+npm run audit:upstream -w @cloud-pi/tui # pinned source/header comparison
 ```
 
 `test/setup.ts` 将 Bun shim 安装到 `globalThis`，使 vendored 源码无需修改即可在
-Vitest 下运行。测试使用纯 Node：即使未安装 Bun 也必须通过。
+Vitest 下运行。来源审计需要相邻的 oh-my-pi 与 pi Git 仓库，也可设置 `OH_MY_PI_DIR`
+和 `PI_DIR`。测试使用纯 Node：即使未安装 Bun 也必须通过。
 
 ## 许可证
 

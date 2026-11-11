@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/keybinding-matchers.ts
-// (commit 21f1188cf88); effective-key helpers accept an injected manager. See
-// PATCHES.md.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/keybinding-matchers.ts
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 import type { KeyId } from "./app-keybindings";
 import { getKeybindings, type KeybindingsManager } from "./keybindings";
 import { matchesKey } from "./keys";

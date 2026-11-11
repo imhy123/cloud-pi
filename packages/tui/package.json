@@ -17,7 +17,8 @@
 		"LICENSE",
 		"THIRD-PARTY-NOTICES.md",
 		"PATCHES.md",
-		"PATCHES_cn.md"
+		"PATCHES_cn.md",
+		"SOURCES.json"
 	],
 	"exports": {
 		".": {
@@ -58,11 +59,15 @@
 		"typecheck": "tsc --noEmit -p tsconfig.json",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"test:dist": "node --test test/dist/*.test.mjs",
-		"verify": "npm run typecheck && npm run build && npm run test && npm run test:dist"
+		"test:dist": "node scripts/test-dist.mjs",
+		"verify": "npm run typecheck && npm run build && npm run test && npm run test:dist",
+		"audit:upstream": "node scripts/provenance.mjs"
 	},
 	"dependencies": {
+		"beautiful-mermaid": "^1.1.3",
 		"get-east-asian-width": "^1.4.0",
+		"ignore": "^7.0.14",
+		"jsonc-parser": "^3.3.1",
 		"yaml": "^2.8.1"
 	},
 	"devDependencies": {

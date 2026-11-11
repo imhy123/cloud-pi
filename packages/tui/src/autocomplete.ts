@@ -1,6 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/autocomplete.ts
-// (commit 21f1188cf88): added the `ModelMentionCompletion` hook contract. See
-// PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";

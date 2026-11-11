@@ -1,5 +1,5 @@
-// cloud-pi-tui: new file. Image entry point: image component, Kitty graphics
-// and terminal image encoding helpers. See PATCHES.md.
+// cloud-pi-tui: new file. Image entry point: image component, Kitty graphics and terminal image encoding helpers.
+// See PATCHES.md.
 // Inline image rendering: Kitty and iTerm2 protocols, image budget, and placeholder grids.
 export * from "./components/image";
 export * from "./kitty-graphics";

@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/theme/tui-adapters.ts
-// (commit 21f1188cf88): added colorful Markdown roles and `setMarkdownColorful`.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/theme/tui-adapters.ts
+// (commit e325ffc73ab8; v18.18.7).
 // See PATCHES.md.
 import {
 	type HighlightColors as NativeHighlightColors,
@@ -13,10 +13,10 @@ import type { MarkdownTheme } from "../components/markdown";
 import type { SelectListTheme } from "../components/select-list";
 import type { SettingsListTheme } from "../components/settings-list";
 import type { SymbolTheme } from "../symbols";
+import type { AnsiColor } from "./schema";
 import chalk from "@oh-my-pi/pi-utils/chalk";
 import { LRUCache } from "@oh-my-pi/pi-utils/lru";
 import { resolveMermaidAscii } from "./mermaid-cache";
-import type { AnsiColor } from "./schema";
 import type { SlashCommandIconName } from "./symbols";
 import { ensureThemeSync, theme } from "./theme";
 import type { Theme } from "./theme-class";

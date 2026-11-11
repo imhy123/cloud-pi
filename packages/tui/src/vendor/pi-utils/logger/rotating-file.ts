@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/utils/src/logger/rotating-file.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /** Process-local rotating file sink: local-day and size rotation with bounded retention. */
 import * as fs from "node:fs";
 import * as os from "node:os";

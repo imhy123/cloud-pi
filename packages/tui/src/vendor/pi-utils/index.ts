@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/utils/src/index.ts (commit
-// 83de60ad99). Curated facade instead of the full upstream barrel.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/utils/src/index.ts
+// (commit e325ffc73ab8; v18.18.7). Curated facade instead of the full upstream barrel.
 // See PATCHES.md.
 /**
  * Curated facade over the vendored `@oh-my-pi/pi-utils` modules.

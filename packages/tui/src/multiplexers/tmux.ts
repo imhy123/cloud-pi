@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/multiplexers/tmux.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 import type { TerminalMultiplexerModule } from "./types";
 
 /** Wrap a control sequence in tmux's DCS passthrough envelope. */

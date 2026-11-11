@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/windows-input-mode.ts
-// (commit 21f1188cf88). Ctrl+J (VK_J) decodes as Enter and pending-string
-// detection requires a relayed introducer. See PATCHES.md.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/windows-input-mode.ts
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Decode Windows console win32-input-mode key records into the key sequences
  * the rest of the TUI already understands.
@@ -439,8 +439,13 @@ export class Win32PasteMarkerNormalizer {
 		if (output) this.#onInput(output);
 		if (this.#candidate || this.#pending) {
 			this.#timer = setTimeout(() => {
-				this.flush();
-				this.#onExpired?.();
+				// A stalled loop can have the rest of this record waiting in stdin's
+				// poll queue; release only after it has had a chance to arrive.
+				this.#timer = setTimeout(() => {
+					this.#timer = undefined;
+					this.flush();
+					this.#onExpired?.();
+				});
 			}, 75);
 		}
 	}

@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/prompt/image-format.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 const IMAGE_EXTENSION_BY_MIME: Record<string, string> = {
 	"image/png": "png",
 	"image/jpeg": "jpg",

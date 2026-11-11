@@ -16,15 +16,16 @@
 - Copyright (c) 2026 Stencil Labs, Inc.
 
 Vendored files keep their upstream paths under `src/`, except the
-`packages/utils` subset, which lives under `src/vendor/pi-utils/`. Every source
-file carries a provenance header naming its upstream file and commit; code that
+`packages/utils` subset, which lives under `src/vendor/pi-utils/`. TypeScript source
+files carry provenance headers naming their upstream file and commit. JSON sources
+and the full inventory are recorded in [SOURCES.json](./SOURCES.json); code that
 differs from upstream is listed in [PATCHES.md](./PATCHES.md) with the reason for
 the change.
 
 ## pi
 
 - Source: https://github.com/badlogic/pi-mono
-- Used as: reference implementation for the pure-TypeScript text engine
+- Used as: adapted source for the pure-TypeScript text and key engines
   (`visibleWidth`, `wrapTextWithAnsi`, `truncateToWidth`, `sliceWithWidth`,
   `extractSegments`, key parsing) that replaces oh-my-pi's native Rust addon
 - License: MIT
@@ -36,3 +37,10 @@ the change.
 | --- | --- | --- |
 | `get-east-asian-width` | MIT | UAX #11 display-width tables |
 | `yaml` | ISC | Keybindings/config YAML parsing and serialization |
+| `jsonc-parser` | MIT | JSONC keybinding configuration parsing |
+| `ignore` | MIT | Gitignore rule evaluation |
+| `beautiful-mermaid` | MIT | Pure TypeScript Mermaid terminal rendering |
+
+`beautiful-mermaid` includes a TypeScript port of Alexander Grooff's MIT-licensed
+mermaid-ascii engine; its distribution retains that attribution. It is consumed
+as an npm dependency, without copying its sources into this repository.

@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/prompt/image-source.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * File source carried on image attachments backed by a file on disk:
  * path-pasted/drag-and-dropped images, clipboard images the coding agent commits

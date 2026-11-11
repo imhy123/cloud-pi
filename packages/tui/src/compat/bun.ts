@@ -1,10 +1,10 @@
-// cloud-pi-tui: new file. Minimal `Bun` global shim so the vendored TUI
-// sources run on Node.js without a Bun runtime. See PATCHES.md.
+// cloud-pi-tui: new file. Partial Node.js Bun shim, with Unicode Jamo measurement separate from terminal overrides.
+// See PATCHES.md.
 /**
- * Minimal `Bun` global shim for running the vendored TUI sources on Node.js.
- * Bundles inject this module in place of the free `Bun` identifier; the
- * exported object mirrors only the APIs the TUI actually calls.
- */
+	* Minimal `Bun` global shim for running the vendored TUI sources on Node.js.
+	* Bundles inject this module in place of the free `Bun` identifier; the
+	* exported object mirrors only the APIs the TUI actually calls.
+	*/
 
 import * as fs from "node:fs";
 import * as fsp from "node:fs/promises";
@@ -28,7 +28,15 @@ function stringWidth(text: string, _options?: StringWidthOptions): number {
 	// Bun measures tabs and control characters as zero cells; the TUI adds tab
 	// width separately in `utils.visibleWidth`. Passing tabWidth 0 keeps this
 	// shim faithful and avoids double-counting every tab.
-	return visibleWidth(text, 0);
+	const width = visibleWidth(text, 0);
+	// The shared text engine follows terminal overrides; Bun's width remains 2
+	// for every Compatibility Jamo, with correction applied by utils.ts.
+	let delta = 0;
+	for (const ch of stripAnsi(text)) {
+		const cp = ch.codePointAt(0)!;
+		if (cp >= 0x3131 && cp <= 0x318e) delta += 2 - visibleWidth(ch, 0);
+	}
+	return width + delta;
 }
 
 // =============================================================================

@@ -1,5 +1,5 @@
-// cloud-pi-tui: new file. Structural stand-in for `@oh-my-pi/pi-ai` image
-// content types. See PATCHES.md.
+// cloud-pi-tui: new file. Structural stand-in for `@oh-my-pi/pi-ai` image content types.
+// See PATCHES.md.
 /**
  * Structural stand-in for `@oh-my-pi/pi-ai`. The TUI only consumes the image
  * content shape, so cloud-pi-tui stays free of the provider client package.

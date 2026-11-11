@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/components/composer/borderless.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Chrome-free composer: a bare `❯ ` prompt with no rules or borders. Also the
  * effective style whenever a host calls `setBorderVisible(false)` (hook

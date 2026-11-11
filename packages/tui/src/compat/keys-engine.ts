@@ -1,5 +1,5 @@
-// cloud-pi-tui: ported from pi packages/tui/src/keys.ts (commit 2a32a605a9).
-// Pure JavaScript; `ParsedKittySequence` and `parseKittySequence` are exported.
+// cloud-pi-tui: adapted copy of pi packages/tui/src/keys.ts
+// (commit 2a32a605a9f1). Exported ParsedKittySequence and parseKittySequence from the pi key engine.
 // See PATCHES.md.
 /**
  * Keyboard input handling for terminal applications.

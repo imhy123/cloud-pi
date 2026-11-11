@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/windows-altgr.ts (commit
-// 83de60ad99). FFI `user32.dll` bridge removed; `readAltGrLayer` always reports
-// an empty layer, keeping the injectable host seam. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/windows-altgr.ts
+// (commit e325ffc73ab8; v18.18.7). FFI `user32.dll` bridge removed; `readAltGrLayer` always reports an empty layer, keeping the injectable host seam.
+// See PATCHES.md.
 /**
  * Recover AltGr text that Windows console hosts drop under the kitty keyboard protocol.
  *

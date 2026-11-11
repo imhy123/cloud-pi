@@ -1,15 +1,17 @@
-// cloud-pi-tui: new file. Pure-TypeScript replacements for the
-// `@oh-my-pi/pi-natives` APIs the TUI uses (text, highlighting hook, image
-// metadata, TtyWriter, Mermaid stub). See PATCHES.md.
+// cloud-pi-tui: new file. Node worker output pump, gitignore-aware cached discovery, Mermaid adapter, text/key/highlighting and appearance facades.
+// See PATCHES.md.
 /**
- * Pure JavaScript replacement for the subset of `@oh-my-pi/pi-natives` that
- * the TUI uses. The native addon (Rust/N-API) is intentionally not part of
- * cloud-pi-tui: text measurement and key parsing come from local ports, syntax
- * highlighting is a pluggable no-op, and the remaining helpers degrade to
- * platform-neutral implementations.
- */
+	* Pure JavaScript replacement for the subset of `@oh-my-pi/pi-natives` that
+	* the TUI uses. The native addon (Rust/N-API) is intentionally not part of
+	* cloud-pi-tui: text measurement and key parsing come from local ports, syntax
+	* highlighting is a pluggable no-op, and the remaining helpers degrade to
+	* platform-neutral implementations.
+	*/
 
 import * as fs from "node:fs";
+import { renderMermaidASCII } from "beautiful-mermaid";
+import { Worker } from "node:worker_threads";
+import ignore, { type Ignore } from "ignore";
 import * as fsp from "node:fs/promises";
 import * as path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -91,12 +93,7 @@ export function wrapTextWithAnsi(text: string, width: number, tabWidth: number):
 	return wrapTextWithAnsiJs(text, width, tabWidth);
 }
 
-/**
- * Hangul Compatibility Jamo width correction is a native-only table.
- * The JavaScript engine measures these code points by their Unicode East
- * Asian Width, so every override mode behaves as the native `unicode` mode.
- */
-export function setHangulCompatJamoWidthOverride(_value: number): void {}
+export { setHangulCompatJamoWidthOverride } from "./text";
 
 // =============================================================================
 // Key parsing
@@ -265,58 +262,88 @@ export class MacAppearanceObserver {
 // TTY output
 // =============================================================================
 
-const EAGAIN = "EAGAIN";
-const WRITE_RETRY_LIMIT = 200;
-
-function sleepSync(ms: number): void {
-	const shared = new Int32Array(new SharedArrayBuffer(4));
-	Atomics.wait(shared, 0, 0, ms);
-}
-
-/**
- * Synchronous replacement for the native pump thread. Writes go straight to
- * the descriptor; `pending()` is always zero because nothing is buffered.
- */
-export class TtyWriter {
-	#fd: number;
-	#dead = false;
-
-	constructor(fd: number) {
-		this.#fd = fd;
-	}
-
-	write(data: string): number {
-		if (this.#dead) return 0;
-		const bytes = Buffer.from(data, "utf8");
-		for (let attempt = 0; ; attempt++) {
-			try {
-				fs.writeSync(this.#fd, bytes);
-				return 0;
-			} catch (err) {
-				const code = (err as NodeJS.ErrnoException).code;
-				if (code === EAGAIN && attempt < WRITE_RETRY_LIMIT) {
-					sleepSync(1);
-					continue;
-				}
-				this.#dead = true;
-				return 0;
-			}
+/** @internal Complete writes, retaining the offset across short writes and retries. */
+export function writeAllBytes(
+	bytes: Uint8Array,
+	write: (offset: number, length: number) => number,
+	progress: (count: number) => void,
+	pause: () => void,
+): void {
+	let offset = 0;
+	while (offset < bytes.length) {
+		try {
+			const written = write(offset, Math.min(16384, bytes.length - offset));
+			if (written <= 0) throw new Error("zero-byte terminal write");
+			offset += written;
+			progress(written);
+		} catch (err) {
+			const code = (err as NodeJS.ErrnoException).code;
+			if (code === "EINTR") continue;
+			if (code === "EAGAIN" || code === "EWOULDBLOCK") { pause(); continue; }
+			throw err;
 		}
 	}
+}
 
-	pending(): number {
-		return 0;
+/** Off-thread FIFO output with shared byte counts for synchronous shutdown. */
+export class TtyWriter {
+	#state = new Int32Array(new SharedArrayBuffer(8));
+	#worker: Worker;
+	#stopped = false;
+	constructor(fd: number) {
+		this.#worker = new Worker(`
+			const fs = require("node:fs");
+			const { parentPort, workerData } = require("node:worker_threads");
+			const state = new Int32Array(workerData.state);
+			const pause = new Int32Array(new SharedArrayBuffer(4));
+			const writeAll = (${writeAllBytes.toString()});
+			parentPort.on("message", data => {
+				if (data === null) { parentPort.close(); return; }
+				let remaining = data.length;
+				if (!Atomics.load(state, 1)) {
+					try {
+						writeAll(data, (offset, length) => fs.writeSync(workerData.fd, data, offset, length), count => {
+							remaining -= count;
+							Atomics.sub(state, 0, count);
+						}, () => Atomics.wait(pause, 0, 0, 2));
+					} catch { Atomics.store(state, 1, 1); }
+				}
+				if (remaining) Atomics.sub(state, 0, remaining);
+				Atomics.notify(state, 0);
+			});
+		`, { eval: true, workerData: { fd, state: this.#state.buffer } });
+		this.#worker.on("error", () => { Atomics.store(this.#state, 1, 1); Atomics.notify(this.#state, 0); });
+		this.#worker.on("exit", () => { if (!this.#stopped) Atomics.store(this.#state, 1, 1); Atomics.notify(this.#state, 0); });
+		this.#worker.unref();
 	}
-
-	get dead(): boolean {
-		return this.#dead;
+	write(data: string): number {
+		if (this.dead || this.#stopped) return this.pending();
+		const bytes = Buffer.from(data);
+		Atomics.add(this.#state, 0, bytes.length);
+		try { this.#worker.postMessage(bytes); }
+		catch { Atomics.sub(this.#state, 0, bytes.length); Atomics.store(this.#state, 1, 1); }
+		return this.pending();
 	}
-
-	flushSync(_timeoutMs: number): boolean {
-		return !this.#dead;
+	pending(): number { return Atomics.load(this.#state, 0); }
+	get dead(): boolean { return Atomics.load(this.#state, 1) !== 0; }
+	flushSync(timeoutMs: number): boolean {
+		const until = Date.now() + Math.max(0, timeoutMs);
+		while (!this.dead) {
+			const pending = this.pending();
+			if (!pending) return true;
+			const remaining = until - Date.now();
+			if (remaining <= 0) return false;
+			Atomics.wait(this.#state, 0, pending, remaining);
+		}
+		return false;
 	}
-
-	stop(_flushTimeoutMs: number): void {}
+	stop(timeoutMs: number): void {
+		if (this.#stopped) return;
+		const flushed = this.flushSync(timeoutMs);
+		this.#stopped = true;
+		if (flushed) this.#worker.postMessage(null);
+		else void this.#worker.terminate();
+	}
 }
 
 // =============================================================================
@@ -339,15 +366,11 @@ export interface MermaidRenderOptions {
 	};
 }
 
-/**
- * The native Mermaid renderer is not part of cloud-pi-tui. Throwing keeps the
- * markdown component's fallback (render the fenced source as code) intact.
- */
-export function renderMermaidAscii(
-	_text: string,
-	_options?: MermaidRenderOptions | null,
-): string {
-	throw new Error("Mermaid rendering is unavailable in cloud-pi-tui");
+/** Pure TypeScript renderer; unsupported syntax keeps the caller's code fallback. */
+export function renderMermaidAscii(text: string, options?: MermaidRenderOptions | null): string {
+	const { direction, ...rest } = options ?? {};
+	const source = direction ? text.replace(/^(\s*(?:graph|flowchart)\s+)(?:TD|TB|LR|RL|BT)\b/i, `$1${direction}`) : text;
+	return renderMermaidASCII(source, { ...rest, colorMode: rest.colorMode ?? "none" });
 }
 
 // =============================================================================
@@ -377,7 +400,6 @@ export interface FuzzyFindResult {
 }
 
 const SKIPPED_DIRECTORIES = new Set([".git", ".hg", ".svn"]);
-const GITIGNORED_DIRECTORIES = new Set(["node_modules", ".venv", "__pycache__"]);
 const MAX_SCANNED_ENTRIES = 200_000;
 
 function subsequenceScore(haystack: string, needle: string): number | null {
@@ -405,44 +427,89 @@ function scorePath(relativePath: string, query: string): number | null {
 	return subsequenceScore(lowerPath, lowerQuery);
 }
 
-/** Approximate the native fuzzy finder; ordering prefers basename prefix hits. */
+interface SearchEntry { path: string; isDirectory: boolean; }
+interface IgnoreScope { directory: string; rules: Ignore; }
+const discoveryCache = new Map<string, { at: number; entries: SearchEntry[] }>();
+const DISCOVERY_TTL_MS = 1000;
+
+/** Discover with nested gitignore rules; cache scans, never query-dependent ranks. */
 export async function fuzzyFind(options: FuzzyFindOptions): Promise<FuzzyFindResult> {
 	const root = path.resolve(options.path);
 	const includeHidden = options.hidden ?? false;
 	const respectGitignore = options.gitignore ?? true;
-	const maxResults = options.maxResults ?? 100;
+	const maxResults = Math.max(0, options.maxResults ?? 100);
 	const signal = options.signal as AbortSignal | undefined;
-	const deadline = options.timeoutMs ? Date.now() + options.timeoutMs : Number.POSITIVE_INFINITY;
-
+	const deadline = options.timeoutMs ? Date.now() + options.timeoutMs : Infinity;
+	const expired = () => signal?.aborted || Date.now() > deadline;
+	const cacheKey = JSON.stringify([root, includeHidden, respectGitignore]);
+	const cached = options.cache ? discoveryCache.get(cacheKey) : undefined;
+	let entries: SearchEntry[];
+	if (cached && Date.now() - cached.at < DISCOVERY_TTL_MS) entries = cached.entries;
+	else {
+		entries = [];
+		let scanned = 0;
+		let complete = true;
+		const loadRules = async (directory: string, filename: string): Promise<IgnoreScope | undefined> => {
+			try { return { directory, rules: ignore().add(await fsp.readFile(filename, "utf8")) }; }
+			catch { return undefined; }
+		};
+		const initial: IgnoreScope[] = [];
+		if (respectGitignore) {
+			const ancestors: string[] = [];
+			for (let dir = root;; dir = path.dirname(dir)) {
+				ancestors.unshift(dir);
+				if (fs.existsSync(path.join(dir, ".git")) || path.dirname(dir) === dir) break;
+			}
+			const repo = ancestors[0]!;
+			const exclude = await loadRules(repo, path.join(repo, ".git/info/exclude"));
+			if (exclude) initial.push(exclude);
+			for (const dir of ancestors.slice(0, -1)) {
+				const scope = await loadRules(dir, path.join(dir, ".gitignore"));
+				if (scope) initial.push(scope);
+			}
+		}
+		const visit = async (directory: string, inherited: IgnoreScope[]): Promise<void> => {
+			if (expired() || scanned >= MAX_SCANNED_ENTRIES) { complete = false; return; }
+			let scopes = inherited;
+			if (respectGitignore) {
+				const scope = await loadRules(directory, path.join(directory, ".gitignore"));
+				if (scope) scopes = [...inherited, scope];
+			}
+			let children: fs.Dirent[];
+			try { children = await fsp.readdir(directory, { withFileTypes: true }); }
+			catch { complete = false; return; }
+			for (const entry of children) {
+				if (expired() || scanned >= MAX_SCANNED_ENTRIES) { complete = false; return; }
+				scanned++;
+				if (!includeHidden && entry.name.startsWith(".")) continue;
+				if (entry.isDirectory() && SKIPPED_DIRECTORIES.has(entry.name)) continue;
+				const absolute = path.join(directory, entry.name);
+				const isDirectory = entry.isDirectory();
+				let ignored = false;
+				for (const scope of scopes) {
+					const relative = path.relative(scope.directory, absolute).split(path.sep).join("/") + (isDirectory ? "/" : "");
+					const result = scope.rules.test(relative);
+					if (result.ignored) ignored = true;
+					else if (result.unignored) ignored = false;
+				}
+				if (ignored) continue;
+				const relative = path.relative(root, absolute).split(path.sep).join("/");
+				entries.push({ path: relative, isDirectory });
+				if (isDirectory) await visit(absolute, scopes);
+			}
+		};
+		await visit(root, initial);
+		if (options.cache && complete) {
+			if (discoveryCache.size >= 16) discoveryCache.delete(discoveryCache.keys().next().value!);
+			discoveryCache.set(cacheKey, { at: Date.now(), entries });
+		}
+	}
 	const matches: FuzzyFindMatch[] = [];
-	let scanned = 0;
-
-	const visit = async (directory: string): Promise<void> => {
-		if (signal?.aborted || Date.now() > deadline || scanned > MAX_SCANNED_ENTRIES) return;
-		let entries: fs.Dirent[];
-		try {
-			entries = await fsp.readdir(directory, { withFileTypes: true });
-		} catch {
-			return;
-		}
-		for (const entry of entries) {
-			if (signal?.aborted || Date.now() > deadline || scanned > MAX_SCANNED_ENTRIES) return;
-			scanned++;
-			const name = entry.name;
-			if (!includeHidden && name.startsWith(".")) continue;
-			if (entry.isDirectory() && SKIPPED_DIRECTORIES.has(name)) continue;
-			if (entry.isDirectory() && respectGitignore && GITIGNORED_DIRECTORIES.has(name)) continue;
-
-			const absolute = path.join(directory, name);
-			const relative = path.relative(root, absolute).split(path.sep).join("/");
-			const isDirectory = entry.isDirectory();
-			const score = scorePath(isDirectory ? `${relative}/` : relative, options.query);
-			if (score !== null) matches.push({ path: relative, isDirectory, score });
-			if (isDirectory) await visit(absolute);
-		}
-	};
-
-	await visit(root);
+	for (const entry of entries) {
+		if (expired()) break;
+		const score = scorePath(entry.path + (entry.isDirectory ? "/" : ""), options.query);
+		if (score !== null) matches.push({ ...entry, score });
+	}
 	matches.sort((a, b) => b.score - a.score || a.path.localeCompare(b.path));
 	return { matches: matches.slice(0, maxResults), totalMatches: matches.length };
 }

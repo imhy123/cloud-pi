@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/theme/loader.ts
-// (commit 21f1188cf88): passes the `terminal.ansi` palette to the Theme.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/theme/loader.ts
+// (commit e325ffc73ab8; v18.18.7).
 // See PATCHES.md.
 import * as fs from "node:fs";
 import * as path from "node:path";

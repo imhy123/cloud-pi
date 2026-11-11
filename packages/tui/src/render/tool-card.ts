@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/render/tool-card.ts
-// (commit 83de60ad99). Removed the TSP/native describe variants and status
-// spans. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/render/tool-card.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP/native describe variants and status spans.
+// See PATCHES.md.
 import { Text } from "../components/text";
 import type { Theme, ThemeColor } from "../theme/theme";
 import type { Component } from "../tui";

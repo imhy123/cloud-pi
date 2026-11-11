@@ -1,7 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/editor.ts
-// (commit 21f1188cf88): added `setText` cursor placement and synchronous model
-// mention completion. Removed the TSP describe/decoration pipeline and native
-// caret nodes. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/editor.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP describe/decoration pipeline and native caret nodes.
+// See PATCHES.md.
 import { getProjectDir } from "@oh-my-pi/pi-utils/dirs";
 import * as logger from "@oh-my-pi/pi-utils/logger";
 import {

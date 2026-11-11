@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/render/output-pane.ts
-// (commit 83de60ad99). Removed native describe code, SIXEL masking and the
-// `uncapSixel`/`hasSixel` options. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/render/output-pane.ts
+// (commit e325ffc73ab8; v18.18.7). Removed native describe code, SIXEL masking and the `uncapSixel`/`hasSixel` options.
+// See PATCHES.md.
 import { Text } from "../components/text";
 import { getThemeEpoch, type Theme } from "../theme/theme";
 import type { Component } from "../tui";

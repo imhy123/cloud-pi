@@ -1,8 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/terminal.ts (commit
-// 21f1188cf88). Removed `bun:ffi`, the TSP handshake/ConPTY rewrite, tmux TSP
-// helpers and the SIXEL probe; added DA1 reply draining, cooked-mode typeahead
-// restore, a relayed-string timeout, and the dead-terminal handoff. See
-// PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/terminal.ts
+// (commit e325ffc73ab8; v18.18.7). Removed `bun:ffi`, the TSP handshake/ConPTY rewrite, tmux TSP helpers and the SIXEL probe; added DA1 reply draining, cooked-mode typeahead restore, a relayed-string timeout, and the dead-terminal handoff.
+// See PATCHES.md.
 import * as fs from "node:fs";
 import { TtyWriter } from "@oh-my-pi/pi-natives";
 import { $env, isBunTestRuntime, isTerminalHeadless, isWsl } from "@oh-my-pi/pi-utils/env";
@@ -1180,7 +1178,11 @@ export class ProcessTerminal implements Terminal {
 				for (const key of win32Keys) this.#stdinSequenceHandler?.(key);
 				if (decoder.hasPendingSequence) {
 					this.#win32PendingFlushTimer = setTimeout(
-						() => this.#releaseWin32PendingSequence(),
+						() => {
+							// An overdue timer runs before poll delivers relayed tail records.
+							// Give stdin one poll pass before releasing a held ESC or string.
+							this.#win32PendingFlushTimer = setTimeout(() => this.#releaseWin32PendingSequence());
+						},
 						decoder.hasPendingString ? WIN32_RELAYED_STRING_TIMEOUT_MS : WIN32_RELAYED_ESCAPE_TIMEOUT_MS,
 					);
 				}

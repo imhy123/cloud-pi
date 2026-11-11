@@ -1,8 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/tui.ts (commit
-// 21f1188cf88). Removed the TSP native backend, hello probe, native
-// overlay/sheet paint paths, debug server and SIXEL crop; added DA1 reply
-// draining, the frame-rate ceiling and input-echo floor, and row moves. See
-// PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/tui.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP native backend, hello probe, native overlay/sheet paint paths, debug server and SIXEL crop; added DA1 reply draining, the frame-rate ceiling and input-echo floor, and row moves.
+// See PATCHES.md.
 /**
  * Minimal TUI implementation with explicit history batches.
  *

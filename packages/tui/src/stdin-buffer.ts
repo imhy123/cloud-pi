@@ -1,7 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/stdin-buffer.ts (commit
-// 21f1188cf88). Bracketed-paste chunks route interleaved APC reports and split
-// a trailing typed Enter; the TSP paste-report branch stays removed. See
-// PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/stdin-buffer.ts
+// (commit e325ffc73ab8; v18.18.7). Removed TSP paste-report detection; retained APC reports and paste recovery.
+// See PATCHES.md.
 /**
  * StdinBuffer buffers input and emits complete sequences.
  *

@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/ttyid.ts (commit
-// 83de60ad99). FFI `ttyname` replaced with Node-based resolution
-// (`/proc/self/fd/0`, `readlink /dev/fd/0`, `ps -o tty=`). See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/ttyid.ts
+// (commit e325ffc73ab8; v18.18.7). FFI `ttyname` replaced with Node-based resolution (`/proc/self/fd/0`, `readlink /dev/fd/0`, `ps -o tty=`).
+// See PATCHES.md.
 // Resolve the controlling terminal path using Node APIs (FFI-free port).
 
 import { spawnSync } from "node:child_process";

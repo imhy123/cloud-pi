@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/theme/theme.ts (commit
-// 21f1188cf88). Comment-only change: SIXEL wording removed from the background
-// and repaint notes; exports `setMarkdownColorful`. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/theme/theme.ts
+// (commit e325ffc73ab8; v18.18.7). Removed SIXEL wording from background and repaint comments.
+// See PATCHES.md.
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { detectMacOSAppearance, MacAppearanceObserver } from "@oh-my-pi/pi-natives";

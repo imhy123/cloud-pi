@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/key-hint-format.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Key-hint formatting, kept free of the native addon: it imports only types
  * plus the theme symbol mirror, so addon-free CLI paths (`omp --version`,

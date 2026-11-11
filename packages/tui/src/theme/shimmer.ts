@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/theme/shimmer.ts (commit
-// 83de60ad99). Removed `describeShimmer` and the native "paint nothing" branch.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/theme/shimmer.ts
+// (commit e325ffc73ab8; v18.18.7). Removed `describeShimmer` and the native "paint nothing" branch.
 // See PATCHES.md.
 import type { Theme, ThemeColor } from "./theme";
 import { FG_RESET } from "./color";

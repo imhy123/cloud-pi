@@ -1,5 +1,6 @@
-// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/keys.ts
-// (commit 83de60ad99). See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/keys.ts
+// (commit e325ffc73ab8; v18.18.7). Publicly re-exported KeyEventType for generated declarations.
+// See PATCHES.md.
 /**
  * Keyboard input handling for terminal applications.
  *
@@ -20,6 +21,7 @@
  * - isKittyProtocolActive() - Query global Kitty protocol state
  */
 
+export type { KeyEventType } from "@oh-my-pi/pi-natives";
 import type { KeyEventType } from "@oh-my-pi/pi-natives";
 import {
 	matchesKey as matchesKeyNative,

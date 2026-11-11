@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/utils/src/yaml-config.ts (commit
-// 83de60ad99). `Bun.YAML.stringify` replaced with the `yaml` package.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/utils/src/yaml-config.ts
+// (commit e325ffc73ab8; v18.18.7). `Bun.YAML.stringify` replaced with the `yaml` package.
 // See PATCHES.md.
 import { stringify } from "yaml";
 

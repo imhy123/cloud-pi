@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/components/composer/types.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Composer chrome contract. A {@link ComposerStyle} owns everything about how
  * the input editor's frame looks — top/bottom chrome, per-row side chrome,

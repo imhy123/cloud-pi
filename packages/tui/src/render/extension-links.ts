@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/render/extension-links.ts
-// (commit 83de60ad99). Native-rendering state removed; markers are always
-// emitted for a registered scheme and stripped by the TUI. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/render/extension-links.ts
+// (commit e325ffc73ab8; v18.18.7). Native-rendering state removed; markers are always emitted for a registered scheme and stripped by the TUI.
+// See PATCHES.md.
 /**
  * Links whose scheme an extension registered (`pi.registerLinkScheme`). Markdown draws them
  * without the ` (url)` suffix. The rendered row carries an OSC 8 marker with the URL so a click's

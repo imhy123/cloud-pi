@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/prompt/image-references.ts
-// (commit 83de60ad99). Removed native link spans; `imageLinksEnabled` now
-// reflects OSC 8 support only. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/prompt/image-references.ts
+// (commit e325ffc73ab8; v18.18.7). Removed native link spans; `imageLinksEnabled` now reflects OSC 8 support only.
+// See PATCHES.md.
 import type { ImageContent } from "@oh-my-pi/pi-ai";
 import { logger } from "@oh-my-pi/pi-utils";
 import { fileHyperlink, isHyperlinkEnabled } from "../render/hyperlink";

@@ -1,0 +1,1506 @@
+{
+	"upstreamTag": "v18.18.7",
+	"files": [
+		{
+			"file": "active-terminal.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/active-terminal.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e4a95c7d2c83bb0e9e5221d4565db13868df1fc840986a9c353a22c1302a4b0a"
+		},
+		{
+			"file": "app-keybindings.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/app-keybindings.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "471798248130d0386cd47d209e6248ef8a8aab348cb4da8c070fd1a09ca6ee02",
+			"changes": "Replaced Bun JSONC/YAML with jsonc-parser and yaml."
+		},
+		{
+			"file": "autocomplete.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/autocomplete.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "95c2e6abc8a233352fa5343ea7f91d803d5cd1d2625cf649ba7554a7823db744"
+		},
+		{
+			"file": "bracketed-paste.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/bracketed-paste.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3b1de55f31c87e50f64a2c81796f4e3829fc04e2a4be714a4940f98da5dae0ab"
+		},
+		{
+			"file": "chrome/keybinding-hints.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/chrome/keybinding-hints.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "846302906245a2e169a969509de27ac11abdfc0657a045c72b8aeaf6d8783f3f"
+		},
+		{
+			"file": "chrome/visual-truncate.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/chrome/visual-truncate.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0860ae41dba6630f0c0fb9d6c32aa6772563aa8a711eabf8b9a173670e825148"
+		},
+		{
+			"file": "compat/bun-globals.d.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Ambient typings for the injected `Bun` shim."
+		},
+		{
+			"file": "compat/bun.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Partial Node.js Bun shim, with Unicode Jamo measurement separate from terminal overrides."
+		},
+		{
+			"file": "compat/keys-engine.ts",
+			"kind": "adapted",
+			"origin": "pi",
+			"source": "packages/tui/src/keys.ts",
+			"commit": "2a32a605a9f18a5f0191f65358a2e764b2f69fc7",
+			"upstreamSha256": "8db2ec979e8aae55d21c8a3efba7334b1e5723ebc6f3fe552c5aa96da59f2298",
+			"changes": "Exported ParsedKittySequence and parseKittySequence from the pi key engine."
+		},
+		{
+			"file": "compat/natives-path.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Windows path helpers preserve their input; Win32 8.3 expansion is unavailable."
+		},
+		{
+			"file": "compat/natives.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Node worker output pump, gitignore-aware cached discovery, Mermaid adapter, text/key/highlighting and appearance facades."
+		},
+		{
+			"file": "compat/pi-agent-core.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Structural stand-in for `@oh-my-pi/pi-agent-core` (`ThinkingLevel`)."
+		},
+		{
+			"file": "compat/pi-ai.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Structural stand-in for `@oh-my-pi/pi-ai` image content types."
+		},
+		{
+			"file": "compat/text.ts",
+			"kind": "adapted",
+			"origin": "pi",
+			"source": "packages/tui/src/utils.ts",
+			"commit": "2a32a605a9f18a5f0191f65358a2e764b2f69fc7",
+			"upstreamSha256": "767502b2baec02dfd33cdc35c5bfc0b7229ad033ffeaae8e707670b7b7ea8b19",
+			"changes": "Pure TypeScript text engine with explicit tab width, terminal Jamo overrides, complete CSI detection and colon SGR state."
+		},
+		{
+			"file": "components/box.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/box.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "785e1b05fd25f2878097f0141f2e6f06085364fc69b604d4639bd1dcd9e80fc8",
+			"changes": "Removed the TSP `describe()` implementation and native helper imports; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/cancellable-loader.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/cancellable-loader.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "29ae8073b05d9df2d0d7281c17e74564c890d80e3e9f23033f3f7fa194baccb1"
+		},
+		{
+			"file": "components/composer/band.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/band.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6665c08326b9101da8e0defccf43ec7d66d66a92331805c01ddd002e04554d00"
+		},
+		{
+			"file": "components/composer/borderless.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/borderless.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "deaedc953323d9229347108bb7caf65e57566f3c56f9d4877a1b0a7a0da76099"
+		},
+		{
+			"file": "components/composer/box.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/box.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "80be9f6357c6e1ce079a1dd36f27055474bc6744f93f07ac5915cfb2305761f3"
+		},
+		{
+			"file": "components/composer/claude.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/claude.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "94123cd0b486f58d42d1536831f7f3a0248b6e1cfcbb02ee50d3de0c5c04138b"
+		},
+		{
+			"file": "components/composer/field.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/field.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "da3d466ad2dddf2e0acfa468f5f696d5296f881481af8b0b962958f0dfa66031"
+		},
+		{
+			"file": "components/composer/index.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ebe01e4aefeeb7a884f18142b08bc29b5e93c9dcc58989f98498bae1b8d809ab"
+		},
+		{
+			"file": "components/composer/pi.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/pi.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0d9eefd7cbdfaf29129f996020d06971f8e839c5fd1eb3898e5976ba5a8d4c82"
+		},
+		{
+			"file": "components/composer/rail.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/rail.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8d703a1a0f7162ab76dfcafc2ff8c874b46d0b9e2a8793c35d4a8be581e6bee1"
+		},
+		{
+			"file": "components/composer/registry.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/registry.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "778fefda8b9e90a985a73188cbc5a854ac0ea827a806573c3845bce5f41bfe7b"
+		},
+		{
+			"file": "components/composer/rule.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/rule.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "33ea3e6240d52d63ba61da76eb8a1e252a4158f849381fc6306ae815ed809cc9"
+		},
+		{
+			"file": "components/composer/types.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/composer/types.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "49ee777fe1f38d7927a277c7c76d7e9a6ad5e4d4a59a95110ac7ae2657de6b47"
+		},
+		{
+			"file": "components/disclosure.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/disclosure.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "34f21f16baffadb027949eb675e8d40c0df31c768cb1892c3a702a52220d8ec0",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/editor.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/editor.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c1d18255bc69285225312c88df3893f4ea5a3ffb59182b6e45ab11bc29322173",
+			"changes": "Removed the TSP describe/decoration pipeline and native caret nodes."
+		},
+		{
+			"file": "components/form.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/form.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8f9e1d2135ebd3d711ea2836138e921ebe1165558918f513e73c241c72993080",
+			"changes": "Removed the TSP describe tree and the native picker sheet."
+		},
+		{
+			"file": "components/image.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/image.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8080fba2566105eecf2b32d42463ea7a3fc3e44da192e30b2fe59776ad164e4b",
+			"changes": "Removed SIXEL encoding and the native image node; Kitty/iTerm2 rendering is unchanged."
+		},
+		{
+			"file": "components/index.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Public component barrel."
+		},
+		{
+			"file": "components/input.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/input.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ef128fdb50cf7727d440d4f6eaeb909184a0808d79f507ae5447d8e62117fd45",
+			"changes": "Removed the TSP describe path and `TspInputProps`."
+		},
+		{
+			"file": "components/key-value-list.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/key-value-list.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1709a7db903bb42531788adad6b26328b6f623e91b92c994b834d1fe56c25baf",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/layout/geometry.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/layout/geometry.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "223feb5828ed699061fdf80be092afccf74577542354805ab9db754781b3e405",
+			"changes": "Removed the TSP native layout adapter and `TspProps`."
+		},
+		{
+			"file": "components/layout/row.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/layout/row.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "58effb7d6b0e52a34845ac6326dcdd3308732e72a68330d59b6bef0176ed94d3",
+			"changes": "Removed the native row describe path and slot helpers."
+		},
+		{
+			"file": "components/layout/split-pane.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/layout/split-pane.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4c4764008bd92ddae3a85c5e7a1859e4512d9ab2a552e6f7c59d04785a1bc60a",
+			"changes": "Removed the TSP native describe path and slot helpers."
+		},
+		{
+			"file": "components/layout/stack.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/layout/stack.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9e3e0a9d53541a5c858623db69c47c604af068c9e6339f65505f67e28a677375",
+			"changes": "Removed the native stack describe path and slot helpers."
+		},
+		{
+			"file": "components/loader.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/loader.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e3f1224c729bd12d993f3207bed28a74051ee8c3a3df17f80403c1a0c84354f6",
+			"changes": "Removed the TSP describe path, native helpers and `TspProps`; spinner cadence comes from the shared spinner clock."
+		},
+		{
+			"file": "components/markdown.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/markdown.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0258df7301ccd59bae70abe79c76aa3e57176d9a52a5a2c45ca8b9723239c8ad",
+			"changes": "Removed native Markdown describe paths; retained the v18.18.7 render path."
+		},
+		{
+			"file": "components/menu-selection.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/menu-selection.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a2e4ee80e5e7728bb440ffbe8fda0292d9fc42cc14a79451c9b9075abc395335"
+		},
+		{
+			"file": "components/metric.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/metric.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1f7aa8ae4e0431f52a7ce4ab4e7cd78fd0beec6bb18c17fa15129e373daac6f6",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/progress-bar.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/progress-bar.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6c8a55a227c0c4a89bdeb052c44d58b634a4807f03e2de5526bb67e2fc7884e9",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/scroll-view.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/scroll-view.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ee1007ea8313b31d7b9c2ddaacffb932e2ce7df62cb308e5e7905144d864978c",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/scroll-viewport.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/scroll-viewport.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "069a38833c5d1a2d1704bb91b7c7c759b067e7716099db60cf60a4b9d32ec474"
+		},
+		{
+			"file": "components/section.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/section.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "015823c23f95710351416fc6266f2664dcfeee9e52e51781e65e45acad83bbf8",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/select-list.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/select-list.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2e1701472b0ebea35668f018672c9c202d126d1620d80545ecf8635700bba38b",
+			"changes": "Removed TSP props and the native described-item cache."
+		},
+		{
+			"file": "components/settings-list.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/settings-list.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e2249a3284e164556268448dc140a074d6f76357c4d112634fb7a1c7515b35f8",
+			"changes": "Removed TSP preference types and the native described-item cache."
+		},
+		{
+			"file": "components/spacer.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/spacer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fe6e575b3a2579874743ef0f935e7f2166e931e4a444e457fb30220564523790",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/sparkline.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/sparkline.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d97f449063f2b038c0e37517568535712cc2bef8556e363eec3f0bfa294b3958"
+		},
+		{
+			"file": "components/tab-bar.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/tab-bar.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "46ae552df7b9604d2e17c6c53e6fe53f811a1613152db31edc2ff49ecb0f15a1",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/table.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/table.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1ec116e9d6de733b937604b7afb6d37be6dabcaa55bc35340bcbb868bd514088",
+			"changes": "Removed the TSP describe path and `TspTableColumn`/ `TspText`."
+		},
+		{
+			"file": "components/text.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/text.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ec45e8fd50c91fd2e88b9eb0651b67bfeb5f155686b8e0e60613f2ea62ab0db1",
+			"changes": "Removed the native describe path and tone helpers; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/tree-view.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/tree-view.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "65f7209acab2c403864538d266c25011ebf40b2ee00edaa5d44b31054fd68b8a",
+			"changes": "Removed TSP tree types and the native describe path."
+		},
+		{
+			"file": "components/truncated-text.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/truncated-text.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "87778736a47e40f86b10fef2dd3b8b2f216de2f9ea48eb400cc79c9182c67a93",
+			"changes": "Removed the TSP `describe()` implementation; the `render()` path is unchanged."
+		},
+		{
+			"file": "components/wizard-step.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/components/wizard-step.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "13e862001264934e6ca3a4dec60120b30e5832c76520f798becc429a029893b8",
+			"changes": "Removed the TSP describe path; `sameItems` is replaced with an element-wise comparison."
+		},
+		{
+			"file": "deccara.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/deccara.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "573ad897f6d8ba9363db07a75f5342c5dcaf67ea8ab19d644c436d124d55f509"
+		},
+		{
+			"file": "desktop-notify.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/desktop-notify.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "800e61fbc572955a9afce2321917f7cda0f3802b09917b0f8687a2c312ac5d65"
+		},
+		{
+			"file": "editor-component.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/editor-component.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e8ee21211addb1efebeeba7236614b9d8b6fb23aeaf3089a699816219b20c6ad"
+		},
+		{
+			"file": "frame-rate.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/frame-rate.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "582482c7a308a88be7f0ed6087be3776f8594ed694060cb14fc88706c80d556f"
+		},
+		{
+			"file": "fuzzy.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/fuzzy.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2a7f200c11f7345f3ad1c7d881ab895c9643fd5fbcc10c7dea6fbbe59916f980"
+		},
+		{
+			"file": "glyph-protocol.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/glyph-protocol.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b0b5483cd6380ffbad7a235f59691c234bf915aa1cb1bc3e73d00e5a140c38ef"
+		},
+		{
+			"file": "image.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Image entry point: image component, Kitty graphics and terminal image encoding helpers."
+		},
+		{
+			"file": "index.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "58b73d5ff1d767bf6bbd344539f6e044df10b576b474a81469a92b7264be41d5",
+			"changes": "Removed CLI, native and debug-server exports; retained library exports."
+		},
+		{
+			"file": "key-hint-format.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/key-hint-format.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "404b2ed7621d6229ee7afbc5721250ce8a0bd85dc07a5b1c325d4f839e00b7ad"
+		},
+		{
+			"file": "keybinding-matchers.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/keybinding-matchers.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "559ee51392f3318a84c6c01768ea254f6247b97cd9538ee05b6384e4d7931b86"
+		},
+		{
+			"file": "keybindings.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/keybindings.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "782bcf279e6eecf5c2edf8f75f47020c1dccb32e50cb4a864b4aa8bc977693a3"
+		},
+		{
+			"file": "keys.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/keys.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "860dcdb3ae87d3069b20287c6e66b2af325c23555dac36ce819b2fde67f0e043",
+			"changes": "Publicly re-exported KeyEventType for generated declarations."
+		},
+		{
+			"file": "kill-ring.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/kill-ring.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8428e4650b4d28f610422582c7cbd16c7ff64ab5c557d403b179053379332a58"
+		},
+		{
+			"file": "kitty-graphics.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/kitty-graphics.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "30a746ff858cb6e483707c684f216303a95fc26d5954b970013ca613a32621a2"
+		},
+		{
+			"file": "lang-from-path.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/lang-from-path.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "32853a091656d5514dec005a56c5a8e7fc3036cdd25624a0ac56a4a9dec2b98d"
+		},
+		{
+			"file": "latex-block.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/latex-block.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3ab345b64b6a168c8423ffda71433d4ea9dadb4b82381d796d2665b8e1064c06",
+			"changes": "Removed describeLatex and its TSP dependencies."
+		},
+		{
+			"file": "latex-to-unicode.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/latex-to-unicode.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a516067b6e043ab5afffe282f8d6677f5bcc65cf1322faee4fab78f4377b2a4b"
+		},
+		{
+			"file": "loop-watchdog.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/loop-watchdog.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b733dd371796c368e005fa108c6879d5343b32aea4578e236a8141701b086d8e"
+		},
+		{
+			"file": "motion-effects.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/motion-effects.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0f6e1dcd2d3a429e16817f7b9e15b32e284e9bd93b745ad74f24affb48b67c64"
+		},
+		{
+			"file": "mouse.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/mouse.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9a7415fef129f774e4ea81eb500f885c4aab52060dd16502c7677b10641787b8"
+		},
+		{
+			"file": "multiplexers/cmux.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/cmux.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4408466a20ebe1adc6a6646114c28785128f0c7d5e401c202ecd4d9c36662f84"
+		},
+		{
+			"file": "multiplexers/herdr.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/herdr.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1ff1ca26044d111d8f8f90a2fa453ab6453192df73b644b34ba544bc3ae59aa7"
+		},
+		{
+			"file": "multiplexers/index.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Public multiplexer barrel."
+		},
+		{
+			"file": "multiplexers/notify.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/notify.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8d9133a900a459b227209d72a114b6572378321885f25b95ca453e793d317b30"
+		},
+		{
+			"file": "multiplexers/orca.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/orca.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "df0e40a4795f403c98f2d9eb79ec067349b7886e5e5657e19f2cd328f6108ea0"
+		},
+		{
+			"file": "multiplexers/screen.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/screen.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "70fbe8b63660c093dda4c81a231a132284820af637eca6fe17a36f25980e906d"
+		},
+		{
+			"file": "multiplexers/tmux.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/tmux.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3262ad59ca0f0bb7f459208ef12c667aa59f401c74e7e3f31a979531235bd45c"
+		},
+		{
+			"file": "multiplexers/types.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/types.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "55ce7d62f813e469268b9afbeecfd167a1baa976c4ff874a01200c71f254fb28"
+		},
+		{
+			"file": "multiplexers/wmux.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/wmux.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4238a4614d2e082ebf1f530d9a327d303a42220c62a2953f7419886c972f1413"
+		},
+		{
+			"file": "multiplexers/zellij.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/multiplexers/zellij.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "220583a4e391177fe000321e972077e8eff0358ea61167402d85d62688cbcaa2"
+		},
+		{
+			"file": "notifications.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Notification entry point: OSC formatting, multiplexer routing and desktop toasts."
+		},
+		{
+			"file": "prompt/image-format.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/prompt/image-format.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0ee015ce9148c3364641b9a88d50fa49dffb10382df544791d511a9eeca996bf"
+		},
+		{
+			"file": "prompt/image-references.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/prompt/image-references.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "92be7e5baceaa692f6fc5965a8b65943e3bd53ec4416c72564f206cb3bcf59df",
+			"changes": "Removed native link spans; `imageLinksEnabled` now reflects OSC 8 support only."
+		},
+		{
+			"file": "prompt/image-source.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/prompt/image-source.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f2ce6e93be44cd352c1f1d90942ac64fe47cc658393d85b88c95e7c87d4ded05"
+		},
+		{
+			"file": "render/code-cell.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/code-cell.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "90a329172464206c23be3fd9053d3aba7ea942a4895fb6120a14457175e8b40e",
+			"changes": "Removed the TSP/native describe variants; text rendering is unchanged."
+		},
+		{
+			"file": "render/composite.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/composite.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e9feac0076520d0771080aabc5b3d1caa55aa8a6cea34767cad483a81da61471"
+		},
+		{
+			"file": "render/extension-links.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/extension-links.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7e360c4c9b53ba5bc1282f29e8af4e463f3f3b493a19a112391eb00a001c6bb5",
+			"changes": "Native-rendering state removed; markers are always emitted for a registered scheme and stripped by the TUI."
+		},
+		{
+			"file": "render/file-list.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/file-list.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2fb0500c5334ce895dcc9937ac6a3c9260d63ebdd7a58ed699005f00cce1e153",
+			"changes": "Removed `describeFileList`; text rendering is unchanged."
+		},
+		{
+			"file": "render/hanging-wrap.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/hanging-wrap.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cd3a4b556de16dd4bcc845a44686c60846a83c0d3bfeeae4420ff8c9fd01f0bd"
+		},
+		{
+			"file": "render/hyperlink.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/hyperlink.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "930ecb1e2036296c0ec196c90e559872bb711bfa85d45ad5ecd188de7cb0a69d",
+			"changes": "Removed the native link spans; OSC 8 helpers are unchanged."
+		},
+		{
+			"file": "render/index.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "585ae01503a181a5eeafd342c8b07b75a11538cef242d3b8d359f7145dd5acd6",
+			"changes": "Dropped the removed `sixel` barrel export."
+		},
+		{
+			"file": "render/link-hints.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/link-hints.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d53020cd195961d414b941842730236ebdcac46dbbafadbecc2cba243d2c9cb3"
+		},
+		{
+			"file": "render/output-block.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/output-block.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "462f3eaa9d1c7a4b45c49dce6164dcb2d6f78f60754c086088ef7767cf799560",
+			"changes": "Removed TSP types and SIXEL payload preservation."
+		},
+		{
+			"file": "render/output-pane.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/output-pane.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "30cbf6f6047a78de1eb6da1f90e6d37f62f8d53fd95352163686ec9a637de142",
+			"changes": "Removed native describe code, SIXEL masking and the `uncapSixel`/`hasSixel` options."
+		},
+		{
+			"file": "render/render-utils.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/render-utils.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a798535eab79ccd58dad317c7eed82b02bdd7c61ba052f89e8c7a05a14648077"
+		},
+		{
+			"file": "render/row-moves.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/row-moves.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "24bd46ab3be39a82cf46da34d46cead59220a14e22157d04d07de334c3bd15be"
+		},
+		{
+			"file": "render/status-line.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/status-line.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d62a86ae6ed2eb8712b0026260337569000974b1e6e3bca87d4029751e67d033"
+		},
+		{
+			"file": "render/tool-card.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/tool-card.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f61c8346b74341fe7679c2a1dcca29b2dabddecea4e5d5890c062ef62c6fda21",
+			"changes": "Removed the TSP/native describe variants and status spans."
+		},
+		{
+			"file": "render/tree-list.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/tree-list.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9e890b42dfca903df69fed25b2e8cb6a877cf311881c85a387e27dbb275eb417",
+			"changes": "Removed `describeTreeList`; text rendering is unchanged."
+		},
+		{
+			"file": "render/types.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/types.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5e3df7de0c518e2b138be2a1c25727c177424c6c46f9251558615577635cdaa9"
+		},
+		{
+			"file": "render/utils.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/utils.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "85293177fcc38168921b447ac9eef05ffe353310b645dcd1a4f6419adc71e547"
+		},
+		{
+			"file": "render/width-aware-text.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/render/width-aware-text.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ededea150e3ab96ecf0ffbeda82575796307bb86945a2e007acf6526b13aada2",
+			"changes": "Removed the native describe path."
+		},
+		{
+			"file": "space-hold.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/space-hold.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "373eb6e94cf0eddab85bc9157efd718254ddf83b8572295bac77e122338a9c39"
+		},
+		{
+			"file": "spinner-clock.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/spinner-clock.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9e43495e7ceea329828388bd9495206f9c2c46741156a03204b559c27270d7d7"
+		},
+		{
+			"file": "stdin-buffer.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/stdin-buffer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5f697799fadbd941685af010af13131af6734f7333dacaf4e5731b1ec11eebbc",
+			"changes": "Removed TSP paste-report detection; retained APC reports and paste recovery."
+		},
+		{
+			"file": "symbols.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/symbols.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f77e3ea8f08cc1ca3d0a84ae4107a126ba649fb4e3c1b50aaa3c304aad7625b1"
+		},
+		{
+			"file": "terminal-capabilities.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/terminal-capabilities.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2133f1410e040ddf22d8b2ec623fb1d86502152e21d0e8b80db24660e11a4a5f",
+			"changes": "Removed SIXEL encoding/detection and the native import; Kitty and iTerm2 detection are unchanged, and OSC 99 IDs take a per-process random prefix."
+		},
+		{
+			"file": "terminal-multiplexer.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/terminal-multiplexer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "709c94aa50cc5505c20cead514226227c24f6c4892bea51f653d0302c6ae52b6"
+		},
+		{
+			"file": "terminal.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/terminal.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0316094e96c17130c60956fb670c63e76a50e440dacbfe26ef244ed62afcb9e8",
+			"changes": "Removed `bun:ffi`, the TSP handshake/ConPTY rewrite, tmux TSP helpers and the SIXEL probe; added DA1 reply draining, cooked-mode typeahead restore, a relayed-string timeout, and the dead-terminal handoff."
+		},
+		{
+			"file": "theme/active-symbols.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/active-symbols.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8b48046de09610a84b5b7460464fc3a0320b48bbbc43a49b14bd8cb69c0c9cf3"
+		},
+		{
+			"file": "theme/color.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/color.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "406991bea3eacec38b2b8764e79cd393b830b76d5d50bebf1fc412870fd527a6"
+		},
+		{
+			"file": "theme/dark.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/dark.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "48f25550dc04373e091db9b6103b39f8d51df37198f3997d2525ea2e5867ea71"
+		},
+		{
+			"file": "theme/defaults.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/defaults.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1842c695d37ea0d6277b57e74538ae297ee9b6a0effd292dca92b27984916cb8"
+		},
+		{
+			"file": "theme/glyph-bundle.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/glyph-bundle.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "822a030d0db74c58825dfe294c74487a996f5d843d16093313465770a8eefa58"
+		},
+		{
+			"file": "theme/index.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "57f21e3530647df83259dd189da44b105d8732979edfb02d79ffa33191f3eebc",
+			"changes": "Added public highlighting hook types, HighlightStream, setHighlighter and supportsLanguage."
+		},
+		{
+			"file": "theme/light.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/light.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e439bbc9a0903a94114eecf4a496838f4eedc9edeb3618557823463418aa8d8b"
+		},
+		{
+			"file": "theme/loader.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/loader.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9d666cae7c3a81f88e480a0d880b4b3bafb9a8e1862c61ad37f093d661721666"
+		},
+		{
+			"file": "theme/mermaid-cache.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/mermaid-cache.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5823b54e8a7e64171842f803b1a67c4e2f32430fdf6c0285fc7109e660d9fc7c"
+		},
+		{
+			"file": "theme/schema-validation.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/schema-validation.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3f8b2c0382bb2a2a55dc624e9a838ea828c7566a5395cfb04937a05dfcecec5f",
+			"changes": "Replaced the ArkType/`@oh-my-pi/omptype` schema with structural validators."
+		},
+		{
+			"file": "theme/schema.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/schema.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0b732d0dbfa71eba7e40004b3007f642c02276d1d84c9d560d96afe671021c11"
+		},
+		{
+			"file": "theme/session-color.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/session-color.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "95ee2dce62fe915dd4634823be5853e052739697079196661b14e58c3dc18320"
+		},
+		{
+			"file": "theme/shimmer.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/shimmer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "976975b1f483b2ee5d842cb986e2eba6b46f8fb4f56bd542dba75ab95f49e693",
+			"changes": "Removed `describeShimmer` and the native \"paint nothing\" branch."
+		},
+		{
+			"file": "theme/symbols.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/symbols.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cbc349229e2adde9f27475a70db8ca31877d2cd23825d5a99c1fa7ce5b54b431"
+		},
+		{
+			"file": "theme/theme-class.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/theme-class.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b3d61106052fcc578f8cd6044a0f33f6ce02d1cdd224d597828d2e78bf51fa9e"
+		},
+		{
+			"file": "theme/theme-schema.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/theme-schema.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4182a09518b4ea3ac3567658aeb71a05f93f28fed4f1ee4968becd52b5e84bb2"
+		},
+		{
+			"file": "theme/theme.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/theme.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "854fc2c325edace38e9726df6d25ac6431a4c6e13a7b484cbfccc53c1ca254c1",
+			"changes": "Removed SIXEL wording from background and repaint comments."
+		},
+		{
+			"file": "theme/tui-adapters.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/theme/tui-adapters.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6909f0a78c368a59667c0bfe8f892321a4990b84cde385558da5856a2a49d950"
+		},
+		{
+			"file": "tmux.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/tmux.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "549c3ee08bbef6a45b7b5bfeec329122ceeba9e205d30c8e5346b551206699ce",
+			"changes": "Removed the TSP session helpers and SIXEL client detection."
+		},
+		{
+			"file": "ttyid.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/ttyid.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "17123115d2e5a92b79c2e95b7f29823c7a07c32bd7a55be82c91a1a3cdad41f3",
+			"changes": "FFI `ttyname` replaced with Node-based resolution (`/proc/self/fd/0`, `readlink /dev/fd/0`, `ps -o tty=`)."
+		},
+		{
+			"file": "tui.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/tui.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "26562bea0b4a68754925882621553500d0136e6b15d3174c58a78674da9069c0",
+			"changes": "Removed the TSP native backend, hello probe, native overlay/sheet paint paths, debug server and SIXEL crop; added DA1 reply draining, the frame-rate ceiling and input-echo floor, and row moves."
+		},
+		{
+			"file": "utils.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/utils.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dadb2193a095389d7601e7407cba869125a5be0df79b15878f92a4df2ca3da66"
+		},
+		{
+			"file": "vendor/package.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/package.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ce98ad001ccbfd39aa62264c861aa8b40ea02b40b1d0bd245c1455f73b9d80c9"
+		},
+		{
+			"file": "vendor/pi-utils/abortable.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/abortable.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f2d0d4433f0bd42197589e83341fb4478589c47e0e4d7dcf748b17e152d980e2"
+		},
+		{
+			"file": "vendor/pi-utils/async.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/async.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6bf925071d79611ab6f2bcd96a6ac24c2507292778b77ecc333e1264b4acb429"
+		},
+		{
+			"file": "vendor/pi-utils/bytes.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/bytes.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4a55d0a1cf55b56942187cd366e112baae5554b356f5455ba2bf1266ba5db179"
+		},
+		{
+			"file": "vendor/pi-utils/chalk.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/chalk.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9a03a0b68beba48ca78926ed909bd3d8de8c7eee5c522cd9087f94b01e0e8a6e"
+		},
+		{
+			"file": "vendor/pi-utils/color.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/color.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1a77ca8c26b09c29497bf34b15d54064e46be969dd07d211c91641c1214a342d"
+		},
+		{
+			"file": "vendor/pi-utils/dirs.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/dirs.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f5bb52b0d3c28d418138bc90d5df6cc64b02938f89d87c9dc2055fe2b55c40c6",
+			"changes": "The JSON manifest is read through the default binding so tsup/esbuild can see its exports."
+		},
+		{
+			"file": "vendor/pi-utils/env.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/env.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2ba7d027c9dd406387d59077047e45e9687d56d324c663aa28725c14a7320491"
+		},
+		{
+			"file": "vendor/pi-utils/format.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/format.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d8e0fd35251278fed8fbf46a44066db6f17a6290f3d4489e29f1663eed875e7e"
+		},
+		{
+			"file": "vendor/pi-utils/fs-error.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/fs-error.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cc119ca2c39dd8c7d84df2580719abe6608bec6d06fc19726c0a6ec4ad264eb8"
+		},
+		{
+			"file": "vendor/pi-utils/index.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "75a2127a5794a86800d2f1d38337eb7c1ba2b0e11c4a24654a9ecd537541095f",
+			"changes": "Curated facade instead of the full upstream barrel."
+		},
+		{
+			"file": "vendor/pi-utils/json-lexer.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/json-lexer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c3ccb7932cd36a39db5c6a2f0cd331c8f91dddb56e621aa29b1f61b4c35757ef"
+		},
+		{
+			"file": "vendor/pi-utils/json-parse.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/json-parse.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9a5dc5dd2a180fae6066ada73bde5cf3652c1853cf249ca862d60a6631538893"
+		},
+		{
+			"file": "vendor/pi-utils/json.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/json.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "19ba31117f4b3f624bcea126dbbc5233d35503cd7cf8e88b916fa27231512a7d"
+		},
+		{
+			"file": "vendor/pi-utils/logger.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/logger.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e972c73a1567f53bf1d4d7285aeb0967db69d2e945027f7ba3489600389c3971"
+		},
+		{
+			"file": "vendor/pi-utils/logger/rotating-file.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/logger/rotating-file.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "eb17d98c579ad1c6ad591aa498e019dee89509ad8ad0d079390d134db1c539c5"
+		},
+		{
+			"file": "vendor/pi-utils/loop-phase.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/loop-phase.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5a43d91828f36a55d7388d27d8971e67e4305ed294d307e839c8a84846ec47f5"
+		},
+		{
+			"file": "vendor/pi-utils/lru.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/lru.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ec25ba7d645ee03be063f23dfc1be371fe8e30e39317884367dc192b39c52c82"
+		},
+		{
+			"file": "vendor/pi-utils/marked-list.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked-list.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "63b6827130fd3ffd6f075235314aea33f92c604636b5ffaddc418b6946656808"
+		},
+		{
+			"file": "vendor/pi-utils/marked.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0a66cffa9628686078e2f5401b22eb84f9c30ef6cdca462204a699fe81e7f679"
+		},
+		{
+			"file": "vendor/pi-utils/marked/core.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked/core.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a114aed7ab809cb131c6abf5b972a3b29e118f5d8baa69a3a239af28f3de55bf"
+		},
+		{
+			"file": "vendor/pi-utils/marked/inline-closers.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked/inline-closers.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b80729a788e0d208c10486ffdcb197401c91205fb853cc9d32ee922448293cbc"
+		},
+		{
+			"file": "vendor/pi-utils/marked/inline-text.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked/inline-text.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "769abfd9ed427a850eb52f6d8fa6a1c0ee173ba9bf409814402ff5222099d4ad"
+		},
+		{
+			"file": "vendor/pi-utils/math-delimiters.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/math-delimiters.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1fd01c736dc04b6bf7dbf004b249c60c5c94204a258519924eec19545b001dac"
+		},
+		{
+			"file": "vendor/pi-utils/mermaid-ascii.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/mermaid-ascii.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4d9a2c380b206d8f413f5dd7841ef5f0c3dbe8a125890d7f6a4122b5adfe7c27"
+		},
+		{
+			"file": "vendor/pi-utils/path.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/path.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "abee5d079737e59e844cfcb9fe6c66a71ba4d3bdd5410e09e88bee620a3f8577"
+		},
+		{
+			"file": "vendor/pi-utils/pid.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/pid.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ce9699f9c264ca227dc1119b02659e278380bd3ee1ec991954a036cba915a162"
+		},
+		{
+			"file": "vendor/pi-utils/postmortem.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/postmortem.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "126be58c6e55e4212b08243acc885a5a74481257ceee62fe34cc4151f2aded10",
+			"changes": "The Bun-only `process.reallyExit` path is replaced with `process.exit`/`SIGKILL`; a disconnected terminal is declared dead so `SIGTERM`/`SIGHUP` skip the postmortem."
+		},
+		{
+			"file": "vendor/pi-utils/sanitize-text.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/sanitize-text.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cdbdd41278c58f9c49f3672cef48d96661f9062033dffacfa3e4dd8d6916436f"
+		},
+		{
+			"file": "vendor/pi-utils/slugify.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/slugify.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "21370324963fab5ceeb4da96e472317cc43eb2fe986229fdd44745c149193493"
+		},
+		{
+			"file": "vendor/pi-utils/stderr-guard.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/stderr-guard.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "067fbfc31ab73c6630a1abcc186bc0341e0f0f4337729504e0caf2db161c1cc9",
+			"changes": "Removed bun:ffi; fd redirection remains inert."
+		},
+		{
+			"file": "vendor/pi-utils/tab-spacing.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/tab-spacing.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1cc79b425d75935c4c74a5041c751d76d2c87c9c67bcdaff61e88a812b577007"
+		},
+		{
+			"file": "vendor/pi-utils/test-runtime.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/test-runtime.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "db1ce164e3ed5943d7a0e5cb9133bc4d74c51bc13db23f09aa3459af5abb5128"
+		},
+		{
+			"file": "vendor/pi-utils/timing-buffer.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/timing-buffer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4f0872b4e83c9566c03cee5bdefaec21b9be13c0ccfee947a468f453668f87ac"
+		},
+		{
+			"file": "vendor/pi-utils/type-guards.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/type-guards.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "86a5fb728ab7635711ea82c2de2dacbcc849e56acd7e4bfaf5041d555a9090dd"
+		},
+		{
+			"file": "vendor/pi-utils/version.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/version.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "178c9bf34acac45af462118c5d97dbac7b1a6284913bc6f6264bea3b2287e6cf"
+		},
+		{
+			"file": "vendor/pi-utils/which.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/which.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8e3f25b6389b79d04859dcf70c53fc0ab81b83a46d4e8c28eb63f31fc4236cb3"
+		},
+		{
+			"file": "vendor/pi-utils/worker-host.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/worker-host.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7aaa5e8efc45747090a562193f5d200013b8bc649e0212e8c06d4c8eb1486b0b"
+		},
+		{
+			"file": "vendor/pi-utils/yaml-config.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/yaml-config.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3cfa4f144f9b140af0242e3b4978940597024df6f9616c1c55be279825a41e80",
+			"changes": "`Bun.YAML.stringify` replaced with the `yaml` package."
+		},
+		{
+			"file": "vim.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/vim.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "586a5651ad72bfad97180f401d2126533954dabad4d249f14582648f7ad2a946"
+		},
+		{
+			"file": "windows-altgr.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/windows-altgr.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dffb9a74f00cc544479203b777e0ad302d2e29f3832038ae0dcd44d316b9247d",
+			"changes": "FFI `user32.dll` bridge removed; `readAltGrLayer` always reports an empty layer, keeping the injectable host seam."
+		},
+		{
+			"file": "windows-input-mode.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/tui/src/windows-input-mode.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5a0f9d8a51fee278734fcce27408b6e771139120b0ede4a9ed9d6fd32c5c0541"
+		}
+	]
+}

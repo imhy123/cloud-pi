@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/form.ts
-// (commit 83de60ad99). Removed the TSP describe tree and the native picker
-// sheet. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/form.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP describe tree and the native picker sheet.
+// See PATCHES.md.
 import { getKeybindings } from "../keybindings";
 import { matchesKey } from "../keys";
 import type { MouseRoutable, SgrMouseEvent } from "../mouse";

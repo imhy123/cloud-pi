@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/utils/src/json-parse.ts (commit
-// 21f1188cf88). `__proto__` keys are defined as data properties instead of
-// assigned. See PATCHES.md.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/utils/src/json-parse.ts
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 import {
 	BACKSLASH,
 	COLON,

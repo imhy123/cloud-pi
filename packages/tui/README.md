@@ -6,6 +6,8 @@ frame renderer, themes, components, inline images (Kitty / iTerm2), and terminal
 notifications as a reusable package with no FFI, no native addon, and no Bun
 runtime dependency.
 
+Upstream baseline: oh-my-pi **v18.18.7** (`e325ffc73ab8`).
+
 - **Node.js 24+**, ESM only.
 - **Immutable render contract**: `render(width)` returns `readonly string[]`.
   Rows are owned by the component and never mutated by the engine.
@@ -238,9 +240,13 @@ legacy VT sequences and the Kitty keyboard protocol are supported.
   status line, setup wizard, and debug server are not included.
 - **Pluggable highlighting**: no built-in syntax-highlighting engine is shipped.
 
-Every file under `src/` starts with a provenance header naming its upstream file
-and baseline commit, and marking it as verbatim, adapted, or new. See
-[PATCHES.md](./PATCHES.md) for the file-by-file modification log.
+TypeScript files under `src/` carry verbatim/adapted/new provenance headers.
+JSON provenance and the complete inventory live in [SOURCES.json](./SOURCES.json).
+See [PATCHES.md](./PATCHES.md) for local differences and synchronization history.
+
+Mermaid fenced blocks use the pure TypeScript `beautiful-mermaid` renderer
+(flowchart, state, sequence, class, ER and XY charts). Unsupported syntax falls
+back to code; layout can differ from upstream's Rust renderer.
 
 ## Development
 
@@ -249,12 +255,14 @@ npm install
 npm run typecheck -w @cloud-pi/tui   # tsc --noEmit
 npm run build -w @cloud-pi/tui       # tsup (ESM + d.ts, 8 entry points)
 npm run test -w @cloud-pi/tui        # Vitest over src/
-npm run test:dist -w @cloud-pi/tui   # node --test against the built bundle
+npm run test:dist -w @cloud-pi/tui   # tracked tests in test/bundle/
 npm run verify                       # all of the above
+npm run audit:upstream -w @cloud-pi/tui # pinned source/header comparison
 ```
 
 `test/setup.ts` installs the Bun shim on `globalThis` so the vendored sources run
-unmodified under Vitest. Tests are plain Node: they must pass with no Bun
+unmodified under Vitest. The source audit needs sibling oh-my-pi and pi Git repositories (or `OH_MY_PI_DIR`
+and `PI_DIR`). Tests are plain Node: they must pass with no Bun
 installed.
 
 ## License

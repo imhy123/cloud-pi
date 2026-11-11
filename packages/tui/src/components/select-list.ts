@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/select-list.ts
-// (commit 83de60ad99). Removed TSP props and the native described-item cache.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/select-list.ts
+// (commit e325ffc73ab8; v18.18.7). Removed TSP props and the native described-item cache.
 // See PATCHES.md.
 import { popLoopPhase, pushLoopPhase } from "@oh-my-pi/pi-utils";
 import { Input } from "./input";

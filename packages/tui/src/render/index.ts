@@ -1,5 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/render/index.ts (commit
-// 83de60ad99). Dropped the removed `sixel` barrel export. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/render/index.ts
+// (commit e325ffc73ab8; v18.18.7). Dropped the removed `sixel` barrel export.
+// See PATCHES.md.
 /**
  * Public exports for shared TUI components.
  */

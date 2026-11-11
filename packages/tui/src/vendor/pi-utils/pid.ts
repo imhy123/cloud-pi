@@ -1,5 +1,6 @@
 // cloud-pi-tui: verbatim copy of oh-my-pi packages/utils/src/pid.ts
-// (commit 83de60ad99). See PATCHES.md.
+// (commit e325ffc73ab8; v18.18.7).
+// See PATCHES.md.
 /**
  * Signal-0 liveness probe: true unless the OS reports the pid as gone
  * (`ESRCH`) or invalid (`EINVAL`). Any other failure, notably `EPERM` (alive

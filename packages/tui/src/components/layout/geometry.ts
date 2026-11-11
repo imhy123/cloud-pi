@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/layout/geometry.ts
-// (commit 83de60ad99). Removed the TSP native layout adapter and `TspProps`.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/layout/geometry.ts
+// (commit e325ffc73ab8; v18.18.7). Removed the TSP native layout adapter and `TspProps`.
 // See PATCHES.md.
 import type { MouseRoutable } from "../../mouse";
 import type { Component } from "../../tui";

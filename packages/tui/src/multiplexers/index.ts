@@ -1,4 +1,5 @@
-// cloud-pi-tui: new file. Public multiplexer barrel. See PATCHES.md.
+// cloud-pi-tui: new file. Public multiplexer barrel.
+// See PATCHES.md.
 // Terminal multiplexer integration.
 export * from "./cmux";
 export * from "./herdr";

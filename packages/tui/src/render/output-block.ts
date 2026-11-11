@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/render/output-block.ts
-// (commit 83de60ad99). Removed TSP types and SIXEL payload preservation.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/render/output-block.ts
+// (commit e325ffc73ab8; v18.18.7). Removed TSP types and SIXEL payload preservation.
 // See PATCHES.md.
 /**
  * Bordered output container with optional header and sections.

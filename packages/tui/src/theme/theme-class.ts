@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/theme/theme-class.ts
-// (commit 21f1188cf88): added `ansiFg()`/`faint()` for colorful Markdown.
+// cloud-pi-tui: verbatim copy of oh-my-pi packages/tui/src/theme/theme-class.ts
+// (commit e325ffc73ab8; v18.18.7).
 // See PATCHES.md.
 import { colorLuma, relativeLuminance } from "@oh-my-pi/pi-utils/color";
 import * as logger from "@oh-my-pi/pi-utils/logger";
@@ -680,6 +680,8 @@ export class Theme {
 			job: this.#symbols["icon.job"],
 			cache: this.#symbols["icon.cache"],
 			cacheMiss: this.#symbols["icon.cacheMiss"],
+			cacheWarm: this.#symbols["icon.cacheWarm"],
+			cacheCold: this.#symbols["icon.cacheCold"],
 			input: this.#symbols["icon.input"],
 			output: this.#symbols["icon.output"],
 			throughput: this.#symbols["icon.throughput"],

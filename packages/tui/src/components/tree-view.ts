@@ -1,5 +1,5 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/tui/src/components/tree-view.ts
-// (commit 83de60ad99). Removed TSP tree types and the native describe path.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/tree-view.ts
+// (commit e325ffc73ab8; v18.18.7). Removed TSP tree types and the native describe path.
 // See PATCHES.md.
 import type { Theme } from "../theme/theme";
 import type { Component } from "../tui";

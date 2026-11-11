@@ -1,6 +1,6 @@
-// cloud-pi-tui: adapted from oh-my-pi packages/utils/src/stderr-guard.ts
-// (commit 83de60ad99). The FFI `dup`/`dup2` redirect is removed; every entry
-// point is inert. See PATCHES.md.
+// cloud-pi-tui: adapted copy of oh-my-pi packages/utils/src/stderr-guard.ts
+// (commit e325ffc73ab8; v18.18.7). Removed bun:ffi; fd redirection remains inert.
+// See PATCHES.md.
 /**
  * Terminal stderr guard: keeps unmanaged fd-2 writes off the terminal while a
  * TUI owns the viewport.
@@ -17,9 +17,14 @@
  * so diagnostics stay greppable and Bun native-crash reports (which abort
  * before any JS cleanup can restore fd 2) are preserved.
  *
- * Only dup/dup2 go through bun:ffi. fcntl is deliberately avoided: it is
- * variadic, and the arm64-darwin ABI passes variadic arguments on the stack,
- * so a fixed-arity FFI signature would read garbage for the third argument.
+ * Only dup2 goes through bun:ffi. The saved copy of fd 2 comes from opening
+ * `/dev/fd/2` instead of `dup(2)`, because Bun opens files close-on-exec: a
+ * plain dup would leak the terminal into every child spawned without explicit
+ * fd handling (Rust `Command`, gitoxide filter drivers), which could then read
+ * the user's keystrokes and terminal replies. fcntl is deliberately avoided:
+ * it is variadic, and the arm64-darwin ABI passes variadic arguments on the
+ * stack, so a fixed-arity FFI signature would read garbage for the third
+ * argument.
  */
 import * as fs from "node:fs";
 import * as path from "node:path";
@@ -29,18 +34,11 @@ const STDOUT_FILENO = 1;
 const STDERR_FILENO = 2;
 
 interface LibcFdOps {
-	dup(fd: number): number;
 	dup2(oldFd: number, newFd: number): number;
 }
 
-/**
- * cloud-pi-tui has no FFI bindings, so the guard cannot dup/dup2 fd 2. Every entry
- * point stays inert: the terminal still works, but raw fd-2 writes from native
- * libraries are not redirected away from the viewport.
- */
-function libcFdOps(): LibcFdOps | null {
-	return null;
-}
+/** Node has no dup2 API; fd redirection remains explicitly unavailable. */
+function libcFdOps(): LibcFdOps | null { return null; }
 
 /**
  * True when fd 2 writes would land on the same terminal the TUI paints to:
@@ -88,6 +86,15 @@ export function suppressTerminalStderr(options?: SuppressTerminalStderrOptions):
 	const libc = libcFdOps();
 	if (!libc) return false;
 
+	// First, so a fd 2 that cannot be reopened (a socket: Linux refuses
+	// `/dev/fd/N` for those) leaves the guard inert with no redirect file made.
+	let saved: number;
+	try {
+		saved = fs.openSync(`/dev/fd/${STDERR_FILENO}`, fs.constants.O_WRONLY);
+	} catch {
+		return false;
+	}
+
 	let redirectFd: number;
 	try {
 		const redirectPath = options?.redirectPath ?? redirectTarget ?? getLogPath();
@@ -101,15 +108,11 @@ export function suppressTerminalStderr(options?: SuppressTerminalStderrOptions):
 		try {
 			redirectFd = fs.openSync("/dev/null", "w");
 		} catch {
+			fs.closeSync(saved);
 			return false;
 		}
 	}
 
-	const saved = libc.dup(STDERR_FILENO);
-	if (saved === -1) {
-		fs.closeSync(redirectFd);
-		return false;
-	}
 	if (libc.dup2(redirectFd, STDERR_FILENO) === -1) {
 		fs.closeSync(redirectFd);
 		fs.closeSync(saved);
