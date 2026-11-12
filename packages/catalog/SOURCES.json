@@ -1,0 +1,4499 @@
+{
+	"upstreamTag": "v18.18.7",
+	"files": [
+		{
+			"file": "CHANGELOG.md",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/CHANGELOG.md",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "782b46191f9e774aad55af21784ceb398b26e9468cc93ee12c1d75ed478894c0"
+		},
+		{
+			"file": "LICENSE",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/LICENSE",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "90179611795093ae17d4a6bc6e06da450a8e54bbeb147a065b4127e1e4b407a7"
+		},
+		{
+			"file": "PATCHES.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "PATCHES_cn.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "README.md",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/README.md",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f59d1894abb678dc75392954b758e2262ae652844eba768e7915b0625c8b05c6"
+		},
+		{
+			"file": "README_cn.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "THIRD-PARTY-NOTICES.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "bench/classify.bench.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/bench/classify.bench.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "18161558db4f75e5962120a81bb9910294a3875cd3dfe0b15b1b78f99fdae51a",
+			"changes": "performance.now replaces Bun.nanoseconds."
+		},
+		{
+			"file": "package.json",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi package identity and Node.js build/test scripts replace the upstream Bun manifest."
+		},
+		{
+			"file": "scripts/clean-dts.mjs",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "scripts/compat-compiler/compile-auth.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compat-compiler/compile-auth.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "94dbd259d871ec2ed8166513da6a967f025be91de4c209c9b79cd7dd7c38200e"
+		},
+		{
+			"file": "scripts/compat-compiler/compile-axes.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compat-compiler/compile-axes.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3948f759e3a6c2ac2a66bf8f041464828c8abe943b0d097918d72e3889118dce"
+		},
+		{
+			"file": "scripts/compat-compiler/compile-behavior.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compat-compiler/compile-behavior.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "43a163c02dec20540172570301b4ed408fe03f29be29bb3be4c7fd7737998099"
+		},
+		{
+			"file": "scripts/compat-compiler/compile-cascade.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compat-compiler/compile-cascade.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "22ec442172d111cb9fd7bb5a0ff8a48ee83a8211796f50cc41a3dff9e1c17732"
+		},
+		{
+			"file": "scripts/compat-compiler/compile-providers.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compat-compiler/compile-providers.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b5bc4e67a3dae2e0c2076aa1b37c6e38cfdbf5b732771dcf0f49b27d564e79e7"
+		},
+		{
+			"file": "scripts/compat-compiler/compile-taxonomy.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compat-compiler/compile-taxonomy.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "74ca187e2fe5972ce2b21373c87fb5bd04d15b31e85a193bf31dfff689ee7c26"
+		},
+		{
+			"file": "scripts/compat-compiler/index.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compat-compiler/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ad95118f26031ec0a6800d21179eaae0859620856eb50c869dd4e6a85f334e09",
+			"changes": "node:fs readFile replaces Bun.file."
+		},
+		{
+			"file": "scripts/compat-compiler/kdl-reader.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compat-compiler/kdl-reader.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2ed478860cf5f915a2c720e645ed2c3bd434db309584b1c40acb2333525bc101"
+		},
+		{
+			"file": "scripts/compile-compat.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/compile-compat.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "eaeb69f4e9c1cd42e296e4f7d27026ce4d5d932799d841b4ee3eeb8b5e52a712",
+			"changes": "Node fs and fileURLToPath replace Bun.write and import.meta.dir."
+		},
+		{
+			"file": "scripts/equivalence.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/equivalence.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d9cc7abb632bd6b828ea420720374a1c1aed62f771340a4b6021bbec6b4feca3"
+		},
+		{
+			"file": "scripts/generate-models.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/generate-models.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a1fbba6d4dd428d646f95f592bd9d631443ef751ee1d3a64859748207c547ae2",
+			"changes": "Node fs/argv and explicit programmatic/CLI host injection replace pi-ai imports."
+		},
+		{
+			"file": "scripts/generate-protocols.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/generate-protocols.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "edc4a02bd5e4036048a8f3376ee78639d370a1d11fd734145b1b9e033761d59d",
+			"changes": "Node fs.globSync and fs read/write replace Bun.Glob/Bun.file/Bun.write."
+		},
+		{
+			"file": "scripts/generated-policies.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/generated-policies.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b7bd84f9320ef35b78f433c1447aa897a160693b82d882298c5f627a8d4e27b6"
+		},
+		{
+			"file": "scripts/generation-host.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Explicit typed programmatic and local ESM host services for live generation."
+		},
+		{
+			"file": "scripts/proto-parser.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/scripts/proto-parser.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "de6aa25f892bb2c3ce770795ab4332cd2b5364002f2a4be5c4fad6261dbab994",
+			"changes": "Node fs.globSync and fs read/write replace Bun.Glob/Bun.file/Bun.write."
+		},
+		{
+			"file": "scripts/test-dist.mjs",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "src/build.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/build.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e6a119fbc5b9f562795b6235a73852ef8a2cb385361d17a5d225f35f08c9b1ac"
+		},
+		{
+			"file": "src/cline-pass-model-id.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/cline-pass-model-id.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c86864eb8d50761d7230926efaf0c2e86ba58d8590c888a9ae0776cda725b915"
+		},
+		{
+			"file": "src/compat/anthropic.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/anthropic.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6d683aa6ab8149d79b07d42145cee077db7780412238f6306ad60d9f5e9f1589"
+		},
+		{
+			"file": "src/compat/apply.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/apply.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4566e7931cfa85efc633ca898c613d592a6087952f3b087dfe1e3729ae883f7f"
+		},
+		{
+			"file": "src/compat/auth-ids.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/auth-ids.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ea30d6fb29bef93032e17152c1b7ee0887d6de1c39ba8ede9b9a279d860b82c1"
+		},
+		{
+			"file": "src/compat/auth.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/auth.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b3d26a76975240e67c23c93c8e8e46f4ccacd429687220121974dd4a09e4c84f"
+		},
+		{
+			"file": "src/compat/axes.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/axes.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "005315d6a51332a4557dd92fb1923b8b3015aea3bba7695beef5545f51930f24"
+		},
+		{
+			"file": "src/compat/behavior.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/behavior.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d5ba99792afdf6842b1a51c363ab5c44cba6028244943dc2fbe6a8f007691eb1"
+		},
+		{
+			"file": "src/compat/cascade.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/cascade.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c55f910d2efd078d7044a087cdbe0460da63fd36eae0b36397a40c8f8eac2942"
+		},
+		{
+			"file": "src/compat/catalog-endpoint.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/catalog-endpoint.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5f997cecc1d4d66f0197e2ba3bfc3bd0d8ad73d2dc5099c201affe5cff121f95"
+		},
+		{
+			"file": "src/compat/catalog-policy.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/catalog-policy.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "563df70cab6f0fd07e8c99bac452c5f2f704f4cf4808d9308d2bdd6541812641"
+		},
+		{
+			"file": "src/compat/collapse.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/collapse.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a9f4df3919a225673b211fc2312bf6050fdc08e15e7aabf80fda30a86b30df69",
+			"changes": "node:util isDeepStrictEqual replaces Bun.deepEquals."
+		},
+		{
+			"file": "src/compat/context-window.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/context-window.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "92acb45180e908e2f4843147a652b909396e420145f0402e858359841f6f6a5e"
+		},
+		{
+			"file": "src/compat/delegation.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/delegation.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ac9c71c446ed21bcb48caf85e5dfda3b9b4b851c4c26d897d837da6ee0aa9ae6"
+		},
+		{
+			"file": "src/compat/factory-droid.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/factory-droid.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d7f606fd55014548ddfdecc433daf72e0769d9a9eaa27caaa08f2b5e48c5869f"
+		},
+		{
+			"file": "src/compat/fallback-credit.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/fallback-credit.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0134e5e6347638e627a96353e694960cf1acb03cb35e66f0838a8a208474dcf2"
+		},
+		{
+			"file": "src/compat/image-tokenization.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/image-tokenization.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0edaae1b05c7ae18df23eca6c4914f614dfbc5134f9f8a0b70c5e326e60eec35"
+		},
+		{
+			"file": "src/compat/judgment-images.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/judgment-images.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "51625488ac8869abb60be21614e4436f9bcf794e4bcbf8dc429a91ede50bceca"
+		},
+		{
+			"file": "src/compat/judgment-questions.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/judgment-questions.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fb851e98210eeeff157f884678c7c5bd612f62a51587ebf564d20a946048f056"
+		},
+		{
+			"file": "src/compat/openai.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/openai.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "13fc15c062c73106745e1e4eabc824a21a73c44f03f4b2bd766f89c4065740f5"
+		},
+		{
+			"file": "src/compat/output-limits.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/output-limits.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ec67518a053bd93cdb61b5a4d44e4fe6ff5131f4107615cfea62696643bed78f"
+		},
+		{
+			"file": "src/compat/prompt-cache-lookback.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/prompt-cache-lookback.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "988c00e48cc915ff80bac01154ee18d4f98aab3d4e48c46fdc1dd506f0b56119"
+		},
+		{
+			"file": "src/compat/prompt-cache-persistent.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/prompt-cache-persistent.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "66e650a0a129b2130eb5fe2cfce8e4e65972c4cfa19f829ecc81ecd6347b7136"
+		},
+		{
+			"file": "src/compat/provider-ids.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/provider-ids.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cbe39238be8a5b5962706867ca3c6483b5d1e2f6d67ca2ac2e2064f9708bb21d"
+		},
+		{
+			"file": "src/compat/providers.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/providers.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4829d4374bb1ff87331c16e1c22b9c86423c4f82b7a2bca2b41fd2f291ef8118"
+		},
+		{
+			"file": "src/compat/reasoning-carry.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/reasoning-carry.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2d121b1da5df1dc7359a431482294f80abb264b268fc4afc42a7fa728ce476b1"
+		},
+		{
+			"file": "src/compat/request-compression.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/request-compression.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fa6a986a5be490fcac8d41fa0624ff2ed7f37fa6c4e74b35c1a790729c9bff3c"
+		},
+		{
+			"file": "src/compat/request-size.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/request-size.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fbe75129d90627c34af373502274e7effda5651ee5d6d50aad80da8eebc2fb7a"
+		},
+		{
+			"file": "src/compat/resolve.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/resolve.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6a2057fffb3a490e7b4d9a185ccd7bc7fb4b2eb99847dd2adbbd167dac5e473c"
+		},
+		{
+			"file": "src/compat/responses-websocket.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/responses-websocket.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0dd468507baa1eeb529f49173ad222c7c5ab81ed30f18002b9796907ebe74e25"
+		},
+		{
+			"file": "src/compat/revision.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/revision.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "541d652e6eb581d0cf97aa842ba8afef4750f88cbe2237476d205a2d6cc8c9b5"
+		},
+		{
+			"file": "src/compat/rules.d.json.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules.d.json.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "149f9932bb9fdcc717d0e6da73cb3c4e990d0bd81f5765b523a2fb23c62dbf32"
+		},
+		{
+			"file": "src/compat/rules.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "467daee961415ef70323e266776215c82de7a515c756bed3f413e8d0eb117070"
+		},
+		{
+			"file": "src/compat/rules/README.md",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/README.md",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3c03e44337f92698a849dc5f81a914842f1f9d9ef36d5d133c40c00fa257af5c"
+		},
+		{
+			"file": "src/compat/rules/auth/_order.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/_order.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "272c16bf54a0c0c3b67502324df08efccba8a7324d8eea511a4d30cd6df7390c"
+		},
+		{
+			"file": "src/compat/rules/auth/abliteration.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/abliteration.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "680d459fbaff5370c15cb39756e1aa62a616917645e3f3063fbf55fc285af4cf"
+		},
+		{
+			"file": "src/compat/rules/auth/aiand.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/aiand.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3b46ac8ddc01611c205297489d747ee9fe7ae4f712b9ad7e6ba51d917ae3c1bb"
+		},
+		{
+			"file": "src/compat/rules/auth/aimlapi.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/aimlapi.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1c6ce575e0229b6a1db0294ffe04dbae6e530680defa8af125425a2a58003638"
+		},
+		{
+			"file": "src/compat/rules/auth/alibaba-coding-plan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/alibaba-coding-plan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6db368f8a76a999eb67becc6ba6b24595438b4a896a807aa9b38904fe21724ff"
+		},
+		{
+			"file": "src/compat/rules/auth/alibaba-token-plan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/alibaba-token-plan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ac895cc06468f834c8a36f10ee3cb9fc5793422a9888d39f9c2c04f2af58fc0d"
+		},
+		{
+			"file": "src/compat/rules/auth/amazon-bedrock.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/amazon-bedrock.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "03d9c3c64aa2d440cbfb3b82780c4fd680173425ae2f2cd0b3b8bd82e2891ed2"
+		},
+		{
+			"file": "src/compat/rules/auth/anthropic.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/anthropic.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "331aecac79b634c12940e14e498ba4bc6de29eea4ab344685e535f4cf7a32b54"
+		},
+		{
+			"file": "src/compat/rules/auth/apple.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/apple.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a31936c7f152770a6e92f5938607d224f55f92d98e2bcab39db03c3e8691ca45"
+		},
+		{
+			"file": "src/compat/rules/auth/azure.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/azure.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6f10c5cd25e4d18a89cc5e94d274277884d0b4112210da27bbcf580c7c91f56a"
+		},
+		{
+			"file": "src/compat/rules/auth/baseten.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/baseten.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "46d847fe67c88ba1a74ae59e7d7c6190150b339381387f492c2856259d3c6454"
+		},
+		{
+			"file": "src/compat/rules/auth/bedrock-mantle.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/bedrock-mantle.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8d3a18a8d10287d181a21bfcf2e2c45bbeec61306062164c9c7bcbc77723465c"
+		},
+		{
+			"file": "src/compat/rules/auth/cerebras.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/cerebras.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b02d06217c3e4d25b78a1b9761d85987f712e5b8e1569f24b2b87fef0bc4766e"
+		},
+		{
+			"file": "src/compat/rules/auth/charm-hyper.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/charm-hyper.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cc1adc101f83adef5e7481cd0cc2c9ff239163824339d6d295ac79e7dcd39091"
+		},
+		{
+			"file": "src/compat/rules/auth/cline-pass.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/cline-pass.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "39c580349e6808a7d3b7d000eefd120dae938a6943c04ef8a74b4b05a8ff7a1a"
+		},
+		{
+			"file": "src/compat/rules/auth/cloudflare-ai-gateway.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/cloudflare-ai-gateway.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ed8cc395d18b39a693e194c0a335cde33a0cfc488107f01d84dad5bf03c31d2b"
+		},
+		{
+			"file": "src/compat/rules/auth/cloudflare-workers-ai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/cloudflare-workers-ai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4431a2457cc745f0bec9e892f3d813fde47806ea62f3484dd7c9bdfce4532ce3"
+		},
+		{
+			"file": "src/compat/rules/auth/commandcode.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/commandcode.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d1b4977a22672623fb90d1599465e1a03da38b42136671ec85f10349e9700c26"
+		},
+		{
+			"file": "src/compat/rules/auth/coralbricks.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/coralbricks.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ebcdeb674ff8c04587e085a85f47524b1b8a7810514c98c33ad2ed2ec8c9e54a"
+		},
+		{
+			"file": "src/compat/rules/auth/coreweave.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/coreweave.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4d0cfdf357fd2878bc2f0a19c02152e26e32c943f2272aeda730b3c397bf41ad"
+		},
+		{
+			"file": "src/compat/rules/auth/cursor.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/cursor.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "91e418257bb11fa6d32c0eadcbe2f25947d39ef2fcc0577fcf17de1694febe4b"
+		},
+		{
+			"file": "src/compat/rules/auth/deepinfra.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/deepinfra.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2b90421f6d835c967e6901bb37708f1a29e608b08ed8c49cabf29a048901c734"
+		},
+		{
+			"file": "src/compat/rules/auth/deepseek.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/deepseek.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "82dd21418030e7aafebd9622370379a14d2a9a5863817b75178aad1fec1b7cad"
+		},
+		{
+			"file": "src/compat/rules/auth/devin-cli.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/devin-cli.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "61997c2670bc7e2956381af5f662926669752b67ee29cc27cbbb1942dcf2a4d5"
+		},
+		{
+			"file": "src/compat/rules/auth/devin-windsurf.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/devin-windsurf.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4d2a220ed6ebcb3789001e8e07a3550fdf3d9eef1c14764a07b8133f07561688"
+		},
+		{
+			"file": "src/compat/rules/auth/devin.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/devin.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bb6de7869e3a6fce610ff517087fb8b64491a3b5a38df7ff91bea61e5ad7ba49"
+		},
+		{
+			"file": "src/compat/rules/auth/exa.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/exa.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3a3f761adfbef142dd1360c1da06033c1061dfa3c855ca5b22e4b26bae307c4b"
+		},
+		{
+			"file": "src/compat/rules/auth/factory-droid.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/factory-droid.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "da78b2ffafc1233de69829a1d20a6b3d82e3dbcbe4f3a774b2d2472151242988"
+		},
+		{
+			"file": "src/compat/rules/auth/firepass.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/firepass.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6d59619d20554e1aba9e87541993c06152f0323bfbd4bf3380eb4ee6743e6915"
+		},
+		{
+			"file": "src/compat/rules/auth/fireworks.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/fireworks.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a2c0e19aa8020e47dd674881b33528b6d7a3487f6efacf266f55cd1ab59197f1"
+		},
+		{
+			"file": "src/compat/rules/auth/github-copilot.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/github-copilot.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fa176e4bd030108b71a1376148c233206d71ea048a384f7b122556d3269b5d01"
+		},
+		{
+			"file": "src/compat/rules/auth/gitlab-duo-agent.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/gitlab-duo-agent.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c02c7f89fcf52375cbb6f01491c5dec4f4b71f6fc5c99c22412271e9b7ed44c9"
+		},
+		{
+			"file": "src/compat/rules/auth/gitlab-duo.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/gitlab-duo.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9b96d43c8a00ef95ab34519779558b330b16244d93f604d1d9f70313e2781548"
+		},
+		{
+			"file": "src/compat/rules/auth/gmi-cloud.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/gmi-cloud.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c6de8483014ee9735b3faef1b165b167b39c38c4f2261d35464b2ec32185a139"
+		},
+		{
+			"file": "src/compat/rules/auth/google-antigravity.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/google-antigravity.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0fcc1c6e650198d3306db3a23c06127968675c32c59c326468b88fdcf30616e0"
+		},
+		{
+			"file": "src/compat/rules/auth/google-gemini-cli.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/google-gemini-cli.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a681b993a441a0db450e1c76f996fbf6024e1eaf8452eded3bfdf7fd117caa4c"
+		},
+		{
+			"file": "src/compat/rules/auth/google-vertex.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/google-vertex.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0f705783e870fe0735d377c9e7a051901573dbd045cddc29a6ef6395001eb443"
+		},
+		{
+			"file": "src/compat/rules/auth/google.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/google.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a5f618774c9c60bac97d8c8ad25c7712777cd0ac6471e512b645c41c0ba9f1d8"
+		},
+		{
+			"file": "src/compat/rules/auth/groq.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/groq.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3c40acac5b8c15d38e71892047e0b6364e0be28c2e95de534c3f6e5a32f43b5f"
+		},
+		{
+			"file": "src/compat/rules/auth/helmcode.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/helmcode.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ed38bd2dfe8c189d055cbff69b86b86f92b0af8ea17946bc80ef180a38f2d579"
+		},
+		{
+			"file": "src/compat/rules/auth/huggingface.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/huggingface.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "046e8387226fd40348b57936045cb2828b26f437017a943db43ce225a638e92b"
+		},
+		{
+			"file": "src/compat/rules/auth/inception.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/inception.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e668ed4db1d0dcc09842810714e1dcac1324fab0e0c9294f32c2a3ca256e9943"
+		},
+		{
+			"file": "src/compat/rules/auth/kagi.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/kagi.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "631a061e5077792193f31bf6a941d85c86987b0cf627af79a74365a443b02d5e"
+		},
+		{
+			"file": "src/compat/rules/auth/kilo.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/kilo.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9dc2093dd5df7d31e7e907e81657196821c246a795e7a29151ab89469ab13ebd"
+		},
+		{
+			"file": "src/compat/rules/auth/kimi-code.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/kimi-code.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bb1d751c32125fc57fbd41e3670874a178dfa7ef311590d61851fecafdd8204a"
+		},
+		{
+			"file": "src/compat/rules/auth/litellm.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/litellm.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d86bc1685f78131771c6eb190e9a27c2a2e545b789df7acd6a749ac8dad83f8f"
+		},
+		{
+			"file": "src/compat/rules/auth/llama.cpp.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/llama.cpp.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "75eb41175c344b5b815a4754bccf1d0526b3b0e13859b19f2febea62a9e20ed5"
+		},
+		{
+			"file": "src/compat/rules/auth/lm-studio.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/lm-studio.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "187dd9f31e44453794ea1f2ee5bd1c451c18cc960722751a53974b2962162de1"
+		},
+		{
+			"file": "src/compat/rules/auth/local.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/local.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3594256d33d3ab7cccf94aac7f0175a5a6ad72409a3541640ccdb0a45ddcc010"
+		},
+		{
+			"file": "src/compat/rules/auth/meta.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/meta.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4be665e1695d7630b835a121282ee5e5d7e460df8ed70cbbd988e831904d0bb9"
+		},
+		{
+			"file": "src/compat/rules/auth/minimax-code-cn.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/minimax-code-cn.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7c7351a949384d4dec1edc5008ff4f88f977e1bdca7cbc4e951eadb3e66b5c36"
+		},
+		{
+			"file": "src/compat/rules/auth/minimax-code.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/minimax-code.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2a861ba023f44a0d7e2c32ae35c54b75c9f641460e7b48bd382d2e0dbad62251"
+		},
+		{
+			"file": "src/compat/rules/auth/minimax.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/minimax.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "94b18e2a2c7e0dd7e6e5814c71572c7db552054b046454ce8b2351bde335ca0f"
+		},
+		{
+			"file": "src/compat/rules/auth/mistral.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/mistral.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7347b3d2743fbb20f0e6dee0a2de528363b42e41a93f09eea50b9c6f9178047a"
+		},
+		{
+			"file": "src/compat/rules/auth/modular.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/modular.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "899713565e09bedf98cbebd26b3039e165bbc328a6904825e4965dd64d735431"
+		},
+		{
+			"file": "src/compat/rules/auth/moonshot.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/moonshot.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ec8c11a6462dc03fa349ed2cf91a96745807a421007f6241f9addec23aa5ca87"
+		},
+		{
+			"file": "src/compat/rules/auth/muse-code.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/muse-code.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4b338ef5da36b963d717c37fd2ef74180f5d3cc0829a2b225a0ccedbdea059ce"
+		},
+		{
+			"file": "src/compat/rules/auth/nanogpt.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/nanogpt.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "01c7b69491c131b4da721ed5b5b071911a907847093494cfe73e8666bbe322c9"
+		},
+		{
+			"file": "src/compat/rules/auth/novita.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/novita.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "20ee21333d6f23b2ab0768173e816c29233f0fd6aeef71e725dd106e75d2b70c"
+		},
+		{
+			"file": "src/compat/rules/auth/nvidia.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/nvidia.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6f6b408e548dc58319ded4e7b17bd2a2a1114fcae907303fc5ccb28d20559405"
+		},
+		{
+			"file": "src/compat/rules/auth/ollama-cloud.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/ollama-cloud.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f224eef5b115c8dd4e219fb9731a72418ae7e22c9591cbb4211f297c65645279"
+		},
+		{
+			"file": "src/compat/rules/auth/ollama.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/ollama.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cb50184216d8cb1238bffe8278de4c7235ba3ca18d8a9a5279a1dae2021e1514"
+		},
+		{
+			"file": "src/compat/rules/auth/openai-codex-device.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/openai-codex-device.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d57c4dfa5cc3009287b20c1e493cd832d80b91c598e670d8eb6b96aae4cb55f4"
+		},
+		{
+			"file": "src/compat/rules/auth/openai-codex.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/openai-codex.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f6821a43caf83e1ba94ea996ff29c6f7e5d99a915adfa65ecbbbb3607099fbc7"
+		},
+		{
+			"file": "src/compat/rules/auth/openai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/openai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bc86a6c13fde9eb133590afc4ab24bba3b4a280af404ec0dfe0661f6807952f1"
+		},
+		{
+			"file": "src/compat/rules/auth/opencode-go.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/opencode-go.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7d53dbcd4c4431e18cd737595c4711a9367266477a6571bf68b25440b55ab2e1"
+		},
+		{
+			"file": "src/compat/rules/auth/opencode-zen.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/opencode-zen.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9674612ca559ec0f60107bf3865ca923025f8ec899adb05f60a1c80a8daa439e"
+		},
+		{
+			"file": "src/compat/rules/auth/openrouter.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/openrouter.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "86fef6f24176de86d2ca3edda335a3ca8a7969e400fccff90df23976a1b6390d"
+		},
+		{
+			"file": "src/compat/rules/auth/otari.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/otari.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b2efd42881743307de10d196a9e412e0c5441b70c1aad5fd56d44ce250a3bb4f"
+		},
+		{
+			"file": "src/compat/rules/auth/parallel.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/parallel.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "72624791401524748449d083a5e5a5b5f3d06d6885985475b51aa6444b7bef73"
+		},
+		{
+			"file": "src/compat/rules/auth/perplexity.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/perplexity.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7e4764a7a6a6a3d78a0543c27bf7b06da18bc4901bab5d0c7bacad5eb424c731"
+		},
+		{
+			"file": "src/compat/rules/auth/qianfan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/qianfan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ae25f5bde5c3ef24867093a57aebda64a2157f5692f9501867b568e2f52a79df"
+		},
+		{
+			"file": "src/compat/rules/auth/qwen-portal.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/qwen-portal.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5724a68ed07c7c98f5fef9d96e0b4ef6ff7a637d43432189d0db330208dee7a5"
+		},
+		{
+			"file": "src/compat/rules/auth/sakana.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/sakana.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "95e142fa5592193d362db70e181dfff6b66979bf575188cc7855493d13ff7425"
+		},
+		{
+			"file": "src/compat/rules/auth/sambanova.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/sambanova.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5a9253af715b88ad17be2c8671d163bc56c54abf207cf4c7a0766b6135ad380f"
+		},
+		{
+			"file": "src/compat/rules/auth/scaleway.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/scaleway.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3c0d74f664c5b7380965b2f3e73d675afc080a578970198dd45451ac2d846f9a"
+		},
+		{
+			"file": "src/compat/rules/auth/siliconflow-cn.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/siliconflow-cn.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "51a0f4359a561456fd4a13b6cabd90803964b4167dadf104dacac18a8ac1f718"
+		},
+		{
+			"file": "src/compat/rules/auth/siliconflow.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/siliconflow.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c1722a3b6e3e0a9df5896685687a3ba724636467421b15fb2ae2d10bd44dff5d"
+		},
+		{
+			"file": "src/compat/rules/auth/singularityapi-dev.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/singularityapi-dev.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1cfd1e69e3358226e5d75c338e1daf3dfbbfd35de9db0e94873f7e92186e57df"
+		},
+		{
+			"file": "src/compat/rules/auth/singularityapi-tech.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/singularityapi-tech.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bd0e56c7d4daa5c7d51d766f2d4ca40e81b21533a0e563e9f14ab900ae934545"
+		},
+		{
+			"file": "src/compat/rules/auth/snowflake.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/snowflake.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f59ab33a14b33f3d32730c4bcd6566737f572cf7f4a1c6807a33cfe85ea9fc40"
+		},
+		{
+			"file": "src/compat/rules/auth/stencil.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/stencil.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "da6bc15fc4a9bdb134e1417c64d234529d701193e60e441e9ebf523cff773b5a"
+		},
+		{
+			"file": "src/compat/rules/auth/stepfun.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/stepfun.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8b41b64a4224881e7ddfee92a2283170c0e1cedfd59553709c98515b33abfb58"
+		},
+		{
+			"file": "src/compat/rules/auth/synthetic.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/synthetic.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0d6fe50d1e163b6509c6185fe186e3bf6bddad62bae70c4baf7265996a3028bf"
+		},
+		{
+			"file": "src/compat/rules/auth/tavily.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/tavily.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c4e648eae3a3ff683ec3905f08fade1de07da183cf4830ae4a1fa90fe4a9efad"
+		},
+		{
+			"file": "src/compat/rules/auth/together.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/together.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3fcfac4d6fddf04e187414a26a4eddfa52e29c87d449ce1376994861b7772c4a"
+		},
+		{
+			"file": "src/compat/rules/auth/typesafe.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/typesafe.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "aa3666df9b769f1af4c055baa3e355c170ee59b4046a7420234278b93dbeeed6"
+		},
+		{
+			"file": "src/compat/rules/auth/umans.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/umans.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fc6bbe8d81943be5c1545b92a30eb7451d1d1ab3f8c6487ed0610468bc93bd0b"
+		},
+		{
+			"file": "src/compat/rules/auth/venice.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/venice.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7ac04481c2ed973e360766f0ef9deb5ea9264e97f222eb9c4ebb7aec2f31c369"
+		},
+		{
+			"file": "src/compat/rules/auth/vercel-ai-gateway.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/vercel-ai-gateway.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "51a949ef10d7e2ffa968f6785d4d06d2cde3cd36c4a211a3b79dcc5a686666eb"
+		},
+		{
+			"file": "src/compat/rules/auth/vllm.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/vllm.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3fcddd8b0d701f57d5ca2874f485d7dc8b003d36bd298241fccb6c9974965b7a"
+		},
+		{
+			"file": "src/compat/rules/auth/wafer-serverless.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/wafer-serverless.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "430c70340bde3f0686ae635880c40817f358ff9d21e690668451df73eb958892"
+		},
+		{
+			"file": "src/compat/rules/auth/web.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/web.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "88c0a3784e40d1a66b11f31030c9c79cdf365e6a34175a3c5d4b4d88990e4c5b"
+		},
+		{
+			"file": "src/compat/rules/auth/xai-oauth.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/xai-oauth.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2e373f5dc29d212f4188dd364ed67eddc68bdc39671271c7f25ccfa944b84a3c"
+		},
+		{
+			"file": "src/compat/rules/auth/xai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/xai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8a2b5ed61ae49c7ee7d1903ed38a7c2cab0dff89435c752639535c399e8d48fb"
+		},
+		{
+			"file": "src/compat/rules/auth/xiaomi-token-plan-ams.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/xiaomi-token-plan-ams.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "738eddea603e7db58bfd546c4680e18c77fcfbb01d82fc7a6e1641f983a03c3c"
+		},
+		{
+			"file": "src/compat/rules/auth/xiaomi-token-plan-cn.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/xiaomi-token-plan-cn.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9f2201d804c3132325c60a5e5e908f350f4d1145ca2a15f1fd81d39b144319bf"
+		},
+		{
+			"file": "src/compat/rules/auth/xiaomi-token-plan-sgp.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/xiaomi-token-plan-sgp.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d8b5a71b13b464c2fb62fc16942ebcaac70be57e313fe5a07f21b65e76fbc279"
+		},
+		{
+			"file": "src/compat/rules/auth/xiaomi.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/xiaomi.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1b3bc8e115cdf19322a028bca9332f8c2d677b26eb2ba0af830e02ce03702615"
+		},
+		{
+			"file": "src/compat/rules/auth/yolo-auto.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/yolo-auto.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "45f870e3c5b61a44c3877ca672aadf52a4853783388cd4531f6dc69164a51f26"
+		},
+		{
+			"file": "src/compat/rules/auth/zai-coding-plan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/zai-coding-plan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9806a6ec1f839f6254658e7517a86bab50b3a29d6252add29f3d60298efaf1ee"
+		},
+		{
+			"file": "src/compat/rules/auth/zai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/zai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "913b417d09bfaaeca7ef88bf0be1eecd522656729bd0603ecc585035a4a50d4a"
+		},
+		{
+			"file": "src/compat/rules/auth/zenmux.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/zenmux.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f34d4df6bd75c07289674af9d0d6f606727f3d7a0f6131bb3e7d6c6d2ef91bfd"
+		},
+		{
+			"file": "src/compat/rules/auth/zhipu-coding-plan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/auth/zhipu-coding-plan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f5064affb3db6186ca3a43b9bda52c9cfc1119754cde50b1b35583e7da7770c8"
+		},
+		{
+			"file": "src/compat/rules/classes/amazon.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/amazon.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1d307c2badd5384a89e702a5fae1edca057de17eefed24e3970b65612c3ebbd2"
+		},
+		{
+			"file": "src/compat/rules/classes/anthropic.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/anthropic.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "336f148a0abc383d8c714e1eb89a857f78989bc7d8d1ea1f41e535c2c7753a8d"
+		},
+		{
+			"file": "src/compat/rules/classes/baidu.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/baidu.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9c54111b53d099f5a533954fc1cd3a21978779c2f5b1eef2bf8f4080e0c15012"
+		},
+		{
+			"file": "src/compat/rules/classes/bytedance.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/bytedance.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7decc36b6ee46b5ff57541b24bca9c6b999b678273dfbf79c9df2808fd2affac"
+		},
+		{
+			"file": "src/compat/rules/classes/cohere.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/cohere.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5045ebb077769c2cb63bc9a18f50dfe6519f1ee13291ec10abade248dd163aa5"
+		},
+		{
+			"file": "src/compat/rules/classes/deepseek.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/deepseek.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a9e85fcb15491b1f791dbc8f3a81d397cc02f4b038de3d54eb49684dc5dc5b06"
+		},
+		{
+			"file": "src/compat/rules/classes/gemini.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/gemini.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f842f8160ca7a68befde6024f19cb0e4f940bdfe3235a36e97d6ae93ef0eb5cb"
+		},
+		{
+			"file": "src/compat/rules/classes/gemma.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/gemma.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ba483aa07dd940671caa9641d72b73ee870b1b303cc4e7faa10d0f29d9d671c8"
+		},
+		{
+			"file": "src/compat/rules/classes/glm.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/glm.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1d85b0202752b882f4f7d6de70134e2baf0285bc766eddd5a96ee5244f0dc566"
+		},
+		{
+			"file": "src/compat/rules/classes/gpt-oss.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/gpt-oss.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cd0b5b2868b59931ae394fd8f1f52b6b56d07d32bd24aa1f8762f4ca8186fae6"
+		},
+		{
+			"file": "src/compat/rules/classes/kimi.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/kimi.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d2d0e2e884e20465ad5c779765f04ecdb26f41a9332bc65e7ad770fd4af4f9f7"
+		},
+		{
+			"file": "src/compat/rules/classes/meta.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/meta.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e96ac0facfb5e8db4c7beea4a1a4613590bb2c66a527f424e000d1acfda3623c"
+		},
+		{
+			"file": "src/compat/rules/classes/mimo.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/mimo.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4f223113dd65c18f46d75a15001c7379763e067c7d57f59282740bd6b2128d60"
+		},
+		{
+			"file": "src/compat/rules/classes/minimax.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/minimax.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a8519fa42262491d4cb80e22634f56bfdbc8061939ffb5afa454d3929b0abd89"
+		},
+		{
+			"file": "src/compat/rules/classes/mistral.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/mistral.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8836a5c4d2508e515366d32e590bf6ceaaf38f7afa4068d9a61328bf2fb002ee"
+		},
+		{
+			"file": "src/compat/rules/classes/openai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/openai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ff7f9873bb8c080f454b63ee3675452829b85cbaf8ea7a2a638f1c3a010f1a55"
+		},
+		{
+			"file": "src/compat/rules/classes/qwen.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/qwen.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "594634db0a390141e17fd7bfd89d903fc43903ee71ca71f8e2d8993e00ac5074"
+		},
+		{
+			"file": "src/compat/rules/classes/stepfun.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/stepfun.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9e67bc15def795212c3bcac4c1d5ff04f1401cd6bae2a546da51447dbf8c9bf1"
+		},
+		{
+			"file": "src/compat/rules/classes/xai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/classes/xai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "54e4bc80d89c6816811513dd177a4498fcf82a5f02abf1e8a180ac8cc4c8b896"
+		},
+		{
+			"file": "src/compat/rules/providers/abliteration.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/abliteration.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "592ce59253b7e03faa32676eab1c5c174d4de8fa34ebc82d62438d7e0b65a5d9"
+		},
+		{
+			"file": "src/compat/rules/providers/aiand.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/aiand.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "56035e5c2ccaf89f64acbdb9854bebf637f500547811926384061b65c049960b"
+		},
+		{
+			"file": "src/compat/rules/providers/aimlapi.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/aimlapi.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c453680e5809f9a0e4382d971077832277a82971426c601b80ce5a37ffd82ce3"
+		},
+		{
+			"file": "src/compat/rules/providers/alibaba-coding-plan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/alibaba-coding-plan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c87598c5eedb9f9636af51d28eae6554b0d0db81924ff0c5bcb9beb6ffe55324"
+		},
+		{
+			"file": "src/compat/rules/providers/alibaba-token-plan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/alibaba-token-plan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "56d5332627bc39aa39dddd332398841d24a167a58b84f1a3393a625871430e17"
+		},
+		{
+			"file": "src/compat/rules/providers/amazon-bedrock.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/amazon-bedrock.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a0789b70cad108278b5a06fafb86d018d98267d5436f3c4e1f92a3f6046bf6d4"
+		},
+		{
+			"file": "src/compat/rules/providers/anthropic.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/anthropic.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d2cf5c9bb1b27c3e3545ff3ed2a55406446abe126ace60b62648b7c0b2437c9d"
+		},
+		{
+			"file": "src/compat/rules/providers/apple.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/apple.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d2e3b6ce3d539131e064166f6b17f5a34d1805bdb33c8e3fd680b2d7d0b50827"
+		},
+		{
+			"file": "src/compat/rules/providers/azure.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/azure.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "43b106dd38b332458e28d81a2d14b4c11c34782fd432a8b0b978ddf6f1bee363"
+		},
+		{
+			"file": "src/compat/rules/providers/baseten.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/baseten.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "13e09d25347bb7623fdacd6bef7db4725d91ad3eb6750d36649ebed62d3d5ba7"
+		},
+		{
+			"file": "src/compat/rules/providers/bedrock-mantle.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/bedrock-mantle.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2642275cc11cc0d1bc1aa192d32cc47a02da82de1ce445b200b2493e56c2df5a"
+		},
+		{
+			"file": "src/compat/rules/providers/cerebras.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/cerebras.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8717022c7c75821a6b172ddf465487f815a11c5440677fec1b08ca6dfd9e495f"
+		},
+		{
+			"file": "src/compat/rules/providers/charm-hyper.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/charm-hyper.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "58813b539249adcd95177db724a67bd664819b38f3fa1879ed28612e827de9c9"
+		},
+		{
+			"file": "src/compat/rules/providers/cline-pass.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/cline-pass.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5ff491abe4c1fd8339f33a67efddd984bbb8ae166fa16a4f320033ea2483eb4d"
+		},
+		{
+			"file": "src/compat/rules/providers/cloudflare-ai-gateway.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/cloudflare-ai-gateway.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9c45ff3600af3a53c9bc789295153871f6b2f5c507fbbbde0a37c660498f647d"
+		},
+		{
+			"file": "src/compat/rules/providers/cloudflare-workers-ai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/cloudflare-workers-ai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ac10ab0340b31511ef81d300e2debae421453c5fe8d9d069830bcf7d8d123c6a"
+		},
+		{
+			"file": "src/compat/rules/providers/commandcode.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/commandcode.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cd4ed81d6801f742041170d2d6696b5281ca8fedee93f0c8fd1b49e1b6239950"
+		},
+		{
+			"file": "src/compat/rules/providers/coralbricks.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/coralbricks.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "972b5d876ea003a60dc239705831abf90536d89011fa13651698cfee4d699e52"
+		},
+		{
+			"file": "src/compat/rules/providers/coreweave.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/coreweave.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9e2737b4a5d45db39c5e1d028eb85739d90b7747cd108f7931de61e68018198f"
+		},
+		{
+			"file": "src/compat/rules/providers/cursor.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/cursor.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "faf12e682a5605eadf6a481cf327e469513170b1e5d3606e02b1b55b48576500"
+		},
+		{
+			"file": "src/compat/rules/providers/deepinfra.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/deepinfra.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "eba43651ffe441c5d8a02d08a4595a2db4c5ad7b2ad870e1947060832a287479"
+		},
+		{
+			"file": "src/compat/rules/providers/deepseek.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/deepseek.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b80c8d6f55e4ce13f157ff3912a6bf2e40ee9979a097a34d353b23c90888d988"
+		},
+		{
+			"file": "src/compat/rules/providers/devin.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/devin.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "752136372a225b03931b4bdc0725c7ee7d0a38675ab0f41fd8ff7229a5ad36d0"
+		},
+		{
+			"file": "src/compat/rules/providers/factory-droid.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/factory-droid.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "77c7c4b7276be0b83ef2988b2472654a2e2dc949841a0562997841e571db628d"
+		},
+		{
+			"file": "src/compat/rules/providers/firepass.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/firepass.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6c10b2ed5ff7b3076687158d25a99aeafba90767b90b2813e1fd5b77a760caf0"
+		},
+		{
+			"file": "src/compat/rules/providers/fireworks.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/fireworks.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "02ca340cc8b38d821c54444ecf2666ab553bc390ded7836b17e9b3e8f7bbc509"
+		},
+		{
+			"file": "src/compat/rules/providers/github-copilot.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/github-copilot.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ee4a056b6dede570db50725c86706ccae96c17d66febd8c19ba9dd9ff7b3d3f7"
+		},
+		{
+			"file": "src/compat/rules/providers/gitlab-duo-agent.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/gitlab-duo-agent.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b52f2a73e8096731653ebcb1ca5b99eb3d8aeea904130fc3520f8ea43ba7f1d3"
+		},
+		{
+			"file": "src/compat/rules/providers/gitlab-duo.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/gitlab-duo.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "540af76ed15be7e91f6c7d69a89cd170931f1f38fb3ab33e053f363decc7d08f"
+		},
+		{
+			"file": "src/compat/rules/providers/gmi-cloud.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/gmi-cloud.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "edaaba429d75cc30e9e429efe091fb9a25d508175febde0ad2a370d2a09f20a7"
+		},
+		{
+			"file": "src/compat/rules/providers/google-antigravity.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/google-antigravity.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5bc28d86fa1e81ed3343f6bdc93cc45f43c105b4d88c21d4116902aa181315bc"
+		},
+		{
+			"file": "src/compat/rules/providers/google-gemini-cli.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/google-gemini-cli.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7ae1329dbcde34b220d766785254c04edac77eb31be09710d82f99bf8386e934"
+		},
+		{
+			"file": "src/compat/rules/providers/google-vertex.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/google-vertex.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2c3d1e6684afa3571f89f750bc8296c124356fbb46a0b0de50511e6c79639897"
+		},
+		{
+			"file": "src/compat/rules/providers/google.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/google.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d84a8964e16c12c459682465c80e3802acae5f98c4732040b3e5d662395b4f89"
+		},
+		{
+			"file": "src/compat/rules/providers/groq.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/groq.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8447349dedf88c35e7a64f9d5e6c7e2d0cf2a980cb6626f1dadd03066aea96eb"
+		},
+		{
+			"file": "src/compat/rules/providers/helmcode.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/helmcode.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "27859c526c145252a540e58c44bf39a7bdfbc682e916e5bba711aa340b1c37c9"
+		},
+		{
+			"file": "src/compat/rules/providers/huggingface.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/huggingface.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cc86ec732192ecf365deab3fe1731499b3c2e74565fd5d95a113c0d5a58fab09"
+		},
+		{
+			"file": "src/compat/rules/providers/image-tokenization.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/image-tokenization.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "03e0982dede514f9f41e9c073bc29d297bb1e7a1c21b812ed15aaddf1a9b880e"
+		},
+		{
+			"file": "src/compat/rules/providers/inception.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/inception.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "edb9b803536dded605f8ac003f7b5528ebb13648b3434c33c60ccf6c9845a3aa"
+		},
+		{
+			"file": "src/compat/rules/providers/judgment-questions.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/judgment-questions.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bb21de7d429074b67aea6cc02e34c18c264c6b9b3f6f10677a5e6bbf4930fab3"
+		},
+		{
+			"file": "src/compat/rules/providers/kilo.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/kilo.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c9aa96840d209c00d6c74b6c058da2cf6c59c979e3e59fad5533749f16fcff01"
+		},
+		{
+			"file": "src/compat/rules/providers/kimi-code.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/kimi-code.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a3f286b823f2be470ee74cd6718e82deb624300c61e2853801dd71407a78e8bf"
+		},
+		{
+			"file": "src/compat/rules/providers/litellm.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/litellm.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6080e95bab449084327245be2175334b77adc2ebb519ae07fd7431e56f752d81"
+		},
+		{
+			"file": "src/compat/rules/providers/llama.cpp.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/llama.cpp.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0deecc5096148b755a8b0338e7673a399c8d6d685a8e28750015c24887faafad"
+		},
+		{
+			"file": "src/compat/rules/providers/lm-studio.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/lm-studio.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "eecbc11470c2aad20b617e664ac719f46d4a48e8e76c58e1605b3c2ed3dcc456"
+		},
+		{
+			"file": "src/compat/rules/providers/local.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/local.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "34fc59b7b2be96e0804aa799800bbb821a8e17a9ee958028ea289d03d419f5da"
+		},
+		{
+			"file": "src/compat/rules/providers/meta.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/meta.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3698856f23f8e8249be43765dc6db11e5e9cc4ba5667c3fa8e427b70b31b5f3e"
+		},
+		{
+			"file": "src/compat/rules/providers/minimax-code-cn.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/minimax-code-cn.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "13bf99a6c90652f9ecc6643cfbfa816be39d2d28534e4245d80a5ae94eb34427"
+		},
+		{
+			"file": "src/compat/rules/providers/minimax-code.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/minimax-code.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2879c9572841c34a162480b32269c7387259a25c2e7e873b150a051f528aa6ea"
+		},
+		{
+			"file": "src/compat/rules/providers/minimax.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/minimax.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2dc098c4532fb460b890071a1747158ee0ed3202d2aa439e89269eae93cff31b"
+		},
+		{
+			"file": "src/compat/rules/providers/mistral.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/mistral.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a76c766a96ad34d3de076e37ae52009e325e3100a096c8141aa9c5a6937ea4a7"
+		},
+		{
+			"file": "src/compat/rules/providers/modular.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/modular.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1e0d19d41e7440b7a462b02bd6473b199461e38d2f7a62c72e9330b934686f3c"
+		},
+		{
+			"file": "src/compat/rules/providers/moonshot.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/moonshot.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "783477d22f6334dc083be4df069eb90eb88f10769dcfb277e708fc55dd546f43"
+		},
+		{
+			"file": "src/compat/rules/providers/muse-code.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/muse-code.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1f8c7119d0d8149c0ca9083eb54293a9da63d976cc29dee2fa871e5916498826"
+		},
+		{
+			"file": "src/compat/rules/providers/nanogpt.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/nanogpt.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "652af05e891489a5fad392b6c831cd618c9ed928bf8279edba6ed5c3492e7fd9"
+		},
+		{
+			"file": "src/compat/rules/providers/native-tools.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/native-tools.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "54280c85aef572c70bce7cffa671e683f384ee49c2a0cf2d23a5d3af844dbe09"
+		},
+		{
+			"file": "src/compat/rules/providers/novita.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/novita.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7b5f37c67ea736f092283b957214c8784eeb5d1033ff67206db6882eb257c950"
+		},
+		{
+			"file": "src/compat/rules/providers/nvidia.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/nvidia.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8cafc6c506bbf721b9817d82a575147d714136eb2ee9148f323b6ba3a48a5c91"
+		},
+		{
+			"file": "src/compat/rules/providers/ollama-cloud.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/ollama-cloud.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a8b7faa7a79076204609d663993333b1ff95d8f09851dabfffa0dc640a816d02"
+		},
+		{
+			"file": "src/compat/rules/providers/ollama.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/ollama.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3a57803e690d59a4506eeaca2564b0da3dc0ae385b03821e2bb17e6ab08c54e4"
+		},
+		{
+			"file": "src/compat/rules/providers/openai-codex.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/openai-codex.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c03e9bc2a82d10255a6f513adc926d8d295d5080f6734eedd16b031f7b94c694"
+		},
+		{
+			"file": "src/compat/rules/providers/openai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/openai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a8bbc209f8889ea4508dd046a51895193bd21fb823ac05fbae026e29717b9050"
+		},
+		{
+			"file": "src/compat/rules/providers/opencode-go.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/opencode-go.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "be0343cf53186eab3e99c076fb5ca2dd028bea88c793e438fdb1846781207e32"
+		},
+		{
+			"file": "src/compat/rules/providers/opencode-zen.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/opencode-zen.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "112955f48735c944a95f2de71f0784bacad432764b361a293d27416fd585a187"
+		},
+		{
+			"file": "src/compat/rules/providers/openrouter.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/openrouter.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "35aab498a6134a1cbcb4a0a23a0fa4dd728d0ae8537f7fcfb201b6d77e0ee46e"
+		},
+		{
+			"file": "src/compat/rules/providers/otari.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/otari.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5212d94416fc1fb694c175d12add0b27157d03e938fc2630aa53620e3aae8589"
+		},
+		{
+			"file": "src/compat/rules/providers/output-limits.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/output-limits.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9de35b3d2373d4ec422e2910aa4fd17168449348ad10ab9ae1ff7bc366fe2e98"
+		},
+		{
+			"file": "src/compat/rules/providers/qianfan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/qianfan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4a291cf625afaee962b47df74103eee30a619c3f0349ffc3f371cf3f439c0590"
+		},
+		{
+			"file": "src/compat/rules/providers/qwen-portal.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/qwen-portal.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "25506d09b224b9b038b7858786839ab396be291fd222bbc9dd6e2b112bdb90be"
+		},
+		{
+			"file": "src/compat/rules/providers/sakana.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/sakana.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e440599fb44376a7073fd07b1b5159003b84731349cdcfc7f46006f9ee9edca0"
+		},
+		{
+			"file": "src/compat/rules/providers/sambanova.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/sambanova.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cb406d493111b9fc7f330f07dc195b2bfa62d80a233cdf8f0af0a5340687c4b5"
+		},
+		{
+			"file": "src/compat/rules/providers/scaleway.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/scaleway.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f52646f65135c85b1e179836b5afd9370b0efc2492178fb45e6a2f7e678584a1"
+		},
+		{
+			"file": "src/compat/rules/providers/siliconflow-cn.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/siliconflow-cn.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "252194a61bc7037d0768a0ff7662eff9b0e43e2e9270c1ac363d8c8ae73b2205"
+		},
+		{
+			"file": "src/compat/rules/providers/siliconflow.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/siliconflow.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9262d1c5249c1419c06a29dae83c3ccdfee917a101010a1a20416d91f21a7193"
+		},
+		{
+			"file": "src/compat/rules/providers/singularityapi-dev.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/singularityapi-dev.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8b1ffb400b256b4af250f41bf96326afbb9b6686ccf095137157c9d469c65ce5"
+		},
+		{
+			"file": "src/compat/rules/providers/singularityapi-tech.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/singularityapi-tech.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "19b59b29a68ff889a4c075ba628212abfc74d31cb472b7e1ef596a0cf3f77781"
+		},
+		{
+			"file": "src/compat/rules/providers/snowflake.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/snowflake.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4ddc76a47e080108b81ec031b875986b46f0228b8edd077b68d235fe6a449a82"
+		},
+		{
+			"file": "src/compat/rules/providers/stepfun.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/stepfun.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6a396a2d5fbab47e7738c5fa90b78270a997f6f88caf56a2768a73102fd1fb01"
+		},
+		{
+			"file": "src/compat/rules/providers/synthetic.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/synthetic.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ab25d2839cbab5475d2edcc9b7b6223f2951f455469f673756115f1dad988c79"
+		},
+		{
+			"file": "src/compat/rules/providers/together.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/together.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5ab1ef5d67d5b5fdb287540626ae4c3335f72e20f5d599e1c9e3786bb2b29efb"
+		},
+		{
+			"file": "src/compat/rules/providers/tool-call-names.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/tool-call-names.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3d49b91649fbb100a8d5eaa653d126d4f4f3bd50b5770a5f0341387e049603db"
+		},
+		{
+			"file": "src/compat/rules/providers/tool-free-history.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/tool-free-history.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2b80202604afa3c9bf8ccba9d43bd657fc19c1297bf7675e2fa28c54dcc82db5"
+		},
+		{
+			"file": "src/compat/rules/providers/tool-result-images.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/tool-result-images.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bb9c11eb39819a49b43078242b0a0924632ddb718090b479a4b4e01204dbee33"
+		},
+		{
+			"file": "src/compat/rules/providers/typesafe.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/typesafe.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5efbeb8fbec28d61b9ad311ba9f997c4a5b260cc7ea2fde88130a8bb9cf47c54"
+		},
+		{
+			"file": "src/compat/rules/providers/umans.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/umans.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f0cf15d69d1419e8c278deb2908335144999f79fda25325b1ebd12e6dee9110d"
+		},
+		{
+			"file": "src/compat/rules/providers/venice.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/venice.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "aaeef81db96299c21cff45642b34370ede78f83315a0609eeeb0a7c59a42ecdf"
+		},
+		{
+			"file": "src/compat/rules/providers/vercel-ai-gateway.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/vercel-ai-gateway.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4a73701a82b5d18c76fec768ddc5dde8c1dc1637cb1577e1d24a4f4ebd353289"
+		},
+		{
+			"file": "src/compat/rules/providers/vllm.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/vllm.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fe2d6a70dfc5cd5f416d0230917920423b27906d4427f08df2d557f156f87125"
+		},
+		{
+			"file": "src/compat/rules/providers/wafer-serverless.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/wafer-serverless.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8c6db57d2158a4f360a4e128bed03b89a8d6e1eba5d62831a894a84d0facde4a"
+		},
+		{
+			"file": "src/compat/rules/providers/web.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/web.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8cb80b1475b9e2bdfdb0fde7921c52dfebe04165630d1e43f4b4fbfe3fe2c79a"
+		},
+		{
+			"file": "src/compat/rules/providers/xai-oauth.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/xai-oauth.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "027bce639a16197220bfc3bcb2ce74ab591269876959075649c97d87ef0d059a"
+		},
+		{
+			"file": "src/compat/rules/providers/xai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/xai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c03d67bad9bf45e077a1e258e8b1612978d23bc8eb967169274de786238c8728"
+		},
+		{
+			"file": "src/compat/rules/providers/xiaomi-token-plan-ams.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/xiaomi-token-plan-ams.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fa1072cec3128005d832fb4ca9a9c835e6e60c4846dbe9747b2a038929d060b9"
+		},
+		{
+			"file": "src/compat/rules/providers/xiaomi-token-plan-cn.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/xiaomi-token-plan-cn.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5e25cae4be398e3a988c41d543ac35537a72f4ea4a71d9b8dd19545b11978c85"
+		},
+		{
+			"file": "src/compat/rules/providers/xiaomi-token-plan-sgp.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/xiaomi-token-plan-sgp.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c75f3cce15111a0755fdc0fdcc7b70f05c2e928f843258fa944ae3bf854e545a"
+		},
+		{
+			"file": "src/compat/rules/providers/xiaomi.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/xiaomi.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2d1f9d1b52d64d197235bd95df3b6cf51b6ff3372854cf728dbb4441c7dfa9fd"
+		},
+		{
+			"file": "src/compat/rules/providers/yolo-auto.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/yolo-auto.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ff007520a974ca2df0bee92e26d98d7da9aaa7f76c687c2f172fba64144ff9b9"
+		},
+		{
+			"file": "src/compat/rules/providers/zai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/zai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "201950050f8cd7228afd22bb61e2a45bd576410bdc2177b1a46c508dd6ed9350"
+		},
+		{
+			"file": "src/compat/rules/providers/zenmux.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/zenmux.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "03d1f42998caff7b97932d23e45cb6d6eb02975d348a86a9ff63fe18e1bc75f6"
+		},
+		{
+			"file": "src/compat/rules/providers/zhipu-coding-plan.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/providers/zhipu-coding-plan.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fa9d56a7e70a935cae3e9dbe3a96751bb57dd8041a30909c2811c0132f5c9ad1"
+		},
+		{
+			"file": "src/compat/rules/runtime/behavior.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/runtime/behavior.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ad680f4956d2ceb4588fdcd88ad6b733f52de7da41cbc4c5136474c083b04a84"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/_collapse.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/_collapse.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e2bbb3a97be5c7e6f1062f425629c71a2563afe376f58f5d566172c66b85b307"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/_discovery.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/_discovery.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6a0cdc96435b128a435a3881c223f99e402804638bb59d83677bba0e69323d27"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/ai21.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/ai21.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1fd1897424280808f1b830bd725c3ed1b673a12589e53811a3357b2a66cc747e"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/amazon.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/amazon.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5591734f638283accc43c46fba05d84660d74a329051a92eb1a51b132599efad"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/anthropic.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/anthropic.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "41cd0154bf60f17643e8904d76c02d5670eabb9185d2d4a57ae0a3a272bf118c"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/baidu.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/baidu.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4d257aca00ec14c5d897f40896fb7bb79d3ef9ce0b1d216731aff3bc15066a3d"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/bytedance.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/bytedance.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b0833ac7baf50c9c662b62fe16323b332fabb86e3d0a48b93c3a4b21bed25f72"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/cohere.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/cohere.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0e58745c530c0aa786e0e0f787179b8ba08a84205157522dd3f74fe3f83f3b41"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/deepseek.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/deepseek.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0c9777087d62e3b45704fce28bb119d1857ccedeccd11559bca751315c9df87e"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/gemini.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/gemini.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5816ec67816eae916f8bf7bdb9f9a6d53b8a12004527a3ccda73e93d77092cee"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/gemma.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/gemma.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "777c19a555b607d7d6586fa9b276ddac72975f0c45c508af24c15032d5b7cf42"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/glm.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/glm.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ba5c4890ce5513058af746283a6d6cf3974b3f9e3dbb2d09cfe5b24634dbcd90"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/gpt-oss.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/gpt-oss.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "95e9f2291471b79b738367099af3920dd864aa2e3e2afd9c0494631a97d1e628"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/kimi.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/kimi.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "099e4377aa9a537f185b2b7429ec3d4b6bfabcb0d5b3d0632638e6093817ebcf"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/meta.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/meta.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b7b7b1d019a4f2ae870530b178ed590574ca7a9de705ff1257107bf7e77ecfaf"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/mimo.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/mimo.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2472ada8abcd6bcfd32469192db3dfd61d31032c982e2ba800b8e7ab96e90dc0"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/minimax.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/minimax.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bfd55ff11d82a143afd285bbb7cbcfdeae2e92283e2d9a2b46141493fcd9fa1c"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/mistral.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/mistral.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e0a02d6f41c80cd8c0901426f27afc52aa4148e6d7d6e55bc5fd9e17e21ce4fd"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/openai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/openai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4dc798dccdbe058f3942cd4f7a9d7b7b88a1b7911a2e46acab12341ee6856928"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/qwen.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/qwen.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c917e479cfa0600d7d6eb7fa3d690991a457dc8d0efa5a8d8385a719845c57a7"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/stepfun.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/stepfun.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "945fd3c61155ee0eeb2b226c4c23827533c10d0a6a59ab3d54be6f0b72b2117f"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/unknown.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/unknown.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6759ec147d30c35ec245881f0933f167b7c1231944cacf020f84a833bf885a27"
+		},
+		{
+			"file": "src/compat/rules/taxonomy/xai.kdl",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/rules/taxonomy/xai.kdl",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "15238f6288dc1ab73ab9dd07e53b29fc356409943c422cc8fa610b0b9549091f"
+		},
+		{
+			"file": "src/compat/seeds-tmp.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/seeds-tmp.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0d645f3efb4505d9b1d8891690ab8e87f2110c3958657dc4e821992ef8beeb2e"
+		},
+		{
+			"file": "src/compat/server-side-fallback.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/server-side-fallback.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6d52190287039452be1fe00301ffec26557749cceed33ed1d981df6c8876c837"
+		},
+		{
+			"file": "src/compat/taxonomy.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/taxonomy.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4472cf223227499d773ef8feb88d48f1a8094bf06c036d743f6cd2ff50e7a531"
+		},
+		{
+			"file": "src/compat/thinking-replay.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/thinking-replay.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "767378391b0142186917169de8bcafa3a986d8d0a5bc5df0041503512ceb8ab6"
+		},
+		{
+			"file": "src/compat/tools.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/tools.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "22db4fe381161529b58ecfdb738d31208d95f2209b745491491db6476d8df3c9"
+		},
+		{
+			"file": "src/compat/types.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/compat/types.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9ebfa4aae3a34e1262d4e024330a1328555951a6b198d13701b772b7bfef1378"
+		},
+		{
+			"file": "src/discovery/antigravity.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/antigravity.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1a1e246fcb9d7b63f1bfe45e548799bc4f4584316e994687c29a55c14cb12c4d",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "src/discovery/codex.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/codex.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "09161c4e344e3595e1e4d329b24130cbdcd039dacb1338ab1e58e7562e144d94"
+		},
+		{
+			"file": "src/discovery/cursor-models.proto",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/cursor-models.proto",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2a5090bb0ebedb38f164ed0f13440098986a39e45e807d9ba1c6465444725547"
+		},
+		{
+			"file": "src/discovery/cursor-proto.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/cursor-proto.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1079721f5231dbaf94b944fe6b1342e86ad72eedd8af319ff6a4ee883c73f9ec"
+		},
+		{
+			"file": "src/discovery/cursor.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/cursor.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "00b6983548485efa097f301dbb8d8f63acdc46505d4de1d04470deee4b713081"
+		},
+		{
+			"file": "src/discovery/devin-proto.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/devin-proto.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "801b7469300585eeb2b6c9ce6b2d95b94b64d89c0db5ce4cf370b8352da81062"
+		},
+		{
+			"file": "src/discovery/devin.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/devin.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2498a41ef7606f214888f1d6d4a53ff51a162d88d663303c13cb443dd8fea240"
+		},
+		{
+			"file": "src/discovery/factory-droid.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/factory-droid.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "47ece07b1157018621a4048aa2baa4ca3c33ef1382107998d042c3fe90991c8f"
+		},
+		{
+			"file": "src/discovery/gemini-cli.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/gemini-cli.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ea8f8d5ed6cc56ae60972873a453ea88a50c523e3358c761001708eb886376e4"
+		},
+		{
+			"file": "src/discovery/gemini.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/gemini.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5d43c2c4bfadc7c07f63bc7102fa2e8bd026fa783dc399306dc60d30c7e8b383"
+		},
+		{
+			"file": "src/discovery/gitlab-duo-workflow.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/gitlab-duo-workflow.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "74b884bd4b2a319e514fb15226772a262deec7402fd1f47099d4a2955e5f956e",
+			"changes": "process.env replaces Bun.env."
+		},
+		{
+			"file": "src/discovery/index.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "02f676b655663d6b2a02e231e9bbcfc7224f614df1dc6833c8e13294c9a3b016"
+		},
+		{
+			"file": "src/discovery/openai-compatible.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/openai-compatible.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f5a78bf3dbe0d833b6f12b121824b5c3645fdaac23feb0e93d80745432bd38c0"
+		},
+		{
+			"file": "src/discovery/protobuf.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/protobuf.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "aff266ce3d1375dcbedaca27cb2db35571e78f9d37424caaedc6ea46195383e5",
+			"changes": "Buffer base64 replaces Uint8Array.toBase64."
+		},
+		{
+			"file": "src/discovery/typesafe.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/discovery/typesafe.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8241f6a1d1707a3f51292c4bc1f945168786e00fe3b66d96997ca12143131c89"
+		},
+		{
+			"file": "src/effort.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/effort.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "78858ce4b34cc03759dd49bcbdb6243821deaae2624afc8ee833f890b8a2dcb3"
+		},
+		{
+			"file": "src/fireworks-model-id.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/fireworks-model-id.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "06147d5ea89b64a3e95343e570d7806cbe19a8db24566ed304469f6c9021a321"
+		},
+		{
+			"file": "src/hosts.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/hosts.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4b0387a649136c56c6351968954525b1609bbcf2433a8eed1cc1d0a8177bc0e7"
+		},
+		{
+			"file": "src/identity/bundled.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/identity/bundled.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9b36dce757f862648aa85757d2a65680c73fbebd0ac9f5291ffa1fb4d6253b8d"
+		},
+		{
+			"file": "src/identity/dialect.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/identity/dialect.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4c4fa295e669bdb95cd032dcfff68c34be52a1f23091833e42df103618ce939a"
+		},
+		{
+			"file": "src/identity/id.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/identity/id.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f69847d29fc56ebaf65df1a92f05b821846575841b0298c0930b0202f0010b9c"
+		},
+		{
+			"file": "src/identity/index.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/identity/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b486e9c0c9b3cc7e177c2a816af367e605a5d55290b2cd07729ac58a4a63e4c5"
+		},
+		{
+			"file": "src/identity/metrics.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/identity/metrics.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "95126fa29d0032217f9875d0de68da08ecfc4e81b273bcf64681391a1bf57c96"
+		},
+		{
+			"file": "src/identity/priority.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/identity/priority.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0cab203cff79d17e64a1e12fdcc985f2abbb137cb73e195ab95b5e1ec3a0faa7"
+		},
+		{
+			"file": "src/identity/reference.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/identity/reference.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bb44545f59495f4811e77d32c52e63e5efc5b2ee1a8ea319c29da963e228c2d9"
+		},
+		{
+			"file": "src/index.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6338e3fc0915c048824ec34a111fbe71b6c22fc454b2805749a0b962724d69ab"
+		},
+		{
+			"file": "src/model-cache.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/model-cache.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "312cc90ac752790aac53e8bbe84c4094e7a00d5ac07ffb4551a53dc45107d771",
+			"changes": "node:sqlite adapter, deterministic Node hash, and cache schema v16 replace Bun sqlite/hash."
+		},
+		{
+			"file": "src/model-catalog-format.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/model-catalog-format.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "49ba2201d03c742050f6984de580ae24587622f413f90c03a2f3267dab11a09b"
+		},
+		{
+			"file": "src/model-manager.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/model-manager.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ce0e27612db79a1dc1ed4c90e8f0a2edd22e0f1c2843502e005aac90e996437c",
+			"changes": "Deterministic Node hash and merge-v6 fingerprint version."
+		},
+		{
+			"file": "src/model-thinking.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/model-thinking.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "698f75a0aadc4870b50c10dd0388ca50cb3cde57c1b17883826342cd9e6f9577"
+		},
+		{
+			"file": "src/model-tokenizer.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/model-tokenizer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9c737df2ff4543f974e9cf6999442f31212e7d6d6096690a9e7a5a440bc28f10"
+		},
+		{
+			"file": "src/models.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/models.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3256ca28d788655c098b346dadb4d1317a1d9f591e42fc499641533c78e05612"
+		},
+		{
+			"file": "src/models.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/models.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3f7e8757f27c70dcf07a1593f4c60160a269f5614c5a7502ab0a5863b9e79a40"
+		},
+		{
+			"file": "src/pricing.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/pricing.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7822a56f4d40b7364631ba6414a2029fa584771e90a6cd57f8885e9de419b829",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "src/provider-models/account-access.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/account-access.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "34191724ee7f3480478a93ab74ff878fa95e7b0154f973e2ae172ae315ffe3c5"
+		},
+		{
+			"file": "src/provider-models/bundled-references.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/bundled-references.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "548565c899cb0e757a315bc0bbd74e8870ff3f6f78e793ab92d329cfe0a3e38b"
+		},
+		{
+			"file": "src/provider-models/cache-provider-id.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/cache-provider-id.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "87d09344735b4a8f9a2fc9dcb32dd31fae91d834f78f1ed50a275c10c12a8ebf",
+			"changes": "process.env and deterministic Node hash replace Bun APIs."
+		},
+		{
+			"file": "src/provider-models/cline-pass.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/cline-pass.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dbcb2e4ed3f6894b4b470c97902817674ea1477218513f8b1d054b1ae9073fa0"
+		},
+		{
+			"file": "src/provider-models/descriptor-types.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/descriptor-types.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b4fb1c8da87f368897d3d9e6f5fdd4a243454fa1b6b6ba0a28225470f7db0a08"
+		},
+		{
+			"file": "src/provider-models/descriptors.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/descriptors.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1ebafbddab88812834f9aad97a96454c0a772c82369e924676ac7edf74d6c610"
+		},
+		{
+			"file": "src/provider-models/google.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/google.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "012ea8f40895bec367a9d81b89aa66f90979ade950ee023f713bb57584c0cdbd",
+			"changes": "Dropped the Bun-only global fetch preconnect fallback."
+		},
+		{
+			"file": "src/provider-models/index.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "30b8cc850570e2a0234d13ef28007dc109f8e4bcd6e7446b968eed17b22d9a1e"
+		},
+		{
+			"file": "src/provider-models/models-dev-policies.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/models-dev-policies.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "94d489bee54bd654ff08947953ac33733a5995084c53bfb63249918259ec63d4"
+		},
+		{
+			"file": "src/provider-models/ollama.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/ollama.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6aacf7a51d6614b9f0d80c6fab66270d6a50082e58221553062d63cd61f17388"
+		},
+		{
+			"file": "src/provider-models/openai-compat.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/openai-compat.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d8719a698778ec598174b593c5fadeab83a3943be1940b4c5dc91416b46ad29e",
+			"changes": "process.env and node:zlib zstd replace Bun.env and Bun.zstdDecompress."
+		},
+		{
+			"file": "src/provider-models/special.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/provider-models/special.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a37424973f45e20150130a364c4964ff4796ce05083d1d9a54df3c1032c8e715",
+			"changes": "process.env and deterministic Node hash replace Bun.env and Bun.hash."
+		},
+		{
+			"file": "src/types.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/types.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f6c20a3313bff790fedad6464fad03afc818b435f3d62551554bbefd48890c16",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "src/utils.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/utils.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "18f8618cfaf05a39369d35e5dc94a9333bca1bab1db0fb5b16fc12858d3fa3b1",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "src/wire/alibaba-token-plan.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/alibaba-token-plan.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3ed8dbdeb92b7ec4a3dcbace320d2147a24f838fdc87343eaf98c0e207e7e5a8"
+		},
+		{
+			"file": "src/wire/charm-hyper.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/charm-hyper.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8e1a035ddda2cd5b01709b65b4dcddd0a436bc063a463367db34f50dbb260763"
+		},
+		{
+			"file": "src/wire/cline-pass.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/cline-pass.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a997fe3c57ec4d6bfb60c24612a76f9db6e2e4485205ed9c8625bda51ad4d9cd"
+		},
+		{
+			"file": "src/wire/cloudflare-ai-gateway.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/cloudflare-ai-gateway.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c05690c27b5cc2d54a07ff8162997fc46521685eee136bbb410d483b22f5f111"
+		},
+		{
+			"file": "src/wire/cloudflare.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/cloudflare.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "76bf76aea4e4f526a4098ec1db5e1befd78a9ef02bd49c3e2256fa0c57d41654"
+		},
+		{
+			"file": "src/wire/codex.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/codex.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "96df0a281dbe3885418897080bc13f4d74fd0db7fa94e33d3528aa10b7bb3879"
+		},
+		{
+			"file": "src/wire/coreweave.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/coreweave.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e45eb047acb8b214fddfb3c37d359b6c967e25b7eacd44f554aa1b92751d3497"
+		},
+		{
+			"file": "src/wire/cursor.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/cursor.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1fead4198e3622d8d0b40ea83cb718f2927cf51a05b598ffd048212aa1a7e886"
+		},
+		{
+			"file": "src/wire/devin-proto.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/devin-proto.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a4d0e43ba2f3a24df749ea61ed4180fee9c25e425d16b6f31f5fc6d2811bf88b"
+		},
+		{
+			"file": "src/wire/devin.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/devin.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a6a83f5a16ca01059b93c6dab37d691ea379b6869e51adfd736ee6b1f15dc1da"
+		},
+		{
+			"file": "src/wire/factory-droid.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/factory-droid.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "77dca421f7238f8211424283e2a52d8f81ad3bc93d0441902829bf235e9b5c86",
+			"changes": "Deterministic Node hash replaces Bun.hash."
+		},
+		{
+			"file": "src/wire/gemini-headers.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/gemini-headers.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e87dcf484ba86b0467b4f413bb044bd8644967fffa17017b9dfa1a919fe3617b",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "src/wire/github-copilot.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/github-copilot.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4347899d4cdd3c2eae92da4e25a1229c48f7ece81684b5897cfeecbfa3ca0ade"
+		},
+		{
+			"file": "src/wire/image-fetchers.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/image-fetchers.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0843b1af7d2d5b2440449e1b589cdb279d90080c2ef52c721464bf37d0976b6c"
+		},
+		{
+			"file": "src/wire/singularityapi.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/singularityapi.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d260452f6dab62058672daabc5edd28e143afe6c740b87e1e695e22d6203252e"
+		},
+		{
+			"file": "src/wire/xiaomi-token-plan.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/src/wire/xiaomi-token-plan.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dbfb936aac4026eb7dd631ae3e94d8a0ee49b15d6e755366039bdf1036a7ba51"
+		},
+		{
+			"file": "test/abliteration-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/abliteration-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5a4e238783e8b9b282671fc9b0efc0d1270d84df987cfe705257cb532e628b26",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/alibaba-token-plan.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/alibaba-token-plan.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8d1f03d92d3a2a0b5f14e08ffead233ab2bda299feb3a427815cae55437cdd33",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/amazon-bedrock-openai.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/amazon-bedrock-openai.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a3fbc1d14362d2fe14b12f72870c41e190ab017d764e1090181cea7b197d3190",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/amazon-bedrock-opus-5.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/amazon-bedrock-opus-5.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "94bebfb73489529fab22becad64e7eef30a53f167774cbc6b7e7098907dd42ad",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/amazon-bedrock-us-gov.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/amazon-bedrock-us-gov.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "29cff74d0188cae736231db411b276bef4a20704ff46a8ef413c93628dfe6839",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/anthropic-copilot-signing-compat.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/anthropic-copilot-signing-compat.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a2f0d94294809bce640618e1c1149bc87a24f14b4b146da2dd2814809c739d77",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/anthropic-custom-provider-disabled-thinking.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/anthropic-custom-provider-disabled-thinking.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fa0899e76077cf0915a0a4afee4f04688a266b8d4f256041c7008ee08b1ceab9",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/anthropic-fable-5-1-cache-read.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/anthropic-fable-5-1-cache-read.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "69efc924f1deaba8d1d9610b38a4f145a1fea2c4919ddedd048b2cc3f3a4e883",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/anthropic-fable-5-2.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/anthropic-fable-5-2.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dcb5aa411b1ffb4bcf844f72c1ce96d962199287e3d6e46ae81c5e61ef835bf3",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/anthropic-fallback-credit-targets.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/anthropic-fallback-credit-targets.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2b371c59b9b277b8edca8e867ed52168146f0c782b66a2ddb695f1beea6f6206",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/anthropic-retired-models.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/anthropic-retired-models.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3dfae683a789540cb6be13004db51586eddd0ebad3e8e151e96fb3ff4128864a",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/anthropic-zenmux-signing-compat.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/anthropic-zenmux-signing-compat.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1589ebc5841d56f2421b8226052690c931285e1512f791caa0152180d7e20ad4",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/antigravity-version-lookup.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/antigravity-version-lookup.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dadfc5722851da98ffe940fc69590c868cd9c4249984fee3e8dca377e4640217",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/azure-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/azure-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "66ef5271c4d08f118eea67a590e3af879ca57fef932551230a61d2fc3807a87b",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/baseten-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/baseten-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "812189c8dcc1a43c834b4a8f0fc87f2eaa44dd0cc37f561fe37c99545f1f1136",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/bedrock-prompt-cache.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/bedrock-prompt-cache.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "566c0bdd14c1d551f90b5e0a6a360e37fb02c3ee90c96f862ac3110ee01287f6",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/bedrock-qwen-output-limits.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/bedrock-qwen-output-limits.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6104df2cae3aa165283874bb228b9e7dfa8f195d3b514457bf69ee2feab32735",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/bedrock-stream-idle-timeout.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/bedrock-stream-idle-timeout.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d064708b22846a9cdfe8543806608140c001f6bfe11cf8f2d6cbd3e140a928a8",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/build.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/build.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a8c23fd91bddffa2261296c1854a624b73477b8941d74d30e92c5a02286d77fb",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/canonical-limit-fallback.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/canonical-limit-fallback.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5f183e064c8c932b917ba7deb1a0bc6137d5ab54081e2dbc63e4034cdd0764b5",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/catalog-metrics-index.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/catalog-metrics-index.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9edd6c2ec69f11399d2a35742af19c15e6bad9443b616b40247b16ce1e1e0758",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/cerebras-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/cerebras-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e4233382fe50800cfb840d160c71864c1ca5853a4729ea21ce12d8e1650dbb21",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/cline-pass-compat.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/cline-pass-compat.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bd2a61e3f5413ba743791abe8ead99cc3791884c0d862216630d2eefe6397272",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/cloudflare-ai-gateway-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/cloudflare-ai-gateway-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "092e0c5309df486f8a613df9319fb12c9c7860e0c04a1a90e51c6c046473b203",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/codex-wire.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/codex-wire.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ae6c1415d1c990f67d58e966ff2ccac271fff4b401ee18414cc802de1197ee0f",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/compat-capability-axes.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/compat-capability-axes.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "276bd8885f598c540c91df9c052d6ae97c724cdac2e0702f89a408451d7fe41f",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/compat-cascade.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/compat-cascade.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8dfd022dec47f258a2332c47292ec5374fe47bce1963d81d0086f8f4ad14fd2f",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/compat-collapse.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/compat-collapse.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8587b591d9bd8291b8f9a14f600bedbc52285ab4f348b8db70b6801b238dee95",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/compat-compile.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/compat-compile.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6d81f367d2bfd66226e1e1a97d16ab2b2c763f126c31b486e0f07ecda8814b3f",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/compat-conformance.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/compat-conformance.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "09055c9ed394ad65234075d770dbcc0fe26853582129492b07773133aa9e68be",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/compat-parity.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/compat-parity.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d8b3d02856f501081738c65784ae59627aee81f0d786cc4930a529bbffb00d2c",
+			"changes": "Vitest and Node equality adaptation; 30s budget for the full catalog parity sweep."
+		},
+		{
+			"file": "test/compat-taxonomy.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/compat-taxonomy.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bfb3fa8ab753abd1e111970e0e3fcabcc8c90db8201067a8db43449806df21be",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/coralbricks-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/coralbricks-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2e6b67ecc42b9fdfcc48a149255c771cc1113434ea2c12a8e3aac07fa15e2afb",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/coreweave-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/coreweave-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "65b98f953d4a0057d86c8ac41a10d9adefc8c3d3c0ca9daf7263071ee346cbdb",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/cursor-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/cursor-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2650f9d745de932a8ddc1550aa4089dd373adbe198d1a70aa443a2e80e85b47b",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/cursor-pricing.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/cursor-pricing.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7ded551d44e0ea80f5487024e481823dba9075682e07a36b43977bcedbbaa085",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/deepinfra-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/deepinfra-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8d4ebc16cc1ee314a7d74ffff8146ddd8d70ba17e207a36a81be0ee6e8b7b63e",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/deepseek-v41-flash.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/deepseek-v41-flash.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2caf80426509d586790465aca4f3250485047f2bbf3da11a227ace7d6a189ade",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/delegation-cache.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/delegation-cache.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "123b162035b37ec6f74d43587d78b8fa76aba7789a892ca1d9321724c664c6e2",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/descriptors.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/descriptors.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0267dad246685b114bd9826352e912c1de6487779297d01630bd69ba50acb26d",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/devin-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/devin-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "adf92c848b9edb49be8cdff13b54290b3cdf30be19b131f21af9b372f00ee1e1",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/discovery-null-limits.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/discovery-null-limits.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "836560df8af100558fd452dd33d2fc9dc4f96b89eeb9b30a34b9ed39ac5594bc",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/embedding-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/embedding-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6049a2c5bbf5114bd518cbac96a01e51a8002ba879843054a0cd907c6d4f5bb3",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/factory-droid-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/factory-droid-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "41c8d10c99d2fcd873e225da5cf3d9669434313341ce5986d40b1d1275278729",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/fireworks-fast.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/fireworks-fast.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0fe6858bef6558fff6bac3fe95e04b45ee8064df6be9fa80bd1f6818820171b6",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/fireworks-serverless-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/fireworks-serverless-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9faaa5b7c07c18608cb9333df52b6ac16a32901db1b1230014e83e95cbffd923",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/gateway-reference.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/gateway-reference.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4b6d0e6302cb35a06bc58a4575d4ecafbc4c5800bfccf4b24eba1c147ead960a",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/gemini-argon-pricing.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/gemini-argon-pricing.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9f85817a9e947704bdf3292662ef732a1a292ab4e20d646ee92a1e2d90ca5af6",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/gemini-cli-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/gemini-cli-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0372c166a08d79622700d43fda4b027260b37c0e32b93b02a518c1b9d47a29f7",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/generated-policies.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/generated-policies.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7337512b44183c11f34e03d9f16399d8bc2d7165e06bfb4cf85af7155fd8f8d8",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/generation-host.test.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Injected credentials, discovery preparation, async GitLab, fallback, and host loading regressions."
+		},
+		{
+			"file": "test/github-copilot-wire.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/github-copilot-wire.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c84d4af4e0d183014d7a018a4081604f6bf2b65ebe3c224d8c9b28b7d56a7695",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/gitlab-duo-workflow-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/gitlab-duo-workflow-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a99955740a40f7675d1cab616717ab25e3c84974536a11d40407d306eb3f3337",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/gmi-cloud-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/gmi-cloud-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8b90833ce989bec5555dd13b6308d87de3f0197016cedeff046a54825598d73f",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/google-aistudio-compat.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/google-aistudio-compat.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "47513c734b789e1fdc2a5a23863f33683b232c6f2af51f00027a09e4d99e26d8",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/google-antigravity-prompt-cache.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/google-antigravity-prompt-cache.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c0050c48b5af7b68d5dbcfe25d6c8ca4f5dceb490f05c5139cb4cd138ef967d1",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/google-vertex-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/google-vertex-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "eb9ec72b695be2fe17c9c410372e825877c1591db0a2ba42d8e494ec37194c48",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/groq-compat.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/groq-compat.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8295042441d0a038e0e2b49ccc8a7aa1a3e23724c59c0eeacfc843aeba7430cc",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/helmcode-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/helmcode-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5a75b6e2a52de4ec8f2096a5a13109d14cbf31678f2591cdf2e87ddf63155aa8",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/helpers/http-server.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Node http server replaces Bun.serve for Cursor discovery tests."
+		},
+		{
+			"file": "test/helpers/vitest-clock.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Vitest adapter for Bun's setSystemTime."
+		},
+		{
+			"file": "test/hosts.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/hosts.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "21fa021f4460a424197f33890d6e5ed912eff2ea74ee3f5d741843f7e66fbac9",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/image-fetchers.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/image-fetchers.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2259f7fa5bc33def8485339bbc800f170fbcbede8078a12bb18856083283b943",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/image-tokenization.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/image-tokenization.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c87c0525f16fffa181276d86715655b7a21af653fa098105beefb08d56af5946",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/inception-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/inception-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d467260ccbfef3c68d6d738df4aaf6c5ac512ed89010ae6a9977c02dfb6c499b",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/aiand-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/aiand-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f665c8132c0e1bd74026b6725066aca2d01112e30005a6828c5ea8b20882efa9",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/charm-hyper-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/charm-hyper-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "725dcc88e679ce66ad92f30ea435ee9ca6572f2a745fd6e564add1702a6594d4",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/classifier-cot-extraction.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/classifier-cot-extraction.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e1a2a7f5aa85be067986e2cba5181b17c7f83de3ff8c777713d8fe7388cbf6ba"
+		},
+		{
+			"file": "test/integration/codex-discovery.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/codex-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d313d48c917ee06296a3a4ebfafcf61438511c78cbecfb788c5e97156faeb20d"
+		},
+		{
+			"file": "test/integration/commandcode-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/commandcode-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8f838922d36065be3184e8ad6ecc61b821f6b755b7efef61bdae0e161447eea7",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/gpt-oss-antigravity-compat.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/gpt-oss-antigravity-compat.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "209b0ca5112f335a69f4f065fe4bfb449d26a9f713d66e096102b7c33e1fa160"
+		},
+		{
+			"file": "test/integration/issue-1846-repro.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-1846-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "62f44ec238a59fd0a8ab01768b39b5e1032c1d0e4ecbfd0f713432048f7623a7"
+		},
+		{
+			"file": "test/integration/issue-2113-repro.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-2113-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "781ad9fe64212e454aa10b233fc868821781314f93139dd823f11a435806e9ae"
+		},
+		{
+			"file": "test/integration/issue-2299-repro.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-2299-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d29761fbe3daf92a9107ad304765f32a8516127561b187895c776a29da37798c"
+		},
+		{
+			"file": "test/integration/issue-2558-repro.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-2558-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "70a3a4ae0eeae8b9a609afa573ea7e608975bdcf776ad77bb1ab338cbafa4d4d"
+		},
+		{
+			"file": "test/integration/issue-5572-repro.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-5572-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2452d3298ba900858702351032abba2cbd3a122a2a1cf25541579b15fa075689"
+		},
+		{
+			"file": "test/integration/issue-5756-repro.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-5756-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e63e4f39738232be1187130cc1671e106944f50ea90a8d26ffb97c6a495b6127"
+		},
+		{
+			"file": "test/integration/issue-772-repro.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-772-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e255760629a84ef50c228e6866f01d7a1ad0e42044847ebfd324295ecb91a3f0"
+		},
+		{
+			"file": "test/integration/issue-830-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-830-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f50465a015d373ea0430f1bb9cdbdb74099a8ccac46ec3ef7ac919602b6ecdcb",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/issue-9345-repro.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-9345-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6c2691de53e5cebf840e912edd4688e1c3b0b85c47161dfb747f149171e5a440"
+		},
+		{
+			"file": "test/integration/litellm-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/litellm-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fc543fc651efc3950f745a366f3f2100b97ff41dfa8286f942e7fec4aeadc170",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/model-manager-unbuildable-rows.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/model-manager-unbuildable-rows.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8614e4dff801ae8f63b53631c0a1f19279eb9b282df808722a1a362e1ef941b4"
+		},
+		{
+			"file": "test/integration/modular-provider.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/modular-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4ad8aac7acf26b6ed6578025b3d8ac03c65a0dee50474ab3ac5f8154d8810007"
+		},
+		{
+			"file": "test/integration/ollama-cloud-output-caps.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/ollama-cloud-output-caps.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5656f8a81a847d9beda08a65e878477646b1750fb84ce3939a5e379dd0af5576"
+		},
+		{
+			"file": "test/integration/ollama-cloud-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/ollama-cloud-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "da6bf7400a7968ff168790df806fdb6c68707e286cc163ef37fe7435f37aed5f",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/ollama-provider.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/ollama-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "50a2b1e4d8f47fd213d71e89c428cb4969a15381f49812c9df2abafb6317955c"
+		},
+		{
+			"file": "test/integration/opencode-provider.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/opencode-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f1b9b8315f811c01d68609f2b318dcaa9ab6ad963b4675eecb3b89a435a258c0"
+		},
+		{
+			"file": "test/integration/sakana-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/sakana-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "57f849b24dcb852b640079a7d2c61d933036810d73eab763eeaba957ad4bc483",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/singularityapi-dev-provider.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/singularityapi-dev-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "585d633365dee42e3849dca4cd849939fb256a412202aa356785ab11160e80b1"
+		},
+		{
+			"file": "test/integration/singularityapi-tech-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/singularityapi-tech-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8633e5c8e97337ec4a55583382de0a09bad352fc1bcf0db301ce9a17307b80ba",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/integration/wafer.test.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/wafer.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9546bd1473f08f8b69816fa1452d26260ef474617078a6db74e2392cc2272db4"
+		},
+		{
+			"file": "test/issue-13912-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-13912-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "08f3c871e8b1b8a468697bde06091d2a1a4dc2f4b8b5137cb09187aec3e84eaa",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-1617-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-1617-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bc11432e48ce1fe7eb739f599dabbb24b07fcbd5f04856545742da1b9279aa89",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-17481-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-17481-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e95b01a8a8bd39670ab9d9a09d2bd12bc88d9d5a6d25ad2ee2f9d6191eec86e7",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-1849-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-1849-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d4b4294f97f4f756aefbbfb6222348a8cfe287c1a90e8e8922b5296a542ea744",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-2105-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-2105-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e12297ec0893de125d7d02bf23451af7622dcb6b7c97cbd3a7532b13386ca85e",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-2883-moonshot-china.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-2883-moonshot-china.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0c992506dd0b353dff9921593ad49437bfc15941d08624a8e345b5a6be22a850",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-4297-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-4297-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "813c39f550dc94be3994fc7ff8a37ca3715253b5f68790c7beb4946374cee411",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-5598-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-5598-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0250c52661a9f2c512c18b92bd28ec126e48f3846ae0641eedfff1cbd7db11fa",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-6563-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-6563-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a4e76ba195226d9c86d32e70d97424b39bbc62ecffa071ea6f8b8187a0705325",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-6664-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-6664-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "62681444dd8fa6e51708dc50a14d7de37177762886eb9f1de79915099c4fd4bd",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-8315-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-8315-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5ac82c3ae0e2fb6f9d5182b4d0ba4d8950f729e5997ce6328809b09c5965f114",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-847-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-847-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "950f79b0b18f5278e4382faef06aab34ed4540ea8016d7604d2478f50c23ea92",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/issue-8867-repro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/issue-8867-repro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "27e863135fc5b83decfb48cd6003457a1f89bf84730a5b81c419333f0c3517db",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/judgment-images.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/judgment-images.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "24b47d069feb91186c0f546ac17e632edc318472bb89e0705f5de06440fbdc29",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/judgment-questions.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/judgment-questions.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c1e2831adf21cb338f0aa1bd76e52ea98b7ec8ea1d0a54a547f72df9a25e93f6",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/kilo-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/kilo-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "00e3a487730ef8f925da512ebbc4412c7ea16c6151349264bbc3ac1a9ab0c731",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/kimi-code-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/kimi-code-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ef83b8f9fd20928c71cdd039e5675b5c2176e9d2520c17310ea938cde8d1b731",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/kimi-k3-1-pro.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/kimi-k3-1-pro.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e07f1ba09b7a02b8b3ba1e49fa705773056e2252630ac952b525e9f5d49bb6c9",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/lm-studio-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/lm-studio-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bd8d95fa3ff6fb1f50b1c921df2b4a8c3c6d69334b60f14e196f1a2910a1c550",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/long-context-pricing.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/long-context-pricing.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "97f6cf4241e88a5f5b5cea47b97e292bd4f750a75124cfdca1842394e0a1e6a3",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/meta-muse-openrouter-compat.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/meta-muse-openrouter-compat.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0eea792354fb3a247621742452b5eeff650659a9622ac6095fe8e55272bf273f",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/meta-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/meta-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "702ea4797a1949934ce83ae223dbcca84b2c5ec08399bde8a2e5bee99ec1dc92",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/mistral-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/mistral-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a29f6404127e5534b38357d2be15f9c1147fe37d8fcdaa4616b514ab8beeff29",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/model-cache-rewrites.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/model-cache-rewrites.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3e4999fefec0e7833ad14e2973b6e778a7c3fce2277db15e16981d6ee9351ea1",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/model-catalog-format.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/model-catalog-format.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fade9e8486b3d5f73c0a6ae64c791690d2d2b5718c189d27766d2b281f05a874",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/model-id-affixes.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/model-id-affixes.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a6cd361e7084e4e770fd3f68013cb51bbac737d5b07ae46b1d78d02545a2fc84",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/model-manager-always-refetch.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/model-manager-always-refetch.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "00ca8ea09432b5d3bb34f3a2ff1a79e9b9e00b37716357ea82ead8c7fda54107",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/model-manager-reasoning-authority.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/model-manager-reasoning-authority.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5c91ef6f59e2cf457c7363e8446d950ffac8bdd059b2bae76d11c4f8310224a3",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/model-thinking.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/model-thinking.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4cd49622d970f58ef569d5ba18aa7aa44be5f0ae19485cabffc5207e63d32da2",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/model-tokenizer.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/model-tokenizer.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a300de3d98a7f789938ed6e6a17ea6cb5a939bde29bec315bfe91a4b790730b8",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/models-dev-kind.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/models-dev-kind.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3c805fe81b7166977cc114923cc70d5bde01013fdc285a9925fd617e572ac2cb",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/models-dev-metrics.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/models-dev-metrics.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3e655a6d3b8e9af983439be2b4d2b7d462286dc1efbff0c7b3aa4a81f58fb386",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/nanogpt-model-limits.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/nanogpt-model-limits.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "52a6ee281abd29936e8852069e43cc3a186ece3f490aaad475183c639881b43f",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/novita-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/novita-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d4b5c3b191fa44d29beee13d3f6a9dac6736faf6e6494b16bdf08ee20446e833",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/ollama-reasoning-disable.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/ollama-reasoning-disable.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dc8bebb9231c7bf7f9d8013ccc4cf01a1e60170b05707b08084c994783df3aba",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/openai-daybreak.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/openai-daybreak.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c31b67ecbc22be92c8152dfb2381d5b529e13a4a983dd78c6d9f542a92504153",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/openrouter-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/openrouter-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2961739ef276ae8c76dd0fda77138931b96b8fb085d36732364985d7edcf5757",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/otari-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/otari-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0b95226ff17fa1ac8cd93866d0d927580196186fe89d678789b966e46438483b",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/outlier-model-policies.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/outlier-model-policies.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "27eb0c1c0da5572a9b45d08c35c82408e84152e56855c8a13322d3c9bb3c65ae",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/prompt-cache-lookback.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/prompt-cache-lookback.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3bced924a93a139660a958af8184b884913e54550f857727c1817a02481086b7",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/prompt-cache-persistent.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/prompt-cache-persistent.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "620a123a52feadbbf9e134a2e6d0701ee3ae111c4401793412c95cc6f41de2fe",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/proto-parser.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/proto-parser.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2f6491616798a3280eba67a945c602189c1d9db28e01138aa1440eb183a1a630",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/protobuf.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/protobuf.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3102f75e4458088ea1e5029a5e79608204585528e7e2c9661ae014f2888a8472",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/provider-cache-id.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/provider-cache-id.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4f8d3f2c830bcf53588d1c1bb2be6deef822eeabb01d2cfa1e9528c4ed5ad0d5",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/published-effort-ladders.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/published-effort-ladders.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d9f7a62609c20cd8b61e1d55630abe538ca7bcfa555349102b77206ffecbda9d",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/request-size.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/request-size.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "27a60e0fefcfd8ce2740900b54074588f9174565a7cafcac8a86ba70cdac28f2",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/rerank-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/rerank-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "626292ba7a58bd71f9040d60f8b95e172a1e87ae1937d10cadb2fbd15fabe074",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/responses-websocket-policy.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/responses-websocket-policy.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ce97aed5b511cacce584e9e78501136fad9c3b0faaef60608690be47278d0830",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/sambanova-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/sambanova-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "94c7c2ecab49611bbe3539cdc4dabdff3065550f634b7aa9432c146d657f456b",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/scaleway-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/scaleway-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c34821425f90ee127da9585ee09f0dee7caa713b87ae8788ecf680a539c39889",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/setup.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Per-worker HOME/XDG isolation so catalog tests never write the real cloud-pi config root."
+		},
+		{
+			"file": "test/shared-prompt-cache.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/shared-prompt-cache.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2c78d2c180e94d074dbd65b2d5de376ffb1eee683b6985a11a93a8aaba13e589",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/siliconflow-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/siliconflow-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "83191fa005b21d46b4dde9f76f99bc273abec68afae6e576db8283a6860535ac",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/snowflake-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/snowflake-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b3457c301181e18857273fc56bb3db1f4ef78a875f2d8373664c308535df42a2",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/stepfun-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/stepfun-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d957e78360bf9b655955e1a212497d4d393e59eac6e4043030422be219940452",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/synthetic-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/synthetic-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "778ada8ef81b4ffad95d5a457eb39cfe2d09303d2a23d45915fe7cfb8df2efd0",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/time-based-pricing.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/time-based-pricing.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dba60272246b154e1afa05431425c5181897412f7c65a0bfbadd4ecbae1c3b17",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/transcription-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/transcription-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "94cdf81468d8006aa06694fc8bf408dd2f1e6127a4e6aaa804becb05b73c0a0d",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/typesafe-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/typesafe-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "efbb4489685796212f0ed89bb9712ea69586128965adbfd69d08c9b5d3c49e65",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/venice-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/venice-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e8333f7c99ad76e078053fddd23aa8616f6b1e745da69681eddf284b7d208ffa",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/vercel-ai-gateway-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/vercel-ai-gateway-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d36ae563e505c6da86edfadfbfec8f8aa9ba08afdc9def915de92d7e472ffa5b",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/video-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/video-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b20694021b5d894de8b76579fd246dd87fefee4f0e57dea21edd210f234d77f5",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/vllm-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/vllm-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "85e7f47ac872134ce3df5afdf7bf11499d0858788af9e1533f2ff81ef1d8075c",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/web-search-lineage.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/web-search-lineage.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4a3b3501370eb07e549743113a044f4a7aac11e284e4ee1aae5a9a2aad276d7e",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/xai-api-key-responses.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/xai-api-key-responses.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0f1eb70baae803c13a1a90344b71ac40c8d7c6911ed7614b4f3c7326157a7d83",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/xai-grok-4-20-alias-pricing.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/xai-grok-4-20-alias-pricing.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1d0cef77dff2ae464d28a1e3f53e2eb691f61a51abb61ef68acc2e84913bdad3",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/xai-oauth-bundle.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/xai-oauth-bundle.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "02c75e0b582236a948f8673311b83b81d59506163d83d404d0f1d25883e0a020",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/xai-oauth-discovery.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/xai-oauth-discovery.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8700c42934535b48fbceed2d4033712a6b6d1ffd1e6a050d02669f8b79b2dcfd",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/xai-responses-thinking-policy.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/xai-responses-thinking-policy.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e22b2f7540337205f99ebbbad09f038a17b638a5ee835b68e3c7650db54e8b43",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/yolo-auto-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/yolo-auto-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2a7a4074793c87d2f0bd4ec2a8c55b626b3b5895ff7cb3909563dcb394420cb0",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/zenmux-provider.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/zenmux-provider.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6bc88415ccc0c5356ac4bd7e01b6d6c9dfeb177ebea7ddff9503da5fc1819358",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/zhipu-compat.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/catalog/test/zhipu-compat.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3ce9a395cd92da3196c46037889e5b9002321ff89cd6bc6ddf9151241f254b47",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		}
+	]
+}

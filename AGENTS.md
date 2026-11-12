@@ -14,7 +14,10 @@ research-phase part of cloud-pi.
 
 ## Repository layout
 
-- `packages/*` — workspace packages; `packages/tui` is `@cloud-pi/tui`.
+- `packages/*` — workspace packages; `packages/tui` is `@cloud-pi/tui` and
+  `packages/catalog` is `@cloud-pi/catalog`.
+- `packages/vendor/omp/*` — private Node.js workspaces vendoring the shared
+  `@oh-my-pi/pi-utils` and `@oh-my-pi/omptype` dependency closure.
 - `apps/*` — workspace applications.
 - `demo/` — research demos, outside the npm workspaces.
 
@@ -61,7 +64,7 @@ Run from the repository root:
 npm install
 npm run typecheck   # typecheck every workspace package
 npm run test        # test every workspace package
-npm run verify      # typecheck + build + tests (currently @cloud-pi/tui only)
+npm run verify      # typecheck + build + tests + distribution smoke tests
 ```
 
 The root `build`, `example`, and `test:dist` scripts target `@cloud-pi/tui`
@@ -71,6 +74,10 @@ specifically; use `-w @cloud-pi/tui` to address the package directly:
 npm run build -w @cloud-pi/tui   # tsup (ESM + d.ts)
 npm run test -w @cloud-pi/tui    # Vitest over src/
 npm run test:dist -w @cloud-pi/tui
+npm run build -w @cloud-pi/catalog
+npm run test -w @cloud-pi/catalog
+npm run test:dist -w @cloud-pi/catalog
+npm run gen:compat -w @cloud-pi/catalog   # offline KDL regeneration
 ```
 
 ### Examples

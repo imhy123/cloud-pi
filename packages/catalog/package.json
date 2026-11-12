@@ -1,0 +1,65 @@
+{
+	"name": "@cloud-pi/catalog",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Node.js model catalog: bundled model database, provider discovery descriptors, model identity, classification, and compatibility rules",
+	"type": "module",
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"files": [
+		"dist",
+		"src",
+		"SOURCES.json",
+		"README.md",
+		"README_cn.md",
+		"PATCHES.md",
+		"PATCHES_cn.md",
+		"THIRD-PARTY-NOTICES.md",
+		"LICENSE"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./provider-models": {
+			"types": "./dist/provider-models/index.d.ts",
+			"import": "./dist/provider-models/index.js"
+		},
+		"./discovery": {
+			"types": "./dist/discovery/index.d.ts",
+			"import": "./dist/discovery/index.js"
+		},
+		"./identity": {
+			"types": "./dist/identity/index.d.ts",
+			"import": "./dist/identity/index.js"
+		},
+		"./*": {
+			"types": "./dist/*.d.ts",
+			"import": "./dist/*.js"
+		}
+	},
+	"scripts": {
+		"build": "tsup && node scripts/clean-dts.mjs",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"test": "vitest run",
+		"test:dist": "node scripts/test-dist.mjs",
+		"gen:compat": "npm run build:scripts --silent && node dist-scripts/compile-compat.js",
+		"gen:models": "npm run build:scripts --silent && node dist-scripts/generate-models.js",
+		"gen:proto": "npm run build:scripts --silent && node dist-scripts/generate-protocols.js",
+		"audit:upstream": "node scripts/provenance.mjs",
+		"build:scripts": "tsup --config tsup.scripts.config.ts"
+	},
+	"devDependencies": {
+		"tsup": "^9.0.0",
+		"vitest": "^5.1.0",
+		"@bgotink/kdl": "0.4.0",
+		"@oh-my-pi/omptype": "18.18.7",
+		"@oh-my-pi/pi-utils": "18.18.7",
+		"yaml": "^2.8.1"
+	}
+}

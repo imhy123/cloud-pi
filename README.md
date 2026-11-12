@@ -112,7 +112,7 @@ Added at the gateway, not in pi:
 | Multiplexing | one connection ↔ one session initially; a `session` envelope field leaves room for many |
 | Resync | on reconnect: `get_state` + replay session entries to rebuild the view |
 | Liveness | WS ping/pong; server keeps the pi process alive on disconnect (tmux-style) |
-| Sizing/terminal caps | client sends `cols/rows/theme/dark` in the hello frame for informational use |
+| Client identity/capabilities | versioned hello and acknowledged negotiation (§4.5); `cols/rows/theme/dark` remain presentation hints |
 
 ### 4.2 No PTY forwarding, deliberately
 
@@ -156,6 +156,94 @@ the SSH surface is gated by the same auth as the gateway.
 
 ---
 
+### 4.5 Client identity and capability negotiation
+
+Design proposal; the handshake below is not implemented yet. Each connection sends a gateway
+`hello` before attaching to a session. It declares the client type (`tui`, `web`, `electron`,
+`im`, or another registered type), application version, a separate protocol version, platform
+metadata, and presentation capabilities. Application versions are diagnostic; protocol versions
+and capabilities determine compatibility.
+
+Platform metadata is structured, for example `{ "os": "linux", "arch": "x64",
+"distribution": "debian", "release": "trixie" }`; `linux:x64:debian-trixie` can be derived
+for display. Use explicit architecture names (`x64`, `arm64`, `ia32`) rather than ambiguous
+`x86`. Browser and IM clients may not know the device OS, architecture or distribution: omit
+unknown fields rather than inferring them from the gateway host. A terminal product/version,
+when known, is optional diagnostic information, not proof of graphics support.
+
+A compact declaration can use a named preset plus overrides:
+
+```json
+{
+  "type": "hello",
+  "protocolVersion": 1,
+  "client": { "type": "tui", "version": "0.0.0" },
+  "platform": { "os": "linux", "arch": "x64", "distribution": "debian", "release": "trixie" },
+  "capabilities": {
+    "preset": "tui-normal@1",
+    "overrides": {
+      "images": { "receive": false },
+      "limits": { "text": { "max": 16384, "unit": "utf8-bytes" } }
+    }
+  }
+}
+```
+
+The example limit is illustrative. Presets are immutable, versioned protocol definitions, not
+names whose meaning changes with a server upgrade. Initial preset families:
+
+| Preset | Intended presentation |
+|---|---|
+| `tui-normal@1` | Rich terminal UI, Markdown/code blocks, structured questions; images only when the live terminal path supports them |
+| `tui-simple@1` | Text-focused terminal, plain code blocks and text questions; no inline images or rich UI assumptions |
+| `im-normal@1` | Adapter-provided channel formatting, image attachments and structured replies where available |
+| `im-simple@1` | Plain text and numbered/text replies; no rich formatting, image or button assumptions |
+
+Use `tui-simple` as the canonical name rather than introducing a synonymous `tui-degrade`.
+Web and Electron may use their own versioned presets or explicit declarations. Ghostty/Kitty
+are candidates for `tui-normal`, but SSH, multiplexers and user settings may reduce what the
+actual connection supports. Presets are defaults; probes and channel-specific restrictions
+must be reflected in overrides. They never select features merely by product name.
+
+The expanded capability schema should distinguish:
+
+- **Media:** image upload/send and receive/display independently; supported MIME types and
+  attachment/inline presentation. A file download is not the same as displaying an image.
+- **Formatting:** Markdown subset, fenced code blocks, syntax highlighting, links and tables
+  separately. Native IM formatting is mapped by the adapter; it need not be full Markdown.
+- **Interaction:** text answers, single/multiple choice, form input and approval prompts;
+  whether replies can carry request IDs and explicit cancellation. Text-only channels can use
+  numbered choices, with correlation, expiry and cancellation still enforced.
+- **Delivery:** streaming updates, edits to an existing message, and attachments.
+- **Limits:** text length with an explicit unit (`utf8-bytes`, `unicode-code-points`, or
+  `utf16-code-units`), plus attachment bytes/count and any formatting overhead. Limits are
+  per delivered message, distinct from transport frame limits. The adapter enforces its
+  channel's actual counting rules, splitting text or sending an attachment when appropriate.
+
+The server expands a recognized preset, merges overrides by field (arrays replace), validates
+limits and intersects the declaration with protocol support, deployment policy and adapter
+constraints. It acknowledges the resolved protocol version and effective capabilities before
+session events are delivered. An unknown preset/version must not silently mean “normal”: ask
+for explicit capabilities, agree a known conservative preset, or reject the handshake when
+required functionality has no fallback. Unknown optional fields grant no capabilities.
+
+Capabilities belong to a connection, not to the transcript or the session's model abilities.
+Different clients can view the same semantic event with different renderings. Capability changes
+need an acknowledged update (or reconnect); resize/theme information can update independently.
+Unsupported presentation gets a defined fallback: code as plain text, images as accessible
+attachments/descriptions where available, questions as correlated text replies. If a required
+approval cannot be presented safely, leave it pending or report unsupported; never auto-approve.
+Client claims describe presentation, not permission to execute local tools or use credentials.
+
+Telegram/WeChat integrations may run as server-side adapters. They still represent logical
+`im` clients, with a channel identifier and adapter version separate from any known user-app
+version. Negotiate per conversation/delivery target, since channel and chat modes can differ.
+Report user-facing channel capabilities; keep the adapter host platform separate from the
+unknown end-user device. Adapter authentication does not replace authorization of the user
+and conversation it represents.
+
+---
+
 ## 5. Clients
 
 All clients consume the same session view model; only rendering differs.
@@ -165,6 +253,7 @@ All clients consume the same session view model; only rendering differs.
 | Terminal | pi-tui components (`Editor`, `Markdown`, `SelectList`) | pi-tui is a Node/Bun library; cannot run in a browser |
 | Web | React (or similar), same view model | WS only; no local process |
 | Desktop | electron/tauri wrapping the web view | adds local tools, mounts, keychain, notifications |
+| IM | Channel messages and replies through an adapter | Telegram/WeChat-style integration; capabilities negotiated per delivery target (§4.5) |
 
 Shared code as TypeScript packages: `protocol` (record types), `client` (command correlation,
 event subscription), `view-model` (event reducer), plus per-platform renderers.

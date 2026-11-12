@@ -1,0 +1,1488 @@
+{
+	"upstreamTag": "v18.18.7",
+	"files": [
+		{
+			"file": "LICENSE",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/LICENSE",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "90179611795093ae17d4a6bc6e06da450a8e54bbeb147a065b4127e1e4b407a7"
+		},
+		{
+			"file": "README.md",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/README.md",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a42379625cee949478cc66958e910080ceda52c9319eee80d7dc5f99c347d03e"
+		},
+		{
+			"file": "package.json",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Private Node.js workspace metadata replaces the upstream Bun package manifest."
+		},
+		{
+			"file": "src/ark.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/ark.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "30db8d792fe3967d02b1f9650fb432c05b9793aea3359127ed8a64355f49b073"
+		},
+		{
+			"file": "src/compile.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/compile.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f2090bb2478946a30c28590e7a5d88b1d9597cfa53cd358083dc253b320b766c"
+		},
+		{
+			"file": "src/errors.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/errors.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2cbdba6eb30d4729d537bd2b8af5cc8cd7d5da9b4fd4df524daaac0b6b078e96"
+		},
+		{
+			"file": "src/from-json-schema.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/from-json-schema.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2f12167d1fc0571bc4bddd9d9b21b4b3f1aab93ec1839aaf0d415ef5589bc9af"
+		},
+		{
+			"file": "src/index.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f11a45125ad6df596df99f76d7b32774b102616fa4772ceaa875ca9290ee015c"
+		},
+		{
+			"file": "src/infer.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/infer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "06f857c7f55253b85617a8d9cd40804e726d73f8263c8dc013beb209da7e49e4",
+			"changes": "Bun.FormDataEntryValue replaced with the DOM string | File type."
+		},
+		{
+			"file": "src/interp.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/interp.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "424d127375c519b772be51faa67bddd784b2533e20b2e5bca03e9fb1e180b314"
+		},
+		{
+			"file": "src/ir.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/ir.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dd6cee56d0760a70e4bb870e927f24a33e9f9453e8e89db89627cddc480cbc76"
+		},
+		{
+			"file": "src/json-schema.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/json-schema.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "827b4718ab1c92bce0156e44749e25843024c445b2fd32ce6ed9f574e1408cf7"
+		},
+		{
+			"file": "src/jsonschema/codegen.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/jsonschema/codegen.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "103f0d92140146d781341b829e66bf1e14ce6b737f134869df7370bca5f239cf"
+		},
+		{
+			"file": "src/jsonschema/interpret.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/jsonschema/interpret.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "baeb3bac25a36354b8782c529f29b34efd55f6d664efe69c27224864c50ad67c"
+		},
+		{
+			"file": "src/jsonschema/pattern.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/jsonschema/pattern.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a109f726358cd8a6dd309363951572afd7bc329025afcbcb94330b028b348a32"
+		},
+		{
+			"file": "src/jsonschema/plan.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/jsonschema/plan.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "620ade3d3131c5d2a4e215a83d8045a3f843cdbb51e0ae1e9160fc5a4ba9e73d"
+		},
+		{
+			"file": "src/jsonschema/resolve.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/jsonschema/resolve.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c1c980f2a40d1d96770c96a0fb6de0440d23aa330d5822f9d58ccb302b5d309b"
+		},
+		{
+			"file": "src/jsonschema/runtime.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/jsonschema/runtime.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f2c44149a1e009c128a54dba87f1dc6fcc3611783cd95d77da7ea7cb3a1c6ba3"
+		},
+		{
+			"file": "src/jsonschema/validator.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/jsonschema/validator.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c5f35058d75eda7d606fd0fa4939199177baf9adc99227cafe0c4b542be2e7bc"
+		},
+		{
+			"file": "src/keywords.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/keywords.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2c2418a8df25808c06294f24b412f9a3fc305013ee0ec2bfeae19a6641865b1a",
+			"changes": "Bun.FormDataEntryValue replaced with the DOM string | File type."
+		},
+		{
+			"file": "src/local-ref.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/local-ref.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "aa6331d5d248a4713b616853d2fa9dfea58bb7786635509c90ba7da464da7e0c"
+		},
+		{
+			"file": "src/type.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/type.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b1507f7dda89da45a65081988962fa66f6edd6848bd77b230edc68a16130aab2"
+		},
+		{
+			"file": "src/typebox.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/typebox.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0ac94273bc58edd3389652d0d8acc5cc058c6ca508aa807c41dc06dc447cfa43"
+		},
+		{
+			"file": "src/zod.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/src/zod.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ce581ac438267acacbafe2fa8af023c90ab8fcd092eaae53409f68cff1cd1d5e"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/LICENSE",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/LICENSE",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "837402bd25fad9b704265801ca3f92566a98157c1f9a7acd6f446299ba1c305a"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/README.md",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/README.md",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d417e0109a8d30f317ea5d59ceb8d99dafc5036294fd4fc752e505a6817abde6"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/baseUriChange/folderInteger.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/baseUriChange/folderInteger.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fab4a7197aaa97e26792aa501e2643829a6074343c5fd45a6512af28bc55dd93"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/baseUriChangeFolder/folderInteger.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/baseUriChangeFolder/folderInteger.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fab4a7197aaa97e26792aa501e2643829a6074343c5fd45a6512af28bc55dd93"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/baseUriChangeFolderInSubschema/folderInteger.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/baseUriChangeFolderInSubschema/folderInteger.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fab4a7197aaa97e26792aa501e2643829a6074343c5fd45a6512af28bc55dd93"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2019-09/dependentRequired.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2019-09/dependentRequired.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d92216917b9d9989b57e7c9eb21f42b86f97d8d3c41475fb48609bca4d2f3051"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2019-09/ignore-prefixItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2019-09/ignore-prefixItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "01a4ad72fc2f529a7329caf5eb02c86ed2be591bd0c2b327624276aa5e16653c"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/baseUriChange/folderInteger.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/baseUriChange/folderInteger.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "01909782da0e97eb093661b6a030fb4fa140198c1ceb4bddd33357ca416ee0bb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/baseUriChangeFolder/folderInteger.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/baseUriChangeFolder/folderInteger.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "01909782da0e97eb093661b6a030fb4fa140198c1ceb4bddd33357ca416ee0bb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/baseUriChangeFolderInSubschema/folderInteger.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/baseUriChangeFolderInSubschema/folderInteger.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "01909782da0e97eb093661b6a030fb4fa140198c1ceb4bddd33357ca416ee0bb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/detached-dynamicref.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/detached-dynamicref.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "179fa0d52df07a3c0c0509ec9a66aae3f5bbd8d150b64a8bdfa9e7342ccb6385"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/detached-ref.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/detached-ref.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1d89f859adec83ae5eb27fd1a171bad2567b7d05baf019845ec8ae848f975a1c"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/different-id-ref-string.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/different-id-ref-string.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7a3be1ab2e5cb85d9c85ac20859b0187c30d3066cbe8a708a61ef145012dee1f"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/extendible-dynamic-ref.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/extendible-dynamic-ref.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "876cfd13df8730880db32f8d1b4b95c850ec170929247787118b448347dd1ed4"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/format-assertion-false.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/format-assertion-false.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ae4de9d880b3f4630ad1eff35d797b0bcb2465a9744d27ff56692b50d78612c5"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/format-assertion-true.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/format-assertion-true.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b452da83b92aa5f559abbae690adf59819fbb3e20ebd19acceeeeea7636a9cd9"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/integer.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/integer.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "01909782da0e97eb093661b6a030fb4fa140198c1ceb4bddd33357ca416ee0bb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/locationIndependentIdentifier.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/locationIndependentIdentifier.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "363f9c0cba34b30f38ba351e562f5704079657bece4aaf5329183ae17663b141"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/metaschema-no-validation.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/metaschema-no-validation.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ece55f3d99bea2317baba2aaa886f57736ac0e9b4c4b6e433b93176a6a5501f5"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/metaschema-optional-vocabulary.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/metaschema-optional-vocabulary.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4677e1f74ccac6be9da11831de3d859ce06aeeca30242e39edc1821e6c5bf269"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/name-defs.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/name-defs.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7069ac1ac37c71e32ac42c32091353126b836890f0bd20cdada183f8657376ed"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/nested-absolute-ref-to-string.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/nested-absolute-ref-to-string.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a339b08131df671e927c6ecad6cc41c340b17937718d494ed64ddbfce67fcad0"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/nested/foo-ref-string.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/nested/foo-ref-string.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f476446b33cca4971acd249dded0400f6f8764c61cce5bb5d1445910750d7ba0"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/nested/string.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/nested/string.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "463ae2cb710a930e17db3799f110abf0c56019ae1a64d1da35bfcc94c4bdc814"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/prefixItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/prefixItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a8bc2649cd9314ce069634619bd96ee95af570ae702393c1c5b558b383c2e28a"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/ref-and-defs.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/ref-and-defs.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "99aa223bc45a9c40e6746ad518aed22a6e42dacb93444e6a53c4368d711d3e86"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/subSchemas.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/subSchemas.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f6c1452bb6ca9e7e5638a7ea000763cb847d42132756c8db6e570debcacdac76"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/tree.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/tree.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e2fa53954b78121c6533e98ef7ca83689c9b990c5ca1c01f65e2cc7e7f426664"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft2020-12/urn-ref-string.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft2020-12/urn-ref-string.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5cbd6af1efdfcffee931886613be5c398a2d2a5faa064c11da1d028463126283"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft7/detached-ref.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft7/detached-ref.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ea00368e86308ec10e7e9d08b9426568f92cbaa54d9702199f949dafd4e32cd4"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft7/ignore-dependentRequired.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft7/ignore-dependentRequired.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8c981a3ec7d057aa0641a92835e01c7e6e05ab379b2e4c7336fb94416fa48cc0"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft7/locationIndependentIdentifier.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft7/locationIndependentIdentifier.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "315c3114cab95764c1dad2ad56c84abffd6c8f180638f11ce6e80ced0321f15d"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft7/name.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft7/name.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9288a5be0c1be53ee38d629645088abeb3e3e0912ae00eee0818efdabffb6a35"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft7/ref-and-definitions.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft7/ref-and-definitions.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2f89a7faecb47524e8efb656191dd934826eb7eb528bf71697af33514d9ccaf6"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/draft7/subSchemas.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/draft7/subSchemas.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6fa00a1ac5296436f40d020b1077cd3c633fd99762de83e059ad29495e41a3bb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/integer.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/integer.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fab4a7197aaa97e26792aa501e2643829a6074343c5fd45a6512af28bc55dd93"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/nested/foo-ref-string.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/nested/foo-ref-string.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8af9833ea84cfecd9494a75c9b304d857108f00bee72fb247dc95045f1852986"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/remotes/nested/string.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/remotes/nested/string.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "449e7fcd49f7748a36f0298c3bcdea9897b5c6534c50356f334e3faf5c8d4f62"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/additionalProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/additionalProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b96bd533416386ac6421737b48c5c072870ab5dbea910585e9e8fa6305c7ca91"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/allOf.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/allOf.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "81045b06706a28f6aa337b485b41a764098e10ac73bb1d346ba0a4285a63e970"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/anchor.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/anchor.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6f60e0782be6072733701459684cadf3741ddd60d96b14698b4d9a19075e9f1e"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/anyOf.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/anyOf.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7a6fe41602496c256334ffa3e6fb457b26ac23b97ca03cb16b724ad21a7d216d"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/boolean_schema.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/boolean_schema.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9c8828d325b88a0c632fca22405d5481548b49fb0f9f5536ee401e4d66aa8582"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/const.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/const.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "83a148d2589cbd211e7e64b31763290f8869d763f513de4658e8d25f0fcc025e"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/contains.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/contains.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "086782fc8b54ac77a4a2afe8b84f8cc7fc9ca7b22473ebd8db3480f2eb8d0ab6"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/content.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/content.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9b08c408d32cf64f1966aa300cc246355799d883ed278a61d720493f61711bab"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/default.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/default.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "db4a8382727f6c687a0fc7bb24347e010c3fcfabd1207150ce025e1a763f6094"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/defs.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/defs.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5a352f0b1ad9aa906758fa4d363a77c4c4b29cfc193e8d6f7ab1e184be2a75d5"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/dependentRequired.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/dependentRequired.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0824c393115498ac1a62551c3174a3ccd54ee4ef323d5eb9de0dfe3a185ad666"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/dependentSchemas.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/dependentSchemas.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f77df8d5243c0f58e04053a14a30706f5a6d5a9e7eccbfd17f8d6445841f8752"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/dynamicRef.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/dynamicRef.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dd763124c3d1432977b9c276bf682fa746f82a69b1d9bbc1d79fbdb2a3dda5e4"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/enum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/enum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1abe7eb883bde4a78c62f08e484e16f32b72ca5c1be725aa54d85cc4546b5031"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/exclusiveMaximum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/exclusiveMaximum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e37fc110c48e2a9de564579ceba3e8ab098a36f904dcc1ef02f8cf7b59dc0473"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/exclusiveMinimum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/exclusiveMinimum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0395a2423606d07943d3d355d1c9c4a474cc7cb544d3c8f266ceab801c5f0a6d"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/format.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/format.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3baf934e2aeace523012f92994e3c9f4b6142d68ba9ece0c12becaffa52eaf5f"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/if-then-else.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/if-then-else.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ca6fc50a73f054ac5cf55b6981257933995d417b26d1f5426ec60e9b5db61c3e"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/infinite-loop-detection.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/infinite-loop-detection.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9fffe850049048a0e411133f7e5fec347f97c077bde65b34c67dadf96e046bcc"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/items.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/items.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d924a8171f1f1d04ff026a4e3491d1376297145563158543005b7073b69ab913"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/maxContains.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/maxContains.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2d7cf7557b87b15a08457badc66905593834bbdda98f325a22d136dfdefe81ed"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/maxItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/maxItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "59fa6236c0766aaac5fb7c9ef82e205c230efa94271485f614218291be7cbc5c"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/maxLength.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/maxLength.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ac43a3991586f2d2d1e7e37cad01bb1a7b1c5d9ad7b558d6029d24b41a04d1a9"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/maxProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/maxProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4f1d14ac74862f134e6769884a7e72d47328daf91e2c6b475ae5f99891e3477d"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/maximum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/maximum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dfbc88ef4ede2966250fb2ad44076856d51481ea01ce679cca70efe47606ee90"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/minContains.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/minContains.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2aca05e48dbdf605fe14c775f5470061cf4c8b679e3e6a955a18334ea97d3c23"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/minItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/minItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9792cedc446be654836b42d0312eca12051e9e2f24cd5d95dcd3f3fc9adccd0a"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/minLength.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/minLength.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "999e9731c57a1296e06e8b9b36b0531614ab7a6ac3c20db6fed50badbf3850ab"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/minProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/minProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "00f641408d1dc3ff81743e0c730eb430ff818e3bbe37007a64138bd513ade05a"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/minimum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/minimum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f6a29cb574b76621da23636a636cf12cb31b01646b89543e6ce1a813376439a3"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/multipleOf.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/multipleOf.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ada35b586efe55186d35d8888a4e4954724c313253b59bd47ec03637a44cb4ad"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/not.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/not.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1fd6ef263efd365680c6aaf8f23aa5430d7b9f80b84f46b1208b1ed8353c28b4"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/oneOf.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/oneOf.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a8d80a786d07769cb9b8b9a8903ca4f7aa564446ae6b781c7f7f6ffea11ed363"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/anchor.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/anchor.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5489247c9d8e1a6513137cf0f979cf0fc7b391d4e4e65db0c9833afe30f0a1fa"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/bignum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/bignum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "52608148c500b3c4eeab2066317939cee5901991c38a234f4cc6179289cd8bf4"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/cross-draft.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/cross-draft.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "de66c92876b3ba15ca43f2018ba6cd2451d4a5c8867aae5e7e660a31b3dba0cd"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/dependencies-compatibility.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/dependencies-compatibility.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "309878857448fb606bb0809c88c8756100a16bc5fbb976ffbb26721468ccd1d2"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/dynamicRef.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/dynamicRef.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "eb6e0dfc35dc5d6cc075cbdfd79f96206d827b249017ab4a2c442255985a5384"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/ecmascript-regex.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/ecmascript-regex.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8ee6227f32327b5debb30a78088636f5eef3968840f685c615d4be636fd90c92"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/float-overflow.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/float-overflow.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bfccb3bf6e4eb6f15a572dccc0e7ad93e6ff24911991355fd9ba2d75deae02e1"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/format-assertion.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/format-assertion.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5ddc556bc2e991b36070aa116ee19d347ef778eb1b7f00efc70da0bae90005be"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/id.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/id.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4d0a3082a630b5a2dcc605000f0129f481da400019b8346f0b3cf77192f0acc8"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/no-schema.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/no-schema.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8ddd0dc73d767875606b19732b63537b6e00ccfe2aa7e18bdc274a8b934a30c5"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/non-bmp-regex.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/non-bmp-regex.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b01f24ba860f74baad227988571d44edd6461f51dc5319e418802f2f789721f1"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/refOfUnknownKeyword.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/refOfUnknownKeyword.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "deb7915d8926158fbc5b4a6c12383486c31adedbe025620af8b466bcb09b743c"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/unknownKeyword.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/optional/unknownKeyword.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dc66418e962824759cbf5eb6c5a655de320ffeecbb77fd42d50b6e95f9bccecb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/pattern.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/pattern.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "60713a3b01957fad54f00ab30b378463b3e07b35242c945a9325f8d6ae7080fc"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/patternProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/patternProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "aa73ad1e6eac3cee42bc79628f86d813ec80a88c432f62bfca8add91326dd924"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/prefixItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/prefixItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5b2006fb0d99f9df8e25e384d665edc57427e7849ac0f963f541626fd82bb522"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/properties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/properties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "58f01566cfe3e1fc4fb851d3b2eab13768d65ba5dbc4e9f9387ceaf4244a0522"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/propertyNames.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/propertyNames.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "54469f831102465060d0db9a9611e827fb7e87df38179d8a28ac45c10576ef83"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/ref.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/ref.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ae53f3f57c220879729225eb416cecac909f06b5adaf15f799b4f3e7c0612998"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/refRemote.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/refRemote.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8fcb97acb2b76308cab9d82eccd7388dd7d6ca59cf68f6d03281bc40adc9c7ee"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/required.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/required.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3e3900dd0e546c1cb4aaab6b24ea0e06a8f7f8c05b272dcc87e85332501ed42e"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/type.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/type.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4c5cbe6cbcd28af73761091367b20e07d0403847e236c06c31fc27061bd81192"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/unevaluatedItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/unevaluatedItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "477e7e734ba86a76fc605d34afa6867ab25081b072792c2d853cbe666e42b7da"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/unevaluatedProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/unevaluatedProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "dbd5b401b09de49215f33ed7b30f4b9cd4a27e439624ad2a6aeb3a3879cac1dd"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/uniqueItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/uniqueItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "20f7c3decb4ff491a722253181ffef351acd23e39ecbbfeea40941f3623cc27a"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft2020-12/vocabulary.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft2020-12/vocabulary.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7c753d28de2d551fe0329b5a0ac939de921ffe1dfd1c82336e8d4a78d904ce8a"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/additionalItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/additionalItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c25888a38a6db63d31daa9bce5647038513a54a327dabaeb2548189f6a51fb64"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/additionalProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/additionalProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6ab2e5091d2d75fc047767b42cafdb493b67f2559b05bf33202a154363824b4c"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/allOf.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/allOf.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "940b67eca31bc9035a9864a5b00a720e6880d7780e6e4db85403bfa12222fd7a"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/anyOf.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/anyOf.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1175062b77388b03432d61f1b43448a71b5b2bb03696215ebe52fa5be69eec61"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/boolean_schema.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/boolean_schema.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9c8828d325b88a0c632fca22405d5481548b49fb0f9f5536ee401e4d66aa8582"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/const.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/const.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "65d2b152fbbbdd3291beb3dcc048dea1644acf3c59c68b5f72f521b5a927fcf9"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/contains.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/contains.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2a27945551b0189c264709147b46608fedb1d50b0d841817757ef60ba445f024"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/default.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/default.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b0c16241a36d86af33b33183da33b15f5d883a141fbc2ee451d57ec679f17e7e"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/definitions.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/definitions.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b1159d8adeb80362bfc09b925b20f4bacdf698f8fe437d9859b4403dfff87b24"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/dependencies.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/dependencies.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e5c757b8c79b669eab621eb7b2801c99aecd94dd16aa4e41662992509d249fd5"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/enum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/enum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "069890108f4f83e62c9be9f42af63b5de911555e6644d83cd89c08ff644a43bb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/exclusiveMaximum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/exclusiveMaximum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a51392482efa787d7fcea34de78de441a8807b1881ec0bc414f013cab0bf5812"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/exclusiveMinimum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/exclusiveMinimum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "08435add3250275173074d2b7ad519806baae83be95d7397d3a514b8ad7561d3"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/format.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/format.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8c670c5bbf816d1bb6a7be7db526d31989e2fe3d2f95198ee7c28c34136c8f22"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/if-then-else.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/if-then-else.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3712305f35008ed0b25652a8a297a421f394bb6f6336fdb8f56075cdf4759044"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/infinite-loop-detection.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/infinite-loop-detection.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c247742221355ae165edaada14385669382c6d0cdbcc933ce8f9a693b9444de7"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/items.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/items.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6480f868b34c832265c9ee42a7643e16873c74f11c8d735d8eea5e494c93ed02"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/maxItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/maxItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "913397eff076de4eb63982c6682fb40cfd6117900da34f8fbb3a71839bcc813c"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/maxLength.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/maxLength.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3330342d36c85a7334ea3f7deb168beae26617ce83cc1d43b6ba2f618b3c2f4e"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/maxProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/maxProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b57f784fdb7ec266cef13afd2de4ab9f2cfc7e2bdd86428d90be0212106babd3"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/maximum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/maximum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b3094bf70bea8df1eb17c22a9afb47af1bcf3b8d6616bfb8bce95c1ee874e2e3"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/minItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/minItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "706f786718b5af39ca447d006909aa3adba53ebffe450d97cc7773f47d97bb46"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/minLength.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/minLength.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6faf7b73d1eac9615da33147a05e0fdde90737b62a175d1ce2a9a0bc98eaaaa5"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/minProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/minProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c958aade9248bf33ae2670171379671f0484aeec434c44c9f2adf4b87f39bcf7"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/minimum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/minimum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8e13e2a245ecffc0c39481430583ef3b11ce1ac3eb5d02617bfe6f8a022b1579"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/multipleOf.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/multipleOf.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "919162ca3ea2aa831d403b1100a04aba53e7ff2e48810a65e7f4a88ceb959ff9"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/not.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/not.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c225b4d75dfb2a485006236f005070a2aae2f60090c761ffaf947a3259de77da"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/oneOf.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/oneOf.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0eff07bc5ec108eb324aeb61d9ff130a3e689b0ab4b26af40561e6b1eda3a26c"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/optional/bignum.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/optional/bignum.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9b89a405018381628c43e8e68a3c8f844bcbd6252122e60a43db5e327e512fbb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/optional/content.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/optional/content.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0e907bd8c61d79b8cfa269d801c90bf2a35c5801e4ba1e1c3ab210b4d21e81c5"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/optional/cross-draft.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/optional/cross-draft.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "89fd4e617cb513f4c92c91c8be3e2995b88d995b6ca51c99faf3b27fb952c9fe"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/optional/ecmascript-regex.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/optional/ecmascript-regex.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fa7d8aa98ec490ababb80d127d27f5f8ad934a94407f32ec7f45ac4b0c0e6626"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/optional/float-overflow.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/optional/float-overflow.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "94b97e3f41cd765b52f05f8377ea1209e4bf0bd0da698b76e3869388a8fb9dc7"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/optional/id.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/optional/id.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "45096207dda6ec9f062bc90e94dcb568300ad89f8fdced1ce7ca4038ba0316e2"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/optional/non-bmp-regex.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/optional/non-bmp-regex.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4bc9203fdcac901c98a0509543017762b03a4393cc547cf35e57579e232c5c39"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/optional/unknownKeyword.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/optional/unknownKeyword.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1ced503b09cb6f4fd81316ed4b835d33033a7278d4a09f4d971d46e369593349"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/pattern.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/pattern.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "92f42bdbf24f20b2b6378a8dfa882a8b40746170303f5dbe5b4cade420599507"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/patternProperties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/patternProperties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2e27cf7e3c459d15c7d9a40f3daebdf673ca49c283b3bbcb3ac1f4c2d333ec4d"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/properties.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/properties.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b8246287c2b214d0e17ed4b1904b92cfde803d52546a901ce123a7ecce5b75cb"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/propertyNames.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/propertyNames.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "847e2fb9ba870632c9a13c04133511a3af9d98165de56df64c99b1d6f2eac355"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/ref.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/ref.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "217aebe267fab77ff9bb3332d559054cf1602077abb3395dae417c0b6db6d789"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/refRemote.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/refRemote.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6051ea8dfa9cdb3d7ec5802e7eb824be40ae5bc0d224706055d3cb57eeae6455"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/required.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/required.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "66946289772a5e931835060187b18e63bc215fbebf981b2d40d1c945145676f4"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/type.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/type.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "091aa31e688df20891de7884878b527745ddac0a3ced6d19a5ea4aa075dbbe00"
+		},
+		{
+			"file": "test/fixtures/json-schema-test-suite/tests/draft7/uniqueItems.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/json-schema-test-suite/tests/draft7/uniqueItems.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "382d4e81ffe448139bb8c31b481ff0e13d6625f7887adf34518bd35e54eeac0a"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/README.md",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/README.md",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "54ba885abe59d1148e41227eaf891719635f9a296b97b14bed499c1b7d3da02f"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft-07-schema.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft-07-schema.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "692e1d165e47afcb5f11b2ce1c639635ffa834035d6ecb6bcf3087481dae8404"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft2020-12-meta-applicator.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft2020-12-meta-applicator.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "bf273b26f9f735b93ece78f2b61b36676e1d122ce78ab37ad5a2e45dfa1ca2b1"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft2020-12-meta-content.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft2020-12-meta-content.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a10456605b2b5bb12a1b4dcfc0300f02f54d3e8bb3646bed7724583866627682"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft2020-12-meta-core.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft2020-12-meta-core.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "21f79d143fab1f180245c331e5657057045b36794d41fe151e6e4fed65035299"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft2020-12-meta-format-annotation.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft2020-12-meta-format-annotation.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5c79404f831dd905c0f40fefac7c6f3e51bf3729b4a876a5c2020178d97f3bcc"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft2020-12-meta-meta-data.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft2020-12-meta-meta-data.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c664d438a84d58889c8edecd248ce2f945a4bc0e3b087323b11303dc136abfbe"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft2020-12-meta-unevaluated.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft2020-12-meta-unevaluated.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "fc99f32188da41689a9382af174dd42e8b255e4374965c157b8286556b4ab2bc"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft2020-12-meta-validation.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft2020-12-meta-validation.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e921c5b79264d3689af01c1af1ffdf692e09f1c45df90a0f08eb7288c9acdeab"
+		},
+		{
+			"file": "test/fixtures/meta-schemas/draft2020-12-schema.json",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/fixtures/meta-schemas/draft2020-12-schema.json",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "41da76f5afb7ce062d248f762463a92f7ca47e4e0f905b224ba6afeef91ded0f"
+		},
+		{
+			"file": "test/from-json-schema.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/from-json-schema.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5383a5cb19e27905b45e96a67b3d5708e9f47438b6a357163103ff5009e2e4e9",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/infer.type-test.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Type-only assertions renamed out of the runtime suite; assertions unchanged."
+		},
+		{
+			"file": "test/json-schema-pattern.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/json-schema-pattern.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e1b7e45e71accbb35b0f579a82412ff2ee6475f801ef36e3f5011623a35762f0",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/json-schema-suite.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/json-schema-suite.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d518e41524b428746db2d3ae9a060cde8a548fd141c59594c84bb22ed4322c47",
+			"changes": "Vitest plus Node fs/JSON loading replace bun:test and Bun.Glob/Bun.file."
+		},
+		{
+			"file": "test/json-schema.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/json-schema.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "52c103e6314394088c1eb10ff14b45bd526f72d3e8c4d5c162f605382550b171",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/type.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/type.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e4285195a170eb8ee6b9145ff677b92e4759c276940d809602defd7e8120722d",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/typebox.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/typebox.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1fa72f2007afb0d7357afd6f609562d8c545abf9ba52cc63a57cd4ef417efdbc",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/zod.test.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/omptype/test/zod.test.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a3dcd7b9a6163dde539bb3c0cd65ae8631830cf94e299bf624e789c9984de7eb",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		}
+	]
+}

@@ -1,6 +1,6 @@
 // Adapted from oh-my-pi packages/tui/test/mermaid-cache.test.ts (v18.18.7): Vitest, local imports and async worker assertions.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import * as mermaidAscii from "@oh-my-pi/pi-utils/mermaid-ascii";
+import * as mermaidAscii from "../src/compat/mermaid-ascii";
 import { clearMermaidCache, resolveMermaidAscii } from "../src/theme/mermaid-cache";
 
 describe("resolveMermaidAscii resize selection", () => {

@@ -15,9 +15,11 @@
 - Copyright (c) 2025-2026 Can Bölük
 - Copyright (c) 2026 Stencil Labs, Inc.
 
-Vendored files keep their upstream paths under `src/`, except the
-`packages/utils` subset, which lives under `src/vendor/pi-utils/`. TypeScript source
-files carry provenance headers naming their upstream file and commit. JSON sources
+Vendored files keep their upstream paths under `src/`. The shared
+`packages/utils` subset lives in the private workspace
+`packages/vendor/omp/pi-utils`, which carries its own license and inventory.
+TypeScript source files carry provenance headers naming their upstream file and
+commit. JSON sources
 and the full inventory are recorded in [SOURCES.json](./SOURCES.json); code that
 differs from upstream is listed in [PATCHES.md](./PATCHES.md) with the reason for
 the change.

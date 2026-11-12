@@ -12,7 +12,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import ts from "typescript";
 
 const root = path.resolve(import.meta.dirname, "..");
-const vendor = name => path.join(root, "src/vendor/pi-utils", name);
+const vendor = name => path.join(root, "../vendor/omp/pi-utils/src", name);
 
 // Mirrors the entries in tsup.config.ts.
 const packageEntries = {
@@ -30,7 +30,7 @@ const packageEntries = {
 const aliases = new Map(
 	[
 		["@oh-my-pi/pi-natives", "src/compat/natives.ts"],
-		["@oh-my-pi/pi-natives/path", "src/compat/natives-path.ts"],
+		["@oh-my-pi/pi-natives/path", "../vendor/omp/pi-utils/src/natives-path.ts"],
 		["@oh-my-pi/pi-ai", "src/compat/pi-ai.ts"],
 		["@oh-my-pi/pi-agent-core", "src/compat/pi-agent-core.ts"],
 	].map(([specifier, file]) => [specifier, path.join(root, file)]),

@@ -14,10 +14,11 @@ The two pi-derived engines retain pi commit `2a32a605a9f18a5f0191f65358a2e764b2f
 path, commit, upstream SHA-256, and verbatim/adapted/new classification.
 TypeScript provenance headers use the same classification. JSON files remain
 valid JSON without comments; their provenance is recorded in SOURCES.json.
-`vendor/pi-utils/` maps to `packages/utils/src/`; `vendor/package.json` maps to
-`packages/utils/package.json`; other upstream files retain their TUI paths.
-Import aliases in tsconfig, tsup and Vitest redirect upstream package specifiers
-to local facades without changing copied imports. Such files remain verbatim.
+The shared `packages/utils` subset moved to the private workspace
+`packages/vendor/omp/pi-utils`; its own `SOURCES.json` and `PATCHES.md` are the
+authoritative records for those files. TUI's inventory covers `src/` only.
+Import aliases in tsconfig, tsup, Vitest and the example loader redirect upstream
+package specifiers to that workspace without changing copied imports.
 
 Run `npm run audit:upstream -w @cloud-pi/tui` with sibling oh-my-pi and pi checkouts
 (or set `OH_MY_PI_DIR` and `PI_DIR`). The audit compares Git objects at the pinned
@@ -27,6 +28,9 @@ the inventory and headers after a reviewed sync. Only the standalone
 `// See PATCHES.md.` line ends a header; original comments are never stripped.
 
 ## Scope
+
+The shared utility sources formerly under `src/vendor/pi-utils/` now live in
+`packages/vendor/omp/pi-utils`; this table lists TUI-owned files only.
 
 Kept: the render loop, terminal I/O, text/input utilities, components and composer
 shapes, render helpers, theme runtime, multiplexers, Kitty/iTerm2 images,
@@ -117,7 +121,6 @@ listed below; the reason describes the difference from its declared baseline.
 | `src/compat/bun-globals.d.ts` | new | Ambient declarations for the injected Bun shim. |
 | `src/compat/bun.ts` | new | Partial Node Bun shim; Unicode Jamo width stays separate from terminal overrides. |
 | `src/compat/keys-engine.ts` | adapted | pi key engine with exported ParsedKittySequence and parseKittySequence. |
-| `src/compat/natives-path.ts` | new | Windows 8.3 long/short path helpers preserve their input. |
 | `src/compat/natives.ts` | new | Text/key/highlighting/appearance facades, worker output pump, gitignore discovery and async SVG/Mermaid facades. |
 | `src/compat/pi-agent-core.ts` | new | Structural ThinkingLevel type/value without agent runtime. |
 | `src/compat/pi-ai.ts` | new | Structural image-content type without provider runtime. |
@@ -172,16 +175,11 @@ listed below; the reason describes the difference from its declared baseline.
 | `src/tmux.ts` | adapted | Removed TSP session helpers and SIXEL client detection. |
 | `src/ttyid.ts` | adapted | Node /proc, readlink and ps replace ttyname FFI. |
 | `src/tui.ts` | adapted | Removed native/debug/SIXEL integration; retained DA1 draining and Node terminal ownership. |
-| `src/vendor/pi-utils/dirs.ts` | adapted | Default JSON import supports bundling; manifest stays at v18.18.7. |
-| `src/vendor/pi-utils/index.ts` | adapted | Curated library exports; no CLI/native/debug exports. |
-| `src/vendor/pi-utils/postmortem.ts` | adapted | Node exit/SIGKILL replaces reallyExit; removed worker reportError. |
-| `src/vendor/pi-utils/stderr-guard.ts` | adapted | Removed FFI; fd-2 redirection remains unavailable. |
-| `src/vendor/pi-utils/yaml-config.ts` | adapted | yaml package replaces Bun.YAML.stringify. |
 | `src/windows-altgr.ts` | adapted | Removed user32 FFI; injectable translation remains, layout discovery is empty. |
 | `src/chat/svg-figure.ts` | adapted | Worker PNG conversion, Node base64, stale-result handling, no SIXEL. |
 | `src/chat/figure-markdown.ts` | adapted | SVG-only composition, async repaint callbacks and disposal. |
 | `src/theme/mermaid-cache.ts` | adapted | Async single-flight cache and state width/orientation selection. |
-| `src/vendor/pi-utils/mermaid-ascii.ts` | adapted | Promise-based renderer and safe fallback; removed unused `extractMermaidBlocks`. |
+| `src/compat/mermaid-ascii.ts` | adapted | Promise-based renderer and safe fallback; removed unused `extractMermaidBlocks`. |
 | `src/compat/render-worker.ts` | new | Typed rendering contracts/calls, fonts and bounded worker lifecycle. |
 | `src/compat/render-worker-entry.ts` | new | Off-thread SVG/Mermaid execution with type-only imports from its companion. |
 

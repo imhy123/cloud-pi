@@ -13,10 +13,11 @@
 
 [SOURCES.json](./SOURCES.json) 记录 `src/` 下每个文件的来源、上游路径、提交、上游
 SHA-256 及 verbatim/adapted/new 分类。TypeScript 来源头使用相同分类。JSON 文件保持
-合法格式，不添加注释，其来源记录在 SOURCES.json 中。`vendor/pi-utils/` 对应
-`packages/utils/src/`，`vendor/package.json` 对应 `packages/utils/package.json`，
-其余上游文件保留 TUI 路径。tsconfig、tsup 和 Vitest 的别名将上游包导入映射到本地
-兼容层，不修改复制文件的导入；这类文件仍属于 verbatim。
+合法格式，不添加注释，其来源记录在 SOURCES.json 中。原先共用的
+`packages/utils` 子集已迁移到私有 workspace `packages/vendor/omp/pi-utils`，
+其 `SOURCES.json` 与 `PATCHES.md` 是该批文件的权威记录；TUI 清单只覆盖
+`src/`。tsconfig、tsup、Vitest 和示例加载器的别名把上游包导入映射到该
+workspace，不修改复制文件的导入；这类文件仍属于 verbatim。
 
 在相邻目录存在 oh-my-pi 和 pi checkout 时运行 `npm run audit:upstream -w @cloud-pi/tui`
 （也可设置 `OH_MY_PI_DIR` 和 `PI_DIR`）。审计直接读取固定提交的 Git 对象，校验分类与
@@ -25,6 +26,9 @@ SHA-256 及 verbatim/adapted/new 分类。TypeScript 来源头使用相同分类
 `// See PATCHES.md.` 行结束来源头，不会删除原有注释。
 
 ## 范围
+
+原先位于 `src/vendor/pi-utils/` 的共用工具源码已迁移到
+`packages/vendor/omp/pi-utils`；本表只列出 TUI 自有文件。
 
 保留渲染循环、终端 I/O、文本/输入工具、组件与 composer 形状、render 辅助、主题运行时、
 multiplexer、Kitty/iTerm2 图片、通知、LaTeX、fuzzy/autocomplete、帧率与 spinner 时钟、
@@ -97,7 +101,6 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/compat/bun-globals.d.ts` | new | 为注入的 Bun shim 提供环境类型声明。 |
 | `src/compat/bun.ts` | new | 部分 Node Bun shim；Unicode Jamo 测量与终端宽度覆盖分离。 |
 | `src/compat/keys-engine.ts` | adapted | 使用 pi 按键引擎，并导出 ParsedKittySequence 和 parseKittySequence。 |
-| `src/compat/natives-path.ts` | new | Windows 8.3 长短路径辅助原样返回输入。 |
 | `src/compat/natives.ts` | new | 文本/按键/高亮/外观兼容层、worker 输出泵、gitignore 发现及异步 SVG/Mermaid 兼容层。 |
 | `src/compat/pi-agent-core.ts` | new | 提供 ThinkingLevel 结构类型和值，不引入 agent 运行时。 |
 | `src/compat/pi-ai.ts` | new | 提供图片内容结构类型，不引入提供商运行时。 |
@@ -152,16 +155,11 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/tmux.ts` | adapted | 移除 TSP 会话辅助与 SIXEL 客户端探测。 |
 | `src/ttyid.ts` | adapted | 使用 Node /proc、readlink 和 ps 替代 ttyname FFI。 |
 | `src/tui.ts` | adapted | 移除原生界面、调试服务器与 SIXEL 集成；保留 DA1 排空及 Node 终端所有权处理。 |
-| `src/vendor/pi-utils/dirs.ts` | adapted | 使用默认 JSON 导入支持打包；清单保持 v18.18.7 版本。 |
-| `src/vendor/pi-utils/index.ts` | adapted | 整理库导出；不导出 CLI、原生界面或调试服务器。 |
-| `src/vendor/pi-utils/postmortem.ts` | adapted | 使用 Node exit/SIGKILL 替代 reallyExit；移除 worker reportError。 |
-| `src/vendor/pi-utils/stderr-guard.ts` | adapted | 移除 FFI；fd-2 重定向仍不可用。 |
-| `src/vendor/pi-utils/yaml-config.ts` | adapted | 使用 yaml 包替代 Bun.YAML.stringify。 |
 | `src/windows-altgr.ts` | adapted | 移除 user32 FFI；保留可注入转换，布局发现为空。 |
 | `src/chat/svg-figure.ts` | adapted | worker PNG 转换、Node base64、过期结果处理，移除 SIXEL。 |
 | `src/chat/figure-markdown.ts` | adapted | 仅组合 SVG，增加异步重绘回调和销毁。 |
 | `src/theme/mermaid-cache.ts` | adapted | 异步 single-flight 缓存及状态图宽度/方向选择。 |
-| `src/vendor/pi-utils/mermaid-ascii.ts` | adapted | 基于 Promise 的渲染与安全回退；移除未使用的 `extractMermaidBlocks`。 |
+| `src/compat/mermaid-ascii.ts` | adapted | 基于 Promise 的渲染与安全回退；移除未使用的 `extractMermaidBlocks`。 |
 | `src/compat/render-worker.ts` | new | 类型明确的渲染协议/调用、字体配置及有界 worker 生命周期。 |
 | `src/compat/render-worker-entry.ts` | new | 在 worker 中执行 SVG/Mermaid，仅从配套文件导入类型。 |
 

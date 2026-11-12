@@ -3,7 +3,7 @@
 // See PATCHES.md.
 import type { MermaidRenderOptions } from "@oh-my-pi/pi-natives";
 import { LRUCache } from "@oh-my-pi/pi-utils/lru";
-import * as mermaidAscii from "@oh-my-pi/pi-utils/mermaid-ascii";
+import * as mermaidAscii from "../compat/mermaid-ascii";
 
 /**
  * Options controlling how fenced Mermaid source is resolved to terminal ASCII.

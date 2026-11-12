@@ -31,3 +31,6 @@ tmp/
 demo/
 *.log
 .DS_Store
+
+# generated script bundles
+**/dist-scripts/

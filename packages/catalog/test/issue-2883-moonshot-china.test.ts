@@ -1,0 +1,99 @@
+// cloud-pi-catalog: adapted copy of oh-my-pi packages/catalog/test/issue-2883-moonshot-china.test.ts
+// (commit e325ffc73ab8; v18.18.7). Node.js adaptation; see PATCHES.md.
+// See PATCHES.md.
+import { afterEach, describe, expect, test, vi } from "vitest";
+import { providerEntry } from "@cloud-pi/catalog/compat/providers";
+import { moonshotModelManagerOptions } from "@cloud-pi/catalog/provider-models/openai-compat";
+import type { FetchImpl } from "@cloud-pi/catalog/types";
+import { $pickenv } from "@oh-my-pi/pi-utils";
+
+const MODELS_DEV_URL = "https://catalog.stencil.so/models.json.zstd";
+
+const ORIGINAL_ENV: Record<string, string | undefined> = {
+	MOONSHOT_BASE_URL: process.env.MOONSHOT_BASE_URL,
+	MOONSHOT_API_KEY: process.env.MOONSHOT_API_KEY,
+	KIMI_API_KEY: process.env.KIMI_API_KEY,
+};
+
+function restoreEnv(): void {
+	for (const key in ORIGINAL_ENV) {
+		const value = ORIGINAL_ENV[key];
+		if (value === undefined) {
+			delete process.env[key];
+		} else {
+			process.env[key] = value;
+		}
+	}
+}
+
+function inputUrl(input: string | URL | Request): string {
+	if (typeof input === "string") return input;
+	if (input instanceof URL) return input.toString();
+	return input.url;
+}
+
+function makeFetchMock(calls: string[]): FetchImpl {
+	return vi.fn(async (input: string | URL | Request) => {
+		const url = inputUrl(input);
+		if (url === MODELS_DEV_URL) {
+			return new Response("{}", { status: 500 });
+		}
+		calls.push(url);
+		return new Response(JSON.stringify({ data: [{ id: "kimi-k2.7-code" }] }), {
+			status: 200,
+			headers: { "Content-Type": "application/json" },
+		});
+	}) as FetchImpl;
+}
+
+afterEach(() => {
+	restoreEnv();
+	vi.restoreAllMocks();
+});
+
+describe("Moonshot China platform (issue #2883)", () => {
+	test("moonshot accepts KIMI_API_KEY as an env-key fallback for MOONSHOT_API_KEY", () => {
+		// `getEnvApiKey("moonshot")` resolves a catalog provider via `$pickenv(...envVars)`
+		// (see ai/src/stream.ts), so the descriptor's env-var order IS the resolution order.
+		const envVars = providerEntry("moonshot")?.envVars;
+		expect(envVars).toEqual(["MOONSHOT_API_KEY", "KIMI_API_KEY"]);
+
+		delete process.env.MOONSHOT_API_KEY;
+		process.env.KIMI_API_KEY = "kimi-china-key";
+		expect($pickenv(...(envVars ?? []))).toBe("kimi-china-key");
+	});
+
+	test("MOONSHOT_API_KEY keeps precedence over the KIMI_API_KEY alias", () => {
+		const envVars = providerEntry("moonshot")?.envVars ?? [];
+		process.env.MOONSHOT_API_KEY = "moonshot-primary-key";
+		process.env.KIMI_API_KEY = "kimi-fallback-key";
+		expect($pickenv(...envVars)).toBe("moonshot-primary-key");
+	});
+
+	test("discovers models against api.moonshot.cn when MOONSHOT_BASE_URL is set", async () => {
+		process.env.MOONSHOT_BASE_URL = "https://api.moonshot.cn/v1";
+		const calls: string[] = [];
+		const options = moonshotModelManagerOptions({ apiKey: "kimi-china-key", fetch: makeFetchMock(calls) });
+		const models = await options.fetchDynamicModels?.();
+
+		expect(calls).toContain("https://api.moonshot.cn/v1/models");
+		expect(models?.[0]).toMatchObject({
+			provider: "moonshot",
+			baseUrl: "https://api.moonshot.cn/v1",
+		});
+	});
+
+	test("explicit config baseUrl keeps precedence over MOONSHOT_BASE_URL", async () => {
+		process.env.MOONSHOT_BASE_URL = "https://api.moonshot.cn/v1";
+		const calls: string[] = [];
+		const options = moonshotModelManagerOptions({
+			apiKey: "kimi-china-key",
+			baseUrl: "https://proxy.example/v1",
+			fetch: makeFetchMock(calls),
+		});
+		const models = await options.fetchDynamicModels?.();
+
+		expect(calls).toContain("https://proxy.example/v1/models");
+		expect(models?.[0]?.baseUrl).toBe("https://proxy.example/v1");
+	});
+});

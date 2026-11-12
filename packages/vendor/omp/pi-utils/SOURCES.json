@@ -1,0 +1,445 @@
+{
+	"upstreamTag": "v18.18.7",
+	"files": [
+		{
+			"file": "LICENSE",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/LICENSE",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "90179611795093ae17d4a6bc6e06da450a8e54bbeb147a065b4127e1e4b407a7"
+		},
+		{
+			"file": "PATCHES.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "PATCHES_cn.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "README.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "README_cn.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "THIRD-PARTY-NOTICES.md",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "cloud-pi workspace file; see PATCHES.md."
+		},
+		{
+			"file": "package.json",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Private Node.js workspace metadata replaces the upstream Bun package manifest."
+		},
+		{
+			"file": "src/abortable.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/abortable.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f2d0d4433f0bd42197589e83341fb4478589c47e0e4d7dcf748b17e152d980e2"
+		},
+		{
+			"file": "src/async.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/async.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "6bf925071d79611ab6f2bcd96a6ac24c2507292778b77ecc333e1264b4acb429"
+		},
+		{
+			"file": "src/bun-compat.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Node stand-ins for the Bun globals the retained utility sources use."
+		},
+		{
+			"file": "src/bytes.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/bytes.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4a55d0a1cf55b56942187cd366e112baae5554b356f5455ba2bf1266ba5db179"
+		},
+		{
+			"file": "src/chalk.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/chalk.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9a03a0b68beba48ca78926ed909bd3d8de8c7eee5c522cd9087f94b01e0e8a6e"
+		},
+		{
+			"file": "src/color.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/color.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1a77ca8c26b09c29497bf34b15d54064e46be969dd07d211c91641c1214a342d"
+		},
+		{
+			"file": "src/dirs.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/dirs.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "f5bb52b0d3c28d418138bc90d5df6cc64b02938f89d87c9dc2055fe2b55c40c6",
+			"changes": "Node import of the package manifest, cloud-pi identity, and a local Windows path shim."
+		},
+		{
+			"file": "src/env.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/env.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2ba7d027c9dd406387d59077047e45e9687d56d324c663aa28725c14a7320491",
+			"changes": "Node environment access; dotenv loading and sanitization require explicit initializeEnvironment()."
+		},
+		{
+			"file": "src/fetch-retry.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/fetch-retry.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "2d211b23db03a8fcb4a3732b987207a0716b765609aa36273a45fd2656001ca6"
+		},
+		{
+			"file": "src/format.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/format.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "d8e0fd35251278fed8fbf46a44066db6f17a6290f3d4489e29f1663eed875e7e"
+		},
+		{
+			"file": "src/fs-error.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/fs-error.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cc119ca2c39dd8c7d84df2580719abe6608bec6d06fc19726c0a6ec4ad264eb8"
+		},
+		{
+			"file": "src/index.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/index.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "75a2127a5794a86800d2f1d38337eb7c1ba2b0e11c4a24654a9ecd537541095f",
+			"changes": "Curated TUI + catalog facade, including explicit host environment initialization."
+		},
+		{
+			"file": "src/json-lexer.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/json-lexer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "c3ccb7932cd36a39db5c6a2f0cd331c8f91dddb56e621aa29b1f61b4c35757ef"
+		},
+		{
+			"file": "src/json-parse.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/json-parse.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "9a5dc5dd2a180fae6066ada73bde5cf3652c1853cf249ca862d60a6631538893"
+		},
+		{
+			"file": "src/json.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/json.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "19ba31117f4b3f624bcea126dbbc5233d35503cd7cf8e88b916fa27231512a7d"
+		},
+		{
+			"file": "src/logger.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/logger.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "e972c73a1567f53bf1d4d7285aeb0967db69d2e945027f7ba3489600389c3971"
+		},
+		{
+			"file": "src/logger/rotating-file.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/logger/rotating-file.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "eb17d98c579ad1c6ad591aa498e019dee89509ad8ad0d079390d134db1c539c5"
+		},
+		{
+			"file": "src/loop-phase.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/loop-phase.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "5a43d91828f36a55d7388d27d8971e67e4305ed294d307e839c8a84846ec47f5"
+		},
+		{
+			"file": "src/lru.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/lru.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ec25ba7d645ee03be063f23dfc1be371fe8e30e39317884367dc192b39c52c82"
+		},
+		{
+			"file": "src/marked-list.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked-list.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "63b6827130fd3ffd6f075235314aea33f92c604636b5ffaddc418b6946656808"
+		},
+		{
+			"file": "src/marked.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "0a66cffa9628686078e2f5401b22eb84f9c30ef6cdca462204a699fe81e7f679"
+		},
+		{
+			"file": "src/marked/core.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked/core.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "a114aed7ab809cb131c6abf5b972a3b29e118f5d8baa69a3a239af28f3de55bf"
+		},
+		{
+			"file": "src/marked/inline-closers.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked/inline-closers.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "b80729a788e0d208c10486ffdcb197401c91205fb853cc9d32ee922448293cbc"
+		},
+		{
+			"file": "src/marked/inline-text.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/marked/inline-text.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "769abfd9ed427a850eb52f6d8fa6a1c0ee173ba9bf409814402ff5222099d4ad"
+		},
+		{
+			"file": "src/math-delimiters.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/math-delimiters.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1fd01c736dc04b6bf7dbf004b249c60c5c94204a258519924eec19545b001dac"
+		},
+		{
+			"file": "src/natives-path.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Pure JavaScript Windows path shim for the removed pi-natives dependency."
+		},
+		{
+			"file": "src/path.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/path.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "abee5d079737e59e844cfcb9fe6c66a71ba4d3bdd5410e09e88bee620a3f8577"
+		},
+		{
+			"file": "src/pid.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/pid.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "ce9699f9c264ca227dc1119b02659e278380bd3ee1ec991954a036cba915a162"
+		},
+		{
+			"file": "src/postmortem.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/postmortem.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "126be58c6e55e4212b08243acc885a5a74481257ceee62fe34cc4151f2aded10",
+			"changes": "Bun.inspect, Bun.sleep, and Bun.isMainThread come from the Node shim."
+		},
+		{
+			"file": "src/sanitize-text.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/sanitize-text.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "cdbdd41278c58f9c49f3672cef48d96661f9062033dffacfa3e4dd8d6916436f",
+			"changes": "ANSI stripping is implemented locally."
+		},
+		{
+			"file": "src/slugify.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/slugify.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "21370324963fab5ceeb4da96e472317cc43eb2fe986229fdd44745c149193493"
+		},
+		{
+			"file": "src/sqlite.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/sqlite.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "889700cb44a0ca10bf1225b510c1771ae3518768469c315f373b90f7098f67c3",
+			"changes": "Node SQLite adapter with bounded BUSY waits/retries; native locks and salvage helpers are omitted."
+		},
+		{
+			"file": "src/stderr-guard.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/stderr-guard.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "067fbfc31ab73c6630a1abcc186bc0341e0f0f4337729504e0caf2db161c1cc9",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "src/tab-spacing.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/tab-spacing.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "1cc79b425d75935c4c74a5041c751d76d2c87c9c67bcdaff61e88a812b577007",
+			"changes": "Local glob matching replaces Bun.Glob."
+		},
+		{
+			"file": "src/temp.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/temp.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "be50152572258488a1db00f992f664c6bf8a15bf39b80f8b41d996715472252b",
+			"changes": "Bun.gc and Bun.sleep use Node fallbacks."
+		},
+		{
+			"file": "src/test-runtime.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/test-runtime.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "db1ce164e3ed5943d7a0e5cb9133bc4d74c51bc13db23f09aa3459af5abb5128",
+			"changes": "process.env and process.argv[1] replace Bun env/main."
+		},
+		{
+			"file": "src/timing-buffer.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/timing-buffer.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "4f0872b4e83c9566c03cee5bdefaec21b9be13c0ccfee947a468f453668f87ac"
+		},
+		{
+			"file": "src/tls-fetch.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/tls-fetch.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "84277bcde761a23ec53589773c723f4d057747d6d549b52440dc82071b773761",
+			"changes": "Pass-through wrapper; Node owns NODE_EXTRA_CA_CERTS trust."
+		},
+		{
+			"file": "src/type-guards.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/type-guards.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "86a5fb728ab7635711ea82c2de2dacbcc849e56acd7e4bfaf5041d555a9090dd"
+		},
+		{
+			"file": "src/version.ts",
+			"kind": "verbatim",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/version.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "178c9bf34acac45af462118c5d97dbac7b1a6284913bc6f6264bea3b2287e6cf"
+		},
+		{
+			"file": "src/which.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/which.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "8e3f25b6389b79d04859dcf70c53fc0ab81b83a46d4e8c28eb63f31fc4236cb3",
+			"changes": "Node PATH lookup replaces Bun.which; macOS toolchain fallback is unchanged."
+		},
+		{
+			"file": "src/worker-host.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/worker-host.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "7aaa5e8efc45747090a562193f5d200013b8bc649e0212e8c06d4c8eb1486b0b",
+			"changes": "process.argv[1] replaces Bun.main."
+		},
+		{
+			"file": "src/yaml-config.ts",
+			"kind": "adapted",
+			"origin": "oh-my-pi",
+			"source": "packages/utils/src/yaml-config.ts",
+			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
+			"upstreamSha256": "3cfa4f144f9b140af0242e3b4978940597024df6f9616c1c55be279825a41e80",
+			"changes": "Node.js adaptation; see PATCHES.md."
+		},
+		{
+			"file": "test/env.test.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Import purity and explicit environment bootstrap regressions."
+		},
+		{
+			"file": "test/sqlite.test.ts",
+			"kind": "new",
+			"origin": "new",
+			"source": null,
+			"commit": null,
+			"upstreamSha256": null,
+			"changes": "Node SQLite contention, bounded retry, and corruption recovery regressions."
+		}
+	]
+}

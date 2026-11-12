@@ -3,16 +3,16 @@
 	"compilerOptions": {
 		"paths": {
 			"@oh-my-pi/pi-utils": [
-				"../../packages/tui/src/vendor/pi-utils/index.ts"
+				"../../packages/vendor/omp/pi-utils/src/index.ts"
 			],
 			"@oh-my-pi/pi-utils/*": [
-				"../../packages/tui/src/vendor/pi-utils/*"
+				"../../packages/vendor/omp/pi-utils/src/*"
 			],
 			"@oh-my-pi/pi-natives": [
 				"../../packages/tui/src/compat/natives.ts"
 			],
 			"@oh-my-pi/pi-natives/path": [
-				"../../packages/tui/src/compat/natives-path.ts"
+				"../../packages/vendor/omp/pi-utils/src/natives-path.ts"
 			],
 			"@oh-my-pi/pi-ai": [
 				"../../packages/tui/src/compat/pi-ai.ts"

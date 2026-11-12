@@ -1,0 +1,38 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"paths": {
+			"@cloud-pi/catalog": [
+				"./src/index.ts"
+			],
+			"@cloud-pi/catalog/*": [
+				"./src/*"
+			],
+			"@oh-my-pi/pi-utils": [
+				"../vendor/omp/pi-utils/src/index.ts"
+			],
+			"@oh-my-pi/pi-utils/*": [
+				"../vendor/omp/pi-utils/src/*"
+			],
+			"@oh-my-pi/omptype": [
+				"../vendor/omp/omptype/src/index.ts"
+			],
+			"@oh-my-pi/omptype/*": [
+				"../vendor/omp/omptype/src/*"
+			]
+		}
+	},
+	"include": [
+		"src",
+		"scripts",
+		"test",
+		"bench",
+		"tsup.config.ts",
+		"vitest.config.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"test/integration"
+	]
+}

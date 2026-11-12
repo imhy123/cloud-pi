@@ -2,10 +2,10 @@
 	"extends": "../tsconfig.json",
 	"compilerOptions": {
 		"paths": {
-			"@oh-my-pi/pi-utils": ["../src/vendor/pi-utils/index.ts"],
-			"@oh-my-pi/pi-utils/*": ["../src/vendor/pi-utils/*"],
+			"@oh-my-pi/pi-utils": ["../../vendor/omp/pi-utils/src/index.ts"],
+			"@oh-my-pi/pi-utils/*": ["../../vendor/omp/pi-utils/src/*"],
 			"@oh-my-pi/pi-natives": ["../src/compat/natives.ts"],
-			"@oh-my-pi/pi-natives/path": ["../src/compat/natives-path.ts"],
+			"@oh-my-pi/pi-natives/path": ["../../vendor/omp/pi-utils/src/natives-path.ts"],
 			"@oh-my-pi/pi-ai": ["../src/compat/pi-ai.ts"],
 			"@oh-my-pi/pi-agent-core": ["../src/compat/pi-agent-core.ts"],
 			"@cloud-pi/tui": ["../src/index.ts"],

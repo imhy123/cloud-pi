@@ -1,0 +1,42 @@
+{
+	"name": "@oh-my-pi/omptype",
+	"version": "18.18.7",
+	"private": true,
+	"description": "ArkType-compatible schema validation with a lazy JIT, vendored from oh-my-pi packages/omptype",
+	"type": "module",
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"files": [
+		"dist",
+		"src",
+		"SOURCES.json",
+		"README.md",
+		"PATCHES.md",
+		"THIRD-PARTY-NOTICES.md",
+		"LICENSE"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./*": {
+			"types": "./dist/*.d.ts",
+			"import": "./dist/*.js"
+		}
+	},
+	"scripts": {
+		"build": "tsup",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"test": "vitest run",
+		"audit:upstream": "node scripts/provenance.mjs"
+	},
+	"devDependencies": {
+		"tsup": "^9.0.0",
+		"vitest": "^5.1.0"
+	}
+}

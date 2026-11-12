@@ -1,6 +1,6 @@
 // Adapted from oh-my-pi packages/utils/test/mermaid-ascii.test.ts (v18.18.7): Vitest, local imports and async worker assertions.
 import { describe, expect, it } from "vitest";
-import { renderMermaidAscii, renderMermaidAsciiSafe } from "../src/vendor/pi-utils/mermaid-ascii";
+import { renderMermaidAscii, renderMermaidAsciiSafe } from "../src/compat/mermaid-ascii";
 
 describe("renderMermaidAscii", () => {
 	it("renders through the worker with the requested options", async () => {
