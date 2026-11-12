@@ -20,8 +20,8 @@
 			"@oh-my-pi/pi-agent-core": [
 				"../../packages/tui/src/compat/pi-agent-core.ts"
 			],
-			"@cloud-pi/i18n": [
-				"../../packages/i18n/src/index.ts"
+			"@cloud-pi/common": [
+				"../../packages/common/src/index.ts"
 			],
 			"@cloud-pi/tui": [
 				"../../packages/tui/src/index.ts"

@@ -1,5 +1,5 @@
-// cloud-pi i18n: verbatim copy of pi packages/chord/src/surfaces/format.ts
-// (tag v1.5.2). Only the import path changed.
+// cloud-pi common: adapted copy of pi packages/chord/src/surfaces/format.ts
+// (tag v1.5.2). Retained formatting behavior; adapted introductory comments.
 //
 // Dates, times and numbers in the viewer's locale: `Intl` with the current
 // language's locale, so a message function's `formatTime(at)` follows the

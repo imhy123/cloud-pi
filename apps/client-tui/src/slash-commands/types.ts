@@ -1,5 +1,5 @@
 // cloud-pi client-tui: adapted copy of oh-my-pi packages/coding-agent/src/slash-commands/types.ts
-// (commit e325ffc73ab8; v18.18.7). Retained command metadata and results; replaced omp session/ACP/TUI runtimes with client operations; omitted icons and live descriptions.
+// (commit e325ffc73ab8; v18.18.7). Retained command metadata and results; replaced omp session/ACP/TUI runtimes with client clear, settings and quit operations; omitted icons and live descriptions.
 // See ../../PATCHES.md for the migration scope.
 
 /** Declarative subcommand definition for commands with argument completion. */
@@ -35,6 +35,7 @@ export type SlashCommandResult = undefined | { consumed: true } | { prompt: stri
 /** Operations owned by the client; commands have no dependency on a server session. */
 export interface SlashCommandRuntime {
 	clearTranscript(): void;
+	showSettings(): void;
 	quit(): void;
 }
 

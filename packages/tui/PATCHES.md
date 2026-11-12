@@ -140,7 +140,7 @@ listed below; the reason describes the difference from its declared baseline.
 | `src/components/scroll-view.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
 | `src/components/section.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
 | `src/components/select-list.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
-| `src/components/settings-list.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
+| `src/components/settings-list.ts` | adapted | Removed TSP describe/native surfaces; search text is injectable for localization. |
 | `src/components/spacer.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
 | `src/components/tab-bar.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |
 | `src/components/table.ts` | adapted | Removed TSP describe/native surfaces; terminal rendering stays upstream. |

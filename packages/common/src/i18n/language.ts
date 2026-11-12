@@ -1,7 +1,7 @@
-// cloud-pi i18n: adapted copy of pi packages/chord/src/surfaces/language.ts
+// cloud-pi common: adapted copy of pi packages/chord/src/surfaces/language.ts
 // (tag v1.5.2).
 // Changes: the `plugin` field of the `failed` report is dropped together with
-// the registry cut in `translations.ts`; everything else is verbatim.
+// the registry cut in `translations.ts`; introductory comments are adapted.
 import { canonicalLocale, type TranslationIndex } from "./translations.ts";
 
 /** A locale to render in: its direction, its fallback chain, the host's catalogs and the reports' destination. */

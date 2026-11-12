@@ -1,6 +1,6 @@
-# @cloud-pi/i18n
+# @cloud-pi/common
 
-Typed message catalogs, languages and locale-aware formatting for every
+Shared localizable text, errors, typed message catalogs, languages and locale-aware formatting for every
 cloud-pi client (terminal, web, desktop). It has no runtime dependencies; all
 locale data and formatting come from `Intl`.
 
@@ -26,13 +26,13 @@ Deliberate deviations (recorded in each file's header):
   is local.
 - `translations.ts`: the `Translations` registry and its facet are gone; catalogs
   compose from a plain list with `composeTranslations`.
-- `language.ts` / `format.ts`: the `plugin` attribution in reports is gone;
-  otherwise verbatim.
+- `language.ts`: report plugin attribution is removed and comments are adapted.
+- `format.ts`: formatting behavior is retained; introductory comments are adapted.
 
 ## API
 
 ```ts
-import { composeTranslations, createLanguage, defineMessages, formatNumber, inLanguage, resolveLocale } from "@cloud-pi/i18n";
+import { composeTranslations, createLanguage, defineMessages, formatNumber, inLanguage, resolveLocale } from "@cloud-pi/common";
 
 const t = defineMessages("client-tui", {
 	en: {
@@ -74,12 +74,12 @@ client needs no build step:
 
 ```jsonc
 // apps/<client>/package.json
-"dependencies": { "@cloud-pi/i18n": "0.0.0" }
+"dependencies": { "@cloud-pi/common": "0.0.0" }
 ```
 
 ```jsonc
 // tsconfig.base.json
-"paths": { "@cloud-pi/i18n": ["packages/i18n/src/index.ts"] }
+"paths": { "@cloud-pi/common": ["packages/common/src/index.ts"] }
 ```
 
 Keep `@cloud-pi/tui` locale-agnostic: locale and catalogs belong to the clients,
@@ -88,9 +88,9 @@ so the library's output never drifts with the host's environment.
 Internal imports carry `.ts` extensions, so the package also loads in plain
 Node 24 (native type stripping) without a bundler. A TypeScript consumer needs
 `allowImportingTsExtensions` in its compiler options; `tsconfig.base.json`
-already sets it, together with the `@cloud-pi/i18n` path mapping.
+already sets it, together with the `@cloud-pi/common` path mapping.
 
-`npm install` links the workspace (`node_modules/@cloud-pi/i18n`), which is what
+`npm install` links the workspace (`node_modules/@cloud-pi/common`), which is what
 makes the bare specifier resolve at runtime.
 
 ## Rules
@@ -101,3 +101,18 @@ makes the bare specifier resolve at runtime.
   ids, key ids, `SelectItem.value`. Translate `label`/`description`/`hint`.
 - A component that caches rendered lines must invalidate them on a language
   change, exactly like a theme change.
+## Shared text and errors
+
+`LocalizedText` holds an English default and optional namespaced `MessageData`.
+Callers choose the appropriate catalog at display time and use the default when
+no matching translation is available. `LocalizedError` extends `Error` with
+`messageData` and preserves an optional `cause`; its ordinary `message` is for
+logs. Transporting errors across an IPC or network boundary requires an explicit
+validated data representation rather than relying on the `Error` prototype.
+
+The `client-tui` catalog contains terminal-specific messages. It is available to
+client hosts but does not define text for web or desktop interfaces. Platform
+language detection and settings loading are owned by each host.
+
+All client strings use the `client-tui` namespace in `src/i18n/client-messages.ts`;
+group and diagnostic keys use `settings.group.*` and `settings.error.*`.

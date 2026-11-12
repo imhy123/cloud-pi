@@ -1,5 +1,5 @@
 // cloud-pi-tui: adapted copy of oh-my-pi packages/tui/src/components/settings-list.ts
-// (commit e325ffc73ab8; v18.18.7). Removed TSP preference types and the native described-item cache.
+// (commit e325ffc73ab8; v18.18.7). Removed TSP preference types and the native described-item cache; added injectable search text for localization.
 // See PATCHES.md.
 import { formatKeyHint } from "../app-keybindings";
 import { editorKey, editorKeys } from "../chrome/keybinding-hints";
@@ -99,6 +99,8 @@ export interface SettingsListOptions {
 	 * use when the host renders its own footer.
 	 */
 	hint?: string;
+	/** Optional localized search/status text. */
+	searchText?: { prompt: string; active: (query: string) => string; noMatches: string; editHelp: string };
 	/** Fixed split-sidebar width (columns incl. indent+gap); default derives from section names. */
 	sidebarWidth?: number;
 }
@@ -458,7 +460,7 @@ export class SettingsList implements Component {
 
 	#renderSearchStatus(width: number): string {
 		const query = sanitizeSingleLine(this.#filterQuery);
-		const statusText = query ? `  Search: ${query}` : "  Type to search";
+		const statusText = `  ${query ? (this.#options.searchText?.active(query) ?? `Search: ${query}`) : (this.#options.searchText?.prompt ?? "Type to search")}`;
 		return this.#theme.hint(truncateToWidth(statusText, width, Ellipsis.Omit));
 	}
 
@@ -600,11 +602,11 @@ export class SettingsList implements Component {
 			if (this.#shouldRenderSearchStatus()) {
 				lines.push(this.#renderSearchStatus(width));
 			}
-			lines.push(this.#theme.hint("  No matching settings"));
+			lines.push(this.#theme.hint(`  ${this.#options.searchText?.noMatches ?? "No matching settings"}`));
 			lines.push("");
 			const editKey = editorKey("tui.editor.deleteCharBackward");
 			const cancelKey = editorKey("tui.select.cancel");
-			lines.push(truncateToWidth(this.#theme.hint(`  ${editKey} to edit search · ${cancelKey} to cancel`), width));
+			lines.push(truncateToWidth(this.#theme.hint(`  ${this.#options.searchText?.editHelp ?? `${editKey} to edit search · ${cancelKey} to cancel`}`), width));
 			return lines;
 		}
 

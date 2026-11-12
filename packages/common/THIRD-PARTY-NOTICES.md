@@ -1,6 +1,6 @@
 # Third-party notices
 
-`@cloud-pi/i18n` vendors four files from pi's Chord client surfaces
+`@cloud-pi/common` vendors four files from pi's Chord client surfaces
 (`packages/chord/src/surfaces`), which are MIT-licensed.
 
 ## pi

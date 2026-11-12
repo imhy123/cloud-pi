@@ -1,11 +1,17 @@
+import { parseClientArgs } from "./cli-options";
 import { VERSION } from "./version";
 
-const args = process.argv.slice(2);
-if (args.length === 1 && (args[0] === "--version" || args[0] === "-v")) {
-	console.log(`cloud-pi ${VERSION}`);
-} else if (args.length === 0) {
-	await import("./main");
-} else {
-	console.error(`Unknown arguments: ${args.join(" ")}`);
+let options: ReturnType<typeof parseClientArgs> | undefined;
+try {
+	options = parseClientArgs(process.argv.slice(2));
+} catch (error) {
+	console.error(error instanceof Error ? error.message : String(error));
 	process.exitCode = 1;
+}
+
+if (options?.version) {
+	console.log(`cloud-pi ${VERSION}`);
+} else if (options) {
+	const { startClient } = await import("./main");
+	await startClient(options);
 }

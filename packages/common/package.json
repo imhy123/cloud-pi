@@ -1,8 +1,8 @@
 {
-	"name": "@cloud-pi/i18n",
+	"name": "@cloud-pi/common",
 	"version": "0.0.0",
 	"private": true,
-	"description": "Typed message catalogs, languages, locale resolution and locale-aware formatting shared by cloud-pi clients",
+	"description": "Shared localization and client-independent types",
 	"type": "module",
 	"license": "MIT",
 	"sideEffects": false,

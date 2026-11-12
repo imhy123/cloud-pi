@@ -9,9 +9,9 @@ import {
 	type MessagesReport,
 	resolveLocale,
 	type Translator,
-} from "@cloud-pi/i18n";
+} from "@cloud-pi/common";
 
-import { messages } from "./messages";
+import { messages } from "@cloud-pi/common";
 
 /** The client catalog's shape, as its first locale declared it. */
 type ClientMessages = MessagesOf<typeof messages>;
@@ -48,8 +48,10 @@ export interface ClientLocale {
 	readonly t: Translator<"client-tui", ClientMessages>;
 }
 
-const language = createLanguage(resolveLocale(null, systemLocales(), offered), translations, report);
-export const locale: ClientLocale = {
-	language,
-	t: messages.in(language),
-};
+export function createClientLocale(preferred?: string): ClientLocale {
+	const language = createLanguage(resolveLocale(preferred ?? null, systemLocales(), offered), translations, report);
+	return {
+		language,
+		t: messages.in(language),
+	};
+}

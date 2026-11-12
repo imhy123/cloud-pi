@@ -120,7 +120,7 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 | `src/components/scroll-view.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/section.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/select-list.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
-| `src/components/settings-list.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
+| `src/components/settings-list.ts` | adapted | 移除 TSP describe/原生界面；搜索文案可注入以支持本地化。 |
 | `src/components/spacer.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/tab-bar.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |
 | `src/components/table.ts` | adapted | 移除 TSP describe/原生界面；终端渲染保留上游实现。 |

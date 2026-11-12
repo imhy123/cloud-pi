@@ -447,7 +447,7 @@
 			"source": "packages/tui/src/components/settings-list.ts",
 			"commit": "e325ffc73ab86e03bdd20a91b77d8e2b3964c906",
 			"upstreamSha256": "e2249a3284e164556268448dc140a074d6f76357c4d112634fb7a1c7515b35f8",
-			"changes": "Removed TSP preference types and the native described-item cache."
+			"changes": "Removed TSP preference types and the native described-item cache; added injectable search text for localization."
 		},
 		{
 			"file": "components/spacer.ts",

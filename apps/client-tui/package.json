@@ -13,7 +13,8 @@
 		"test": "node --import ./register.mjs --test test/*.test.ts"
 	},
 	"dependencies": {
-		"@cloud-pi/i18n": "0.0.0",
-		"@cloud-pi/tui": "0.1.0"
+		"@cloud-pi/common": "0.0.0",
+		"@cloud-pi/tui": "0.1.0",
+		"yaml": "^2.8.1"
 	}
 }

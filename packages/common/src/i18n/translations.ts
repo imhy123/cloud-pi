@@ -1,4 +1,4 @@
-// cloud-pi i18n: adapted copy of pi packages/chord/src/surfaces/translations.ts
+// cloud-pi common: adapted copy of pi packages/chord/src/surfaces/translations.ts
 // (tag v1.5.2).
 // Changes: the Chord Translations registry, its facet and plugin attribution are
 // dropped; catalogs compose from a plain list instead of a registry table.

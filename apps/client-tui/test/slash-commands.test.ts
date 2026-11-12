@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { CombinedAutocompleteProvider, Container, Text } from "@cloud-pi/tui";
-import { composeTranslations, createLanguage } from "@cloud-pi/i18n";
-import { messages } from "../src/i18n/messages";
+import { composeTranslations, createLanguage } from "@cloud-pi/common";
+import { messages } from "@cloud-pi/common";
 import { buildClientSlashCommands } from "../src/slash-commands/builtin-client";
 import { createBuiltinSlashCommandRegistry } from "../src/slash-commands/builtin-registry";
 import { parseSlashCommand, parseSubcommand } from "../src/slash-commands/helpers/parse";
@@ -34,6 +34,7 @@ test("clear only detaches transcript entries and quit invokes the host exit oper
 	const runtime: SlashCommandRuntime = {
 		clearTranscript() { transcript.clear(); renders++; },
 		quit() { exits++; },
+		showSettings() {},
 	};
 	const commands = registry();
 	assert.equal(commands.executeBuiltinSlashCommand("  /clear \n", runtime), true);
@@ -55,7 +56,7 @@ test("localizes descriptions and description search while keeping insertion valu
 		const commands = registry(locale);
 		const provider = new CombinedAutocompleteProvider(commands.buildTuiBuiltinSlashCommands());
 		const all = provider.trySyncSlashCompletion("/")!;
-		assert.deepEqual(all.items.map(item => item.value).sort(), ["clear", "quit"]);
+		assert.deepEqual(all.items.map(item => item.value).sort(), ["clear", "quit", "settings"]);
 		const quit = all.items.find(item => item.value === "quit")!;
 		assert.equal(quit.description, locale === "en" ? "Exit Cloud-Pi" : "退出 Cloud-Pi");
 		assert.equal(provider.trySyncSlashCompletion("/cl")!.items[0].value, "clear");
@@ -75,7 +76,7 @@ test("dispatches aliases and preserves generic argument completions, optional hi
 		},
 		{ name: "static", description: "Static", inlineHint: "<value>", handle() {} },
 	]);
-	const runtime: SlashCommandRuntime = { clearTranscript() {}, quit() {} };
+	const runtime: SlashCommandRuntime = { clearTranscript() {}, quit() {}, showSettings() {} };
 	assert.equal(commands.lookupBuiltinSlashCommand("ex"), commands.lookupBuiltinSlashCommand("example"));
 	assert.equal(commands.executeBuiltinSlashCommand("/ex:list", runtime), "list");
 	const [example, plain] = commands.buildTuiBuiltinSlashCommands();

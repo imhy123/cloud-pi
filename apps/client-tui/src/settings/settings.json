@@ -1,0 +1,5147 @@
+{
+	"categories": [
+		{
+			"id": "appearance",
+			"label": {
+				"defaultText": "Appearance",
+				"messageKey": "settings.appearance"
+			},
+			"groups": [
+				{
+					"id": "Theme",
+					"label": {
+						"defaultText": "Theme",
+						"messageKey": "settings.group.theme"
+					},
+					"settings": [
+						{
+							"id": "theme.dark",
+							"label": {
+								"defaultText": "Dark Theme",
+								"messageKey": "settings.darkTheme"
+							},
+							"description": {
+								"defaultText": "Theme used when the terminal has a dark background",
+								"messageKey": "settings.darkTheme.description"
+							},
+							"type": "select",
+							"configPath": "client-tui.theme.dark",
+							"defaultValue": "titanium",
+							"options": {
+								"source": "dynamic",
+								"provider": "themes"
+							}
+						},
+						{
+							"id": "theme.light",
+							"label": {
+								"defaultText": "Light Theme",
+								"messageKey": "settings.lightTheme"
+							},
+							"description": {
+								"defaultText": "Theme used when the terminal has a light background",
+								"messageKey": "settings.lightTheme.description"
+							},
+							"type": "select",
+							"configPath": "client-tui.theme.light",
+							"defaultValue": "light",
+							"options": {
+								"source": "dynamic",
+								"provider": "themes"
+							}
+						},
+						{
+							"id": "mock:symbolPreset",
+							"label": {
+								"defaultText": "Symbol Preset"
+							},
+							"description": {
+								"defaultText": "Glyph set for icons and symbols (Unicode, Nerd Font, or ASCII)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:colorBlindMode",
+							"label": {
+								"defaultText": "Color-Blind Mode"
+							},
+							"description": {
+								"defaultText": "Use blue instead of green for diff additions"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Language",
+					"label": {
+						"defaultText": "Language",
+						"messageKey": "settings.group.language"
+					},
+					"settings": [
+						{
+							"id": "language",
+							"label": {
+								"defaultText": "Language"
+							},
+							"description": {
+								"defaultText": "Language used by cloud-pi clients",
+								"messageKey": "settings.language.description"
+							},
+							"type": "select",
+							"configPath": "client-tui.language",
+							"options": {
+								"source": "static",
+								"items": [
+									{
+										"value": "en",
+										"label": {
+											"defaultText": "English"
+										}
+									},
+									{
+										"value": "zh-CN",
+										"label": {
+											"defaultText": "中文（简体）"
+										}
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"id": "Composer",
+					"label": {
+						"defaultText": "Composer",
+						"messageKey": "settings.group.composer"
+					},
+					"settings": [
+						{
+							"id": "mock:composer.shape",
+							"label": {
+								"defaultText": "Composer Shape"
+							},
+							"description": {
+								"defaultText": "Visual layout of the input editor and status line"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:composer.tokenRate",
+							"label": {
+								"defaultText": "Generation Rate"
+							},
+							"description": {
+								"defaultText": "Show a live generation tok/s readout: on the working row next to the session title, or in the native composer bar right after the thinking level, where the last reading stays between turns. Estimated from streamed deltas and corrected by the provider's billed output count as each message completes."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Status Line",
+					"label": {
+						"defaultText": "Status Line",
+						"messageKey": "settings.group.status-line"
+					},
+					"settings": [
+						{
+							"id": "mock:statusLine.preset",
+							"label": {
+								"defaultText": "Status Line Preset"
+							},
+							"description": {
+								"defaultText": "Pre-built status line configurations"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:statusLine.separator",
+							"label": {
+								"defaultText": "Status Line Separator"
+							},
+							"description": {
+								"defaultText": "Style of separators between segments"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:statusLine.contextLine",
+							"label": {
+								"defaultText": "Context-Reactive Line"
+							},
+							"description": {
+								"defaultText": "How the line between the left and right segments reflects context usage (box composer only)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:statusLine.sessionAccent",
+							"label": {
+								"defaultText": "Session Accent"
+							},
+							"description": {
+								"defaultText": "Use the session name color for the editor border and status line gap"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:statusLine.transparent",
+							"label": {
+								"defaultText": "Transparent Status Line"
+							},
+							"description": {
+								"defaultText": "Use the terminal's default background for the status line instead of the theme's `statusLineBg`. Powerline end caps are dropped because they need a contrasting fill to bridge into the surrounding terminal."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:statusLine.compactThinkingLevel",
+							"label": {
+								"defaultText": "Compact Thinking Level"
+							},
+							"description": {
+								"defaultText": "Show the thinking level as a single icon on the model name instead of a separate ` · <level>` suffix; in Tern's composer, as the model chip's icon instead of a separate chip (click the icon to cycle it)."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:statusLine.showHookStatus",
+							"label": {
+								"defaultText": "Show Hook Status"
+							},
+							"description": {
+								"defaultText": "Display hook status messages below the status line"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Display",
+					"label": {
+						"defaultText": "Display",
+						"messageKey": "settings.group.display"
+					},
+					"settings": [
+						{
+							"id": "mock:tui.resizeScrollback",
+							"label": {
+								"defaultText": "Resize Scrollback"
+							},
+							"description": {
+								"defaultText": "How a settled terminal resize refreshes transcript rows retained in terminal scrollback"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.completeScrollback",
+							"label": {
+								"defaultText": "Complete Scrollback"
+							},
+							"description": {
+								"defaultText": "Send transcript rows pushed off screen by a growing HUD or dialog straight to scrollback; when it shrinks, blank rows sit between the transcript and the input until new output fills them"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:terminal.showProgress",
+							"label": {
+								"defaultText": "Native Terminal Progress"
+							},
+							"description": {
+								"defaultText": "Emit OSC 9;4 indeterminate progress while the agent or context maintenance is running (always on in Tern)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:terminal.programStatus",
+							"label": {
+								"defaultText": "Program Status (OSC 7501)"
+							},
+							"description": {
+								"defaultText": "Report whether the agent is working, waiting on you, done, or failed over OSC 7501, for terminal tab indicators and agent inboxes"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.textSizing",
+							"label": {
+								"defaultText": "Large Headings (Kitty)"
+							},
+							"description": {
+								"defaultText": "Render Markdown H1 headings at 2x scale using Kitty's OSC 66 text-sizing protocol. Only takes effect on Kitty terminals; ignored everywhere else. Off by default."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.colorfulMarkdown",
+							"label": {
+								"defaultText": "Colorful Markdown"
+							},
+							"description": {
+								"defaultText": "Color headings by level, bold and italic text, inline code, and table headers from the theme's ANSI palette. Off uses one heading color and plain bold/italic."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.renderMermaid",
+							"label": {
+								"defaultText": "Render Mermaid Diagrams"
+							},
+							"description": {
+								"defaultText": "Render Mermaid fenced code blocks as ASCII diagrams"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.renderSvg",
+							"label": {
+								"defaultText": "Render SVG Figures"
+							},
+							"description": {
+								"defaultText": "Invite the agent to draw diagrams and charts as SVG, rendered inline as images on terminals that show graphics"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.autoGraph",
+							"label": {
+								"defaultText": "Auto-Graph Tables"
+							},
+							"description": {
+								"defaultText": "Draw a chart under numeric tables in the agent's answers, in your theme's colors, on terminals that show graphics"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.reactions",
+							"label": {
+								"defaultText": "Agent Reactions"
+							},
+							"description": {
+								"defaultText": "Invite the agent to react to your message with an emoji badge on its bubble"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.codexResetFireworks",
+							"label": {
+								"defaultText": "Codex Reset Fireworks"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.titleState",
+							"label": {
+								"defaultText": "Terminal Title Run State"
+							},
+							"description": {
+								"defaultText": "Show the agent run state in the terminal title's separator — an animated spinner while working (a static ':' under WSL), '>' when it's your turn, '!' when the agent is waiting on you"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.titleSpinner",
+							"label": {
+								"defaultText": "Terminal Title Spinner"
+							},
+							"description": {
+								"defaultText": "Glyph set for the working-state spinner in the terminal title — braille sweep, filling moon, single-dot cycle, or ASCII-safe line"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.spinnerInterval",
+							"label": {
+								"defaultText": "Spinner Interval (ms)"
+							},
+							"description": {
+								"defaultText": "Milliseconds between frames of every spinner, the terminal title included; 0 shows static glyphs. Unset follows Motion"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.maxFps",
+							"label": {
+								"defaultText": "Max Frames Per Second"
+							},
+							"description": {
+								"defaultText": "Ceiling on how often the TUI repaints, streaming text included. Keystroke echo keeps 30 fps, so the pane you type in stays responsive"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.hyperlinks",
+							"label": {
+								"defaultText": "Terminal Hyperlinks"
+							},
+							"description": {
+								"defaultText": "Wrap paths and URLs in OSC 8 hyperlinks for terminal-native click-to-open (auto: detect support; off: never; always: unconditional)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.mouse",
+							"label": {
+								"defaultText": "Mouse Click-to-Focus"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.tight",
+							"label": {
+								"defaultText": "Tight Layout"
+							},
+							"description": {
+								"defaultText": "Remove the 1-character horizontal padding from the left and right of the terminal output"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.shimmer",
+							"label": {
+								"defaultText": "Shimmer"
+							},
+							"description": {
+								"defaultText": "Animation style for working/loading messages; off under reduced or no Motion"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.motion",
+							"label": {
+								"defaultText": "Motion"
+							},
+							"description": {
+								"defaultText": "One switch over spinners, shimmer, and decorative blink/fade. Streaming text is unaffected (see Max Frames Per Second). A spinner interval you set still wins"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.pinnedAgents",
+							"label": {
+								"defaultText": "Pinned Agents"
+							},
+							"description": {
+								"defaultText": "Pinned live-agent jump list above the editor (off hides it; collapsed shows a few rows with an expander; full lists all)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.subagentLivePreview",
+							"label": {
+								"defaultText": "Subagent Live Preview"
+							},
+							"description": {
+								"defaultText": "Show each pinned subagent's current (or most recent) tool call beneath its row"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.smoothStreaming",
+							"label": {
+								"defaultText": "Smooth Streaming"
+							},
+							"description": {
+								"defaultText": "Reveal assistant text and streamed tool input smoothly while chunks arrive (Tern types assistant text out itself)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.hideToolActivity",
+							"label": {
+								"defaultText": "Hide Tool Activity"
+							},
+							"description": {
+								"defaultText": "Hide model-initiated tool calls and results from the transcript"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.showTokenUsage",
+							"label": {
+								"defaultText": "Show Token Usage"
+							},
+							"description": {
+								"defaultText": "Show per-turn token usage on assistant messages"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.showTurnTime",
+							"label": {
+								"defaultText": "Show Turn Time"
+							},
+							"description": {
+								"defaultText": "Show the total prompt-to-yield time (including tool calls) on assistant message usage rows"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.cacheMissMarker",
+							"label": {
+								"defaultText": "Cache Miss Marker"
+							},
+							"description": {
+								"defaultText": "Show a divider after an assistant turn whose request lost (missed) the prompt cache"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.shellVisualization",
+							"label": {
+								"defaultText": "Shell Visualization"
+							},
+							"description": {
+								"defaultText": "Show bash commands as an interactive execution visualization instead of plain shell commands"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.advisorCollapsedLines",
+							"label": {
+								"defaultText": "Advisor Collapsed Lines"
+							},
+							"description": {
+								"defaultText": "Maximum note lines a collapsed advisor card shows below its header (0 keeps the full preview; expand with the tool-output toggle)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:display.collapseCompacted",
+							"label": {
+								"defaultText": "Collapse Compacted History"
+							},
+							"description": {
+								"defaultText": "Collapse pre-compaction history behind the summary divider on the live transcript; disable to keep the full transcript inline with dividers at each compaction point"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:showHardwareCursor",
+							"label": {
+								"defaultText": "Show Hardware Cursor"
+							},
+							"description": {
+								"defaultText": "Show terminal cursor for IME support"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.imeSafeCursor",
+							"label": {
+								"defaultText": "IME-Safe Prompt Layout"
+							},
+							"description": {
+								"defaultText": "Move the prompt's bottom border to a separate row so macOS IME preedit cannot displace it"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.showResolvedModelBadge",
+							"label": {
+								"defaultText": "Show Resolved Model Badge"
+							},
+							"description": {
+								"defaultText": "Display the actual model ID used by each subagent in the task widget status line"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:title.icons",
+							"label": {
+								"defaultText": "Title Icons"
+							},
+							"description": {
+								"defaultText": "Icon and short code that head new generated or /rename session titles"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Images",
+					"label": {
+						"defaultText": "Images",
+						"messageKey": "settings.group.images"
+					},
+					"settings": [
+						{
+							"id": "mock:terminal.showImages",
+							"label": {
+								"defaultText": "Show Inline Images"
+							},
+							"description": {
+								"defaultText": "Render images inline in the terminal"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.autoResize",
+							"label": {
+								"defaultText": "Auto-Resize Images"
+							},
+							"description": {
+								"defaultText": "Resize large images to 2000x2000 max for better model compatibility"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.blockImages",
+							"label": {
+								"defaultText": "Block Images"
+							},
+							"description": {
+								"defaultText": "Prevent images from being sent to LLM providers"
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "model",
+			"label": {
+				"defaultText": "Model",
+				"messageKey": "settings.model"
+			},
+			"groups": [
+				{
+					"id": "Thinking",
+					"label": {
+						"defaultText": "Thinking",
+						"messageKey": "settings.group.thinking"
+					},
+					"settings": [
+						{
+							"id": "mock:defaultThinkingLevel",
+							"label": {
+								"defaultText": "Thinking Level"
+							},
+							"description": {
+								"defaultText": "Reasoning depth for thinking-capable models"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hideThinkingBlock",
+							"label": {
+								"defaultText": "Hide Thinking Blocks"
+							},
+							"description": {
+								"defaultText": "Hide thinking blocks in assistant responses"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:expandThinkingBlocks",
+							"label": {
+								"defaultText": "Expand Thinking Blocks"
+							},
+							"description": {
+								"defaultText": "Keep finished thinking blocks expanded instead of collapsing them when the turn ends"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:proseOnlyThinking",
+							"label": {
+								"defaultText": "Prose Only Thinking"
+							},
+							"description": {
+								"defaultText": "Omit code blocks from thinking summaries and replace them with an ellipsis"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:omitThinking",
+							"label": {
+								"defaultText": "Omit Thinking summaries"
+							},
+							"description": {
+								"defaultText": "Instruct upstream providers to completely omit thinking summaries from responses (where supported)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:externalThinking",
+							"label": {
+								"defaultText": "External Thinking"
+							},
+							"description": {
+								"defaultText": "Private scratchpad; not shown to user. Disables supported GPT, Claude, and Gemini reasoning"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:model.loopGuard.enabled",
+							"label": {
+								"defaultText": "Loop Guard"
+							},
+							"description": {
+								"defaultText": "Enable automatic stream loop detection for model reasoning and prose"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:model.loopGuard.checkAssistantContent",
+							"label": {
+								"defaultText": "Loop Guard Scan Prose"
+							},
+							"description": {
+								"defaultText": "Apply loop guard to assistant prose messages in addition to thinking logs"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:model.loopGuard.toolCallReminder",
+							"label": {
+								"defaultText": "Loop Guard Tool-Call Reminder"
+							},
+							"description": {
+								"defaultText": "When a Gemini reasoning stream emits many consecutive planning headers without calling a tool, interrupt it and inject a reminder to issue a tool call (requires Loop Guard)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:model.toolCallLoopGuard.enabled",
+							"label": {
+								"defaultText": "Tool-Call Loop Guard"
+							},
+							"description": {
+								"defaultText": "Detect consecutive identical tool calls across turns and inject a corrective steer"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:model.toolCallLoopGuard.threshold",
+							"label": {
+								"defaultText": "Tool-Call Loop Threshold"
+							},
+							"description": {
+								"defaultText": "Consecutive identical tool calls required before the corrective steer is injected"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:model.toolCallLoopGuard.exemptTools",
+							"label": {
+								"defaultText": "Tool-Call Loop Exempt Tools"
+							},
+							"description": {
+								"defaultText": "Tool names that may repeat consecutively without triggering the cross-turn loop guard"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.autoThinkingMaxEffort",
+							"label": {
+								"defaultText": "Auto Thinking Ceiling"
+							},
+							"description": {
+								"defaultText": "Highest effort the `auto` classifier may resolve. `xhigh` keeps the classifier one tier below the top, so only an explicit `ultrathink` reaches `max`; `max` lets a turn the classifier judges exceptional bill the top tier on models that expose it."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Sampling",
+					"label": {
+						"defaultText": "Sampling",
+						"messageKey": "settings.group.sampling"
+					},
+					"settings": [
+						{
+							"id": "mock:temperature",
+							"label": {
+								"defaultText": "Temperature"
+							},
+							"description": {
+								"defaultText": "Sampling temperature (0 = deterministic, 1 = creative, -1 = provider default)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:topP",
+							"label": {
+								"defaultText": "Top P"
+							},
+							"description": {
+								"defaultText": "Nucleus sampling cutoff (0-1, -1 = provider default)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:topK",
+							"label": {
+								"defaultText": "Top K"
+							},
+							"description": {
+								"defaultText": "Sample from top-K tokens (-1 = provider default)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:minP",
+							"label": {
+								"defaultText": "Min P"
+							},
+							"description": {
+								"defaultText": "Minimum probability threshold (0-1, -1 = provider default)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:presencePenalty",
+							"label": {
+								"defaultText": "Presence Penalty"
+							},
+							"description": {
+								"defaultText": "Penalty for introducing already-present tokens (-1 = provider default)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:repetitionPenalty",
+							"label": {
+								"defaultText": "Repetition Penalty"
+							},
+							"description": {
+								"defaultText": "Penalty for repeated tokens (-1 = provider default)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:textVerbosity",
+							"label": {
+								"defaultText": "Text Verbosity"
+							},
+							"description": {
+								"defaultText": "OpenAI Responses and Codex response verbosity (low, medium, or high)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tier.openai",
+							"label": {
+								"defaultText": "Service Tier — OpenAI"
+							},
+							"description": {
+								"defaultText": "Processing tier for OpenAI / OpenAI-Codex requests, and OpenAI-family models routed via OpenRouter (none = omit). Sent as `service_tier`."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tier.anthropic",
+							"label": {
+								"defaultText": "Service Tier — Anthropic"
+							},
+							"description": {
+								"defaultText": "Processing tier for Claude requests. `priority` realizes fast mode (`speed: \"fast\"`) on supported direct Anthropic models; ignored on Bedrock/Vertex Claude and via OpenRouter."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tier.google",
+							"label": {
+								"defaultText": "Service Tier — Google"
+							},
+							"description": {
+								"defaultText": "Processing tier for Gemini (Google AI Studio + Vertex) requests, and Google-family models routed via OpenRouter (none = omit). Sent as the top-level `serviceTier` field."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tier.subagent",
+							"label": {
+								"defaultText": "Service Tier — Subagent"
+							},
+							"description": {
+								"defaultText": "Service Tier for spawned task/eval subagents. Inherit = match the main agent's live per-family tiers (tracks /fast); pick a value to apply it to whichever family the subagent's model belongs to."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tier.advisor",
+							"label": {
+								"defaultText": "Service Tier — Advisor"
+							},
+							"description": {
+								"defaultText": "Service Tier for the advisor model. None = standard processing; Inherit = match the main agent's live per-family tiers; pick a value to apply it to the advisor model's family."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Prompt",
+					"label": {
+						"defaultText": "Prompt",
+						"messageKey": "settings.group.prompt"
+					},
+					"settings": [
+						{
+							"id": "mock:modelRoleStorage",
+							"label": {
+								"defaultText": "Model Role Storage"
+							},
+							"description": {
+								"defaultText": "Where model selector role assignments are saved"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:inlineToolDescriptors",
+							"label": {
+								"defaultText": "Inline Tool Descriptors"
+							},
+							"description": {
+								"defaultText": "Render full tool descriptors in the system prompt and strip top-level/nested descriptions from provider tool schemas so descriptor text is sent once. Auto enables this for Gemini models and disables it otherwise"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:includeModelInPrompt",
+							"label": {
+								"defaultText": "Include Model in Prompt"
+							},
+							"description": {
+								"defaultText": "Surface the active model identifier in the system prompt so the agent knows which model it is"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:includeWorkspaceTree",
+							"label": {
+								"defaultText": "Include Workspace Tree"
+							},
+							"description": {
+								"defaultText": "Render the workspace directory tree in the system prompt. WARNING: This can bust prompt caching across sessions when files are modified."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:skillful",
+							"label": {
+								"defaultText": "List Skills in Prompt"
+							},
+							"description": {
+								"defaultText": "List available skills in the system prompt; disable to save context and toggle per-session with /skillful"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:personality",
+							"label": {
+								"defaultText": "Personality"
+							},
+							"description": {
+								"defaultText": "Communication style rendered into the system prompt's personality block"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Retry & Fallback",
+					"label": {
+						"defaultText": "Retry & Fallback",
+						"messageKey": "settings.group.retry-fallback"
+					},
+					"settings": [
+						{
+							"id": "mock:retry.maxRetries",
+							"label": {
+								"defaultText": "Retry Attempts"
+							},
+							"description": {
+								"defaultText": "Maximum retry attempts on API errors"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.maxDelayMs",
+							"label": {
+								"defaultText": "Max Retry Delay"
+							},
+							"description": {
+								"defaultText": "Maximum wait between retries, in ms. When the provider asks us to wait longer than this and no credential or model fallback succeeds, the request fails fast instead of sleeping (e.g. 3-hour Anthropic rate-limit windows). 0 disables the ceiling — to let the session auto-resume through provider-stated quota resets."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.waitForUsageReset",
+							"label": {
+								"defaultText": "Wait For Usage Reset"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.modelFallback",
+							"label": {
+								"defaultText": "Retry Model Fallback"
+							},
+							"description": {
+								"defaultText": "Allow retry recovery to switch to models in retry.fallbackChains after provider errors. Independent of Auto-Promote Context"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.fallbackOn",
+							"label": {
+								"defaultText": "Fallback Trigger"
+							},
+							"description": {
+								"defaultText": "Which failed requests may switch to a configured fallback model"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.rateLimitWalksChain",
+							"label": {
+								"defaultText": "Rate Limit Walks Chain"
+							},
+							"description": {
+								"defaultText": "On a rate limit, do not hold the retry.fallbackChains walk for a turn whose thinking is signed by the failing model. Off (the default), such a turn keeps retrying the rate-limited model until retry.maxRetries is spent before the chain is reached."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.usageAwareFallback",
+							"label": {
+								"defaultText": "Usage-Aware Fallback"
+							},
+							"description": {
+								"defaultText": "Use reliable coding-plan quota reports to prefer same-provider accounts, then configured fallback models, before a hard usage limit. Ordinary configured API keys are excluded."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.usageReservePct",
+							"label": {
+								"defaultText": "Reserve Margin"
+							},
+							"description": {
+								"defaultText": "Treat a coding-plan model as near its limit below this remaining percentage. Unknown or unmapped usage keeps the primary model."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.usageReservePolicy",
+							"label": {
+								"defaultText": "Reserve Policy"
+							},
+							"description": {
+								"defaultText": "What to do when every same-provider coding-plan account is inside the reserve margin."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.fallbackChains",
+							"label": {
+								"defaultText": "Retry Fallback Chains"
+							},
+							"description": {
+								"defaultText": "JSON object mapping model roles, model selectors (\"provider/model-id\"), or provider wildcards (\"provider/*\") to ordered fallback selectors, e.g. {\"default\":[\"openai/gpt-4o-mini\"],\"google-antigravity/*\":[\"google/*\",\"google-vertex/*\"]}. Model-oriented keys apply whenever that model/provider is active, regardless of role; a \"provider/*\" entry keeps the failing model's id and swaps the provider. An id-prefixed wildcard (\"openrouter/google/*\") re-prefixes the failing model's bare id (google-antigravity/gemini-x -> openrouter/google/gemini-x) and, used as a key, matches only that provider's ids under the prefix. A fallback entry may carry an explicit thinking suffix (\"provider/model:low\", \":high\", \":max\", \":off\"); a bare entry inherits the failing turn's effort, and \"provider/*\" entries always inherit."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:retry.fallbackRevertPolicy",
+							"label": {
+								"defaultText": "Fallback Revert Policy"
+							},
+							"description": {
+								"defaultText": "When to return to the primary model after a fallback"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.anthropic.serverSideFallback",
+							"label": {
+								"defaultText": "Anthropic Server-Side Fallback (Fable 5)"
+							},
+							"description": {
+								"defaultText": "When a Claude Fable 5 / Mythos 5 request is blocked by Anthropic's safety classifier, retry it on Claude Opus 5 server-side (Anthropic `server-side-fallback-2026-06-01` beta). Opt-in — leaving this off preserves the pre-fallback behavior for every request."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Advisor",
+					"label": {
+						"defaultText": "Advisor",
+						"messageKey": "settings.group.advisor"
+					},
+					"settings": [
+						{
+							"id": "mock:advisor.enabled",
+							"label": {
+								"defaultText": "Enable Advisor"
+							},
+							"description": {
+								"defaultText": "Pair a second model (assigned to the 'advisor' role) that passively reviews each turn and injects notes."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:advisor.syncBacklog",
+							"label": {
+								"defaultText": "Advisor Sync Backlog"
+							},
+							"description": {
+								"defaultText": "Pause main agent until advisor backlog falls below threshold. Numeric values cap wait at 30 seconds; strict waits for all scheduled reviews without a wall-clock cap. Off disables catch-up delays. Abort, failure, and disposal release waits."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:advisor.immuneTurns",
+							"label": {
+								"defaultText": "Advisor Immune Turns"
+							},
+							"description": {
+								"defaultText": "After an advisor concern or blocker interrupts, route further concerns as non-interrupting asides for this many primary turns. Blockers are exempt from the cooldown."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:advisor.continueSeverity",
+							"label": {
+								"defaultText": "Advisor Continue Severity"
+							},
+							"description": {
+								"defaultText": "Minimum severity of an advisor note that wakes the agent after it finished with a final answer. Lower-severity notes stay as a card at the end of the transcript and reach the agent with your next message."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:advisor.reviewMode",
+							"label": {
+								"defaultText": "Advisor Review Mode"
+							},
+							"description": {
+								"defaultText": "Default advisor cadence when no WATCHDOG.yml roster is present. turn reviews every primary turn; agent-end reviews only final yields."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:advisor.reviewInterval",
+							"label": {
+								"defaultText": "Advisor Review Interval"
+							},
+							"description": {
+								"defaultText": "Default advisor cadence when no WATCHDOG.yml roster is present: review every Nth eligible primary update. 1 = every update. Skipped updates are sent with the next scheduled review."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:advisor.maxNotesPerUpdate",
+							"label": {
+								"defaultText": "Advisor Max Notes Per Update"
+							},
+							"description": {
+								"defaultText": "Maximum non-blocker advice notes accepted per advisor prompt update (1–32; UI offers 1–5 quick picks). Blockers are exempt."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:advisor.evictStaleResults",
+							"label": {
+								"defaultText": "Advisor Evict Stale Results"
+							},
+							"description": {
+								"defaultText": "Before each review, replace the advisor's read/grep/glob output from older reviews with a short placeholder. The latest review is kept."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Prewalk",
+					"label": {
+						"defaultText": "Prewalk",
+						"messageKey": "settings.group.prewalk"
+					},
+					"settings": [
+						{
+							"id": "mock:prewalk.enabled",
+							"label": {
+								"defaultText": "Enable Prewalk"
+							},
+							"description": {
+								"defaultText": "Start on the active model, then switch to a fast/cheap model (default the 'smol' role) at the first edit/write after the plan nudge's todo list exists — the strong model plans, commits the todos, and starts the implementation before handing off. Overridable per session with --prewalk / --no-prewalk."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:prewalk.from",
+							"label": {
+								"defaultText": "Prewalk planning model"
+							},
+							"description": {
+								"defaultText": "Model or role (default '@default') that /prewalk restart returns to for planning."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:prewalk.into",
+							"label": {
+								"defaultText": "Prewalk target"
+							},
+							"description": {
+								"defaultText": "Model or role (default '@smol') that prewalk hands off to at the first edit/write: /prewalk, /prewalk restart, Enable Prewalk, and --prewalk. Auto-prewalk uses its own target."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:prewalk.auto",
+							"label": {
+								"defaultText": "Auto Prewalk"
+							},
+							"description": {
+								"defaultText": "Ask the native judge resolved through the 'judge' role whether each new top-level user task front-loads its hard reasoning. Needs a native judge; without one nothing is classified. Independent of Enable Prewalk."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:prewalk.autoTarget",
+							"label": {
+								"defaultText": "Auto-prewalk target"
+							},
+							"description": {
+								"defaultText": "Model or role (default '@smol') auto-prewalk hands off to at the first edit/write."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Vision",
+					"label": {
+						"defaultText": "Vision",
+						"messageKey": "settings.group.vision"
+					},
+					"settings": [
+						{
+							"id": "mock:images.urls.enabled",
+							"label": {
+								"defaultText": "Serve Images as URLs"
+							},
+							"description": {
+								"defaultText": "Publish outgoing images through the configured backend chain and send URL-fetching providers short URLs instead of inline base64. Falls back to inline automatically when every backend or a provider fetch fails"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.urls.backends",
+							"label": {
+								"defaultText": "Image URL Backends"
+							},
+							"description": {
+								"defaultText": "Ordered destinations tried when publishing images for provider access"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.urls.command",
+							"label": {
+								"defaultText": "Image Upload Command"
+							},
+							"description": {
+								"defaultText": "Argv template for the command backend; {file} is the image path, {mime}/{ext} optional. The last URL printed on stdout is used (e.g. pasta -b -f {file})"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.urls.publicBaseUrl",
+							"label": {
+								"defaultText": "Image URL Public Base"
+							},
+							"description": {
+								"defaultText": "Externally reachable base URL fronting the blob server (required for ssh, optional for direct)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.urls.ttlHours",
+							"label": {
+								"defaultText": "Image URL Lifetime (hours)"
+							},
+							"description": {
+								"defaultText": "Serving window for locally hosted image URLs, measured from the last time a conversation sent them; resuming a conversation re-arms the window at the same link. 0 keeps links alive while the broker runs"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.urls.bindHost",
+							"label": {
+								"defaultText": "Image URL Bind Host"
+							},
+							"description": {
+								"defaultText": "Host the blob server binds to; loopback for tunnels, 0.0.0.0 for direct serving"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.urls.sshTarget",
+							"label": {
+								"defaultText": "Image URL SSH Target"
+							},
+							"description": {
+								"defaultText": "user@host destination for the ssh reverse forward"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.urls.sshRemotePort",
+							"label": {
+								"defaultText": "Image URL SSH Remote Port"
+							},
+							"description": {
+								"defaultText": "Remote listen port of the ssh reverse forward that your web server proxies to"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:images.describeForTextModels",
+							"label": {
+								"defaultText": "Describe Images for Text Models"
+							},
+							"description": {
+								"defaultText": "When an image is attached to a model without vision support, save it under local:// and inject a description from a vision-capable model instead of dropping it"
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "interaction",
+			"label": {
+				"defaultText": "Interaction",
+				"messageKey": "settings.interaction"
+			},
+			"groups": [
+				{
+					"id": "Input",
+					"label": {
+						"defaultText": "Input",
+						"messageKey": "settings.group.input"
+					},
+					"settings": [
+						{
+							"id": "mock:steeringMode",
+							"label": {
+								"defaultText": "Steering Mode"
+							},
+							"description": {
+								"defaultText": "How to process queued messages while agent is working"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:followUpMode",
+							"label": {
+								"defaultText": "Follow-Up Mode"
+							},
+							"description": {
+								"defaultText": "How to drain follow-up messages after a turn completes"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:interruptMode",
+							"label": {
+								"defaultText": "Interrupt Mode"
+							},
+							"description": {
+								"defaultText": "When steering messages interrupt tool execution"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:btw.inject",
+							"label": {
+								"defaultText": "/btw Steering Inject"
+							},
+							"description": {
+								"defaultText": "When you ask /btw for a steering prompt, it drafts one in <inject> tags, highlighted in the answer; Alt+I (app.btw.inject) sends it to the main session"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.vimMode",
+							"label": {
+								"defaultText": "Vim Editing Mode"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tui.vimModeDisplay",
+							"label": {
+								"defaultText": "Vim Mode Indicator"
+							},
+							"description": {
+								"defaultText": "How the current Vim mode appears in the status line"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:loop.mode",
+							"label": {
+								"defaultText": "Loop Mode"
+							},
+							"description": {
+								"defaultText": "What happens between /loop iterations before re-submitting the prompt"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:loop.conditionTimeoutMs",
+							"label": {
+								"defaultText": "Loop Condition Timeout (ms)"
+							},
+							"description": {
+								"defaultText": "Max wait for a `/loop --while` / `--until` condition command before treating it as broken and stopping the loop. Set to 0 to wait indefinitely"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:composer.recallClearedDrafts",
+							"label": {
+								"defaultText": "Recall Cleared Drafts"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:doubleEscapeAction",
+							"label": {
+								"defaultText": "Double-Escape Action"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:input.bareExitOnEmptySession",
+							"label": {
+								"defaultText": "Bare Exit on Empty Session"
+							},
+							"description": {
+								"defaultText": "Submitting exactly `exit`, `quit`, or `q` (any case) before the first message quits instead of prompting the model"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:input.bareSlashCommands",
+							"label": {
+								"defaultText": "Bare Slash Commands"
+							},
+							"description": {
+								"defaultText": "Submitting exactly a command name without the leading `/` (e.g. `model`, `compact`) runs that slash command; once the session has messages, press Enter twice to confirm"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:treeFilterMode",
+							"label": {
+								"defaultText": "Session Tree Filter"
+							},
+							"description": {
+								"defaultText": "Default filter mode when opening the session tree"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:autocompleteMaxVisible",
+							"label": {
+								"defaultText": "Autocomplete Items"
+							},
+							"description": {
+								"defaultText": "Max visible items in autocomplete dropdown (3-20)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:spelling.typoDetection",
+							"label": {
+								"defaultText": "Typo Detection (macOS)"
+							},
+							"description": {
+								"defaultText": "Mark misspelled prompt words with the active macOS dictionaries"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:spelling.autocomplete",
+							"label": {
+								"defaultText": "Word Autocomplete"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:composer.predictions",
+							"label": {
+								"defaultText": "Composer Predictions"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:composer.predictionAlternatives",
+							"label": {
+								"defaultText": "Prediction Alternatives"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:spelling.autocorrect",
+							"label": {
+								"defaultText": "Autocorrect (macOS)"
+							},
+							"description": {
+								"defaultText": "Apply confident macOS spelling corrections after completed words"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:emojiAutocomplete",
+							"label": {
+								"defaultText": "Emoji Autocomplete"
+							},
+							"description": {
+								"defaultText": "Suggest emojis from `:name:` shortcodes and expand text emoticons like `:D` or `:-)`"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:paste.largeMenuThreshold",
+							"label": {
+								"defaultText": "Large Paste Menu"
+							},
+							"description": {
+								"defaultText": "When a paste reaches this many lines, offer a menu to wrap it in a code block, wrap it in XML tags, or save it to a file. 0 disables the menu (large pastes still collapse to a [Paste] marker)."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Approvals",
+					"label": {
+						"defaultText": "Approvals",
+						"messageKey": "settings.group.approvals"
+					},
+					"settings": [
+						{
+							"id": "mock:tools.approval",
+							"label": {
+								"defaultText": "Tool Approval Policies"
+							},
+							"description": {
+								"defaultText": "Per-tool approval policies. Set to 'allow' to auto-approve, 'prompt' to require confirmation, or 'deny' to block. Overrides are honored in every approval mode."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.approvalMode",
+							"label": {
+								"defaultText": "Tool Approval"
+							},
+							"description": {
+								"defaultText": "Default approval behavior for tool calls. 'Always ask' auto-approves read-only tools only. 'Ask and remember' also asks before file reads, and can remember a file or folder. 'Write' auto-approves read and workspace-write tools. 'Yolo' auto-approves all tiers; user policy may still prompt or block."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.restrictedFolders",
+							"label": {
+								"defaultText": "Restricted Folders"
+							},
+							"description": {
+								"defaultText": "Folders where every read, write, edit, search, or command needs an explicit approval, whatever the approval mode or a remembered grant. The folder and everything under it is restricted; commands are matched by the directory they run in. A JSON list of paths, e.g. [\"~/secrets\"]."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Notifications",
+					"label": {
+						"defaultText": "Notifications",
+						"messageKey": "settings.group.notifications"
+					},
+					"settings": [
+						{
+							"id": "mock:completion.notify",
+							"label": {
+								"defaultText": "Completion Notification"
+							},
+							"description": {
+								"defaultText": "Notify when the agent finishes a turn"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:error.notify",
+							"label": {
+								"defaultText": "Error Notification"
+							},
+							"description": {
+								"defaultText": "Notify when the agent stops with an error"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ask.timeout",
+							"label": {
+								"defaultText": "Ask Timeout"
+							},
+							"description": {
+								"defaultText": "Auto-select the recommended ask option after this many seconds (0 disables). Also bounds cfg:// approval prompts; an unanswered approval denies the write instead of auto-selecting"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ask.notify",
+							"label": {
+								"defaultText": "Ask Notification"
+							},
+							"description": {
+								"defaultText": "Notify when the ask tool is waiting for input"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:recap.enabled",
+							"label": {
+								"defaultText": "Idle Recap"
+							},
+							"description": {
+								"defaultText": "Generate a brief LLM recap of where things stand after the terminal has been idle"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:recap.idleSeconds",
+							"label": {
+								"defaultText": "Idle Recap Delay"
+							},
+							"description": {
+								"defaultText": "Seconds to wait while idle before showing the recap"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Speech",
+					"label": {
+						"defaultText": "Speech",
+						"messageKey": "settings.group.speech"
+					},
+					"settings": [
+						{
+							"id": "mock:stt.enabled",
+							"label": {
+								"defaultText": "Speech-to-Text"
+							},
+							"description": {
+								"defaultText": "Enable speech-to-text input via microphone"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:stt.submitTrigger",
+							"label": {
+								"defaultText": "Speech-to-Text Submit Trigger"
+							},
+							"description": {
+								"defaultText": "Choose when speech dictation automatically submits: Never, Release (2+ words), Release with complete sentence, or When I Say Submit."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Collab",
+					"label": {
+						"defaultText": "Collab",
+						"messageKey": "settings.group.collab"
+					},
+					"settings": [
+						{
+							"id": "mock:collab.relayUrl",
+							"label": {
+								"defaultText": "Relay URL"
+							},
+							"description": {
+								"defaultText": "Relay used by /collab (wss://host[:port])"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:collab.webUrl",
+							"label": {
+								"defaultText": "Web UI URL"
+							},
+							"description": {
+								"defaultText": "Browser UI used by /collab links; empty derives from collab.relayUrl; explicit http:// is localhost-only"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:collab.displayName",
+							"label": {
+								"defaultText": "Display Name"
+							},
+							"description": {
+								"defaultText": "Name shown to other collab participants (default: OS username)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:collab.autoStart",
+							"label": {
+								"defaultText": "Auto Start"
+							},
+							"description": {
+								"defaultText": "Host every interactive session via collab.relayUrl as it starts and publish it to the local registry (omp collab list); rooms rotate on session switch"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:share.serverUrl",
+							"label": {
+								"defaultText": "Share Server"
+							},
+							"description": {
+								"defaultText": "Share viewer/upload base used by /share (encrypted blob upload + viewer; links are <base>/<id>#<key>)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:share.store",
+							"label": {
+								"defaultText": "Share Store"
+							},
+							"description": {
+								"defaultText": "Where /share uploads the encrypted session blob"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:share.redactSecrets",
+							"label": {
+								"defaultText": "Share Secret Redaction"
+							},
+							"description": {
+								"defaultText": "Run the secret obfuscator over /share snapshots before upload (uses the secrets.* config)"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Stream",
+					"label": {
+						"defaultText": "Stream",
+						"messageKey": "settings.group.stream"
+					},
+					"settings": [
+						{
+							"id": "mock:stream.serverUrl",
+							"label": {
+								"defaultText": "Stream Server"
+							},
+							"description": {
+								"defaultText": "Live stream server used by `omp stream` (https://host[:port]); viewers watch at <base>/<your Stencil username>"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:stream.redactPatterns",
+							"label": {
+								"defaultText": "Extra Redaction Patterns"
+							},
+							"description": {
+								"defaultText": "Additional regular expressions redacted from every streamed row, on top of env/secrets.yml values and built-in credential shapes"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Magic Keywords",
+					"label": {
+						"defaultText": "Magic Keywords",
+						"messageKey": "settings.group.magic-keywords"
+					},
+					"settings": [
+						{
+							"id": "mock:magicKeywords.enabled",
+							"label": {
+								"defaultText": "Magic Keywords"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Startup & Updates",
+					"label": {
+						"defaultText": "Startup & Updates",
+						"messageKey": "settings.group.startup-updates"
+					},
+					"settings": [
+						{
+							"id": "mock:autoResume",
+							"label": {
+								"defaultText": "Auto Resume"
+							},
+							"description": {
+								"defaultText": "Automatically resume the most recent session in the current directory. If its model cannot be restored and model fallback is disabled, interactive startup warns and starts a new session without the saved history"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:startup.quiet",
+							"label": {
+								"defaultText": "Quiet Startup"
+							},
+							"description": {
+								"defaultText": "Skip welcome screen and startup status messages"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:startup.showSplash",
+							"label": {
+								"defaultText": "Show Startup Splash"
+							},
+							"description": {
+								"defaultText": "Show the full animated setup splash on normal interactive startup without rerunning setup. Quiet Startup still suppresses it."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:startup.setupWizard",
+							"label": {
+								"defaultText": "Setup Wizard"
+							},
+							"description": {
+								"defaultText": "Show newly added onboarding steps once per setup version"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:startup.checkUpdate",
+							"label": {
+								"defaultText": "Check for Updates"
+							},
+							"description": {
+								"defaultText": "Check for omp updates on startup"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:update.channel",
+							"label": {
+								"defaultText": "Update Channel"
+							},
+							"description": {
+								"defaultText": "Update channel used by omp update and the startup update check"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:update.auto",
+							"label": {
+								"defaultText": "Auto Update"
+							},
+							"description": {
+								"defaultText": "Install omp updates in the background on startup; the next launch runs the new version"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:marketplace.autoUpdate",
+							"label": {
+								"defaultText": "Marketplace Auto-Update"
+							},
+							"description": {
+								"defaultText": "Check for plugin updates on startup"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:startup.changelogMode",
+							"label": {
+								"defaultText": "Startup Changelog"
+							},
+							"description": {
+								"defaultText": "Choose whether update notes start as a summary, full details, or stay hidden"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:session.worktreeScope",
+							"label": {
+								"defaultText": "Resume Worktree Scope"
+							},
+							"description": {
+								"defaultText": "Choose whether the resume picker's current folder includes sessions from other repository worktrees"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Power",
+					"label": {
+						"defaultText": "Power",
+						"messageKey": "settings.group.power"
+					},
+					"settings": [
+						{
+							"id": "mock:power.sleepPrevention",
+							"label": {
+								"defaultText": "Sleep Prevention"
+							},
+							"description": {
+								"defaultText": "Prevent the system sleeping while the agent is running a turn; an idle session, including one waiting on background jobs, does not hold it. Each level is cumulative — it adds the flags of all lower levels."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Agent",
+					"label": {
+						"defaultText": "Agent",
+						"messageKey": "settings.group.agent"
+					},
+					"settings": [
+						{
+							"id": "mock:features.unexpectedStopDetection",
+							"label": {
+								"defaultText": "Unexpected Stops"
+							},
+							"description": {
+								"defaultText": "Automatically recover when the assistant stops without a visible message. Smart also classifies text-only stops with a small model."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Git",
+					"label": {
+						"defaultText": "Git",
+						"messageKey": "settings.group.git"
+					},
+					"settings": [
+						{
+							"id": "mock:git.enabled",
+							"label": {
+								"defaultText": "Enable Git Integration"
+							},
+							"description": {
+								"defaultText": "Show git branch, status, and PR information in the TUI and watch repository metadata."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Skills",
+					"label": {
+						"defaultText": "Skills",
+						"messageKey": "settings.group.skills"
+					},
+					"settings": [
+						{
+							"id": "mock:skills.registryUrl",
+							"label": {
+								"defaultText": "Skill Registry"
+							},
+							"description": {
+								"defaultText": "Skillshare registry used by `omp skill` to install, search, and publish skills (https://host[:port])"
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "context",
+			"label": {
+				"defaultText": "Context",
+				"messageKey": "settings.context"
+			},
+			"groups": [
+				{
+					"id": "General",
+					"label": {
+						"defaultText": "General",
+						"messageKey": "settings.group.general"
+					},
+					"settings": [
+						{
+							"id": "mock:workspace.additionalDirectories",
+							"label": {
+								"defaultText": "Additional Workspace Dirs"
+							},
+							"description": {
+								"defaultText": "Extra workspace directories added to every session as additional roots (multi-root workspace). Managed live via /add-dir and /remove-dir. Paths resolve relative to cwd; absolute paths recommended. The agent is told these roots exist and can read/grep/glob them."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:contextFiles.extra",
+							"label": {
+								"defaultText": "Extra Context Files"
+							},
+							"description": {
+								"defaultText": "Extra instruction filenames loaded beside AGENTS.md. Use a JSON list of names, not paths, e.g. [\"AGENTS.local.md\"]; [] disables extras. Start a new session to load them."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:contextPromotion.enabled",
+							"label": {
+								"defaultText": "Auto-Promote Context"
+							},
+							"description": {
+								"defaultText": "Promote to the model's contextPromotionTarget on context overflow instead of compacting. Retry fallback switches are controlled by Retry Model Fallback"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:extendedContext",
+							"label": {
+								"defaultText": "Extended Context"
+							},
+							"description": {
+								"defaultText": "Use larger context windows where supported; may incur premium pricing. Off keeps default or standard-pricing windows"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:branchSummary.enabled",
+							"label": {
+								"defaultText": "Branch Summaries"
+							},
+							"description": {
+								"defaultText": "Prompt to summarize when leaving a branch"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Compaction",
+					"label": {
+						"defaultText": "Compaction",
+						"messageKey": "settings.group.compaction"
+					},
+					"settings": [
+						{
+							"id": "mock:compaction.enabled",
+							"label": {
+								"defaultText": "Auto-Compact"
+							},
+							"description": {
+								"defaultText": "Automatically compact context when it gets too large"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.experimentalContextManagement",
+							"label": {
+								"defaultText": "Notes-backed context windows (experimental)"
+							},
+							"description": {
+								"defaultText": "Keep persistent notes and searchable raw history across context windows."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.midTurnEnabled",
+							"label": {
+								"defaultText": "Mid-Turn Compaction"
+							},
+							"description": {
+								"defaultText": "Check thresholds at safe mid-turn tool-loop boundaries before the next provider request; subagents always check, since their whole assignment is one turn"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.methodOrder",
+							"label": {
+								"defaultText": "Compaction Method Order"
+							},
+							"description": {
+								"defaultText": "Preferred fallback order for automatic context maintenance; unavailable or failed methods advance to the next choice"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.thresholdPercent",
+							"label": {
+								"defaultText": "Compaction Threshold"
+							},
+							"description": {
+								"defaultText": "Percent threshold for context maintenance; set to Default to use legacy reserve-based behavior"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.thresholdTokens",
+							"label": {
+								"defaultText": "Compaction Token Limit"
+							},
+							"description": {
+								"defaultText": "Fixed token limit for context maintenance; overrides percentage if set"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.handoffSaveToDisk",
+							"label": {
+								"defaultText": "Save Handoff Docs"
+							},
+							"description": {
+								"defaultText": "Save generated handoff documents to markdown files for the auto-handoff flow"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.remoteStreamingV2Enabled",
+							"label": {
+								"defaultText": "Remote Compaction V2"
+							},
+							"description": {
+								"defaultText": "Use Responses streaming compaction for compatible remote compaction models"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.asyncEnabled",
+							"label": {
+								"defaultText": "Async Compaction"
+							},
+							"description": {
+								"defaultText": "Speculatively summarize in the background as context nears the compaction threshold, then splice the ready result in when the threshold is crossed"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.idleEnabled",
+							"label": {
+								"defaultText": "Idle Compaction"
+							},
+							"description": {
+								"defaultText": "Compact context while idle when token count exceeds threshold"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.idleThresholdTokens",
+							"label": {
+								"defaultText": "Idle Compaction Threshold"
+							},
+							"description": {
+								"defaultText": "Token count above which idle compaction triggers"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.idleTimeoutSeconds",
+							"label": {
+								"defaultText": "Idle Compaction Delay"
+							},
+							"description": {
+								"defaultText": "Seconds to wait while idle before compacting; with a 1-hour prompt cache, compaction instead runs just before the cache expires"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.supersedeReads",
+							"label": {
+								"defaultText": "Supersede Stale Reads"
+							},
+							"description": {
+								"defaultText": "Prune older read results when the same file is read again (cache-aware, runs every turn)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:compaction.dropUseless",
+							"label": {
+								"defaultText": "Elide Uneventful Results"
+							},
+							"description": {
+								"defaultText": "Prune tool results flagged contextually useless (no matches, timed-out waits) once consumed (cache-aware)"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Rules (TTSR)",
+					"label": {
+						"defaultText": "Rules (TTSR)",
+						"messageKey": "settings.group.rules-ttsr"
+					},
+					"settings": [
+						{
+							"id": "mock:ttsr.enabled",
+							"label": {
+								"defaultText": "TTSR"
+							},
+							"description": {
+								"defaultText": "Interrupt the agent mid-stream when output matches rule patterns (Time-Traveling Stream Rules)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ttsr.judge",
+							"label": {
+								"defaultText": "Judged Rules"
+							},
+							"description": {
+								"defaultText": "Ask the judge model role each `question` rule about completed replies, reasoning, and tool calls; a yes injects the rule as a warning"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ttsr.contextMode",
+							"label": {
+								"defaultText": "TTSR Context Mode"
+							},
+							"description": {
+								"defaultText": "What to do with partial output when TTSR triggers"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ttsr.interruptMode",
+							"label": {
+								"defaultText": "TTSR Interrupt Mode"
+							},
+							"description": {
+								"defaultText": "When to interrupt mid-stream vs inject warning after completion"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ttsr.repeatMode",
+							"label": {
+								"defaultText": "TTSR Repeat Mode"
+							},
+							"description": {
+								"defaultText": "How rules can repeat: once per session or after a message gap"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ttsr.repeatGap",
+							"label": {
+								"defaultText": "TTSR Repeat Gap"
+							},
+							"description": {
+								"defaultText": "Messages before a rule can trigger again"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ttsr.builtinRules",
+							"label": {
+								"defaultText": "Built-in Rules"
+							},
+							"description": {
+								"defaultText": "Load the default rules shipped with the agent (override individually with ttsr.disabledRules)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ttsr.disabledRules",
+							"label": {
+								"defaultText": "Disabled Rules"
+							},
+							"description": {
+								"defaultText": "Rule names to ignore entirely (applies to bundled defaults and your own rules)"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Experimental",
+					"label": {
+						"defaultText": "Experimental",
+						"messageKey": "settings.group.experimental"
+					},
+					"settings": [
+						{
+							"id": "mock:snapcompact.systemPrompt",
+							"label": {
+								"defaultText": "Snapcompact System Prompt"
+							},
+							"description": {
+								"defaultText": "Experimental: render selected system prompt text as dense PNG image(s) and attach to the first user message (vision models only). Saves tokens; loses prompt caching for imaged text."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:snapcompact.toolResults",
+							"label": {
+								"defaultText": "Snapcompact Tool Results"
+							},
+							"description": {
+								"defaultText": "Experimental: render large tool results, the newest one included, as dense PNG image(s) instead of text (vision models only). Saves tokens on accumulated search and command output; read results stay text unless the model is known to edit exactly from images."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.format",
+							"label": {
+								"defaultText": "Tool Calling Mode"
+							},
+							"description": {
+								"defaultText": "Controls how tools are exposed to the model. Auto uses provider-native tool calls unless the selected model is marked as not supporting them, then falls back to the GLM owned dialect. Native forces provider-native tools; the other values force the named owned dialect."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:snapcompact.shape",
+							"label": {
+								"defaultText": "Snapcompact Shape"
+							},
+							"description": {
+								"defaultText": "Frame shape snapcompact prints text with (compaction archive and inline imaging). Auto picks a shape tuned for the current model."
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "memory",
+			"label": {
+				"defaultText": "Memory",
+				"messageKey": "settings.memory"
+			},
+			"groups": [
+				{
+					"id": "General",
+					"label": {
+						"defaultText": "General",
+						"messageKey": "settings.group.general"
+					},
+					"settings": [
+						{
+							"id": "mock:memory.backend",
+							"label": {
+								"defaultText": "Memory Backend"
+							},
+							"description": {
+								"defaultText": "Off, local summary pipeline, Mnemopi SQLite, Hindsight remote memory, or Sharpshooter"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Auto-Learn",
+					"label": {
+						"defaultText": "Auto-Learn",
+						"messageKey": "settings.group.auto-learn"
+					},
+					"settings": [
+						{
+							"id": "mock:autolearn.enabled",
+							"label": {
+								"defaultText": "Auto-Learn (experimental)"
+							},
+							"description": {
+								"defaultText": "After the agent stops, nudge it to capture lessons to memory and create/enhance isolated managed skills"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:autolearn.autoContinue",
+							"label": {
+								"defaultText": "Auto-run capture at stop"
+							},
+							"description": {
+								"defaultText": "When on, auto-run one private capture turn at stop (uses extra tokens). When off, only standing auto-learn guidance remains."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Mnemopi",
+					"label": {
+						"defaultText": "Mnemopi",
+						"messageKey": "settings.group.mnemopi"
+					},
+					"settings": [
+						{
+							"id": "mock:mnemopi.dbPath",
+							"label": {
+								"defaultText": "Mnemopi DB Path"
+							},
+							"description": {
+								"defaultText": "Optional SQLite DB path; a leading ~ is the home directory. Defaults to the agent memories directory."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.bank",
+							"label": {
+								"defaultText": "Mnemopi Bank"
+							},
+							"description": {
+								"defaultText": "Optional shared bank base name. Per-project modes derive project-local banks from it."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.scoping",
+							"label": {
+								"defaultText": "Mnemopi Scoping"
+							},
+							"description": {
+								"defaultText": "global = one shared bank; per-project = isolated bank per cwd; per-project-tagged = project-local writes plus global recall visibility"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.embeddingVariant",
+							"label": {
+								"defaultText": "Embedding variant"
+							},
+							"description": {
+								"defaultText": "Local embedding model family. en = stronger English model; multilingual = cross-language model. Changing this rebuilds existing memory embeddings on next start."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.autoRecall",
+							"label": {
+								"defaultText": "Mnemopi Auto Recall"
+							},
+							"description": {
+								"defaultText": "Recall local memories into the first turn of each session"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.autoRetain",
+							"label": {
+								"defaultText": "Mnemopi Auto Retain"
+							},
+							"description": {
+								"defaultText": "Retain completed conversation turns into local Mnemopi memory"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.polyphonicRecall",
+							"label": {
+								"defaultText": "Mnemopi Polyphonic Recall"
+							},
+							"description": {
+								"defaultText": "Fuse recall with graph, fact, vector and temporal voices so linked memories surface without a keyword match"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.enhancedRecall",
+							"label": {
+								"defaultText": "Mnemopi Enhanced Recall"
+							},
+							"description": {
+								"defaultText": "Cache recall results for repeated and similar queries with identical options; any memory write clears it"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.proactiveLinking",
+							"label": {
+								"defaultText": "Mnemopi Proactive Linking"
+							},
+							"description": {
+								"defaultText": "Ingest new memories into the episodic graph as they are stored, linking them to related entities and memories"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.noEmbeddings",
+							"label": {
+								"defaultText": "Mnemopi Disable Embeddings"
+							},
+							"description": {
+								"defaultText": "Force deterministic FTS-only recall instead of vector embeddings"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.embeddingModel",
+							"label": {
+								"defaultText": "Mnemopi Embedding Model"
+							},
+							"description": {
+								"defaultText": "Advanced: explicit embedding model id that overrides the variant. Leave empty to use mnemopi.embeddingVariant."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.embeddingApiUrl",
+							"label": {
+								"defaultText": "Mnemopi Embedding API URL"
+							},
+							"description": {
+								"defaultText": "Optional OpenAI-compatible embedding endpoint passed to Mnemopi"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.embeddingApiKey",
+							"label": {
+								"defaultText": "Mnemopi Embedding API Key"
+							},
+							"description": {
+								"defaultText": "Optional embedding API key passed to Mnemopi"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.llmMode",
+							"label": {
+								"defaultText": "Mnemopi LLM Mode"
+							},
+							"description": {
+								"defaultText": "Use no LLM, the online tiny model (the TINY role from /models, else @smol), or a remote OpenAI-compatible endpoint"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.llmBaseUrl",
+							"label": {
+								"defaultText": "Mnemopi LLM Base URL"
+							},
+							"description": {
+								"defaultText": "Optional OpenAI-compatible LLM endpoint for Mnemopi remote mode"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.llmApiKey",
+							"label": {
+								"defaultText": "Mnemopi LLM API Key"
+							},
+							"description": {
+								"defaultText": "Optional LLM API key for Mnemopi remote mode"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mnemopi.llmModel",
+							"label": {
+								"defaultText": "Mnemopi LLM Model"
+							},
+							"description": {
+								"defaultText": "Optional LLM model name for Mnemopi remote mode"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Hindsight",
+					"label": {
+						"defaultText": "Hindsight",
+						"messageKey": "settings.group.hindsight"
+					},
+					"settings": [
+						{
+							"id": "mock:hindsight.apiUrl",
+							"label": {
+								"defaultText": "Hindsight API URL"
+							},
+							"description": {
+								"defaultText": "Hindsight server URL (Cloud or self-hosted)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.apiToken",
+							"label": {
+								"defaultText": "Hindsight API Token"
+							},
+							"description": {
+								"defaultText": "Bearer token for authenticated Hindsight servers"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.bankId",
+							"label": {
+								"defaultText": "Hindsight Bank ID"
+							},
+							"description": {
+								"defaultText": "Memory bank identifier (default: project name)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.scoping",
+							"label": {
+								"defaultText": "Hindsight Scoping"
+							},
+							"description": {
+								"defaultText": "global = one shared bank; per-project = isolated bank per cwd; per-project-tagged = shared bank with project tags so global + project memories merge on recall"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.globalScope",
+							"label": {
+								"defaultText": "Hindsight Global Scope"
+							},
+							"description": {
+								"defaultText": "Let retain and learn take scope: global, which stores a memory without the project tag so every project recalls it. Needs global or per-project-tagged scoping"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.autoRecall",
+							"label": {
+								"defaultText": "Hindsight Auto Recall"
+							},
+							"description": {
+								"defaultText": "Recall memories on the first turn of each session"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.autoRetain",
+							"label": {
+								"defaultText": "Hindsight Auto Retain"
+							},
+							"description": {
+								"defaultText": "Retain transcript every N turns and at session boundaries"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.retainMode",
+							"label": {
+								"defaultText": "Hindsight Retain Mode"
+							},
+							"description": {
+								"defaultText": "full-session = upsert one document per session, last-turn = chunked"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.mentalModelsEnabled",
+							"label": {
+								"defaultText": "Hindsight Mental Models"
+							},
+							"description": {
+								"defaultText": "Read curated reflect summaries (mental models) into developer instructions at boot. Loads existing models on the bank — does not write. Pair with hindsight.mentalModelAutoSeed to also auto-create the built-in seed set."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:hindsight.mentalModelAutoSeed",
+							"label": {
+								"defaultText": "Hindsight Mental Model Auto-Seed"
+							},
+							"description": {
+								"defaultText": "At session start, create any built-in mental models (project-conventions, project-decisions, user-preferences) that do not yet exist on the bank."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Sharpshooter",
+					"label": {
+						"defaultText": "Sharpshooter",
+						"messageKey": "settings.group.sharpshooter"
+					},
+					"settings": [
+						{
+							"id": "mock:sharpshooter.model",
+							"label": {
+								"defaultText": "Sharpshooter Model"
+							},
+							"description": {
+								"defaultText": "Model selector for extraction/consolidation, empty = smol role"
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "files",
+			"label": {
+				"defaultText": "Files",
+				"messageKey": "settings.files"
+			},
+			"groups": [
+				{
+					"id": "Editing",
+					"label": {
+						"defaultText": "Editing",
+						"messageKey": "settings.group.editing"
+					},
+					"settings": [
+						{
+							"id": "mock:edit.mode",
+							"label": {
+								"defaultText": "Edit Mode"
+							},
+							"description": {
+								"defaultText": "Select the edit tool variant (replace, patch, hashline, or apply_patch); none removes the edit tool and keeps bash enabled"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:edit.fuzzyMatch",
+							"label": {
+								"defaultText": "Fuzzy Match"
+							},
+							"description": {
+								"defaultText": "Accept high-confidence fuzzy matches for whitespace differences"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:edit.fuzzyThreshold",
+							"label": {
+								"defaultText": "Fuzzy Match Threshold"
+							},
+							"description": {
+								"defaultText": "Similarity threshold (0-1) for accepting fuzzy matches"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:edit.streamingAbort",
+							"label": {
+								"defaultText": "Abort on Failed Preview"
+							},
+							"description": {
+								"defaultText": "Abort streaming edit tool calls when patch preview fails"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:edit.recoverInlineEdits",
+							"label": {
+								"defaultText": "Recover Inline Edit Payloads"
+							},
+							"description": {
+								"defaultText": "Execute edit payloads the model emits as plain text by converting them into edit tool calls"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:edit.blockAutoGenerated",
+							"label": {
+								"defaultText": "Block Auto-Generated Files"
+							},
+							"description": {
+								"defaultText": "Prevent editing of files that appear to be auto-generated (protoc, sqlc, swagger, etc.)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:edit.enforceSeenLines",
+							"label": {
+								"defaultText": "Enforce Seen-Line Guard"
+							},
+							"description": {
+								"defaultText": "Reject edits anchored on lines a prior read/search never displayed in full"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:edit.blackbox.enabled",
+							"label": {
+								"defaultText": "Record Parse Regressions"
+							},
+							"description": {
+								"defaultText": "Append full before/after source when an edit introduces an AST parse failure"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:edit.autoRepair.enabled",
+							"label": {
+								"defaultText": "Auto-Repair Parse Regressions"
+							},
+							"description": {
+								"defaultText": "When an edit breaks a file's AST parse, ask the smol model to fix the broken region (validated by re-parse; falls back to a warning)"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Reading",
+					"label": {
+						"defaultText": "Reading",
+						"messageKey": "settings.group.reading"
+					},
+					"settings": [
+						{
+							"id": "mock:readLineNumbers",
+							"label": {
+								"defaultText": "Line Numbers"
+							},
+							"description": {
+								"defaultText": "Prepend line numbers to read tool output by default"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.defaultLimit",
+							"label": {
+								"defaultText": "Default Read Limit"
+							},
+							"description": {
+								"defaultText": "Default number of lines returned when agent calls read without a limit"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.renderMarkdown",
+							"label": {
+								"defaultText": "Markdown Previews"
+							},
+							"description": {
+								"defaultText": "Render Markdown read results as formatted terminal Markdown previews instead of raw source"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.toolResultPreview",
+							"label": {
+								"defaultText": "Inline Read Previews"
+							},
+							"description": {
+								"defaultText": "Render read tool results inline in the transcript instead of summary rows"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Read Summaries",
+					"label": {
+						"defaultText": "Read Summaries",
+						"messageKey": "settings.group.read-summaries"
+					},
+					"settings": [
+						{
+							"id": "mock:read.summarize.enabled",
+							"label": {
+								"defaultText": "Read Summaries"
+							},
+							"description": {
+								"defaultText": "Return structural code summaries when read is called without an explicit selector"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.summarize.prose",
+							"label": {
+								"defaultText": "Prose Summaries"
+							},
+							"description": {
+								"defaultText": "Return structural summaries for Markdown and plain text reads"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.summarize.minBodyLines",
+							"label": {
+								"defaultText": "Read Summary Body Lines"
+							},
+							"description": {
+								"defaultText": "Minimum multiline body or literal length before read summaries collapse it"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.summarize.minCommentLines",
+							"label": {
+								"defaultText": "Read Summary Comment Lines"
+							},
+							"description": {
+								"defaultText": "Minimum multiline block comment length before read summaries collapse it"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.summarize.minTotalLines",
+							"label": {
+								"defaultText": "Read Summary Minimum File Length"
+							},
+							"description": {
+								"defaultText": "Files with fewer total lines are read verbatim instead of structurally summarized"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.summarize.unfoldUntil",
+							"label": {
+								"defaultText": "Read Summary Unfold Target"
+							},
+							"description": {
+								"defaultText": "BFS-unfold elidable spans until the summary is at least this many visible lines. 0 keeps only the outermost elisions."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:read.summarize.unfoldLimit",
+							"label": {
+								"defaultText": "Read Summary Unfold Ceiling"
+							},
+							"description": {
+								"defaultText": "Hard ceiling on summary size while BFS-unfolding. An unfold whose revealed lines would exceed this is skipped (that span stays folded) and unfolding continues with the remaining spans."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "LSP",
+					"label": {
+						"defaultText": "LSP",
+						"messageKey": "settings.group.lsp"
+					},
+					"settings": [
+						{
+							"id": "mock:lsp.enabled",
+							"label": {
+								"defaultText": "LSP"
+							},
+							"description": {
+								"defaultText": "Language-server integration: the lsp tool, diagnostics on write/edit, and format on write (--no-lsp disables for the run)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:lsp.lazy",
+							"label": {
+								"defaultText": "Lazy LSP Startup"
+							},
+							"description": {
+								"defaultText": "Start language servers on first use (lsp tool or editing a matching file type) instead of at session startup"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:lsp.shared",
+							"label": {
+								"defaultText": "Shared Language Servers"
+							},
+							"description": {
+								"defaultText": "Start language servers through the per-project daemon broker. Each connection gets its own server. While another omp instance in the project is running, a released server stays warm and the next connection reuses it instead of cold-starting (falls back to private servers when unavailable)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:lsp.formatOnWrite",
+							"label": {
+								"defaultText": "Format on Write"
+							},
+							"description": {
+								"defaultText": "Automatically format code files using LSP after writing"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:lsp.diagnosticsOnWrite",
+							"label": {
+								"defaultText": "Diagnostics on Write"
+							},
+							"description": {
+								"defaultText": "Return LSP diagnostics after writing code files"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:lsp.diagnosticsOnEdit",
+							"label": {
+								"defaultText": "Diagnostics on Edit"
+							},
+							"description": {
+								"defaultText": "Return LSP diagnostics after editing code files"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:lsp.diagnosticsDeduplicate",
+							"label": {
+								"defaultText": "Deduplicate Diagnostics"
+							},
+							"description": {
+								"defaultText": "Suppress post-edit LSP diagnostics already shown for a file; only surface new or changed ones"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:lsp.requestTimeout",
+							"label": {
+								"defaultText": "Request Timeout"
+							},
+							"description": {
+								"defaultText": "Seconds to wait for a language server's diagnostics, hover and other answers when the agent sets no timeout; late post-edit diagnostics wait at least this long. Raise it for servers that are slow on a cold start. The lsp tool's timeout argument can still raise or lower it per call"
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "shell",
+			"label": {
+				"defaultText": "Shell",
+				"messageKey": "settings.shell"
+			},
+			"groups": [
+				{
+					"id": "Bash",
+					"label": {
+						"defaultText": "Bash",
+						"messageKey": "settings.group.bash"
+					},
+					"settings": [
+						{
+							"id": "mock:bash.enabled",
+							"label": {
+								"defaultText": "Bash"
+							},
+							"description": {
+								"defaultText": "Enable the bash tool for shell command execution"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:bash.allowCompoundCommands",
+							"label": {
+								"defaultText": "Allow Compound Commands"
+							},
+							"description": {
+								"defaultText": "Evaluate literal && chains per command; unmatched commands use normal bash approval policy and mode"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:bash.autoBackground.enabled",
+							"label": {
+								"defaultText": "Bash Auto-Background"
+							},
+							"description": {
+								"defaultText": "Automatically background long-running bash commands and deliver the result later"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:bash.gitGuard",
+							"label": {
+								"defaultText": "Git Guard"
+							},
+							"description": {
+								"defaultText": "Refuse git commands that discard or move shared work in a repository's main checkout: stash, reset --hard or to another commit, and checkout/switch/restore outside a merge or rebase conflict. In a linked worktree they run, saving uncommitted changes they discard first"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:bash.patterns",
+							"label": {
+								"defaultText": "Bash Approval Patterns"
+							},
+							"description": {
+								"defaultText": "Ordered bash command approval rules. Each item has match and approval fields; only '*' wildcards are supported."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:bashInterceptor.enabled",
+							"label": {
+								"defaultText": "Bash Interceptor"
+							},
+							"description": {
+								"defaultText": "Block shell commands that have dedicated tools"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:bash.direnv",
+							"label": {
+								"defaultText": "direnv Auto-Load"
+							},
+							"description": {
+								"defaultText": "Auto-load a repo's direnv/devenv `.envrc` into the bash session so devenv tools and env vars are present without manual `direnv exec`. Honors direnv's allow list: an `.envrc` you haven't `direnv allow`ed is never executed"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:bash.direnvLoadTimeoutMs",
+							"label": {
+								"defaultText": "direnv Load Timeout (ms)"
+							},
+							"description": {
+								"defaultText": "Max wait for the first `direnv export` (a cold devenv shell can be slow); on timeout the session runs without the direnv env"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:shellMinimizer.enabled",
+							"label": {
+								"defaultText": "Shell Minimizer"
+							},
+							"description": {
+								"defaultText": "Compress verbose shell output (git, npm, cargo, etc.) before returning it to the agent"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:shellMinimizer.sourceOutlineLevel",
+							"label": {
+								"defaultText": "Shell Minimizer Source Outline"
+							},
+							"description": {
+								"defaultText": "Source outline mode for cat/read of source files: default or aggressive"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Eval & Runtimes",
+					"label": {
+						"defaultText": "Eval & Runtimes",
+						"messageKey": "settings.group.eval-runtimes"
+					},
+					"settings": [
+						{
+							"id": "mock:eval.py",
+							"label": {
+								"defaultText": "Python Eval Backend"
+							},
+							"description": {
+								"defaultText": "Allow the eval tool to dispatch Python cells to the IPython kernel"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:eval.js",
+							"label": {
+								"defaultText": "JavaScript Eval Backend"
+							},
+							"description": {
+								"defaultText": "Allow the eval tool to dispatch JavaScript cells to the in-process runtime"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:eval.autoProvision",
+							"label": {
+								"defaultText": "Eval Environment Provisioning"
+							},
+							"description": {
+								"defaultText": "Automatically create the managed JavaScript eval package environment on first install"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:eval.tools.enabled",
+							"label": {
+								"defaultText": "Eval-Defined Tools"
+							},
+							"description": {
+								"defaultText": "Let eval cells define tools (@tool in Python, tool(fn) in JS) that task, agent(), and workpool() subagents can call"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:eval.workpool.freshAgents",
+							"label": {
+								"defaultText": "Fresh Workpool Agents"
+							},
+							"description": {
+								"defaultText": "Spawn a new subagent for every workpool item instead of reusing workers or batching queued items"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:eval.autoBackground.enabled",
+							"label": {
+								"defaultText": "Eval Auto-Background"
+							},
+							"description": {
+								"defaultText": "Automatically background long-running eval cells and deliver the result later"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:python.kernelMode",
+							"label": {
+								"defaultText": "Python Kernel Mode"
+							},
+							"description": {
+								"defaultText": "Keep the IPython kernel alive across eval calls or start fresh each time"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:python.interpreter",
+							"label": {
+								"defaultText": "Python Interpreter"
+							},
+							"description": {
+								"defaultText": "Optional path to an exact Python executable. When set, automatic Python runtime discovery is skipped."
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "tools",
+			"label": {
+				"defaultText": "Tools",
+				"messageKey": "settings.tools"
+			},
+			"groups": [
+				{
+					"id": "Available Tools",
+					"label": {
+						"defaultText": "Available Tools",
+						"messageKey": "settings.group.available-tools"
+					},
+					"settings": [
+						{
+							"id": "mock:ida.enabled",
+							"label": {
+								"defaultText": "IDA Pro"
+							},
+							"description": {
+								"defaultText": "Open executables read with `read` in IDA Pro (idalib) and enable the `ida` tool; inert when no IDA install is found"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.enabled",
+							"label": {
+								"defaultText": "Browser"
+							},
+							"description": {
+								"defaultText": "Enable the browser eval prelude for scripted Chromium automation (Puppeteer)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:todo.enabled",
+							"label": {
+								"defaultText": "Todos"
+							},
+							"description": {
+								"defaultText": "Enable the todo tool for task tracking"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:glob.enabled",
+							"label": {
+								"defaultText": "Glob"
+							},
+							"description": {
+								"defaultText": "Enable the glob tool for glob-based file lookup"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:grep.enabled",
+							"label": {
+								"defaultText": "Grep"
+							},
+							"description": {
+								"defaultText": "Enable the grep tool for regex content search"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:astGrep.enabled",
+							"label": {
+								"defaultText": "AST Grep"
+							},
+							"description": {
+								"defaultText": "Enable the ast_grep tool for structural AST search"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:astEdit.enabled",
+							"label": {
+								"defaultText": "AST Edit"
+							},
+							"description": {
+								"defaultText": "Enable the ast_edit tool for structural AST rewrites"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:find.enabled",
+							"label": {
+								"defaultText": "Find (semantic grep)"
+							},
+							"description": {
+								"defaultText": "Enable the find tool: natural-language search for files and line ranges, judged by the judge model role. Auto enables it only when the judge role resolves to a native TypeSafe jev model"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:debug.enabled",
+							"label": {
+								"defaultText": "Debug"
+							},
+							"description": {
+								"defaultText": "Enable the debug tool for DAP-based debugging"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:launch.enabled",
+							"label": {
+								"defaultText": "Services"
+							},
+							"description": {
+								"defaultText": "Enable named bash services and proc:// supervision for shared long-running project processes"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:speechgen.enabled",
+							"label": {
+								"defaultText": "Speech Generation"
+							},
+							"description": {
+								"defaultText": "Enable the tts tool for on-device (Kokoro) or xAI Grok Voice speech-file synthesis"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:generate_image.enabled",
+							"label": {
+								"defaultText": "Generate Image"
+							},
+							"description": {
+								"defaultText": "Enable the generate_image tool (text-to-image generation and editing). Exposed as an xd:// device when tools.xdev is on."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:computer.enabled",
+							"label": {
+								"defaultText": "Computer"
+							},
+							"description": {
+								"defaultText": "Enable the scriptable host-desktop eval prelude (screenshots, input, accessibility)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ratchet.enabled",
+							"label": {
+								"defaultText": "Ratchet"
+							},
+							"description": {
+								"defaultText": "Enable the ratchet eval/hillclimb prelude; /ratchet turns it on for the current session"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:archive.enabled",
+							"label": {
+								"defaultText": "Archive"
+							},
+							"description": {
+								"defaultText": "Enable the read-only archive eval prelude: prompt history, recent projects, past sessions and recaps"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:checkpoint.enabled",
+							"label": {
+								"defaultText": "Checkpoint/Rewind"
+							},
+							"description": {
+								"defaultText": "Enable the checkpoint and rewind tools for context checkpointing"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:fetch.enabled",
+							"label": {
+								"defaultText": "Read URLs"
+							},
+							"description": {
+								"defaultText": "Allow the read tool to fetch and process URLs"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:vault.enabled",
+							"label": {
+								"defaultText": "Obsidian Vault"
+							},
+							"description": {
+								"defaultText": "Enable the vault:// internal URL for reading and editing Obsidian vault content via the Obsidian CLI. When disabled, vault:// resolution is refused and the vault:// entry is omitted from the system prompt."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:github.enabled",
+							"label": {
+								"defaultText": "GitHub CLI"
+							},
+							"description": {
+								"defaultText": "Enable the github tool (op-based dispatch for repository, issue, pull request, diff, search, checkout, push, and Actions watch workflows)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:web_search.enabled",
+							"label": {
+								"defaultText": "Web Search"
+							},
+							"description": {
+								"defaultText": "Enable the web_search tool for live web results"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:security.enabled",
+							"label": {
+								"defaultText": "Security"
+							},
+							"description": {
+								"defaultText": "Enable OMP-native security scan planning, execution, and the read-only security:// resource namespace"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ask.enabled",
+							"label": {
+								"defaultText": "Ask"
+							},
+							"description": {
+								"defaultText": "Enable the ask tool for interactive user questions"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:out.enabled",
+							"label": {
+								"defaultText": "Out"
+							},
+							"description": {
+								"defaultText": "Let the agent reply mid-task by writing to out://, shown like a response without ending its turn. Unset: on in the interactive TUI, off in print, RPC, and ACP"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Todos",
+					"label": {
+						"defaultText": "Todos",
+						"messageKey": "settings.group.todos"
+					},
+					"settings": [
+						{
+							"id": "mock:todo.reminders",
+							"label": {
+								"defaultText": "Todo Reminders"
+							},
+							"description": {
+								"defaultText": "Remind the agent to complete todos before stopping"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:todo.remindersMax",
+							"label": {
+								"defaultText": "Todo Reminder Limit"
+							},
+							"description": {
+								"defaultText": "Maximum number of todo reminders before giving up"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:todo.eager",
+							"label": {
+								"defaultText": "Create Todos Automatically"
+							},
+							"description": {
+								"defaultText": "How strongly to push automatic todo-list creation after the first message"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tasks.todoClearDelay",
+							"label": {
+								"defaultText": "Todo Auto-Clear Delay"
+							},
+							"description": {
+								"defaultText": "Delay before completed or abandoned todos are removed from the todo widget"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Grep & Browser",
+					"label": {
+						"defaultText": "Grep & Browser",
+						"messageKey": "settings.group.grep-browser"
+					},
+					"settings": [
+						{
+							"id": "mock:browser.cdpUrl",
+							"label": {
+								"defaultText": "Browser CDP URL"
+							},
+							"description": {
+								"defaultText": "Default HTTP CDP discovery endpoint (for example http://127.0.0.1:9222) to attach to instead of launching a browser. Explicit app.cdp_url or app.path on the tool call take precedence."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.relay",
+							"label": {
+								"defaultText": "Browser Relay"
+							},
+							"description": {
+								"defaultText": "Drive your own Chrome tabs through the omp browser relay. Install the extension once (`omp browser-relay install`); the relay server auto-starts when the browser prelude needs it. Takes precedence over Browser CDP URL; set PI_BROWSER_RELAY=0 or PI_BROWSER_RELAY=1 to override."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.relayUrl",
+							"label": {
+								"defaultText": "Browser Relay URL"
+							},
+							"description": {
+								"defaultText": "omp browser relay endpoint (default http://127.0.0.1:9224)."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.headless",
+							"label": {
+								"defaultText": "Headless Browser"
+							},
+							"description": {
+								"defaultText": "Launch browser in headless mode (disable to show browser UI)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.cmux",
+							"label": {
+								"defaultText": "cmux Browser"
+							},
+							"description": {
+								"defaultText": "Use cmux WKWebView surfaces for browser automation when a cmux socket is available. Set PI_BROWSER_CMUX=0 or PI_BROWSER_CMUX=1 to override."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.tern",
+							"label": {
+								"defaultText": "Tern Browser"
+							},
+							"description": {
+								"defaultText": "Inside a Tern pane, open browser tabs as picture-in-pictures over omp's pane (native web view) instead of headless Chromium; falls back to Chromium when no Tern window can host them. Explicit app options, the relay and Browser CDP URL take precedence; app.tern:false opts one open out. Set PI_BROWSER_TERN=0 or PI_BROWSER_TERN=1 to override."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.freezeOnTurnEnd",
+							"label": {
+								"defaultText": "Freeze Browser Tabs On Turn End"
+							},
+							"description": {
+								"defaultText": "Freeze OMP-owned headless browser tabs when a turn settles so animated pages stop burning CPU/GPU while idle. Tabs unfreeze automatically on next use; pass persist:true on open to opt a tab out."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.idleCloseSec",
+							"label": {
+								"defaultText": "Browser Idle Close Timeout"
+							},
+							"description": {
+								"defaultText": "Close OMP-owned headless browser tabs and Tern browser picture-in-pictures idle longer than this many seconds (0 = never; session dispose still reaps). Never touches relay/CDP/spawned browsers or other sessions' tabs."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:browser.screenshotDir",
+							"label": {
+								"defaultText": "Screenshot Directory"
+							},
+							"description": {
+								"defaultText": "Directory to save screenshots. If unset, screenshots go to a temp file. Supports ~. Examples: ~/Downloads, ~/Desktop, /sdcard/Download (Android)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:grep.contextBefore",
+							"label": {
+								"defaultText": "Grep Context Before"
+							},
+							"description": {
+								"defaultText": "Lines of context before each grep match"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:grep.contextAfter",
+							"label": {
+								"defaultText": "Grep Context After"
+							},
+							"description": {
+								"defaultText": "Lines of context after each grep match"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Computer",
+					"label": {
+						"defaultText": "Computer",
+						"messageKey": "settings.group.computer"
+					},
+					"settings": [
+						{
+							"id": "mock:computer.display",
+							"label": {
+								"defaultText": "Computer Display"
+							},
+							"description": {
+								"defaultText": "Active window's display (active), all displays (all), or a native display id"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:computer.maxWidth",
+							"label": {
+								"defaultText": "Computer Screenshot Width"
+							},
+							"description": {
+								"defaultText": "Maximum screenshot width in pixels"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:computer.maxHeight",
+							"label": {
+								"defaultText": "Computer Screenshot Height"
+							},
+							"description": {
+								"defaultText": "Maximum screenshot height in pixels"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:computer.backgroundFallback",
+							"label": {
+								"defaultText": "Computer Background Fallback"
+							},
+							"description": {
+								"defaultText": "What window input does when its background route is unavailable: rerun it in takeover and return focus to your app (macOS; elsewhere plain takeover), or refuse, which also keeps the agent from taking the foreground or opening macOS menus itself"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "IDA Pro",
+					"label": {
+						"defaultText": "IDA Pro",
+						"messageKey": "settings.group.ida-pro"
+					},
+					"settings": [
+						{
+							"id": "mock:ida.python",
+							"label": {
+								"defaultText": "IDA Python"
+							},
+							"description": {
+								"defaultText": "Python interpreter that can import ida_domain and idapro; empty auto-detects"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ida.installDir",
+							"label": {
+								"defaultText": "IDA Install Dir"
+							},
+							"description": {
+								"defaultText": "Directory containing libidalib, exported as IDADIR; empty auto-detects ($IDADIR, ida-config.json, standard install paths)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ida.maxOpen",
+							"label": {
+								"defaultText": "IDA Max Open Databases"
+							},
+							"description": {
+								"defaultText": "Most IDA databases (omp.ida.* daemons in omp ps) open at once per project; opening another saves and closes the least recently used idle one"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ida.idleCloseSec",
+							"label": {
+								"defaultText": "IDA Idle Close Timeout"
+							},
+							"description": {
+								"defaultText": "Save and close IDA databases idle longer than this many seconds (0 = never); the exec namespace resets on reopen"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "GitHub",
+					"label": {
+						"defaultText": "GitHub",
+						"messageKey": "settings.group.github"
+					},
+					"settings": [
+						{
+							"id": "mock:github.cache.enabled",
+							"label": {
+								"defaultText": "GitHub View Cache"
+							},
+							"description": {
+								"defaultText": "Cache rendered issue/PR view output in ~/.omp/cache/github-cache.db so repeated reads are free"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:github.cache.softTtlSec",
+							"label": {
+								"defaultText": "GitHub Cache Soft TTL"
+							},
+							"description": {
+								"defaultText": "Within this window, cached issue/PR view rows are returned directly (seconds; default 5 minutes)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:github.cache.hardTtlSec",
+							"label": {
+								"defaultText": "GitHub Cache Hard TTL"
+							},
+							"description": {
+								"defaultText": "Past the soft TTL the cached row is returned and refreshed in the background; past the hard TTL it is dropped (seconds; default 7 days)"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Output Limits",
+					"label": {
+						"defaultText": "Output Limits",
+						"messageKey": "settings.group.output-limits"
+					},
+					"settings": [
+						{
+							"id": "mock:tools.artifactSpillThreshold",
+							"label": {
+								"defaultText": "Artifact Spill Threshold (KB)"
+							},
+							"description": {
+								"defaultText": "Tool output above this size is saved as an artifact; tail is kept inline"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.artifactTailBytes",
+							"label": {
+								"defaultText": "Artifact Tail Size (KB)"
+							},
+							"description": {
+								"defaultText": "Amount of tail content kept inline when output spills to artifact"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.artifactHeadBytes",
+							"label": {
+								"defaultText": "Artifact Head Size (KB)"
+							},
+							"description": {
+								"defaultText": "Amount of head content kept inline alongside the tail when output spills to artifact (middle elision). 0 disables — keep tail only."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.outputMaxColumns",
+							"label": {
+								"defaultText": "Output Column Cap"
+							},
+							"description": {
+								"defaultText": "Per-line byte cap for streaming tool outputs (bash, python, js eval) and `read`. Lines wider than this are ellipsis-truncated; remaining bytes up to the next newline are dropped. 0 disables."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.artifactTailLines",
+							"label": {
+								"defaultText": "Artifact Tail Lines"
+							},
+							"description": {
+								"defaultText": "Maximum lines of tail content kept inline when output spills to artifact"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.artifactMaxBytes",
+							"label": {
+								"defaultText": "Artifact File Cap (MB)"
+							},
+							"description": {
+								"defaultText": "Maximum size of the artifact file saved for streaming tool output (bash, python, js eval). Larger output keeps its beginning (up to 3 MB) and its most recent remainder, with a truncation notice between them. 0 = unlimited."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Execution",
+					"label": {
+						"defaultText": "Execution",
+						"messageKey": "settings.group.execution"
+					},
+					"settings": [
+						{
+							"id": "mock:images.questionTimeoutMs",
+							"label": {
+								"defaultText": "Image Question Timeout"
+							},
+							"description": {
+								"defaultText": "Per-request timeout for the vision-model call behind read's ?q= image questions, in milliseconds. A stalled provider fails fast with a timeout error instead of blocking until manual abort. Set to 0 to disable the timeout."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.intentTracing",
+							"label": {
+								"defaultText": "Intent Tracing"
+							},
+							"description": {
+								"defaultText": "Ask the agent to describe the intent of each tool call before executing it"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.abortOnFabricatedResult",
+							"label": {
+								"defaultText": "Abort On Fabricated Tool Result"
+							},
+							"description": {
+								"defaultText": "With in-band tool calls, stop the model immediately when it starts hallucinating a tool result mid-turn. Disable to let the model finish generating and discard the fabricated continuation instead."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.speculativeExecution.enabled",
+							"label": {
+								"defaultText": "Experimental Speculative Execution"
+							},
+							"description": {
+								"defaultText": "Enable the discard-safe first slice: validated local reads through direct read calls and nested eval. Network requests, provider completions, and live filesystem writes are not part of this baseline."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.speculativeExecution.maxInFlight",
+							"label": {
+								"defaultText": "Speculative Execution Concurrency"
+							},
+							"description": {
+								"defaultText": "Maximum number of validated local reads allowed to run before normal dispatch."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.maxTimeout",
+							"label": {
+								"defaultText": "Max Tool Timeout"
+							},
+							"description": {
+								"defaultText": "Maximum timeout in seconds the agent can set for any tool (0 = no limit)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:async.enabled",
+							"label": {
+								"defaultText": "Async Execution"
+							},
+							"description": {
+								"defaultText": "Enable async bash commands and background task execution"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:async.printWake",
+							"label": {
+								"defaultText": "Wake Print Mode on Job Results"
+							},
+							"description": {
+								"defaultText": "In print mode (-p, --mode json), keep running after the last prompt while this run's background jobs are active, and start another turn in the same session with each job's result; exits once no job or result is pending. Off: print mode exits after its prompts and cancels running jobs"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:async.widgets",
+							"label": {
+								"defaultText": "Live Job Widgets"
+							},
+							"description": {
+								"defaultText": "Draw a live widget for each running background job (charts, bars, status grids derived from its output) in the wait card, the jobs pill and the jobs sheet, and caption long shell commands with one line on what they do. The `widget` model role (default: `smol`) writes one spec and at most one caption per job; updates need no further model calls"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Discovery & MCP",
+					"label": {
+						"defaultText": "Discovery & MCP",
+						"messageKey": "settings.group.discovery-mcp"
+					},
+					"settings": [
+						{
+							"id": "mock:mcp.enableProjectConfig",
+							"label": {
+								"defaultText": "MCP Project Config"
+							},
+							"description": {
+								"defaultText": "Load .mcp.json/mcp.json from project root"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mcp.startupTimeoutMs",
+							"label": {
+								"defaultText": "MCP Startup Window"
+							},
+							"description": {
+								"defaultText": "Wait this many milliseconds for initial MCP tool discovery; 0 waits until connections settle"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mcp.renderMarkdownResults",
+							"label": {
+								"defaultText": "MCP Markdown Results"
+							},
+							"description": {
+								"defaultText": "Render non-JSON MCP text results as Markdown in the transcript"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mcp.notifications",
+							"label": {
+								"defaultText": "MCP Update Injection"
+							},
+							"description": {
+								"defaultText": "Inject MCP resource updates into the agent conversation"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:mcp.notificationDebounceMs",
+							"label": {
+								"defaultText": "MCP Notification Debounce"
+							},
+							"description": {
+								"defaultText": "Debounce window in milliseconds for MCP resource updates before injecting them into the conversation"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.xdev",
+							"label": {
+								"defaultText": "xd:// Tools"
+							},
+							"description": {
+								"defaultText": "Mount rarely-used (discoverable) tools under xd:// device URLs driven via read/write instead of shipping their schemas on every request. Sessions whose explicit tool list grants read but omits write mount devices through a device-only write transport (only local:// scratch stays writable besides devices). Disable to expose every enabled tool top-level."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.xdevDocs",
+							"label": {
+								"defaultText": "xd:// Prompt Docs"
+							},
+							"description": {
+								"defaultText": "Choose which mounted-device docs and schemas are inlined in the system prompt. Built-ins keeps core tools inline while MCP and extension tools stay on-demand."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.xdevInlineDevices",
+							"label": {
+								"defaultText": "xd:// Inline Devices"
+							},
+							"description": {
+								"defaultText": "When xd:// Prompt Docs is Built-ins Only, inline dynamic devices whose names match these glob patterns (for example mcp__context_mode_*). Catalog Only ignores this setting."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tools.xdevNotices",
+							"label": {
+								"defaultText": "xd:// Mount Notices"
+							},
+							"description": {
+								"defaultText": "Show an `xd://: mounted …` notice when MCP or extension tools are mounted or unmounted. The model still learns of the change with its next prompt."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Extensions",
+					"label": {
+						"defaultText": "Extensions",
+						"messageKey": "settings.group.extensions"
+					},
+					"settings": [
+						{
+							"id": "mock:extensionHandlers.toolCallTimeoutMs",
+							"label": {
+								"defaultText": "Tool Call Handler Timeout (ms)"
+							},
+							"description": {
+								"defaultText": "Positive finite active-work timeout for extension tool_call handlers; invalid values use 30000ms, and time awaiting OMP-owned dialogs does not count"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:extensionHandlers.modeControl",
+							"label": {
+								"defaultText": "Extension Mode Control"
+							},
+							"description": {
+								"defaultText": "Let extensions enter and exit plan, vibe, goal, and loop modes via ctx.sessionModes.set(); reading mode state stays available"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:extensionRenderers.assistantText",
+							"label": {
+								"defaultText": "Extension Reply Renderers"
+							},
+							"description": {
+								"defaultText": "Let extensions change how assistant replies are drawn, redraw a reply in place, and receive clicks on their own links; the session, exports and model context keep the reply as written"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:extensionRenderers.transcriptPresenters",
+							"label": {
+								"defaultText": "Extension Transcript Presenters"
+							},
+							"description": {
+								"defaultText": "Let extensions draw transcript blocks such as tool calls in full, as one compact row, or hidden; the session, exports and model context are unchanged"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Developer",
+					"label": {
+						"defaultText": "Developer",
+						"messageKey": "settings.group.developer"
+					},
+					"settings": [
+						{
+							"id": "mock:spotlight.experiment.enabled",
+							"label": {
+								"defaultText": "Spotlight Experiment"
+							},
+							"description": {
+								"defaultText": "Shape tool output and rank find results with Stencil Spotlight, and log each shaped result to the session"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:dev.autoqa",
+							"label": {
+								"defaultText": "Auto QA"
+							},
+							"description": {
+								"defaultText": "Automated tool issue reporting (xd://report_issue). On by default; the first report asks for consent, and denying it disables reporting until re-enabled explicitly"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:dev.autoqaPush.endpoint",
+							"label": {
+								"defaultText": "Auto QA Push Endpoint"
+							},
+							"description": {
+								"defaultText": "Full URL receiving Auto QA JSON reports (default https://qa.omp.sh/v1/grievances)"
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "tasks",
+			"label": {
+				"defaultText": "Tasks",
+				"messageKey": "settings.tasks"
+			},
+			"groups": [
+				{
+					"id": "Modes",
+					"label": {
+						"defaultText": "Modes",
+						"messageKey": "settings.group.modes"
+					},
+					"settings": [
+						{
+							"id": "mock:goal.enabled",
+							"label": {
+								"defaultText": "Goal Mode"
+							},
+							"description": {
+								"defaultText": "Enable per-session goal mode and the hidden goal tool"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:goal.statusInFooter",
+							"label": {
+								"defaultText": "Goal Status in Footer"
+							},
+							"description": {
+								"defaultText": "Show token budget alongside the goal indicator in the status line"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:goal.continuationModes",
+							"label": {
+								"defaultText": "Goal Continuation Modes"
+							},
+							"description": {
+								"defaultText": "Run modes where active goals may auto-continue between turns (\"interactive\", \"rpc\")"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:plan.enabled",
+							"label": {
+								"defaultText": "Plan Mode"
+							},
+							"description": {
+								"defaultText": "Enable plan mode for read-only exploration and planning before execution"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:plan.defaultOnStartup",
+							"label": {
+								"defaultText": "Start in Plan Mode"
+							},
+							"description": {
+								"defaultText": "Automatically enter plan mode at the start of every new session"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:plan.autosave",
+							"label": {
+								"defaultText": "Autosave Plans"
+							},
+							"description": {
+								"defaultText": "Automatically save approved plans to disk when plan mode completes"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:plan.autosaveDir",
+							"label": {
+								"defaultText": "Autosave Directory"
+							},
+							"description": {
+								"defaultText": "Directory for autosaved plans. Supports ~, absolute, and cwd-relative paths. Empty uses <project>/.omp/plans/."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:title.generator",
+							"label": {
+								"defaultText": "Title Generator"
+							},
+							"description": {
+								"defaultText": "What names an untitled session from the user's messages"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:title.refreshOnReplan",
+							"label": {
+								"defaultText": "Refresh Title on Replan"
+							},
+							"description": {
+								"defaultText": "Refresh generated session titles after todo init replans unless the title was set by the user"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:title.refreshAfterPrompts",
+							"label": {
+								"defaultText": "Refresh Title After Prompts"
+							},
+							"description": {
+								"defaultText": "Every this many operator prompts, ask the judge model whether a generated session title still fits the conversation, and regenerate it if not"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Subagents",
+					"label": {
+						"defaultText": "Subagents",
+						"messageKey": "settings.group.subagents"
+					},
+					"settings": [
+						{
+							"id": "mock:task.eager",
+							"label": {
+								"defaultText": "Prefer Task Delegation"
+							},
+							"description": {
+								"defaultText": "How strongly to push the main agent to delegate work; subagents keep the model's own policy"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.batch",
+							"label": {
+								"defaultText": "Batch Task Calls"
+							},
+							"description": {
+								"defaultText": "Switch the task tool to its batch shape: one call carries { context, tasks[] } — one subagent per item, with an optional per-item agent (defaulting to the session spawn-policy agent), per-item isolation, and a required shared context prepended to every assignment. With async.enabled=true, each spawn runs as an independent background agent with the normal idle/parked lifecycle; otherwise the call blocks for merged results. Disable to restore the flat single-spawn schema."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.file",
+							"label": {
+								"defaultText": "Task Instructions from Files"
+							},
+							"description": {
+								"defaultText": "Let the task tool read subagent instructions from a file (taskFile), recording its path and SHA-256."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.structured",
+							"label": {
+								"defaultText": "Structured Task Results"
+							},
+							"description": {
+								"defaultText": "Expose outputSchema/schemaMode on the task tool and return subagent results through the yield tool, validated against caller or agent output schemas. Off: task subagents have no yield tool and return their final message as plain text, except agents whose definition sets structured: true. Eval agent()/workpool spawns always keep structured results."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.speculativeLaunch",
+							"label": {
+								"defaultText": "Speculative Task Launch"
+							},
+							"description": {
+								"defaultText": "Start each batch subagent as soon as its tasks[] item finishes streaming instead of waiting for the whole task call. Launched agents are aborted if the finished call fails validation, is blocked, or its arguments change. Requires auto-allowed task approval and no extension tool lifecycle handlers."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.enableEffort",
+							"label": {
+								"defaultText": "Per-Task Effort"
+							},
+							"description": {
+								"defaultText": "Expose the optional effort parameter on task spawns, allowing callers to override each subagent's thinking level"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.perCallModel",
+							"label": {
+								"defaultText": "Per-Call Model"
+							},
+							"description": {
+								"defaultText": "Whether a subagent call may pick its model with one exact provider/model-id[@upstream][:level] selector. An @upstream pin is part of the model identity and is supported only by aggregators. Only models the configuration already routes to are accepted. Project settings can turn it off but not on, and never approve a model."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.perCallModelAllow",
+							"label": {
+								"defaultText": "Per-Call Model Allowlist"
+							},
+							"description": {
+								"defaultText": "Exact selectors: `provider/model-id`, including `@upstream` only for a pinned OpenRouter/Vercel route (e.g. `openrouter/x@y`). When set, a per-call model must also be listed here. Empty: every model the configuration grants. A project list can only narrow this one."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.maxConcurrency",
+							"label": {
+								"defaultText": "Max Concurrent Tasks"
+							},
+							"description": {
+								"defaultText": "Maximum number of subagents running concurrently"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.workerThreads",
+							"label": {
+								"defaultText": "Subagent Worker Threads"
+							},
+							"description": {
+								"defaultText": "Maximum worker threads for subagents. Up to 8 concurrent subagents run on the main thread; at 9 one worker joins, and one more each time the count doubles (18, 36, 72). Workers stop a minute after no subagent is live in them; 0 keeps every subagent on the main thread"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.enableLsp",
+							"label": {
+								"defaultText": "LSP in Subagents"
+							},
+							"description": {
+								"defaultText": "Allow subagents spawned via the task tool to use the lsp tool. Off by default to keep subagents cheap; enable when LSP-aware delegation is worth the extra tokens."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.maxRecursionDepth",
+							"label": {
+								"defaultText": "Max Task Recursion"
+							},
+							"description": {
+								"defaultText": "How many levels deep subagents can spawn their own subagents"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.maxRuntimeMs",
+							"label": {
+								"defaultText": "Max Subagent Runtime"
+							},
+							"description": {
+								"defaultText": "Hard wall-clock limit per subagent (ms). 0 disables it. Defense-in-depth against provider-side stream hangs that escape the inference-layer watchdog; triggers a normal subagent abort with a 'timed out' reason."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.completionProbe",
+							"label": {
+								"defaultText": "Subagent Completion Probe"
+							},
+							"description": {
+								"defaultText": "Ask a working subagent, through a cached side request like /btw, to estimate how complete its task is: after 2, 5, 10 and 30 more minutes, then hourly. The estimate shows next to the subagent in wait and task views. Only subagents spawned by the main agent of an interactive session are asked; print, RPC, ACP and SDK runs never probe."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.agentIdleTtlMs",
+							"label": {
+								"defaultText": "Agent Idle TTL"
+							},
+							"description": {
+								"defaultText": "How long an idle subagent stays live in memory before being parked to disk (ms). Parked agents are revived automatically when messaged or resumed. 0 keeps idle agents live until exit."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.softRequestBudget",
+							"label": {
+								"defaultText": "Soft Subagent Request Budget"
+							},
+							"description": {
+								"defaultText": "Soft per-subagent request budget (assistant requests per run). Crossing it injects a wrap-up steering notice (see task.softRequestBudgetNotice); at 1.5x the budget the run is force-stopped and the agent must hand back its partial findings. 0 disables the guard. Bundled scout/sonic agents cap out at a lower built-in budget, so a value below that cap still applies to them. A task.agentSoftRequestBudget entry replaces this budget for the agent it names."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.softRequestBudgetNotice",
+							"label": {
+								"defaultText": "Soft Request Budget Notice"
+							},
+							"description": {
+								"defaultText": "Inject one steering notice when a subagent crosses its soft request budget, asking it to wrap up before the 1.5x forced-yield stop."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.maxEffort",
+							"label": {
+								"defaultText": "Maximum Per-Spawn Effort"
+							},
+							"description": {
+								"defaultText": "Maximum reasoning effort allowed for the task tool's per-spawn effort hint or a per-call model. An explicit `:level` is clamped to the highest supported effort at or below this ceiling, and an omitted `:level` inherits the agent's thinking level capped at this value; cold revival re-applies the cap. Unset, `:inherit` and `:off` keep their existing meaning. A per-call model must support an effort at or below this ceiling; the default preserves the model's full range."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.prewalk",
+							"label": {
+								"defaultText": "Generic Task Prewalk"
+							},
+							"description": {
+								"defaultText": "Arm prewalk for the bundled generic `task` subagent: it starts on its resolved model, plans and begins the implementation, then hands off to the 'smol' role at its first edit/write. Per-agent overrides (task.agentPrewalk, configured from the /agents hub) and user agent `prewalk` frontmatter apply regardless of this toggle."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Isolation",
+					"label": {
+						"defaultText": "Isolation",
+						"messageKey": "settings.group.isolation"
+					},
+					"settings": [
+						{
+							"id": "mock:task.isolation.enabled",
+							"label": {
+								"defaultText": "Allow Isolated Subagents"
+							},
+							"description": {
+								"defaultText": "Allow per-task isolation with `isolated: true`; tasks without it run in the shared checkout"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:isolation.backend",
+							"label": {
+								"defaultText": "Isolation Backend"
+							},
+							"description": {
+								"defaultText": "Backend used for subagent isolation and worktree cloning"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:worktree.clone",
+							"label": {
+								"defaultText": "Clone Checkout into Worktrees"
+							},
+							"description": {
+								"defaultText": "New worktrees from `github pr_checkout` and `git worktree add` in bash start as a copy-on-write clone of the current checkout so ignored build artifacts (node_modules, target) carry over; falls back to a plain checkout when the filesystem cannot clone"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:worktree.cleanSource",
+							"label": {
+								"defaultText": "Clean Source Checkout on /wt"
+							},
+							"description": {
+								"defaultText": "When creating a worktree with `/wt`, reset tracked changes and remove untracked files from the original checkout after carrying them over"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:worktree.onStart",
+							"label": {
+								"defaultText": "Worktree on Start"
+							},
+							"description": {
+								"defaultText": "Whether fresh interactive sessions start in a new linked worktree"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:worktree.onExit",
+							"label": {
+								"defaultText": "Worktree on Exit"
+							},
+							"description": {
+								"defaultText": "What to do on exit with worktrees created since omp started (on start or with `/wt`)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.isolation.apply",
+							"label": {
+								"defaultText": "Apply Isolated Changes"
+							},
+							"description": {
+								"defaultText": "Automatically apply successful isolated task changes to the parent checkout; disable to retain patch or branch artifacts"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:ovnfs.path",
+							"label": {
+								"defaultText": "ovnfs Binary"
+							},
+							"description": {
+								"defaultText": "ovnfs executable; unset looks for `ovnfs` on PATH. When it is found, ovnfs checkouts (copy-on-write views of a folder, ready in about a second at any size) serve every separate copy: the system prompt tells agents to open checkouts instead of git worktrees or copies, and isolated subagents (when allowed, with `isolation.backend` on auto) run in checkouts instead of native clones"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.isolation.merge",
+							"label": {
+								"defaultText": "Isolation Merge Strategy"
+							},
+							"description": {
+								"defaultText": "How isolated task changes are integrated (patch apply or branch merge)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:task.isolation.commits",
+							"label": {
+								"defaultText": "Isolation Commit Style"
+							},
+							"description": {
+								"defaultText": "Commit message style for nested repo changes (generic or AI-generated)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:worktree.base",
+							"label": {
+								"defaultText": "Worktree Base Directory"
+							},
+							"description": {
+								"defaultText": "Base directory for agent-managed worktrees — task-isolation copies, `github` PR checkouts, and `omp worktree` cleanup all live here. Unset uses ~/.omp/wt. Must be an absolute or ~-relative path; relative paths are ignored. The OMP_WORKTREE_DIR env var overrides this."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Commands & Skills",
+					"label": {
+						"defaultText": "Commands & Skills",
+						"messageKey": "settings.group.commands-skills"
+					},
+					"settings": [
+						{
+							"id": "mock:skills.enableSkillCommands",
+							"label": {
+								"defaultText": "Skill Commands"
+							},
+							"description": {
+								"defaultText": "Register skills as /skill:name commands"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:commands.enableClaudeUser",
+							"label": {
+								"defaultText": "Claude User Commands"
+							},
+							"description": {
+								"defaultText": "Load commands from ~/.claude/commands/"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:commands.enableClaudeProject",
+							"label": {
+								"defaultText": "Claude Project Commands"
+							},
+							"description": {
+								"defaultText": "Load commands from .claude/commands/"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:commands.enableOpencodeUser",
+							"label": {
+								"defaultText": "OpenCode User Commands"
+							},
+							"description": {
+								"defaultText": "Load commands from ~/.config/opencode/commands/"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:commands.enableOpencodeProject",
+							"label": {
+								"defaultText": "OpenCode Project Commands"
+							},
+							"description": {
+								"defaultText": "Load commands from .opencode/commands/"
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "providers",
+			"label": {
+				"defaultText": "Providers",
+				"messageKey": "settings.providers"
+			},
+			"groups": [
+				{
+					"id": "Services",
+					"label": {
+						"defaultText": "Services",
+						"messageKey": "settings.group.services"
+					},
+					"settings": [
+						{
+							"id": "mock:live.voice",
+							"label": {
+								"defaultText": "Live Voice"
+							},
+							"description": {
+								"defaultText": "Voice used by Codex-backed realtime voice sessions"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.maxInFlightRequests",
+							"label": {
+								"defaultText": "Max In-Flight Requests"
+							},
+							"description": {
+								"defaultText": "Maximum concurrent LLM requests per provider id (for example \"openai\" or \"anthropic\"), shared across local OMP processes with this config root. Omitted providers are unlimited."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.ollama-cloud.maxConcurrency",
+							"label": {
+								"defaultText": "Ollama Cloud Max Concurrency"
+							},
+							"description": {
+								"defaultText": "Maximum concurrent Ollama Cloud subagent runs per process; 0 disables the provider-specific limit"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.webSearchTimeoutSeconds",
+							"label": {
+								"defaultText": "Web Search Timeout"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.antigravityEndpoint",
+							"label": {
+								"defaultText": "Antigravity Endpoint Mode"
+							},
+							"description": {
+								"defaultText": "Endpoint routing strategy for google-antigravity providers (chat, search, image, discovery)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.fetch",
+							"label": {
+								"defaultText": "Fetch Provider"
+							},
+							"description": {
+								"defaultText": "Reader backend priority for the fetch/read URL tool"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:codexResets.minBlockedMinutes",
+							"label": {
+								"defaultText": "Codex Auto-Redeem Min Block"
+							},
+							"description": {
+								"defaultText": "Only auto-redeem when the natural unblock — the latest reset among the exhausted 5h/weekly windows — is at least this many minutes away (don't spend a scarce credit to save a short wait). Raise it (e.g. 360) to ignore 5h-only blocks."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:codexResets.keepCredits",
+							"label": {
+								"defaultText": "Codex Auto-Redeem Reserve"
+							},
+							"description": {
+								"defaultText": "Never auto-spend below this many saved resets (0 = the last credit may be spent automatically). Credits about to expire are exempt — a reserved credit that expires preserves nothing."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:codexResets.salvageHorizonHours",
+							"label": {
+								"defaultText": "Codex Reset Salvage Horizon"
+							},
+							"description": {
+								"defaultText": "With auto-redeem enabled, spend a saved Codex reset within this many hours of expiry when either chat window has meaningful usage. 0 disables early salvage; credits expiring within 5 minutes are still attempted regardless of usage."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:claudeResets.minBlockedMinutes",
+							"label": {
+								"defaultText": "Claude Auto-Redeem Min Block"
+							},
+							"description": {
+								"defaultText": "Only auto-redeem when the natural unblock — the latest reset among the exhausted covered windows — is at least this many minutes away. A 5-hour-only reset is never used for a weekly or model-scoped block."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:claudeResets.keepCredits",
+							"label": {
+								"defaultText": "Claude Auto-Redeem Reserve"
+							},
+							"description": {
+								"defaultText": "Keep at least this many Claude resets banked (0 allows the last eligible reset to be spent automatically). The reserve applies to early salvage, but not to eligible resets expiring within 5 minutes."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:claudeResets.salvageHorizonHours",
+							"label": {
+								"defaultText": "Claude Reset Salvage Horizon"
+							},
+							"description": {
+								"defaultText": "With auto-redeem enabled, use a server-selected Cedar reset within this many hours of expiry when its covered windows have meaningful usage. 0 disables early salvage; eligible Cedar or Juniper resets expiring within 5 minutes are still attempted regardless of usage or reserve. Provider limit requirements still apply."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tts.localVoice",
+							"label": {
+								"defaultText": "Local TTS Voice"
+							},
+							"description": {
+								"defaultText": "Kokoro voice used by the local TTS backend (American/British, female/male)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:tts.localSpeed",
+							"label": {
+								"defaultText": "Local TTS Speed"
+							},
+							"description": {
+								"defaultText": "Speaking rate of the local TTS backend (tts tool, omp say). 1 = normal; clamped to 0.5–2.5"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:speech.enabled",
+							"label": {
+								"defaultText": "Speech Vocalization"
+							},
+							"description": {
+								"defaultText": "Speak the assistant's output aloud through the speakers as it streams"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:speech.mode",
+							"label": {
+								"defaultText": "Speech Vocalization Mode"
+							},
+							"description": {
+								"defaultText": "What to speak: all = assistant messages + thinking; assistant = messages only; yield = only the final message at turn end"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:speech.enhanced",
+							"label": {
+								"defaultText": "Enhanced Speech Rewriting"
+							},
+							"description": {
+								"defaultText": "Rewrite assistant output into natural spoken prose with the tiny/smol model before synthesis (describes code, drops links and markdown). Falls back to mechanical cleanup on failure"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:speech.voice",
+							"label": {
+								"defaultText": "Speech Vocalization Voice"
+							},
+							"description": {
+								"defaultText": "Kokoro voice used when speaking the assistant's output aloud"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:speech.speed",
+							"label": {
+								"defaultText": "Speech Vocalization Speed"
+							},
+							"description": {
+								"defaultText": "Speaking rate when reading the assistant's output aloud. 1 = normal; clamped to 0.5–2.5"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:exa.enabled",
+							"label": {
+								"defaultText": "Exa"
+							},
+							"description": {
+								"defaultText": "Enable the Exa web search provider"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:exa.searchDelayMs",
+							"label": {
+								"defaultText": "Exa Search Delay"
+							},
+							"description": {
+								"defaultText": "Minimum delay between Exa web search requests in milliseconds; set 0 to disable pacing"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:searxng.endpoint",
+							"label": {
+								"defaultText": "SearXNG Endpoint"
+							},
+							"description": {
+								"defaultText": "Base URL of a self-hosted SearXNG instance used for web search"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Fireworks",
+					"label": {
+						"defaultText": "Fireworks",
+						"messageKey": "settings.group.fireworks"
+					},
+					"settings": [
+						{
+							"id": "mock:providers.fireworksTier",
+							"label": {
+								"defaultText": "Fireworks Tier"
+							},
+							"description": {
+								"defaultText": "Serving path for Fireworks requests. Priority sends `service_tier: \"priority\"` for higher reliability during peak traffic at a higher price; Standard omits it. Fast (`-fast`) models ignore this — Fast is its own serving path."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Tiny Model",
+					"label": {
+						"defaultText": "Tiny Model",
+						"messageKey": "settings.group.tiny-model"
+					},
+					"settings": [
+						{
+							"id": "mock:providers.tinyModelDevice",
+							"label": {
+								"defaultText": "Tiny Model Device"
+							},
+							"description": {
+								"defaultText": "Inference backend for local tiny models (titles + memory): an ONNX execution provider, or `mlx` to download MLX weights and run them through mlx-lm on Apple silicon. Default uses CPU-only ONNX. The PI_TINY_DEVICE env var overrides this."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.tinyModelDtype",
+							"label": {
+								"defaultText": "Tiny Model Precision"
+							},
+							"description": {
+								"defaultText": "ONNX quantization/precision for local tiny models. Default uses each model's shipped dtype (q4); lower precision is faster, higher is more faithful. Ignored by the MLX backend (its repos are pre-quantized 4-bit). The PI_TINY_DTYPE env var overrides this."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Protocol",
+					"label": {
+						"defaultText": "Protocol",
+						"messageKey": "settings.group.protocol"
+					},
+					"settings": [
+						{
+							"id": "mock:providers.kimiApiFormat",
+							"label": {
+								"defaultText": "Kimi API Format"
+							},
+							"description": {
+								"defaultText": "API format for Kimi Code provider (auto follows live model metadata)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.openaiWebsockets",
+							"label": {
+								"defaultText": "OpenAI Codex WebSockets"
+							},
+							"description": {
+								"defaultText": "WebSocket policy for OpenAI Codex models only"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.openaiResponsesWebsockets",
+							"label": {
+								"defaultText": "OpenAI Responses WebSockets"
+							},
+							"description": {
+								"defaultText": "Opt in for catalog-supported standard Responses models; model or request false disables it"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.openaiLiveSteering",
+							"label": {
+								"defaultText": "OpenAI Live Steering"
+							},
+							"description": {
+								"defaultText": "Deliver messages typed while a GPT-6 response streams into that response over the Codex WebSocket, instead of waiting for the next tool boundary"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.muse-code.storeResponses",
+							"label": {
+								"defaultText": "Muse Code Stored Responses"
+							},
+							"description": {
+								"defaultText": "Store Muse Code results on Meta's servers so a turn whose connection drops is recovered instead of re-run. Stored runs keep prompts and outputs on Meta's side."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.openai-codex.daybreak",
+							"label": {
+								"defaultText": "Codex Daybreak Blue"
+							},
+							"description": {
+								"defaultText": "Automatically request the Daybreak Blue cyber access program on ChatGPT accounts eligible for it. OpenAI may use content from Daybreak Blue sessions to improve its models. Does not cover dedicated Daybreak Blue models (gpt-daybreak-blue-*), which may still run as Daybreak sessions."
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.cacheRetention",
+							"label": {
+								"defaultText": "Prompt Cache Retention"
+							},
+							"description": {
+								"defaultText": "Prompt-cache retention forwarded to providers that support it (Anthropic, Bedrock, OpenRouter, OpenAI)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.cacheWarming",
+							"label": {
+								"defaultText": "Cache Warming"
+							},
+							"description": {
+								"defaultText": "Re-send the last request with a one-token output budget shortly before its prompt-cache entry expires"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.openrouterVariant",
+							"label": {
+								"defaultText": "OpenRouter Routing"
+							},
+							"description": {
+								"defaultText": "Default routing-variant suffix appended to OpenRouter model IDs (overridden when the selector already names a variant)"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:provider.appendOnlyContext",
+							"label": {
+								"defaultText": "Append-Only Context"
+							},
+							"description": {
+								"defaultText": "Cache system prompt + tool specs and keep an append-only message log so provider prefix caches (DeepSeek, Xiaomi/SGLang, Anthropic) hit at maximum rate. Auto enables for known prefix-cache providers."
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Timeouts",
+					"label": {
+						"defaultText": "Timeouts",
+						"messageKey": "settings.group.timeouts"
+					},
+					"settings": [
+						{
+							"id": "mock:providers.streamFirstEventTimeoutSeconds",
+							"label": {
+								"defaultText": "Stream First Event Timeout"
+							},
+							"description": {
+								"defaultText": "Seconds to wait for the first model stream event; -1 uses provider/env defaults, 0 disables the watchdog"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:providers.streamIdleTimeoutSeconds",
+							"label": {
+								"defaultText": "Stream Idle Timeout"
+							},
+							"description": {
+								"defaultText": "Seconds a model stream may stay silent between events; -1 uses provider/env defaults, 0 disables the watchdog"
+							},
+							"type": "mock"
+						}
+					]
+				},
+				{
+					"id": "Privacy",
+					"label": {
+						"defaultText": "Privacy",
+						"messageKey": "settings.group.privacy"
+					},
+					"settings": [
+						{
+							"id": "mock:secrets.enabled",
+							"label": {
+								"defaultText": "Hide Secrets"
+							},
+							"description": {
+								"defaultText": "Obfuscate configured secrets and redact credential-shaped tokens before sending to AI providers"
+							},
+							"type": "mock"
+						},
+						{
+							"id": "mock:telemetry.otlpExportEnabled",
+							"label": {
+								"defaultText": "OTLP Telemetry Export"
+							},
+							"description": {
+								"defaultText": "Allow OMP to export traces, logs, and metrics using OTEL_* endpoints. Changes take effect on the next launch."
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "plugins",
+			"label": {
+				"defaultText": "Plugins",
+				"messageKey": "settings.plugins"
+			},
+			"groups": [
+				{
+					"id": "Extensions",
+					"label": {
+						"defaultText": "Extensions",
+						"messageKey": "settings.group.extensions"
+					},
+					"settings": [
+						{
+							"id": "mock:plugins",
+							"label": {
+								"defaultText": "Plugins",
+								"messageKey": "settings.plugins"
+							},
+							"description": {
+								"defaultText": ""
+							},
+							"type": "mock"
+						}
+					]
+				}
+			]
+		}
+	]
+}

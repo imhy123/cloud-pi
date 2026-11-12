@@ -10,6 +10,11 @@ export function buildClientSlashCommands(t: ClientLocale["t"]): SlashCommandSpec
 			handle: (_command, runtime) => runtime.clearTranscript(),
 		},
 		{
+			name: "settings",
+			description: t("commands.settings.description"),
+			handle: (_command, runtime) => runtime.showSettings(),
+		},
+		{
 			name: "quit",
 			description: t("commands.quit.description"),
 			handle: (_command, runtime) => runtime.quit(),

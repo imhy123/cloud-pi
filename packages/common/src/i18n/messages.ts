@@ -1,8 +1,8 @@
-// cloud-pi i18n: adapted copy of pi packages/chord/src/surfaces/messages.ts
+// cloud-pi common: adapted copy of pi packages/chord/src/surfaces/messages.ts
 // (tag v1.5.2).
 // Changes: the Chord contracts dependency and `MessageSchema` are gone (no
 // Chord link to carry a message as data), and the namespace check is local.
-// Everything else is verbatim.
+// Catalog lookups use the plain translation index without plugin attribution; comments are adapted.
 
 import { currentLanguage, inLanguage, type Language } from "./language.ts";
 import { canonicalLocale, type Translation } from "./translations.ts";
