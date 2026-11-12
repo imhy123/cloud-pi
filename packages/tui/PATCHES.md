@@ -204,7 +204,8 @@ public entry in a fresh Node process without global Bun. `npm run verify` runs
 typecheck, build, source tests and bundle tests. Run the source audit separately;
 it requires the upstream Git repositories. Upstream MIT notices remain intact.
 
-Development tooling pins `rolldown` to `1.2.16` through the root npm override,
-including matching platform bindings, to avoid the Linux CPU instruction regression
-in 1.2.18 ([upstream issue](https://github.com/rolldown/rolldown/issues/11607)).
-Native tests run without a forced WASM environment variable.
+Development tooling pins `rolldown` to `1.2.19` through the root npm override,
+including matching platform bindings. This release fixes the Linux CPU instruction
+regression in 1.2.18 ([release notes](https://github.com/rolldown/rolldown/releases/tag/v1.2.19)).
+The native binding and a bundle execution check pass on an Intel Celeron J4125
+without AVX; native tests run without a forced WASM environment variable.

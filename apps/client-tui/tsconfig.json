@@ -51,6 +51,7 @@
 	},
 	"include": [
 		"src",
+		"test",
 		"../../packages/tui/src/compat/bun-globals.d.ts"
 	],
 	"exclude": [

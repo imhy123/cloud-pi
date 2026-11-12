@@ -1,6 +1,6 @@
 // Locale selection for the client: the system's languages (LANGUAGE, LC_ALL,
-// LC_MESSAGES, LANG, then the runtime's default) pick the initial language; the
-// store swaps the catalog and re-renders subscribers when a setting changes it.
+// LC_MESSAGES, LANG, then the runtime's default) select the language at startup.
+// Language changes take effect after restarting the client.
 import {
 	composeTranslations,
 	createLanguage,
@@ -42,39 +42,14 @@ function report(entry: MessagesReport): void {
 	if (reports.length > REPORT_LIMIT) reports.shift();
 }
 
-/** The client's current language and its messages; `onChange` fires after a switch. */
-export interface LanguageStore {
+/** The client's language and translator, selected once at startup. */
+export interface ClientLocale {
 	readonly language: Language;
-	/** The client catalog in the current language; read it at render time, never cache its output. */
 	readonly t: Translator<"client-tui", ClientMessages>;
-	/** Switch to `pick` (a BCP-47 tag such as `zh-CN`); an unavailable tag falls back to `en`. */
-	setLocale(pick: string): void;
-	/** Observe language switches; returns the unsubscribe. */
-	onChange(listener: () => void): () => void;
 }
 
-let language = createLanguage(resolveLocale(null, systemLocales(), offered), translations, report);
-let translator = messages.in(language);
-const listeners = new Set<() => void>();
-
-export const locale: LanguageStore = {
-	get language() {
-		return language;
-	},
-	get t() {
-		return translator;
-	},
-	setLocale(pick: string): void {
-		const next = resolveLocale(pick.replace(/_/g, "-"), [], offered);
-		if (next === language.locale) return;
-		language = createLanguage(next, translations, report);
-		translator = messages.in(language);
-		for (const listener of listeners) listener();
-	},
-	onChange(listener: () => void): () => void {
-		listeners.add(listener);
-		return () => {
-			listeners.delete(listener);
-		};
-	},
+const language = createLanguage(resolveLocale(null, systemLocales(), offered), translations, report);
+export const locale: ClientLocale = {
+	language,
+	t: messages.in(language),
 };

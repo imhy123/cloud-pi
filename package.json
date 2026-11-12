@@ -23,6 +23,6 @@
 		"typescript": "6.0.3"
 	},
 	"overrides": {
-		"rolldown": "1.2.16"
+		"rolldown": "1.2.19"
 	}
 }

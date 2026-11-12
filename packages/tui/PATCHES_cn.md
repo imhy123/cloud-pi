@@ -179,6 +179,7 @@ Windows 输入超时的 poll 宽限，以及保留的 utils 更新（路径比�
 进程中导入每个公共入口。`npm run verify` 运行类型检查、构建、源码测试及产物测试。
 来源审计单独运行，需要上游 Git 仓库。上游 MIT 声明保持完整。
 
-开发工具通过根 npm override 将 `rolldown` 及匹配的平台绑定固定到 `1.2.16`，避开
-1.2.18 的 Linux CPU 指令回归（[上游 issue](https://github.com/rolldown/rolldown/issues/11607)）。
+开发工具通过根 npm override 将 `rolldown` 及匹配的平台绑定固定到 `1.2.19`。
+该版本修复了 1.2.18 的 Linux CPU 指令回归（[发布说明](https://github.com/rolldown/rolldown/releases/tag/v1.2.19)）。
+原生绑定加载及打包产物执行已在不支持 AVX 的 Intel Celeron J4125 上通过验证；
 原生测试无需强制 WASM 环境变量。

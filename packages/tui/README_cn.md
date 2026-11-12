@@ -287,8 +287,8 @@ npm run audit:upstream -w @cloud-pi/tui # pinned source/header comparison
 
 `test/setup.ts` 将 Bun shim 安装到 `globalThis`，使 vendored 源码无需修改即可在
 Vitest 下运行。来源审计需要相邻的 oh-my-pi 与 pi Git 仓库，也可设置 `OH_MY_PI_DIR`
-和 `PI_DIR`。测试使用纯 Node：即使未安装 Bun 也必须通过。开发工具通过根 override 固定 Rolldown 1.2.16，
-避开 1.2.18 的 Linux CPU 指令回归；测试无需强制 WASM 设置。
+和 `PI_DIR`。测试使用纯 Node：即使未安装 Bun 也必须通过。开发工具通过根 override 固定 Rolldown 1.2.19，
+该版本修复了 1.2.18 的 Linux CPU 指令回归；测试无需强制 WASM 设置。
 
 ## 许可证
 

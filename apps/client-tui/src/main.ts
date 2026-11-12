@@ -1,4 +1,5 @@
 import {
+	CombinedAutocompleteProvider,
 	Container,
 	Editor,
 	getEditorTheme,
@@ -14,6 +15,10 @@ import {
 } from "@cloud-pi/tui";
 
 import { locale } from "./i18n/locale";
+import { buildClientSlashCommands } from "./slash-commands/builtin-client";
+import { createBuiltinSlashCommandRegistry } from "./slash-commands/builtin-registry";
+import type { SlashCommandRuntime } from "./slash-commands/types";
+import { VERSION } from "./version";
 import { Welcome } from "./tui/components/welcome";
 
 // omp's default dark theme; its accent (electricBlue #00b4ff) is the color omp
@@ -27,9 +32,9 @@ await initTheme(true, undefined, undefined, "titanium", "light");
 const terminal = new ProcessTerminal();
 const tui = new TUI(terminal, true);
 // Text comes from the catalog; `locale` reads the system's languages and
-// re-renders subscribers when a setting switches it later.
+// selects the language at startup.
 const welcome = new Welcome({
-	version: "v0.0.1",
+	version: `v${VERSION}`,
 	tipLabel: locale.t("welcome.tipLabel"),
 	tip: locale.t("welcome.tip"),
 });
@@ -70,24 +75,35 @@ onThemeChange(() => {
 
 welcome.playIntro(() => tui.requestRender());
 
-// A language switch re-renders the banner in the new catalog; transcript lines
-// already emitted keep the language they were printed in.
-locale.onChange(() => {
-	welcome.setTip(locale.t("welcome.tipLabel"), locale.t("welcome.tip"));
-	tui.requestRender();
-});
+// Command descriptions are localized once at startup; language settings take
+// effect for the command menu after restarting the client.
+const commands = createBuiltinSlashCommandRegistry(buildClientSlashCommands(locale.t));
+editor.setAutocompleteProvider(new CombinedAutocompleteProvider(commands.buildTuiBuiltinSlashCommands()));
+
+function quit(): void {
+	welcome.stopIntro();
+	stopAppearanceFallback();
+	tui.stop();
+	process.exit(0);
+}
+
+const commandRuntime: SlashCommandRuntime = {
+	clearTranscript() {
+		transcript.clear();
+		tui.requestRender();
+	},
+	quit,
+};
 
 editor.onSubmit = text => {
-	transcript.addChild(new Text(locale.t("chat.youSaid", text), 1, 0));
+	const result = commands.executeBuiltinSlashCommand(text, commandRuntime);
+	if (result === true) return;
+	transcript.addChild(new Text(locale.t("chat.youSaid", typeof result === "string" ? result : text), 1, 0));
 	tui.requestRender();
 };
 
 tui.addInputListener(data => {
-	if (matchesKey(data, "ctrl+c")) {
-		stopAppearanceFallback();
-		tui.stop();
-		process.exit(0);
-	}
+	if (matchesKey(data, "ctrl+c")) quit();
 	return undefined;
 });
 

@@ -307,9 +307,9 @@ npm run audit:upstream -w @cloud-pi/tui # pinned source/header comparison
 `test/setup.ts` installs the Bun shim on `globalThis` so the vendored sources run
 unmodified under Vitest. The source audit needs sibling oh-my-pi and pi Git repositories (or `OH_MY_PI_DIR`
 and `PI_DIR`). Tests are plain Node: they must pass with no Bun
-installed. Development tooling pins Rolldown to 1.2.16 via the root override to
-avoid the Linux CPU instruction regression in 1.2.18; no forced WASM setting is
-needed for tests.
+installed. Development tooling pins Rolldown to 1.2.19 via the root override;
+this release fixes the Linux CPU instruction regression in 1.2.18. No forced
+WASM setting is needed for tests.
 
 ## License
 

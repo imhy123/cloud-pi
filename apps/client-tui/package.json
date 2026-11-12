@@ -8,8 +8,9 @@
 		"node": ">=24.0.0"
 	},
 	"scripts": {
-		"start": "node --import ./register.mjs src/main.ts",
-		"typecheck": "tsc --noEmit -p tsconfig.json"
+		"start": "node --import ./register.mjs src/cli.ts",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"test": "node --import ./register.mjs --test test/*.test.ts"
 	},
 	"dependencies": {
 		"@cloud-pi/i18n": "0.0.0",

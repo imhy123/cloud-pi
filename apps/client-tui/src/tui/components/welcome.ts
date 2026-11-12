@@ -256,8 +256,8 @@ export class Welcome implements Component {
 	readonly #version: string;
 	readonly #partnerName: string;
 	readonly #partnerVersion: string;
-	#tipLabel: string;
-	#tip: string;
+	readonly #tipLabel: string;
+	readonly #tip: string;
 	#animStart: number | null = null;
 	#timer: NodeJS.Timeout | undefined;
 	#requestRender: (() => void) | undefined;
@@ -275,14 +275,6 @@ export class Welcome implements Component {
 	invalidate(): void {
 		this.#cachedWidth = -1;
 		this.#cachedLines = undefined;
-	}
-
-	/** Replace the tip and its label (a language switch), dropping the cached frame. */
-	setTip(tipLabel: string, tip: string): void {
-		if (this.#tipLabel === tipLabel && this.#tip === tip) return;
-		this.#tipLabel = tipLabel;
-		this.#tip = tip;
-		this.invalidate();
 	}
 
 	/**
